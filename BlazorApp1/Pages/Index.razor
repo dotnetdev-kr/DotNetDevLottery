@@ -1,0 +1,50 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+@inject IJSRuntime JsRuntime
+
+<div style="display: flex; flex-wrap: wrap;">
+    @foreach (var info in listA)
+    {
+        <div style="width: 120px;">@info.Item1</div>
+    }
+</div>
+<div class="w-100 d-flex my-4">
+    <button @onclick="onClickButton" class="btn btn-success mx-auto">추첨 진행</button>
+</div>
+<h2 class="text-center">@personCount 명 중에 당첨자에요!</h2>
+<h1 class="text-center">Blazor로 만들었습니다 :)</h1>
+<div class="w-100 text-center" style="font-size: 200px">@personName</div>
+<div class="w-100 text-center" style="font-size: 50px;">@email</div>
+@code {
+    List<(string, string)> listA = new List<(string, string)>();
+    string personName = "";
+    string email = "";
+    int personCount = 0;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await Http.GetStringAsync("sample-data/festa.csv");
+        var lines = data.Split('\n');
+        foreach(var line in lines)
+        {
+            var values = line.Split(',');
+            
+            if (line.Contains("Yes") && line.Contains("일반 등록"))
+            {
+                (string, string) temp = (values[0], values[1]);
+                listA.Add(temp);
+                personCount++;
+            }
+        }
+    }
+
+    public void onClickButton()
+    {
+        Random rnd = new Random();
+        var index = rnd.Next(listA.Count);
+        personName = listA[index].Item1;
+        email = listA[index].Item2;
+        listA = listA.Where(info => info.Item1 != personName).ToList();
+        
+    }
+}
