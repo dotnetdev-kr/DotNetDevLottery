@@ -117,7 +117,7 @@ public class EventService : IEventService
                 personName = currentRow.GetCell(nameIndex).ToString() ?? "",
                 email = currentRow.GetCell(emailIndex).ToString() ?? "",
                 ticketType = currentRow.GetCell(ticketIndex)?.ToString() ?? "",
-                isChecked = !((currentRow.GetCell(isCheckedIndex)?.ToString() ?? "").Contains(
+                isChecked = ((currentRow.GetCell(isCheckedIndex)?.ToString() ?? "").Contains(
                     eventInfo.checkedString))
             });
         }
