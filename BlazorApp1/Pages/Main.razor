@@ -1,0 +1,125 @@
+@page "/"
+@inject NavigationManager NavigationManager
+@inject EventService EventService
+
+<div class="container mx-auto">
+    <ul class="d-flex justify-content-center pt-5 mb-4 btn-group" style="list-style-type: none;">
+        @foreach (var eventInfo in EventService.EVENT_INFOS.Select((value, index) => new { value, index }))
+        {
+            <li class="@InfoButtonWrapperClassName(eventInfo.index == EventService.EVENT_INFOS.Count - 1)">
+                <button
+                    type="button"
+                    class="@InfoButtonClassName(eventInfo.index == eventInfoIndex)"
+                    disabled="@(!eventInfo.value.isAllowed)"
+                    onclick="@(() => OnClickIndexButton(eventInfo.index))"
+                >
+                    @eventInfo.value.name
+                </button>
+            </li>
+        }
+    </ul>
+    <div class="d-flex justify-content-center mb-4 row col-6 mx-auto">
+        <span class="mr-4 col d-flex align-items-center">엑셀 파일:</span>
+        <InputFile type="text" class="form-control col" OnChange="@(e => OnInputFileInput(e))" />
+    </div>
+    @if (isSecondFilterOpened)
+    {
+        <div>
+            <div class="d-flex justify-content-center mb-4 mx-auto">
+                @foreach (var groupName in groupNames.Select((value, index) => new { value, index }).ToArray())
+                {
+                    <label class="col-2 mr-2">
+                    <input type="checkbox" @bind="@filterGroup[groupName.index]" />
+                        @groupName.value
+                    </label>
+                }
+            </div>
+            <div class="d-flex justify-content-center mb-4 mx-auto">
+                    <label>
+                    <input type="checkbox" @bind="@filterCheckedIn" />
+                        체크인 한 사람만 포함
+                    </label>
+            </div>
+            <div class="d-flex justify-content-center mb-2 mx-auto">
+                <button type="button" class="btn btn-success mx-auto" @onclick="OnClickGoNextPageButton">이동</button>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="d-flex justify-content-center mb-4 mx-auto">
+            <button type="button" class="btn btn-success mx-auto" @onclick="OnClickNextButton" disabled="@isLoading">@(isLoading ? "가져오는 중" : "다음")</button>
+        </div>
+    }
+</div>
+
+@code {
+    IBrowserFile? targetFile;
+    bool isLoading = false;
+    bool isSecondFilterOpened = false;
+    int eventInfoIndex = 0;
+    List<string> groupNames = new();
+    List<bool> filterGroup = new();
+    bool filterCheckedIn = true;
+    
+
+    string InfoButtonWrapperClassName (bool isLast) => isLast ? "me-0" : "me-4";
+    string InfoButtonClassName (bool isSelected) => isSelected ? "btn-primary btn" : "btn-outline-primary btn";
+
+    private void OnClickIndexButton(int index)
+    {
+        eventInfoIndex = index;
+        this.StateHasChanged();
+    }
+
+    private void OnInputFileInput(InputFileChangeEventArgs eventArgs)
+    {
+        Console.WriteLine(eventArgs.File.ToString());
+        targetFile = eventArgs.File;
+    }
+
+    private async Task OnClickNextButton()
+    {
+        if (targetFile == null)
+        {
+            return;
+        }
+        isLoading = true;
+        try
+        {
+            await EventService.getUserInfoList(eventInfoIndex, targetFile);
+            isSecondFilterOpened = true;
+            groupNames = EventService.userInfos
+                .GroupBy((userInfo) => userInfo.ticketType)
+                .Select((userInfoGroup) => userInfoGroup.First().ticketType)
+                .ToList();
+            filterGroup = groupNames.Select((_) => true).ToList();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void OnClickGoNextPageButton()
+    {
+        var targetGroupNames = groupNames.Where((groupName, index) => filterGroup[index]).ToList();
+        EventService.userInfos = EventService.userInfos.Where(info =>
+        {
+            if (!targetGroupNames.Contains(info.ticketType))
+            {
+                return false;
+            }
+            if (filterCheckedIn && !info.isChecked)
+            {
+                return false;
+            }
+            return true;
+        }).ToList();
+        NavigationManager.NavigateTo("/random");
+    }
+}

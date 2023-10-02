@@ -1,0 +1,26 @@
+name: upload-github-pages
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    deploy-to-github-pages:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Setup .NET Core SDK
+              uses: actions/setup-dotnet@v1
+              with:
+                  dotnet-version: 8.0.0-rc.1.23421.29
+            - name: Publish .NET Core Project
+              run: dotnet publish ./BlazorApp1/BlazorApp1.csproj -c Release -o release --nologo
+            - name: Add .nojekyll file
+              run: touch release/wwwroot/.nojekyll
+            - name: Commit wwwroot to GitHub Pages
+              uses: JamesIves/github-pages-deploy-action@3.7.1
+              with:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                BRANCH: gh-pages
+                FOLDER: release/wwwroot

@@ -1,0 +1,40 @@
+﻿@page "/random"
+@inject NavigationManager NavigationManager
+@inject EventService EventService
+
+<div style="display: flex; flex-wrap: wrap;">
+    @foreach (var info in remainedUserList)
+    {
+        <h3 style="width: 200px;">@info.personName</h3>
+    }
+</div>
+<div class="w-100 d-flex my-4">
+    <button @onclick="onClickButton" class="btn btn-success mx-auto">추첨 진행</button>
+</div>
+<h2 class="text-center">@personCount 명 중에 당첨자에요!</h2>   
+<div class="w-100 text-center" style="font-size: 200px">@selectedUserInfo?.personName</div>
+<div class="w-100 text-center" style="font-size: 50px;">@selectedUserInfo?.email</div>
+@code {
+    List<UserInfo> remainedUserList = new List<UserInfo>();
+    UserInfo? selectedUserInfo;
+    int personCount = 0;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        remainedUserList = EventService.userInfos.ToList();
+        personCount = remainedUserList.Count;
+        if (remainedUserList.Count == 0)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+    }
+
+    public void onClickButton()
+    {
+        var randomObj = new System.Random();
+        var index = randomObj.Next(remainedUserList.Count);
+        selectedUserInfo = remainedUserList[index];
+        remainedUserList = remainedUserList.Where(info => info.personName != selectedUserInfo.personName).ToList();
+        
+    }
+}
