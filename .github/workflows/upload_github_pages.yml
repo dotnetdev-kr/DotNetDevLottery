@@ -11,9 +11,9 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Setup .NET Core SDK
-              uses: actions/setup-dotnet@v1
+              uses: actions/setup-dotnet@v3
               with:
-                  dotnet-version: 8.0.0-rc.1.23421.29
+                  dotnet-version: '8.0.0-rc.1.23421.29'
             - name: Publish .NET Core Project
               run: dotnet publish ./BlazorApp1/BlazorApp1.csproj -c Release -o release --nologo
             - name: Add .nojekyll file
