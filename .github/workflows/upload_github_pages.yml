@@ -18,6 +18,9 @@ jobs:
               run: dotnet publish ./BlazorApp1/BlazorApp1.csproj -c Release -o release --nologo
             - name: Add .nojekyll file
               run: touch release/wwwroot/.nojekyll
+            # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
+            - name: Change base-tag in index.html from / to Blazor-festa-random-person/
+              run: sed -i 's/<base href="\/" \/>/<base href="\/Blazor-festa-random-person\/" \/>/g' release/wwwroot/index.html
             - name: Commit wwwroot to GitHub Pages
               uses: JamesIves/github-pages-deploy-action@3.7.1
               with:
