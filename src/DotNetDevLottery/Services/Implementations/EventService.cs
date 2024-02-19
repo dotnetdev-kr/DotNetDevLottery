@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Forms;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using System.Text.RegularExpressions;
 
 namespace DotNetDevLottery.Services.Implementations;
 
@@ -41,6 +42,32 @@ public class EventService : IEventService
 
     public void ClearUserInfoList()
         => UserInfos.Clear();
+
+    private string MaskName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return name;
+
+        var trimmedName = name.Trim();
+        if (trimmedName.Length > 2)
+            return Regex.Replace(trimmedName, "(?<=.)(.*)(?=.)", m => new string('*', m.Length));
+        else
+            return trimmedName[0] + new string('*', trimmedName.Length - 1);
+    }
+
+    private string MaskEmail(string email)
+    {
+        if (string.IsNullOrWhiteSpace(email))
+            return email;
+
+        var trimmedEmail = email.Trim();
+        var atIndex = trimmedEmail.IndexOf('@');
+
+        if (atIndex < 0)
+            return email;
+        else
+            return trimmedEmail.Substring(0, atIndex) + "***";
+    }
 
     public async Task LoadUserInfoListAsync(int eventInfoIndex, IBrowserFile file, CancellationToken cancellationToken = default)
     {
@@ -112,8 +139,8 @@ public class EventService : IEventService
 
             UserInfos.Add(new()
             {
-                personName = currentRow.GetCell(nameIndex).ToString() ?? string.Empty,
-                email = currentRow.GetCell(emailIndex).ToString() ?? string.Empty,
+                personName = MaskName(currentRow.GetCell(nameIndex).ToString() ?? string.Empty),
+                email = MaskEmail(currentRow.GetCell(emailIndex).ToString() ?? string.Empty),
                 ticketType = currentRow.GetCell(ticketIndex)?.ToString() ?? string.Empty,
                 isChecked = (currentRow.GetCell(isCheckedIndex)?.ToString() ?? string.Empty)
                     .Contains(eventInfo.checkedString)
