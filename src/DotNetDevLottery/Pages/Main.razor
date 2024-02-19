@@ -10,7 +10,6 @@
                 <button
                     type="button"
                     class="@InfoButtonClassName(eventInfo.index == eventInfoIndex)"
-                    disabled="@(!eventInfo.value.isAllowed)"
                     onclick="@(() => OnClickIndexButton(eventInfo.index))"
                 >
                     @eventInfo.value.name
@@ -90,7 +89,7 @@
             isSecondFilterOpened = true;
             groupNames = EventService.UserInfos
                 .GroupBy((userInfo) => userInfo.ticketType)
-                .Select((userInfoGroup) => userInfoGroup.First().ticketType)
+                .Select((userInfoGroup) => userInfoGroup.First().ticketType ?? string.Empty)
                 .ToList();
             filterGroup = groupNames.Select((_) => true).ToList();
         }
@@ -110,10 +109,10 @@
         var currentUsers = EventService.UserInfos;
         var selectedUsers = currentUsers.Where(info =>
         {
-            if (!targetGroupNames.Contains(info.ticketType))
+            if (!targetGroupNames.Contains(info.ticketType ?? string.Empty))
                 return false;
 
-            if (filterCheckedIn && !info.isChecked)
+            if (filterCheckedIn && !(info.isChecked ?? false))
                 return false;
 
             return true;

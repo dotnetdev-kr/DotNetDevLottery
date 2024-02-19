@@ -143,7 +143,7 @@ public class EventService : IEventService
                 email = MaskEmail(currentRow.GetCell(emailIndex).ToString() ?? string.Empty),
                 ticketType = currentRow.GetCell(ticketIndex)?.ToString() ?? string.Empty,
                 isChecked = (currentRow.GetCell(isCheckedIndex)?.ToString() ?? string.Empty)
-                    .Contains(eventInfo.checkedString)
+                    .Contains(eventInfo.checkedString ?? string.Empty)
             });
         }
     }
