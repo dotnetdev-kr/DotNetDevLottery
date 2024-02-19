@@ -16,6 +16,7 @@ public class EventService : IEventService
             name = "ONOFFMIX",
             firstRowCellString = "번호",
             nameCellString = "이름",
+            phoneCellString = "전화",
             emailCellString = "이메일",
             ticketCellString = "그룹",
             checkedCellString = "참여확정",
@@ -27,6 +28,7 @@ public class EventService : IEventService
             name = "FESTA",
             firstRowCellString = "이름",
             nameCellString = "이름",
+            phoneCellString = "전화", // To Do: 실제 festa CSV 파일을 확인해봐야 함.
             emailCellString = "이메일",
             ticketCellString = "티켓",
             checkedCellString = "체크인",
@@ -53,6 +55,19 @@ public class EventService : IEventService
             return Regex.Replace(trimmedName, "(?<=.)(.*)(?=.)", m => new string('*', m.Length));
         else
             return trimmedName[0] + new string('*', trimmedName.Length - 1);
+    }
+
+    private string MaskPhone(string phone)
+    {
+        if (string.IsNullOrWhiteSpace(phone))
+            return phone;
+
+        var numericOnly = Regex.Replace(phone, "[^0-9]", string.Empty);
+
+        if (numericOnly.Length <= 4)
+            return numericOnly.Length == 0 ? phone : numericOnly;
+        else
+            return numericOnly.Substring(numericOnly.Length - 4);
     }
 
     private string MaskEmail(string email)
@@ -84,6 +99,7 @@ public class EventService : IEventService
         ms.Seek(0L, SeekOrigin.Begin);
 
         int nameIndex = 0;
+        int phoneIndex = 0;
         int emailIndex = 0;
         int ticketIndex = 0;
         int isCheckedIndex = 0;
@@ -124,6 +140,8 @@ public class EventService : IEventService
 
                     if (currentCellString == eventInfo.nameCellString)
                         nameIndex = cellIndex;
+                    else if (currentCellString == eventInfo.phoneCellString)
+                        phoneIndex = cellIndex;
                     else if (currentCellString == eventInfo.emailCellString)
                         emailIndex = cellIndex;
                     else if (currentCellString == eventInfo.ticketCellString)
@@ -141,6 +159,7 @@ public class EventService : IEventService
             {
                 personName = MaskName(currentRow.GetCell(nameIndex).ToString() ?? string.Empty),
                 email = MaskEmail(currentRow.GetCell(emailIndex).ToString() ?? string.Empty),
+                phone = MaskPhone(currentRow.GetCell(phoneIndex).ToString() ?? string.Empty),
                 ticketType = currentRow.GetCell(ticketIndex)?.ToString() ?? string.Empty,
                 isChecked = (currentRow.GetCell(isCheckedIndex)?.ToString() ?? string.Empty)
                     .Contains(eventInfo.checkedString ?? string.Empty)
