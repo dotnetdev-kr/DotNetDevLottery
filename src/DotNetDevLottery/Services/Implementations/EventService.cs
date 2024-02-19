@@ -1,21 +1,14 @@
-using BlazorApp1.Models;
+using DotNetDevLottery.Models;
 using Microsoft.AspNetCore.Components.Forms;
 using NPOI.HSSF.UserModel;
-using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 
-namespace BlazorApp1.Services;
-
-public interface IEventService
-{
-    public static List<EventInfo> EVENT_INFOS;
-    public List<UserInfo> userInfos { get; set; }
-    public Task getUserInfoList(int index, IBrowserFile file);
-}
+namespace DotNetDevLottery.Services.Implementations;
 
 public class EventService : IEventService
 {
-    public static List<EventInfo> EVENT_INFOS = new()
+    public List<EventInfo> EventInfos { get; } = new()
     {
         new()
         {
@@ -24,8 +17,8 @@ public class EventService : IEventService
             nameCellString = "이름",
             emailCellString = "이메일",
             ticketCellString = "그룹",
-            checkedCellString = "출석확인일시",
-            checkedString = ":",
+            checkedCellString = "참여확정",
+            checkedString = "Y",
             isOldExcel = true,
         },
         new()
@@ -37,21 +30,31 @@ public class EventService : IEventService
             ticketCellString = "티켓",
             checkedCellString = "체크인",
             checkedString = "Yes",
+            isOldExcel = false,
         },
-        new() { name = "EVENTUS", isAllowed = false },
     };
 
-    public List<UserInfo> userInfos { get; set; } = new List<UserInfo>();
+    public List<UserInfo> UserInfos { get; private set; } = new List<UserInfo>();
 
-    public async Task getUserInfoList(int eventInfoIndex, IBrowserFile file)
+    public void SetUserInfoList(IEnumerable<UserInfo> userInfoList)
+        => UserInfos = userInfoList.ToList();
+
+    public void ClearUserInfoList()
+        => UserInfos.Clear();
+
+    public async Task LoadUserInfoListAsync(int eventInfoIndex, IBrowserFile file, CancellationToken cancellationToken = default)
     {
-        var eventInfo = EVENT_INFOS[eventInfoIndex];
-        userInfos.Clear();
-        var httpStream = file.OpenReadStream();
+        var eventInfo = EventInfos[eventInfoIndex];
+        UserInfos.Clear();
+
         var ms = new MemoryStream();
-        await httpStream.CopyToAsync(ms);
-        httpStream.Close();
-        ms.Position = 0;
+
+        using (var httpStream = file.OpenReadStream())
+        {
+            await httpStream.CopyToAsync(ms, cancellationToken).ConfigureAwait(false);
+        }
+
+        ms.Seek(0L, SeekOrigin.Begin);
 
         int nameIndex = 0;
         int emailIndex = 0;
@@ -59,6 +62,7 @@ public class EventService : IEventService
         int isCheckedIndex = 0;
         bool isUserInfoStarted = false;
         ISheet sheet;
+
         if (eventInfo.isOldExcel)
         {
             var hsswb = new HSSFWorkbook(ms);
@@ -69,56 +73,50 @@ public class EventService : IEventService
             var xsswb = new XSSFWorkbook(ms);
             sheet = xsswb.GetSheetAt(0);
         }
+
         for (var index = sheet.FirstRowNum; index < sheet.LastRowNum; index++)
         {
             var currentRow = sheet.GetRow(index);
             if (currentRow == null)
             {
                 if (isUserInfoStarted)
-                {
-                    return;   
-                }
+                    return;
+                
                 continue;
             }
-            var firstCellString = currentRow.GetCell(0)?.ToString() ?? "";
+
+            var firstCellString = currentRow.GetCell(0)?.ToString() ?? string.Empty;
+
             if (firstCellString == eventInfo.firstRowCellString)
             {
                 isUserInfoStarted = true;
+
                 for (var cellIndex = currentRow.FirstCellNum; cellIndex < currentRow.LastCellNum; cellIndex++)
                 {
                     var currentCellString = currentRow.GetCell(cellIndex).ToString();
+
                     if (currentCellString == eventInfo.nameCellString)
-                    {
                         nameIndex = cellIndex;
-                    }
                     else if (currentCellString == eventInfo.emailCellString)
-                    {
                         emailIndex = cellIndex;
-                    }
                     else if (currentCellString == eventInfo.ticketCellString)
-                    {
                         ticketIndex = cellIndex;
-                    }
                     else if (currentCellString == eventInfo.checkedCellString)
-                    {
                         isCheckedIndex = cellIndex;
-                    }
                 }
                 continue;
             }
 
             if (isUserInfoStarted == false)
-            {
                 continue;
-            }
 
-            userInfos.Add(new()
+            UserInfos.Add(new()
             {
-                personName = currentRow.GetCell(nameIndex).ToString() ?? "",
-                email = currentRow.GetCell(emailIndex).ToString() ?? "",
-                ticketType = currentRow.GetCell(ticketIndex)?.ToString() ?? "",
-                isChecked = ((currentRow.GetCell(isCheckedIndex)?.ToString() ?? "").Contains(
-                    eventInfo.checkedString))
+                personName = currentRow.GetCell(nameIndex).ToString() ?? string.Empty,
+                email = currentRow.GetCell(emailIndex).ToString() ?? string.Empty,
+                ticketType = currentRow.GetCell(ticketIndex)?.ToString() ?? string.Empty,
+                isChecked = (currentRow.GetCell(isCheckedIndex)?.ToString() ?? string.Empty)
+                    .Contains(eventInfo.checkedString)
             });
         }
     }

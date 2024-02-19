@@ -1,4 +1,4 @@
-namespace BlazorApp1.Models;
+namespace DotNetDevLottery.Models;
 
 public class UserInfo
 {

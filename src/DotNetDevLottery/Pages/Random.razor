@@ -1,6 +1,6 @@
 ﻿@page "/random"
 @inject NavigationManager NavigationManager
-@inject EventService EventService
+@inject IEventService EventService
 
 <div style="display: flex; flex-wrap: wrap;">
     @foreach (var info in remainedUserList)
@@ -18,23 +18,39 @@
     List<UserInfo> remainedUserList = new List<UserInfo>();
     UserInfo? selectedUserInfo;
     int personCount = 0;
-    
-    protected override async Task OnInitializedAsync()
+
+    protected override Task OnInitializedAsync()
     {
-        remainedUserList = EventService.userInfos.ToList();
+        remainedUserList = EventService.UserInfos.ToList();
         personCount = remainedUserList.Count;
+
         if (remainedUserList.Count == 0)
         {
-            NavigationManager.NavigateTo("");
+            NavigationManager.NavigateTo("/");
+            return Task.CompletedTask;
         }
+
+        return Task.CompletedTask;
     }
 
     public void onClickButton()
     {
+        if (remainedUserList.Count < 1)
+        {
+            NavigationManager.NavigateTo("/");
+            return;
+        }
+
         var randomObj = new System.Random();
         var index = randomObj.Next(remainedUserList.Count);
-        selectedUserInfo = remainedUserList[index];
-        remainedUserList = remainedUserList.Where(info => info.personName != selectedUserInfo.personName).ToList();
-        
+        selectedUserInfo = remainedUserList.ElementAtOrDefault(index);
+
+        if (selectedUserInfo != null)
+            remainedUserList = remainedUserList.Where(info => info.personName != selectedUserInfo.personName).ToList();
+        else
+        {
+            NavigationManager.NavigateTo("/");
+            return;
+        }
     }
 }

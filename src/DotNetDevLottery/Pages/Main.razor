@@ -1,12 +1,12 @@
 @page "/"
 @inject NavigationManager NavigationManager
-@inject EventService EventService
+@inject IEventService EventService
 
 <div class="container mx-auto">
     <ul class="d-flex justify-content-center pt-5 mb-4 btn-group" style="list-style-type: none;">
-        @foreach (var eventInfo in EventService.EVENT_INFOS.Select((value, index) => new { value, index }))
+        @foreach (var eventInfo in EventService.EventInfos.Select((value, index) => new { value, index }))
         {
-            <li class="@InfoButtonWrapperClassName(eventInfo.index == EventService.EVENT_INFOS.Count - 1)">
+            <li class="@InfoButtonWrapperClassName(eventInfo.index == EventService.EventInfos.Count - 1)">
                 <button
                     type="button"
                     class="@InfoButtonClassName(eventInfo.index == eventInfoIndex)"
@@ -61,7 +61,6 @@
     List<string> groupNames = new();
     List<bool> filterGroup = new();
     bool filterCheckedIn = true;
-    
 
     string InfoButtonWrapperClassName (bool isLast) => isLast ? "me-0" : "me-4";
     string InfoButtonClassName (bool isSelected) => isSelected ? "btn-primary btn" : "btn-outline-primary btn";
@@ -81,15 +80,15 @@
     private async Task OnClickNextButton()
     {
         if (targetFile == null)
-        {
             return;
-        }
+
         isLoading = true;
+
         try
         {
-            await EventService.getUserInfoList(eventInfoIndex, targetFile);
+            await EventService.LoadUserInfoListAsync(eventInfoIndex, targetFile);
             isSecondFilterOpened = true;
-            groupNames = EventService.userInfos
+            groupNames = EventService.UserInfos
                 .GroupBy((userInfo) => userInfo.ticketType)
                 .Select((userInfoGroup) => userInfoGroup.First().ticketType)
                 .ToList();
@@ -97,7 +96,7 @@
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.ToString());
+            Console.Error.WriteLine(e.ToString());
         }
         finally
         {
@@ -108,18 +107,19 @@
     private void OnClickGoNextPageButton()
     {
         var targetGroupNames = groupNames.Where((groupName, index) => filterGroup[index]).ToList();
-        EventService.userInfos = EventService.userInfos.Where(info =>
+        var currentUsers = EventService.UserInfos;
+        var selectedUsers = currentUsers.Where(info =>
         {
             if (!targetGroupNames.Contains(info.ticketType))
-            {
                 return false;
-            }
+
             if (filterCheckedIn && !info.isChecked)
-            {
                 return false;
-            }
+
             return true;
         }).ToList();
-        NavigationManager.NavigateTo("random");
+
+        EventService.SetUserInfoList(selectedUsers);
+        NavigationManager.NavigateTo("/random");
     }
 }
