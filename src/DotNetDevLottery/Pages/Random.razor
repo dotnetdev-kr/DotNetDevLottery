@@ -8,7 +8,8 @@
 <h2 class="text-center">@personCount 명 중에 당첨자에요!</h2>   
 <div class="w-100 text-center" style="font-size: 200px">@selectedUserInfo?.personName</div>
 <div class="w-100 text-center" style="font-size: 50px;">@selectedUserInfo?.email</div>
-<div style="display: flex; flex-wrap: wrap;">
+<hr />
+<div style="display: flex; flex-wrap: wrap; color: darkgray;">
     @foreach (var info in remainedUserList)
     {
         <h3 style="width: 200px;">@info.personName</h3>
