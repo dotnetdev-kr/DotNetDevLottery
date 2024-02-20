@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "DotNetDevLottery",
   "resources": {
-    "hash": "sha256-wMVY6Tyqd6lqqLuRPJjl8F7SM+ellUu+JNkaGEXBodA=",
+    "hash": "sha256-cXKwDIwDq/xwgdbteiMsa8ye7MQzhHC0xlfKsoYllVg=",
     "jsModuleNative": {
       "dotnet.native.8.0.2.jgt5nhn140.js": "sha256-gPMK16QWoJSTxorlZJqcVtbBRTniIQWlLsJN2O4cJHg="
     },
@@ -18,7 +18,7 @@
     },
     "assembly": {
       "BouncyCastle.Cryptography.wasm": "sha256-tZxUz5R8To9wugB18BSeGE89A5lQ0IsnaCl5AkgKfnY=",
-      "DotNetDevLottery.wasm": "sha256-/pDRY0dJEEOyxzbXcl6j76l8mSQ69DHluxmKIzZpGmE=",
+      "DotNetDevLottery.wasm": "sha256-8kJVUW/gasv1k8aVEmn++JcOmQOtP7h7HSUEjK4P1Gs=",
       "Enums.NET.wasm": "sha256-pzL+j6B+0G6CnbVAo8dMnTeNxQqDDE6ubZNVym2/P7M=",
       "ICSharpCode.SharpZipLib.wasm": "sha256-N+B+aaiZzE1fHJnfuESjuouC3agz168HHdDcBj9kCPQ=",
       "MathNet.Numerics.wasm": "sha256-u8KPSyaPGoTkqmgb/133wPiFm81PWN6s85SKoxuhiWY=",
