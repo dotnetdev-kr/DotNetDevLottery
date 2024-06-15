@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 1280px;
+    
+    @media(max-width: 1024px) {
+        width: 768px;
+    }
+    @media(max-width: 640px) {
+        width: 578px;
+    }
+}
+
+.event-company {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem 0.5rem;
+    list-style-type: none;
+}
+
+.file-dropzone {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: 0 auto 2rem;
+    
+    & .file-dropzone__input {
+        display: none;
+    }
+}
+
+.form-row {
+    padding: 1rem 0;
+    display: flex;
+    column-gap: 0.75rem;
+    justify-content: center;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+}
