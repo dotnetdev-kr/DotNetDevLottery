@@ -27,9 +27,17 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin: 0 auto 2rem;
-    
+
     & .file-dropzone__input {
         display: none;
+    }
+
+    & .file-dropzone__filename {
+        display: block;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
 }
 

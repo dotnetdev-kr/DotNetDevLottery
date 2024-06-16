@@ -26,7 +26,7 @@
             }
             else
             {
-                <span>
+                <span class="file-dropzone__filename">
                     @targetFile.Name
                 </span>
             }
@@ -48,13 +48,17 @@
             <div class="form-row">
                 @foreach (var groupName in groupNames.Select((value, index) => new { value, index }).ToArray())
                 {
-                    <ui-checkbox onclick="@(() =>OnClickCheckbox(groupName.index))">
+                    <ui-checkbox
+                        checked="@filterGroup[groupName.index]"
+                        @onchange="@(() =>OnChangeCheckbox(groupName.index))">
                         @groupName.value
                     </ui-checkbox>
                 }
             </div>
             <div class="form-row">
-                <ui-checkbox @onclick="OnClickFilterCheckInCheckbox">
+                <ui-checkbox
+                    checked="@filterCheckedIn"
+                    @onchange="OnChangeFilterCheckInCheckbox">
                     체크인 한 사람만 포함
                 </ui-checkbox>
             </div>
@@ -116,11 +120,11 @@
         await elementUtils.InvokeVoidAsync("clickElement", inputFileElement?.Element);
     }
 
-    private void OnClickCheckbox(int index)
+    private void OnChangeCheckbox(int index)
     {
         filterGroup[index] = !(filterGroup[index]);
     }
-    private void OnClickFilterCheckInCheckbox()
+    private void OnChangeFilterCheckInCheckbox()
     {
         filterCheckedIn = !filterCheckedIn;
     }
