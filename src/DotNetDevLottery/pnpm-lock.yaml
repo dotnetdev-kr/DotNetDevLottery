@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@lottiefiles/dotlottie-wc':
+        specifier: ^0.2.4
+        version: 0.2.4
       '@spectrum-web-components/bundle':
         specifier: ^0.43.0
         version: 0.43.0
@@ -196,6 +199,12 @@ packages:
 
   '@lit/reactive-element@2.0.4':
     resolution: {integrity: sha512-GFn91inaUa2oHLak8awSIigYz0cU0Payr1rcFsrkf5OJ5eSPxElyZfKh0f2p9FsTiZWXQdWGJeXZICEfXXYSXQ==}
+
+  '@lottiefiles/dotlottie-wc@0.2.4':
+    resolution: {integrity: sha512-I2QzxsgcvKKd/txs7ejasfxYFORbKwiwWWGqHDn0GVXyGqjcFBKKpvj1ATkjKqsnZ9gx71j/tYvGJSjE1QcRhA==}
+
+  '@lottiefiles/dotlottie-web@0.24.0':
+    resolution: {integrity: sha512-YJ6NVgkduDxHZqkBaKaBALn6IlSKUpE3lWhUlKNgcjm7xsXGpQj7Eb6HAqT4clWW61sK/8u8FiEkvOp6FIYS/g==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -843,6 +852,13 @@ snapshots:
   '@lit/reactive-element@2.0.4':
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.2.0
+
+  '@lottiefiles/dotlottie-wc@0.2.4':
+    dependencies:
+      '@lottiefiles/dotlottie-web': 0.24.0
+      lit: 3.1.4
+
+  '@lottiefiles/dotlottie-web@0.24.0': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -1715,11 +1731,11 @@ snapshots:
 
   vite@5.3.1(@types/node@20.14.2):
     dependencies:
-      '@types/node': 20.14.2
       esbuild: 0.21.5
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
+      '@types/node': 20.14.2
       fsevents: 2.3.3
 
   which@2.0.2:

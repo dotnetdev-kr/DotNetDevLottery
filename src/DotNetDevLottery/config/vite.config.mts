@@ -11,14 +11,10 @@ export default defineConfig({
     emptyOutDir: true,
     lib: {
       entry: [
-        path.resolve(
-          cwd,
-          './typescript/index.ts'
-        ),
         ...globSync(
           path.resolve(
             cwd,
-            './typescript/utils/**/*.ts'
+            './typescript/*.ts'
           )
         )
       ],

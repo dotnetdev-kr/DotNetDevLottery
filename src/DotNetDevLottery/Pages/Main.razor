@@ -95,7 +95,7 @@
     string InfoButtonVariant (bool isSelected) => isSelected ? "primary" : "secondary";
     string InfoButtonTreatment (bool isSelected) => isSelected ? "fill" : "outline";
 
-    protected override async void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         elementUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./build/js/element.mjs");
         await elementUtils.InvokeVoidAsync("addDropEventToChangeInputFile", dropzoneElement);

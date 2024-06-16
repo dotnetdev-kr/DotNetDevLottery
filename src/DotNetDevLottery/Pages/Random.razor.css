@@ -25,16 +25,32 @@
     text-align: center;
     font-size: 2rem;
 }
-.person-text-row {
-    text-align: center;
-    font-size: 15rem;
-    line-height: 1;
-}
-.sub-text-row {
-    margin-bottom: .5rem;
-    text-align: center;
-    font-size: 3rem;
-    line-height: 1;
+.winner {
+    position: relative;
+    height: 28rem;
+    & .person-text-row {
+        text-align: center;
+        font-size: 15rem;
+        line-height: 1;
+    }
+    & .sub-text-row {
+        margin-bottom: .5rem;
+        text-align: center;
+        font-size: 3rem;
+        line-height: 1;
+    }
+    .effect {
+        position: absolute;
+        width: 100%;
+        height: calc(100% + 20rem);
+        top: -10rem;
+        left: 0;
+        z-index: -1;
+        
+        &.effect--disabled {
+            visibility: hidden;
+        }
+    }
 }
 .person-list {
     display: flex;

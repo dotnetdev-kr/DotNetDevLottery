@@ -1,19 +1,26 @@
 ﻿@page "/random"
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 @inject IEventService EventService
 
 <div class="button-row">
     <ui-button
         treatment="outline"
-        @onclick="onClickButton"
+        @onclick="OnClickButton"
         class="success">
         추첨 진행
     </ui-button>
 </div>
 <h2 class="text-row">@personCount 명 중에 당첨자에요!</h2>
-<div class="person-text-row">@selectedUserInfo?.personName</div>
-<div class="sub-text-row">@selectedUserInfo?.phone</div>
-<div class="sub-text-row">@selectedUserInfo?.email</div>
+<div class="winner">
+    <div class="person-text-row">@selectedUserInfo?.personName</div>
+    <div class="sub-text-row">@selectedUserInfo?.phone</div>
+    <div class="sub-text-row">@selectedUserInfo?.email</div>
+    <dotlottie-wc
+        @ref="animationElement"
+        class="@EffectClass(selectedUserInfo == null)" 
+        src="/assets/tada.lottie" />
+</div>
 <ui-divider />
 <div class="person-list">
     @foreach (var info in remainedUserList)
@@ -22,25 +29,30 @@
     }
 </div>
 @code {
+    IJSObjectReference? lottieUtils;
+    ElementReference animationElement;
     List<UserInfo> remainedUserList = new List<UserInfo>();
     UserInfo? selectedUserInfo;
     int personCount = 0;
 
-    protected override Task OnInitializedAsync()
+    string EffectClass(bool isDisabled) => isDisabled ? "effect effect--disabled" : "effect";
+
+    protected override async Task OnInitializedAsync()
     {
+        
         remainedUserList = EventService.UserInfos.ToList();
         personCount = remainedUserList.Count;
 
         if (remainedUserList.Count == 0)
         {
             NavigationManager.NavigateTo("/");
-            return Task.CompletedTask;
+            return;
         }
 
-        return Task.CompletedTask;
+        lottieUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./build/js/lottie.mjs");
     }
 
-    public void onClickButton()
+    public async Task OnClickButton()
     {
         if (remainedUserList.Count < 1)
         {
@@ -53,7 +65,15 @@
         selectedUserInfo = remainedUserList.ElementAtOrDefault(index);
 
         if (selectedUserInfo != null)
-            remainedUserList = remainedUserList.Where(info => info.personName != selectedUserInfo.personName).ToList();
+        {
+            remainedUserList = remainedUserList
+                .Where(info => info.Equals(selectedUserInfo))
+                .ToList();
+            if (lottieUtils != null)
+            {
+                await lottieUtils.InvokeVoidAsync("startLottie", animationElement);
+            }
+        }
         else
         {
             NavigationManager.NavigateTo("/");
