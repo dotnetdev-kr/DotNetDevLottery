@@ -5,14 +5,18 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
-
     <ItemGroup>
       <Compile Remove="wwwroot\js\**" />
       <Content Remove="wwwroot\js\**" />
       <EmbeddedResource Remove="wwwroot\js\**" />
       <None Remove="wwwroot\js\**" />
     </ItemGroup>
-
+    <Target Name="PreBuild" BeforeTargets="Build">
+        <Message Text="Configuration is $(Configuration) $(MSBuildThisFileDirectory)" Importance="high" />
+        <Exec Condition="!Exists('node_modules')" Command="pnpm i" />
+        <Message Text="TypeScript 컴파일 중" Importance="high" />
+        <Exec Command="pnpm build" />
+    </Target>
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-rc.1.23421.29" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-rc.1.23421.29" PrivateAssets="all" />

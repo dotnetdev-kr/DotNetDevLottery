@@ -1,77 +1,132 @@
 @page "/"
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 @inject IEventService EventService
 
-<div class="container mx-auto">
-    <ul class="d-flex justify-content-center pt-5 mb-4 btn-group" style="list-style-type: none;">
+<div class="container">
+    <ui-button-group class="event-company">
         @foreach (var eventInfo in EventService.EventInfos.Select((value, index) => new { value, index }))
         {
-            <li class="@InfoButtonWrapperClassName(eventInfo.index == EventService.EventInfos.Count - 1)">
-                <button
-                    type="button"
-                    class="@InfoButtonClassName(eventInfo.index == eventInfoIndex)"
-                    onclick="@(() => OnClickIndexButton(eventInfo.index))"
-                >
-                    @eventInfo.value.name
-                </button>
-            </li>
+            <ui-button
+                variant="@InfoButtonVariant(selectedEventCompanyIndex == eventInfo.index)"
+                fill="@InfoButtonTreatment(selectedEventCompanyIndex == eventInfo.index)"
+                onclick="@(() => OnClickIndexButton(eventInfo.index))">
+                @eventInfo.value.name
+            </ui-button>
         }
-    </ul>
-    <div class="d-flex justify-content-center mb-4 row col-6 mx-auto">
-        <InputFile type="text" class="form-control col" OnChange="@(e => OnInputFileInput(e))" />
-    </div>
+    </ui-button-group>
+    <ui-dropzone
+        @ref="dropzoneElement"
+        class="file-dropzone">
+            @if (targetFile == null)
+            {
+                <span>
+                    파일을 끌어다가 놓아주세요!
+                </span>
+            }
+            else
+            {
+                <span>
+                    @targetFile.Name
+                </span>
+            }
+        <ui-button
+            variant="primary"
+            fill="fill"
+            @onclick="OnClickFileButton">
+            혹은 파일 직접 찾아보기
+        </ui-button>
+        <InputFile
+            type="file"
+            @ref="inputFileElement"
+            class="file-dropzone__input"
+            OnChange="@OnInputFileInput" />
+    </ui-dropzone>
     @if (isSecondFilterOpened)
     {
         <div>
-            <div class="d-flex justify-content-center mb-4 mx-auto">
+            <div class="form-row">
                 @foreach (var groupName in groupNames.Select((value, index) => new { value, index }).ToArray())
                 {
-                    <label class="col-2 mr-2">
-                    <input type="checkbox" @bind="@filterGroup[groupName.index]" />
+                    <ui-checkbox onclick="@(() =>OnClickCheckbox(groupName.index))">
                         @groupName.value
-                    </label>
+                    </ui-checkbox>
                 }
             </div>
-            <div class="d-flex justify-content-center mb-4 mx-auto">
-                    <label>
-                    <input type="checkbox" @bind="@filterCheckedIn" />
-                        체크인 한 사람만 포함
-                    </label>
+            <div class="form-row">
+                <ui-checkbox @onclick="OnClickFilterCheckInCheckbox">
+                    체크인 한 사람만 포함
+                </ui-checkbox>
             </div>
-            <div class="d-flex justify-content-center mb-2 mx-auto">
-                <button type="button" class="btn btn-success mx-auto" @onclick="OnClickGoNextPageButton">이동</button>
+            <div class="form-row">
+                <ui-button variant="accent" @onclick="OnClickGoNextPageButton">
+                    이동
+                </ui-button>
             </div>
         </div>
     }
     else
     {
-        <div class="d-flex justify-content-center mb-4 mx-auto">
-            <button type="button" class="btn btn-success mx-auto" @onclick="OnClickNextButton" disabled="@isLoading">@(isLoading ? "가져오는 중" : "다음")</button>
+        <div class="button-row">
+            <ui-button
+                variant="primary"
+                fill="outline"
+                @onclick="OnClickNextButton"
+                disabled="@isLoading">
+                @(isLoading ? "가져오는 중" : "다음")
+            </ui-button>
         </div>
     }
 </div>
 
 @code {
+    IJSObjectReference? elementUtils;
+    InputFile? inputFileElement;
+    ElementReference dropzoneElement;
+    
     IBrowserFile? targetFile;
     bool isLoading = false;
     bool isSecondFilterOpened = false;
-    int eventInfoIndex = 0;
+    int selectedEventCompanyIndex = 0;
     List<string> groupNames = new();
     List<bool> filterGroup = new();
     bool filterCheckedIn = true;
 
-    string InfoButtonWrapperClassName (bool isLast) => isLast ? "me-0" : "me-4";
-    string InfoButtonClassName (bool isSelected) => isSelected ? "btn-primary btn" : "btn-outline-primary btn";
+    string InfoButtonVariant (bool isSelected) => isSelected ? "primary" : "secondary";
+    string InfoButtonTreatment (bool isSelected) => isSelected ? "fill" : "outline";
 
+    protected override async Task OnInitializedAsync()
+    {
+        elementUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./build/js/element.mjs");
+        await elementUtils.InvokeVoidAsync("addDropEventToChangeInputFile", dropzoneElement);
+    }
+    
     private void OnClickIndexButton(int index)
     {
-        eventInfoIndex = index;
+        selectedEventCompanyIndex = index;
         this.StateHasChanged();
+    }
+
+    private async Task OnClickFileButton()
+    {
+        if (elementUtils == null)
+        {
+            return;
+        }
+        await elementUtils.InvokeVoidAsync("clickElement", inputFileElement?.Element);
+    }
+
+    private void OnClickCheckbox(int index)
+    {
+        filterGroup[index] = !(filterGroup[index]);
+    }
+    private void OnClickFilterCheckInCheckbox()
+    {
+        filterCheckedIn = !filterCheckedIn;
     }
 
     private void OnInputFileInput(InputFileChangeEventArgs eventArgs)
     {
-        Console.WriteLine(eventArgs.File.ToString());
         targetFile = eventArgs.File;
     }
 
@@ -84,7 +139,7 @@
 
         try
         {
-            await EventService.LoadUserInfoListAsync(eventInfoIndex, targetFile);
+            await EventService.LoadUserInfoListAsync(selectedEventCompanyIndex, targetFile);
             isSecondFilterOpened = true;
             groupNames = EventService.UserInfos
                 .GroupBy((userInfo) => userInfo.ticketType)
