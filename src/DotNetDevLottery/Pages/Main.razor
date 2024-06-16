@@ -33,7 +33,7 @@
         <ui-button
             variant="primary"
             fill="fill"
-            onclick="@OnClickFileButton">
+            @onclick="OnClickFileButton">
             혹은 파일 직접 찾아보기
         </ui-button>
         <InputFile
@@ -80,8 +80,8 @@
 </div>
 
 @code {
-    IJSObjectReference elementUtils;
-    InputFile inputFileElement;
+    IJSObjectReference? elementUtils;
+    InputFile? inputFileElement;
     ElementReference dropzoneElement;
     
     IBrowserFile? targetFile;
@@ -109,7 +109,11 @@
 
     private async Task OnClickFileButton()
     {
-        await elementUtils.InvokeVoidAsync("clickElement", inputFileElement.Element);
+        if (elementUtils == null)
+        {
+            return;
+        }
+        await elementUtils.InvokeVoidAsync("clickElement", inputFileElement?.Element);
     }
 
     private void OnClickCheckbox(int index)
