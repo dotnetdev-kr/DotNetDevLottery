@@ -1,4 +1,5 @@
 ﻿@page "/random"
+@implements IAsyncDisposable
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @inject IEventService EventService
@@ -26,7 +27,8 @@
 </div>
 <dotlottie-wc
     @ref="animationElement"
-    class="@EffectClass(DrawStatus != DrawMachineStatus.Done)" 
+    class="@EffectClass(DrawStatus != DrawMachineStatus.Done)"
+    autoplay="false"
     src="/assets/tada.lottie" />
 @code {
     IJSObjectReference? lottieUtils;
@@ -72,5 +74,12 @@
         }
         DrawStatus = eventArgs.Status;
         await lottieUtils.InvokeVoidAsync("startLottie", animationElement);
+    }
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (lottieUtils is not null)
+        {
+            await lottieUtils.DisposeAsync();
+        }
     }
 }

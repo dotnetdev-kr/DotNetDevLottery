@@ -1,3 +1,4 @@
+@implements IAsyncDisposable
 @inject IJSRuntime JSRuntime
 
 <div class="container">
@@ -93,7 +94,15 @@
         }
         await OnDrawAnimationEnd.InvokeAsync(new DrawAnimationEndEventArgs{
             user = SelectedUserInfo,
-            Status = DrawMachineStatus.Drawed
+            Status = DrawMachineStatus.Done
         });
+    }
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (machineUtils is not null)
+        {
+            await machineUtils.InvokeVoidAsync("executeRemoveEngine");
+            await machineUtils.DisposeAsync();
+        }
     }
 }

@@ -1,4 +1,5 @@
 @page "/"
+@implements IAsyncDisposable
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @inject IEventService EventService
@@ -84,6 +85,7 @@
 </div>
 
 @code {
+    // TODO: Dropzone 분리
     IJSObjectReference? elementUtils;
     InputFile? inputFileElement;
     ElementReference dropzoneElement;
@@ -145,16 +147,6 @@
         {
             await EventService.LoadUserInfoListAsync(selectedEventCompanyIndex, targetFile);
             isSecondFilterOpened = true;
-            foreach(var userInfoGroup in EventService.UserInfos)
-                {
-                    Console.WriteLine(userInfoGroup.personName);
-                }
-                Console.WriteLine("");
-            foreach(var userInfoGroup in EventService.UserInfos
-                .GroupBy((userInfo) => userInfo.ticketType))
-                {
-                    Console.WriteLine(userInfoGroup.First().personName);
-                }
             groupNames = EventService.UserInfos
                 .GroupBy((userInfo) => userInfo.ticketType)
                 .Select((userInfoGroup) => userInfoGroup.First().ticketType ?? string.Empty)
@@ -188,5 +180,12 @@
 
         EventService.SetUserInfoList(selectedUsers);
         NavigationManager.NavigateTo("/random");
+    }
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (elementUtils is not null)
+        {
+            await elementUtils.DisposeAsync();
+        }
     }
 }
