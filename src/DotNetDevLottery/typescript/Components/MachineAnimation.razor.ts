@@ -88,8 +88,8 @@ async function defineDrawMachineAnimation({
     const response = await drawCallback();
 
     // 뽑힌 공 애니메이션
-    const width = size.machine - size.machine / 3;
-    const center = size.wrapper / 2 - 10;
+    const width = size.machine * 2 / 3;
+    const center = size.wrapper / 2 - ballSize / 2;
 
     const ball = document.createElement('div');
     ball.classList.add('ball', 'ball--drawed');
@@ -184,7 +184,7 @@ interface AddMachineToEngineOption {
 }
 function addMachineSphereToEngine({ size, engine, rapier }: AddMachineToEngineOption) {
   const COLLIDER_SEGMENT = 20;
-  const centerPosition = (size.wrapper / 2) - 5;
+  const centerPosition = (size.wrapper / 2);
 
   return Array.from({ length: COLLIDER_SEGMENT }, (_, i) => i)
     .map((index) => {
@@ -229,7 +229,6 @@ class Ball {
   #size: Size;
   #ballSize: number;
   engine: Engine;
-  ballCorrectionPixel: number;
   #element: HTMLDivElement | null;
   #body: RapierNamespace.RigidBody | null;
   #collider: RapierNamespace.Collider | null;
@@ -247,8 +246,7 @@ class Ball {
     this.#element.classList.add('ball');
     this.#size = size;
     this.#ballSize = ballSize;
-    this.ballCorrectionPixel = ballSize / 3;
-    this.#element.style.setProperty(Ball.BALL_SIZE_PROPERTY_NAME, String(ballSize + this.ballCorrectionPixel));
+    this.#element.style.setProperty(Ball.BALL_SIZE_PROPERTY_NAME, String(this.#ballSize * 2));
     wrapperElement.appendChild(this.#element);
 
     const rapierBallSize = coords.toRapier.length(ballSize);
@@ -267,7 +265,7 @@ class Ball {
       return false;
     }
     const [x, y] = coords.fromBody.vector(this.#body)
-    this.#element!.style.transform = `translate(${(x - this.ballCorrectionPixel)}px, ${(y - this.ballCorrectionPixel)}px) scale(1.1)`;
+    this.#element!.style.transform = `translate(${(x - this.#ballSize)}px, ${(y - this.#ballSize)}px) scale(1)`;
     return true;
   }
   destroy() {

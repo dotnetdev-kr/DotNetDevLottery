@@ -32,6 +32,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.machine {
     position: relative;
 }
 .machine ::deep .machine-inner {
