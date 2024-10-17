@@ -1,0 +1,99 @@
+@inject IJSRuntime JSRuntime
+
+<div class="container">
+    <div class="button-row">
+        <ui-button
+            treatment="outline"
+            @onclick="OnClickButton"
+            class="success">
+            추첨 진행
+        </ui-button>
+    </div>
+    <div class="machine-wrapper">
+        <div class="machine"  @ref="machineElement" />
+    </div>
+</div>
+
+@code {
+    ElementReference machineElement;
+    IJSObjectReference? machineUtils;
+    [Parameter, EditorRequired]
+    required public UserInfo[] UserInfoList { get; set; }
+    [Parameter]
+    public EventCallback OnBeforeDrawMachine { get; set; }
+    [Parameter]
+    public EventCallback<DrawUserEventArgs> OnDrawUser { get; set; }
+    [Parameter]
+    public EventCallback<DrawAnimationEndEventArgs> OnDrawAnimationEnd { get; set; }
+
+    public UserInfo? SelectedUserInfo = null;
+    int PersonCount = 0;
+    int RemainedPersonCount = 0;
+    List<int> WinnedUserList = new List<int>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        PersonCount = UserInfoList.Count();
+        RemainedPersonCount = PersonCount;
+        if (PersonCount == 0) {
+            return;
+        }
+        machineUtils = await JSRuntime.InvokeAsync<IJSObjectReference>(
+            "import",
+            "/js/Components/MachineAnimation.razor.js"
+        );
+        await machineUtils.InvokeVoidAsync(
+            "init",
+            Math.Max(Math.Min(PersonCount, 60), 30),
+            machineElement,
+            DotNetObjectReference.Create(this),
+            nameof(OnDrawMachine),
+            nameof(OnDrawMachineAnimationEnd)
+        );
+    }
+
+    public async Task OnClickButton()
+    {
+        if (machineUtils == null) {
+            return;
+        }
+        SelectedUserInfo = null;
+        await machineUtils.InvokeVoidAsync("executeDrawBall");
+        await OnBeforeDrawMachine.InvokeAsync();
+    }
+
+    [JSInvokable]
+    public async Task<UserInfo?> OnDrawMachine()
+    {
+        if (RemainedPersonCount < 1)
+        {
+            // TODO: 남은 인원 없음 알림
+            return null;
+        }
+        var randomObj = new System.Random();
+        var index = randomObj.Next(RemainedPersonCount);
+        while(WinnedUserList.Contains(index)) {
+            index = randomObj.Next(RemainedPersonCount);
+        }
+        SelectedUserInfo = UserInfoList.ElementAtOrDefault(index);
+        if (SelectedUserInfo == null) {
+            return null;
+        }
+        WinnedUserList.Add(index);
+        await OnDrawUser.InvokeAsync(new DrawUserEventArgs{
+            Status = DrawMachineStatus.Drawed
+        });
+        return SelectedUserInfo;
+    }
+    [JSInvokable]
+    public async Task OnDrawMachineAnimationEnd()
+    {
+        if (SelectedUserInfo == null) {
+            return;
+        }
+        await OnDrawAnimationEnd.InvokeAsync(new DrawAnimationEndEventArgs{
+            user = SelectedUserInfo,
+            Status = DrawMachineStatus.Drawed
+        });
+    }
+}

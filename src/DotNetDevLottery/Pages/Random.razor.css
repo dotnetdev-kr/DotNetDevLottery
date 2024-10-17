@@ -1,33 +1,19 @@
-.button-row {
-    margin-bottom: 2rem;
-    width: 100%;
+.container {
     display: flex;
-    justify-content: center;
+    flex-wrap: true;
 }
-
-.success {
-    --mod-button-font-size: 2rem;
-    --spectrum-button-background-color-default: hsl(142.1 76.2% 36.3%);
-    --spectrum-button-background-color-hover: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-background-color-down: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-background-color-focus: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-border-color-default: hsl(142.1 76.2% 36.3%);
-    --spectrum-button-border-color-hover: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-border-color-down: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-border-color-focus: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-content-color-default: hsl(355.7 100% 97.3%);
-    --spectrum-button-content-color-hover: hsl(355.7 100% 97.3%/.9);
-    --spectrum-button-content-color-down: hsl(355.7 100% 97.3%/.9);
-    --spectrum-button-content-color-focus: hsl(355.7 100% 97.3%/.9);
+.text {
+    flex: 1 1 auto;
+    padding: 0 .5rem;
+    height: 100vh;
+    overflow-y: scroll;
 }
-
 .text-row {
+    flex: 1 1 auto;
     text-align: center;
-    font-size: 2rem;
 }
 .winner {
     position: relative;
-    height: 28rem;
     & .person-text-row {
         text-align: center;
         font-size: 15rem;
@@ -39,28 +25,27 @@
         font-size: 3rem;
         line-height: 1;
     }
-    .effect {
-        position: absolute;
-        width: 100%;
-        height: calc(100% + 20rem);
-        top: -10rem;
-        left: 0;
-        z-index: -1;
-        
-        &.effect--disabled {
-            visibility: hidden;
-        }
+}
+.effect {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh);
+    top: -10rem;
+    left: 0;
+    z-index: -1;
+    
+    &.effect--disabled {
+        visibility: hidden;
     }
 }
-.person-list {
+.record {
     display: flex;
-    flex-wrap: wrap;
-    color: hsl(240 10% 3.9%);
-    & .person {
-        overflow: hidden;
-        width: 15rem;
-        padding: 0 1rem;
-        box-sizing: border-box;
-        text-overflow: ellipsis;
-    }
+    flex-direction: column;
+    row-gap: 10px;
+    text-align: center;
+}
+.record-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
 }

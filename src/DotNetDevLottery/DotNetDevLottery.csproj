@@ -11,15 +11,26 @@
       <EmbeddedResource Remove="wwwroot\js\**" />
       <None Remove="wwwroot\js\**" />
     </ItemGroup>
-    <Target Name="PreBuild" BeforeTargets="Build">
-        <Message Text="Configuration is $(Configuration) $(MSBuildThisFileDirectory)" Importance="high" />
-        <Exec Condition="!Exists('node_modules')" Command="pnpm i" />
-        <Message Text="TypeScript 컴파일 중" Importance="high" />
-        <Exec Command="pnpm build" />
+    <Target Name="NpmInstall" Inputs="package.json" Outputs="node_modules/.install-stamp">
+        <PropertyGroup>
+            <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        </PropertyGroup>
+        <Exec Command="pnpm i" Condition="$(RestorePackagesWithLockFile) != 'true'" />
+
+        <!-- 'Incremental builds' 가 되도록 stamp 파일을 업데이트한다. -->
+        <Touch Files="node_modules/.install-stamp" AlwaysCreate="true" />
+    </Target>
+    <Target Name="PreBuild" DependsOnTargets="NpmInstall" BeforeTargets="BeforeBuild">
+        <Message Text="TypeScript 컴파일 중 $(Configuration)" Importance="high" />
+        <PropertyGroup>
+            <NodeCommand Condition="$(Configuration) == 'Release'">pnpm build</NodeCommand>
+            <NodeCommand Condition="$(Configuration) != 'Release'">pnpm build:dev</NodeCommand>
+        </PropertyGroup>
+        <Exec Command="$(NodeCommand)" />
     </Target>
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-rc.1.23421.29" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-rc.1.23421.29" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.10" PrivateAssets="all" />
         <PackageReference Include="NPOI" Version="2.6.2" />
     </ItemGroup>
 

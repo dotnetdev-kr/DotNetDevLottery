@@ -10,10 +10,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: "./.nvmrc"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: "./src/DotNetDevLottery/package.json"
+          run_install: false
+
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "8.0.x"
+          dotnet-version: "8.x"
 
       - name: Publish .NET Core Project
         run: dotnet publish ./src/DotNetDevLottery/DotNetDevLottery.csproj -c Release -o release --nologo

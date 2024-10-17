@@ -1,0 +1,68 @@
+.container {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.success {
+    --spectrum-button-background-color-default: hsl(142.1 76.2% 36.3%);
+    --spectrum-button-background-color-hover: hsl(142.1 76.2% 36.3%/.9);
+    --spectrum-button-background-color-down: hsl(142.1 76.2% 36.3%/.9);
+    --spectrum-button-background-color-focus: hsl(142.1 76.2% 36.3%/.9);
+    --spectrum-button-border-color-default: hsl(142.1 76.2% 36.3%);
+    --spectrum-button-border-color-hover: hsl(142.1 76.2% 36.3%/.9);
+    --spectrum-button-border-color-down: hsl(142.1 76.2% 36.3%/.9);
+    --spectrum-button-border-color-focus: hsl(142.1 76.2% 36.3%/.9);
+    --spectrum-button-content-color-default: hsl(355.7 100% 97.3%);
+    --spectrum-button-content-color-hover: hsl(355.7 100% 97.3%/.9);
+    --spectrum-button-content-color-down: hsl(355.7 100% 97.3%/.9);
+    --spectrum-button-content-color-focus: hsl(355.7 100% 97.3%/.9);
+}
+.button-row {
+    flex: 0 0 auto;
+    padding: 5px 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.machine-wrapper {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.machine ::deep .machine-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #222222;
+    border-radius: 50%;
+    padding: 0;
+}
+.machine ::deep .ball {
+    position: absolute;
+    background-color: #666666;
+    border: 2px solid #222222;
+    border-radius: 50%;
+    width: calc(var(--ball-size) * 1px);
+    height: calc(var(--ball-size) * 1px);
+}
+
+.machine ::deep .ball.ball--drawed {
+    background-color: #666666;
+    border: 0;
+    font-size: calc(var(--ball-size) * .07px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--ball-size) * .1px);
+}
+
+.machine ::deep .ball.ball--drawed .name {
+    font-size: calc(var(--ball-size) * .1px);
+}

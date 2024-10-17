@@ -1,4 +1,4 @@
-[*.{ts,tsx,js,mts,cts}]
+[*.{ts,tsx,js,mjs,cjs,mts,cts,json}]
 charset = utf-8
 indent_style = space
 indent_size = 2

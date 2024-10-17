@@ -101,7 +101,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        elementUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./build/js/element.mjs");
+        elementUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/Pages/Main.razor.js");
         await elementUtils.InvokeVoidAsync("addDropEventToChangeInputFile", dropzoneElement);
     }
     
@@ -145,6 +145,16 @@
         {
             await EventService.LoadUserInfoListAsync(selectedEventCompanyIndex, targetFile);
             isSecondFilterOpened = true;
+            foreach(var userInfoGroup in EventService.UserInfos)
+                {
+                    Console.WriteLine(userInfoGroup.personName);
+                }
+                Console.WriteLine("");
+            foreach(var userInfoGroup in EventService.UserInfos
+                .GroupBy((userInfo) => userInfo.ticketType))
+                {
+                    Console.WriteLine(userInfoGroup.First().personName);
+                }
             groupNames = EventService.UserInfos
                 .GroupBy((userInfo) => userInfo.ticketType)
                 .Select((userInfoGroup) => userInfoGroup.First().ticketType ?? string.Empty)
