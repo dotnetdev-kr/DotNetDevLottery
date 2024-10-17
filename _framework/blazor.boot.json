@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "DotNetDevLottery",
   "resources": {
-    "hash": "sha256-SygHmdth1WqCaVNbjZCPI+DXltHcvoSARv5zzLvAkgo=",
+    "hash": "sha256-2E1OOKiOUZMW/3rlqyqAP0aUq9J0Q+NBuQ/wig0DA7M=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.4xsnm8lwn6.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
@@ -18,7 +18,7 @@
     },
     "assembly": {
       "BouncyCastle.Cryptography.wasm": "sha256-tZxUz5R8To9wugB18BSeGE89A5lQ0IsnaCl5AkgKfnY=",
-      "DotNetDevLottery.wasm": "sha256-CSeh02rjtozI4O52VNjWv+yuTvEMJnrOJgYXXcFtAF4=",
+      "DotNetDevLottery.wasm": "sha256-6X3sfMnCW1i4wd+ME7qdCU6EoOcc4V1kT1C3hiF0vSo=",
       "Enums.NET.wasm": "sha256-pzL+j6B+0G6CnbVAo8dMnTeNxQqDDE6ubZNVym2/P7M=",
       "ICSharpCode.SharpZipLib.wasm": "sha256-N+B+aaiZzE1fHJnfuESjuouC3agz168HHdDcBj9kCPQ=",
       "MathNet.Numerics.wasm": "sha256-u8KPSyaPGoTkqmgb/133wPiFm81PWN6s85SKoxuhiWY=",
@@ -88,7 +88,7 @@
       "System.Runtime.Numerics.wasm": "sha256-m/qXmSw8CL8MnXXWasaxNTiYFQM8PG1RYpc8t1tcNQ4=",
       "System.Runtime.Serialization.Formatters.wasm": "sha256-pI9xIYlXLwVBmYBH1kYyCYEdOHlk8cJX773Vo5nY01c=",
       "System.Runtime.Serialization.Primitives.wasm": "sha256-UEBW5GIpqQMF6dTG7OXkNM/XMs9vyDN+BFH8oI5Adiw=",
-      "System.Runtime.wasm": "sha256-MFW3QL9JcPpzLcnkrTnqvJBAKeh7iAxwZywuCc0nVT0=",
+      "System.Runtime.wasm": "sha256-ECZ+5RjkSeD/SDujYnmuEHXMHSXNP+zKgGuKockpacA=",
       "System.Security.Cryptography.Algorithms.wasm": "sha256-4XdSTPp/JeEx0pbzvDXkvGbrNqHTzs6d3LlUo24BDOA=",
       "System.Security.Cryptography.Csp.wasm": "sha256-VUUB63X5KwE2LzSVkmsUeFJnStuyK8WHSfkkn8Bef7g=",
       "System.Security.Cryptography.Encoding.wasm": "sha256-Rjqj/Ovd+qyFL2njXM9abhBGKB6Mob5FvwZGWBP4+d0=",

@@ -2629,7 +2629,9 @@ var S6 = l((d) => {
 // typescript/Pages/Random.razor.ts
 function startLottie(element) {
   element.dotLottie?.setFrame(0);
+  element.dotLottie?.unfreeze();
   element.dotLottie?.play();
+  console.log(element.dotLottie?.isPlaying);
 }
 export {
   startLottie

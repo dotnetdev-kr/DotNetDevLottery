@@ -211,8 +211,8 @@ async function defineDrawMachineAnimation({
     const transformString = targetBallElement.style.transform;
     const ballSize = Number(targetBallElement.style.getPropertyValue(Ball.BALL_SIZE_PROPERTY_NAME));
     const response = await drawCallback();
-    const width2 = size.machine - size.machine / 3;
-    const center = size.wrapper / 2 - 10;
+    const width2 = size.machine * 2 / 3;
+    const center = size.wrapper / 2 - ballSize / 2;
     const ball = document.createElement("div");
     ball.classList.add("ball", "ball--drawed");
     const nameElement = document.createElement("div");
@@ -296,7 +296,7 @@ async function defineDrawMachineAnimation({
 }
 function addMachineSphereToEngine({ size, engine, rapier }) {
   const COLLIDER_SEGMENT = 20;
-  const centerPosition = size.wrapper / 2 - 5;
+  const centerPosition = size.wrapper / 2;
   return Array.from({ length: COLLIDER_SEGMENT }, (_, i) => i).map((index) => {
     const angle = index / COLLIDER_SEGMENT * Math.PI * 2;
     const x = centerPosition + size.machine / 2 * Math.cos(angle);
@@ -319,7 +319,6 @@ var Ball = class _Ball {
   #size;
   #ballSize;
   engine;
-  ballCorrectionPixel;
   #element;
   #body;
   #collider;
@@ -336,8 +335,7 @@ var Ball = class _Ball {
     this.#element.classList.add("ball");
     this.#size = size;
     this.#ballSize = ballSize;
-    this.ballCorrectionPixel = ballSize / 3;
-    this.#element.style.setProperty(_Ball.BALL_SIZE_PROPERTY_NAME, String(ballSize + this.ballCorrectionPixel));
+    this.#element.style.setProperty(_Ball.BALL_SIZE_PROPERTY_NAME, String(this.#ballSize * 2));
     wrapperElement.appendChild(this.#element);
     const rapierBallSize = coords.toRapier.length(ballSize);
     const bodyDesc = new rapier.RigidBodyDesc(rapier.RigidBodyType.Dynamic).setTranslation(
@@ -352,7 +350,7 @@ var Ball = class _Ball {
       return false;
     }
     const [x, y] = coords.fromBody.vector(this.#body);
-    this.#element.style.transform = `translate(${x - this.ballCorrectionPixel}px, ${y - this.ballCorrectionPixel}px) scale(1.1)`;
+    this.#element.style.transform = `translate(${x - this.#ballSize}px, ${y - this.#ballSize}px) scale(1)`;
     return true;
   }
   destroy() {

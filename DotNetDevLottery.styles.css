@@ -33,6 +33,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.machine[b-565zw19esn] {
     position: relative;
 }
 .machine[b-565zw19esn]  .machine-inner {
@@ -154,12 +156,13 @@
 .effect[b-yd0e48iza9] {
     position: absolute;
     width: 100%;
-    height: calc(100vh);
-    top: -10rem;
+    height: calc(100vh - 100px);
+    top: 50px;
     left: 0;
-    z-index: -1;
+    z-index: 1;
     
     &.effect--disabled {
+        z-index: -1;
         visibility: hidden;
     }
 }
