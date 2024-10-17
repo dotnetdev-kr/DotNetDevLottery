@@ -2,82 +2,75 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @inject IEventService EventService
+<div class="container">
 
-<div class="button-row">
-    <ui-button
-        treatment="outline"
-        @onclick="OnClickButton"
-        class="success">
-        추첨 진행
-    </ui-button>
+<MachineAnimation
+    UserInfoList="@UserInfoList.ToArray()"
+    OnBeforeDrawMachine="OnBeforeDrawMachine"
+    OnDrawUser="OnDrawMachine"
+    OnDrawAnimationEnd="OnDrawAnimationEnd"
+/>
+<ui-divider vertical />
+    <div class="text">
+        <h2 class="text-row">@PersonCount 명 중에 당첨자에요!</h2>
+        <div class="record">
+            @foreach(var WinnedUserInfo in WinnedUserList) {
+                <div class="record-row">
+                    <span>@WinnedUserInfo.personName</span>
+                    <span>@WinnedUserInfo.email</span>
+                    <span>@WinnedUserInfo.phone</span>
+                </div>
+            }
+        </div>
+    </div>
 </div>
-<h2 class="text-row">@personCount 명 중에 당첨자에요!</h2>
-<div class="winner">
-    <div class="person-text-row">@selectedUserInfo?.personName</div>
-    <div class="sub-text-row">@selectedUserInfo?.phone</div>
-    <div class="sub-text-row">@selectedUserInfo?.email</div>
-    <dotlottie-wc
-        @ref="animationElement"
-        class="@EffectClass(selectedUserInfo == null)" 
-        src="/assets/tada.lottie" />
-</div>
-<ui-divider />
-<div class="person-list">
-    @foreach (var info in remainedUserList)
-    {
-        <h3 class="person">@info.personName</h3>
-    }
-</div>
+<dotlottie-wc
+    @ref="animationElement"
+    class="@EffectClass(DrawStatus != DrawMachineStatus.Done)" 
+    src="/assets/tada.lottie" />
 @code {
     IJSObjectReference? lottieUtils;
     ElementReference animationElement;
-    List<UserInfo> remainedUserList = new List<UserInfo>();
-    UserInfo? selectedUserInfo;
-    int personCount = 0;
+    List<UserInfo> UserInfoList = new List<UserInfo>();
+    List<UserInfo> WinnedUserList = new List<UserInfo>();
+    DrawMachineStatus DrawStatus = DrawMachineStatus.Init;
+    int PersonCount = 0;
 
     string EffectClass(bool isDisabled) => isDisabled ? "effect effect--disabled" : "effect";
 
     protected override async Task OnInitializedAsync()
     {
-        
-        remainedUserList = EventService.UserInfos.ToList();
-        personCount = remainedUserList.Count;
+        UserInfoList = EventService.UserInfos.ToList();
+        PersonCount = UserInfoList.Count;
 
-        if (remainedUserList.Count == 0)
+        if (PersonCount == 0)
         {
             NavigationManager.NavigateTo("/");
             return;
         }
 
-        lottieUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./build/js/lottie.mjs");
+        lottieUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/Pages/Random.razor.js");
     }
 
-    public async Task OnClickButton()
+    public void OnBeforeDrawMachine()
     {
-        if (remainedUserList.Count < 1)
-        {
+        DrawStatus = DrawMachineStatus.Pending;
+    }
+    public void OnDrawMachine(DrawUserEventArgs eventArgs)
+    {
+        DrawStatus = eventArgs.Status;
+    }
+    public async Task OnDrawAnimationEnd(DrawAnimationEndEventArgs eventArgs)
+    {
+        if(eventArgs.user == null) {
             NavigationManager.NavigateTo("/");
             return;
         }
-
-        var randomObj = new System.Random();
-        var index = randomObj.Next(remainedUserList.Count);
-        selectedUserInfo = remainedUserList.ElementAtOrDefault(index);
-
-        if (selectedUserInfo != null)
-        {
-            remainedUserList = remainedUserList
-                .Where(info => info.Equals(selectedUserInfo))
-                .ToList();
-            if (lottieUtils != null)
-            {
-                await lottieUtils.InvokeVoidAsync("startLottie", animationElement);
-            }
-        }
-        else
-        {
-            NavigationManager.NavigateTo("/");
+        WinnedUserList.Add(eventArgs.user);
+        if (lottieUtils == null) {
             return;
         }
+        DrawStatus = eventArgs.Status;
+        await lottieUtils.InvokeVoidAsync("startLottie", animationElement);
     }
 }

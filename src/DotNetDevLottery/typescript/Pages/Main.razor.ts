@@ -1,8 +1,8 @@
-function clickElement(element: HTMLElement) {
+export function clickElement(element: HTMLElement) {
   element?.click();
 }
 
-function addDropEventToChangeInputFile(element: HTMLElement) {
+export function addDropEventToChangeInputFile(element: HTMLElement) {
   element.addEventListener('sp-dropzone-drop', (e) => {
     const event = e as CustomEvent<DragEvent>;
     const targetInputElement: HTMLInputElement | null = element.querySelector("input[type='file']");
@@ -13,5 +13,3 @@ function addDropEventToChangeInputFile(element: HTMLElement) {
     }
   })
 }
-
-export { clickElement, addDropEventToChangeInputFile }

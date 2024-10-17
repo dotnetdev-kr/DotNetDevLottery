@@ -27,7 +27,7 @@ public class EventService : IEventService
             name = "EVENTUS",
             firstRowCellString = "순서",
             nameCellString = "이름",
-            phoneCellString = "전화번호",
+            phoneCellString = "휴대전화번호",
             emailCellString = "이메일",
             beforeStartTicketString = "오프라인 전체 출석",
             checkedCellString = "출석",
