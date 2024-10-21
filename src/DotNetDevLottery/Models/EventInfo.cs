@@ -9,8 +9,7 @@ public class EventInfo
     public string? phoneCellString { get; init; }
     public string? ticketCellString { get; init; }
     public string? checkedCellString { get; init; }
-    public string? checkedString { get; init; }
-    public string? beforeStartTicketString { get; init; }
+    public string? uncheckedString { get; init; }
     public bool isOldExcel { get; init; } = false;
     public bool isEnumTicketCell { get; init; } = true;
 }

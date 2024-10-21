@@ -20,7 +20,9 @@ public class EventService : IEventService
             emailCellString = "이메일",
             ticketCellString = "그룹",
             checkedCellString = "출석확인일시",
+            uncheckedString = String.Empty,
             isOldExcel = true,
+            isEnumTicketCell = true,
         },
         new()
         {
@@ -29,9 +31,12 @@ public class EventService : IEventService
             nameCellString = "이름",
             phoneCellString = "휴대전화번호",
             emailCellString = "이메일",
-            beforeStartTicketString = "오프라인 전체 출석",
-            checkedCellString = "출석",
-            checkedString = "O",
+            // 현재 isEnumTicketCell은 EVENTUS를 위한 로직입니다.
+            // EVENTUS는 현재 티켓이 여러개인 경우를 대응하지 않았습니다.
+            // ticketCellString 이후 3개 셀 단위로 티켓 이름을 체크합니다.
+            ticketCellString = "오프라인 전체 출석",
+            checkedCellString = "오프라인 전체 출석",
+            uncheckedString = "X",
             isOldExcel = false,
             isEnumTicketCell = false,
         },
@@ -44,8 +49,9 @@ public class EventService : IEventService
             emailCellString = "이메일",
             ticketCellString = "티켓",
             checkedCellString = "체크인",
-            checkedString = "Yes",
+            uncheckedString = "No",
             isOldExcel = false,
+            isEnumTicketCell = true,
         },
     };
 
@@ -115,7 +121,6 @@ public class EventService : IEventService
         int emailIndex = 0;
         int ticketIndex = 0;
         int isCheckedIndex = 0;
-        int beforeStartTicketIndex = 0;
         bool isUserInfoStarted = false;
         IRow? firstRow = null;
         ISheet sheet;
@@ -163,8 +168,6 @@ public class EventService : IEventService
                         ticketIndex = cellIndex;
                     else if (currentCellString == eventInfo.checkedCellString)
                         isCheckedIndex = cellIndex;
-                    else if (currentCellString == eventInfo.beforeStartTicketString)
-                        beforeStartTicketIndex = cellIndex;
                 }
                 continue;
             }
@@ -172,32 +175,32 @@ public class EventService : IEventService
             if (isUserInfoStarted == false)
                 continue;
 
+            var checkedString = eventInfo.uncheckedString ?? string.Empty;
+            // ONOFFMIX = (Date) / (Empty)
+            // EVENTUS = O / X
+            // FESTA = Yes / No
+            var isChecked = (currentRow.GetCell(isCheckedIndex)?.ToString() ?? string.Empty) != checkedString;
+
             var ticketType = string.Empty;
-            var isChecked = false;
             if (eventInfo.isEnumTicketCell)
             {
-                var checkedString = (eventInfo.checkedString ?? string.Empty);
-                // onoffmix가 출석확인시간으로 엑셀에 저장하는 이슈로 checkedString이 없는 경우 해당 열이 empty인지만 체크
-                isChecked = (eventInfo.checkedString == string.Empty)
-                    ? (currentRow.GetCell(isCheckedIndex)?.ToString() ?? string.Empty).Contains(checkedString)
-                    : (currentRow.GetCell(isCheckedIndex)?.ToString() ?? string.Empty) == string.Empty;
-
                 ticketType = currentRow.GetCell(ticketIndex)?.ToString() ?? string.Empty;
             }
             else
             {
+                // 현재 EVENTUS만을 위한 대응
                 if (firstRow == null)
                 {
                     continue;
                 }
-                for (var cellIndex = beforeStartTicketIndex + 1; cellIndex < firstRow.LastCellNum; cellIndex += 3)
+                for (var cellIndex = ticketIndex + 1; cellIndex < firstRow.LastCellNum; cellIndex += 3)
                 {
                     if (currentRow.GetCell(cellIndex).ToString() != "O") continue;
                     
                     ticketType = firstRow.GetCell(cellIndex).ToString();
                     if (firstRow.GetCell(cellIndex + 2).ToString() == eventInfo.checkedCellString)
                     {
-                        isChecked = (currentRow.GetCell(cellIndex + 2).ToString() == eventInfo.checkedString);
+                        isChecked = currentRow.GetCell(cellIndex + 2).ToString() == eventInfo.uncheckedString;
                     }
                     break;
                 }
