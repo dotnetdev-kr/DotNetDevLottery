@@ -8,7 +8,6 @@
 <MachineAnimation
     UserInfoList="@UserInfoList.ToArray()"
     OnBeforeDrawMachine="OnBeforeDrawMachine"
-    OnDrawUser="OnDrawMachine"
     OnDrawAnimationEnd="OnDrawAnimationEnd"
 />
 <ui-divider vertical />
@@ -27,7 +26,7 @@
 </div>
 <dotlottie-wc
     @ref="animationElement"
-    class="@EffectClass(DrawStatus != DrawMachineStatus.Done)"
+    class="@EffectClass(IsPlayAnimation)"
     autoplay="false"
     src="/assets/tada.lottie" />
 @code {
@@ -35,10 +34,10 @@
     ElementReference animationElement;
     List<UserInfo> UserInfoList = new List<UserInfo>();
     List<UserInfo> WinnedUserList = new List<UserInfo>();
-    DrawMachineStatus DrawStatus = DrawMachineStatus.Init;
+    Boolean IsPlayAnimation = false;
     int PersonCount = 0;
 
-    string EffectClass(bool isDisabled) => isDisabled ? "effect effect--disabled" : "effect";
+    string EffectClass(bool IsPlayAnimation) => IsPlayAnimation ? "effect" : "effect effect--disabled";
 
     protected override async Task OnInitializedAsync()
     {
@@ -56,23 +55,21 @@
 
     public void OnBeforeDrawMachine()
     {
-        DrawStatus = DrawMachineStatus.Pending;
-    }
-    public void OnDrawMachine(DrawUserEventArgs eventArgs)
-    {
-        DrawStatus = eventArgs.Status;
+        IsPlayAnimation = false;
     }
     public async Task OnDrawAnimationEnd(DrawAnimationEndEventArgs eventArgs)
     {
-        if(eventArgs.user == null) {
+        if(eventArgs.user == null)
+        {
             NavigationManager.NavigateTo("/");
             return;
         }
         WinnedUserList.Add(eventArgs.user);
-        if (lottieUtils == null) {
+        if (lottieUtils == null)
+        {
             return;
         }
-        DrawStatus = eventArgs.Status;
+        IsPlayAnimation = true;
         await lottieUtils.InvokeVoidAsync("startLottie", animationElement);
     }
     async ValueTask IAsyncDisposable.DisposeAsync()
