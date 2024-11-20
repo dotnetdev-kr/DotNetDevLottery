@@ -6,7 +6,8 @@
         <ui-button
             treatment="outline"
             @onclick="OnClickButton"
-            class="success">
+            variant="@TriggerButtonVariant(Status == DrawMachineStatus.Pending)"
+            class="@TriggerButtonClass(Status == DrawMachineStatus.Pending)">
             추첨 진행
         </ui-button>
     </div>
@@ -27,7 +28,10 @@
     [Parameter]
     public EventCallback<DrawAnimationEndEventArgs> OnDrawAnimationEnd { get; set; }
 
-    public UserInfo? SelectedUserInfo = null;
+    UserInfo? SelectedUserInfo = null;
+    DrawMachineStatus Status = DrawMachineStatus.Init;
+    string TriggerButtonClass(bool isDisabled) => isDisabled ? "" : "success";
+    string TriggerButtonVariant(bool isDisabled) => isDisabled ? "secondary" : "";
     int PersonCount = 0;
     int RemainedPersonCount = 0;
     List<int> WinnedUserList = new List<int>();
@@ -55,10 +59,11 @@
 
     public async Task OnClickButton()
     {
-        if (machineUtils == null) {
+        if (machineUtils == null || Status == DrawMachineStatus.Pending) {
             return;
         }
         SelectedUserInfo = null;
+        Status = DrawMachineStatus.Pending;
         await machineUtils.InvokeVoidAsync("executeDrawBall");
         await OnBeforeDrawMachine.InvokeAsync();
     }
@@ -73,28 +78,35 @@
         }
         var randomObj = new System.Random();
         var index = randomObj.Next(RemainedPersonCount);
-        while(WinnedUserList.Contains(index)) {
+        while (WinnedUserList.Contains(index))
+        {
             index = randomObj.Next(RemainedPersonCount);
         }
         SelectedUserInfo = UserInfoList.ElementAtOrDefault(index);
-        if (SelectedUserInfo == null) {
+        if (SelectedUserInfo == null)
+        {
             return null;
         }
         WinnedUserList.Add(index);
+        Status = DrawMachineStatus.Drawed;
+        // TODO: 현재에는 사용하고 있지 않음. 추후 관련 기능 추가 없을 경우 삭제.
         await OnDrawUser.InvokeAsync(new DrawUserEventArgs{
-            Status = DrawMachineStatus.Drawed
+            Status = Status
         });
         return SelectedUserInfo;
     }
     [JSInvokable]
     public async Task OnDrawMachineAnimationEnd()
     {
-        if (SelectedUserInfo == null) {
+        if (SelectedUserInfo == null)
+        {
             return;
         }
+        Status = DrawMachineStatus.Done;
+        Console.WriteLine("ASDF");
         await OnDrawAnimationEnd.InvokeAsync(new DrawAnimationEndEventArgs{
             user = SelectedUserInfo,
-            Status = DrawMachineStatus.Done
+            Status = Status
         });
     }
     async ValueTask IAsyncDisposable.DisposeAsync()
