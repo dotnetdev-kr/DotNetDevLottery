@@ -18,6 +18,7 @@
 
 @code {
     ElementReference machineElement;
+    private DotNetObjectReference<MachineAnimation>? componentRef;
     IJSObjectReference? machineUtils;
     [Parameter, EditorRequired]
     required public UserInfo[] UserInfoList { get; set; }
@@ -47,11 +48,12 @@
             "import",
             "/js/Components/MachineAnimation.razor.js"
         );
+        componentRef = DotNetObjectReference.Create(this);
         await machineUtils.InvokeVoidAsync(
             "init",
-            Math.Max(Math.Min(PersonCount, 60), 30),
+            PersonCount,
             machineElement,
-            DotNetObjectReference.Create(this),
+            componentRef,
             nameof(OnDrawMachine),
             nameof(OnDrawMachineAnimationEnd)
         );
@@ -116,5 +118,6 @@
             await machineUtils.InvokeVoidAsync("executeRemoveEngine");
             await machineUtils.DisposeAsync();
         }
+        componentRef?.Dispose();
     }
 }

@@ -24,6 +24,9 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
     devDependencies:
+      '@microsoft/dotnet-js-interop':
+        specifier: ^8.0.0
+        version: 8.0.0
       '@types/node':
         specifier: ^20.16.5
         version: 20.16.5
@@ -225,6 +228,9 @@ packages:
 
   '@lottiefiles/dotlottie-web@0.35.0':
     resolution: {integrity: sha512-dXyQzNGaNOovJ23skUaLs0RU1Hpr+e4JKCBW4Wq/HTVnTCqfhV4uYaG1lLloZy50QdPsUB3UyIgd656pcQwTQA==}
+
+  '@microsoft/dotnet-js-interop@8.0.0':
+    resolution: {integrity: sha512-REgH1LzhP68m3i8B80KLyKLRIOhLbWjwGl60HyVQEqN2eDeFUlgRfjifMa+Udl/NpIIafjqslMAouV8BUzHm8Q==}
 
   '@spectrum-web-components/accordion@0.48.1':
     resolution: {integrity: sha512-t18JBSZ3aQA9h7HIq0oJR6nqRpEjwgUBxnfIfe9d1mO3eLpNwGtwxcXnZJUKtYRabie79m9cddJVU20Y3rzr6Q==}
@@ -642,6 +648,8 @@ snapshots:
       lit: 3.1.4
 
   '@lottiefiles/dotlottie-web@0.35.0': {}
+
+  '@microsoft/dotnet-js-interop@8.0.0': {}
 
   '@spectrum-web-components/accordion@0.48.1':
     dependencies:

@@ -1,3 +1,4 @@
+import type { DotNet } from "@microsoft/dotnet-js-interop";
 import type { RapierNamespace } from "../utils/getRapier";
 import type { Engine } from "../utils/defineEngine";
 
@@ -57,7 +58,7 @@ async function defineDrawMachineAnimation({
     size,
   });
   const topCollider = sphere.find((part) => part.angle === Math.PI * 3 / 2)!.collider;
-  const renderedBallCount = count > 20 ? count : 20;
+  const renderedBallCount = count;
   let balls = addBallsToEngine({
     engine,
     rapier,
@@ -246,10 +247,10 @@ class Ball {
     this.#element.classList.add('ball');
     this.#size = size;
     this.#ballSize = ballSize;
-    this.#element.style.setProperty(Ball.BALL_SIZE_PROPERTY_NAME, String(this.#ballSize * 2));
+    this.#element.style.setProperty(Ball.BALL_SIZE_PROPERTY_NAME, String(this.#ballSize));
     wrapperElement.appendChild(this.#element);
 
-    const rapierBallSize = coords.toRapier.length(ballSize);
+    const rapierBallSize = coords.toRapier.length(ballSize / 2);
     const bodyDesc = new rapier.RigidBodyDesc(rapier.RigidBodyType.Dynamic)
       .setTranslation(
         ...coords.toRapier.vector(size.wrapper / 2 + index, size.wrapper / 2 + index)
@@ -265,7 +266,7 @@ class Ball {
       return false;
     }
     const [x, y] = coords.fromBody.vector(this.#body)
-    this.#element!.style.transform = `translate(${(x - this.#ballSize)}px, ${(y - this.#ballSize)}px) scale(1)`;
+    this.#element!.style.transform = `translate(${(x - this.#ballSize / 2)}px, ${(y - this.#ballSize / 2)}px) scale(1)`;
     return true;
   }
   destroy() {
@@ -313,7 +314,7 @@ function addBallsToEngine(option: AddBallsToEngineOption): Ball[] {
     element,
   } = option;
   const balls = Array.from({ length: count }, (_, index) => {
-    const BALL_SIZE = size.machine / (count * 0.75);
+    const BALL_SIZE = size.machine / (Math.sqrt(count) * 1.5 + 2);
     const ball = new Ball({
       engine,
       rapier,
@@ -329,11 +330,6 @@ function addBallsToEngine(option: AddBallsToEngineOption): Ball[] {
 
 let ballInterface: Awaited<ReturnType<typeof defineDrawMachineAnimation>>;
 
-
-interface DotNetInterface {
-  invokeMethodAsync: <T extends any[], R extends any>(...args: T) => Promise<R>;
-  invokeMethod: <T extends any[], R extends any>(...args: T) => R;
-}
 
 export function executeDrawBall() {
   ballInterface?.drawBall();
@@ -358,10 +354,9 @@ const debounce = (callback: (...args: any[]) => void, wait: number) => {
 export async function init(
   count: number,
   element: HTMLDivElement,
-  // TODO: DotNetObjectReference이 타이핑이 있다면 교체
-  instance: DotNetInterface,
-  drawCallback: EventCallback,
-  animationEndCallback: () => Promise<void>,
+  instance: DotNet.DotNetObject,
+  drawCallback: string,
+  animationEndCallback: string,
 ) {
   const option: DefineDrawMachineAnimationOption = {
     count,
