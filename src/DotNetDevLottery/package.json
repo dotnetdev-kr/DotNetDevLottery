@@ -18,6 +18,7 @@
     "mitt": "^3.0.1"
   },
   "devDependencies": {
+    "@microsoft/dotnet-js-interop": "^8.0.0",
     "@types/node": "^20.16.5",
     "esbuild": "^0.24.0",
     "esbuild-plugin-wasm": "^1.1.0",

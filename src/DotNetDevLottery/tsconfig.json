@@ -22,7 +22,9 @@
     "paths": {
       "@/utils/*": ["./utils/*"]
     },
-    "types": []
+    "types": [
+      "./typescript/global.d.ts"
+    ]
   },
   "include": ["**/*.ts"]
 }

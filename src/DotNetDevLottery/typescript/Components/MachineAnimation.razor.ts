@@ -1,3 +1,4 @@
+import type { DotNet } from "@microsoft/dotnet-js-interop";
 import type { RapierNamespace } from "../utils/getRapier";
 import type { Engine } from "../utils/defineEngine";
 
@@ -330,11 +331,6 @@ function addBallsToEngine(option: AddBallsToEngineOption): Ball[] {
 let ballInterface: Awaited<ReturnType<typeof defineDrawMachineAnimation>>;
 
 
-interface DotNetInterface {
-  invokeMethodAsync: <T extends any[], R extends any>(...args: T) => Promise<R>;
-  invokeMethod: <T extends any[], R extends any>(...args: T) => R;
-}
-
 export function executeDrawBall() {
   ballInterface?.drawBall();
 }
@@ -358,10 +354,9 @@ const debounce = (callback: (...args: any[]) => void, wait: number) => {
 export async function init(
   count: number,
   element: HTMLDivElement,
-  // TODO: DotNetObjectReference이 타이핑이 있다면 교체
-  instance: DotNetInterface,
-  drawCallback: EventCallback,
-  animationEndCallback: () => Promise<void>,
+  instance: DotNet.DotNetObject,
+  drawCallback: string,
+  animationEndCallback: string,
 ) {
   const option: DefineDrawMachineAnimationOption = {
     count,
