@@ -8,40 +8,30 @@
     <ui-button-group class="event-company">
         @foreach (var eventInfo in EventService.EventInfos.Select((value, index) => new { value, index }))
         {
-            <ui-button
-                variant="@InfoButtonVariant(selectedEventCompanyIndex == eventInfo.index)"
+            <ui-button variant="@InfoButtonVariant(selectedEventCompanyIndex == eventInfo.index)"
                 fill="@InfoButtonTreatment(selectedEventCompanyIndex == eventInfo.index)"
                 onclick="@(() => OnClickIndexButton(eventInfo.index))">
                 @eventInfo.value.name
             </ui-button>
         }
     </ui-button-group>
-    <ui-dropzone
-        @ref="dropzoneElement"
-        class="file-dropzone">
-            @if (targetFile == null)
-            {
-                <span>
-                    파일을 끌어다가 놓아주세요!
-                </span>
-            }
-            else
-            {
-                <span class="file-dropzone__filename">
-                    @targetFile.Name
-                </span>
-            }
-        <ui-button
-            variant="primary"
-            fill="fill"
-            @onclick="OnClickFileButton">
+    <ui-dropzone @ref="dropzoneElement" class="file-dropzone">
+        @if (targetFile == null)
+        {
+            <span>
+                파일을 끌어다가 놓아주세요!
+            </span>
+        }
+        else
+        {
+            <span class="file-dropzone__filename">
+                @targetFile.Name
+            </span>
+        }
+        <ui-button variant="primary" fill="fill" @onclick="OnClickFileButton">
             혹은 파일 직접 찾아보기
         </ui-button>
-        <InputFile
-            type="file"
-            @ref="inputFileElement"
-            class="file-dropzone__input"
-            OnChange="@OnInputFileInput" />
+        <InputFile type="file" @ref="inputFileElement" class="file-dropzone__input" OnChange="@OnInputFileInput" />
     </ui-dropzone>
     @if (isSecondFilterOpened)
     {
@@ -49,17 +39,13 @@
             <div class="form-row">
                 @foreach (var groupName in groupNames.Select((value, index) => new { value, index }).ToArray())
                 {
-                    <ui-checkbox
-                        checked="@filterGroup[groupName.index]"
-                        @onchange="@(() =>OnChangeCheckbox(groupName.index))">
+                    <ui-checkbox checked="@filterGroup[groupName.index]" @onchange="@(() => OnChangeCheckbox(groupName.index))">
                         @groupName.value
                     </ui-checkbox>
                 }
             </div>
             <div class="form-row">
-                <ui-checkbox
-                    checked="@filterCheckedIn"
-                    @onchange="OnChangeFilterCheckInCheckbox">
+                <ui-checkbox checked="@filterCheckedIn" @onchange="OnChangeFilterCheckInCheckbox">
                     체크인 한 사람만 포함
                 </ui-checkbox>
             </div>
@@ -73,11 +59,7 @@
     else
     {
         <div class="button-row">
-            <ui-button
-                variant="primary"
-                fill="outline"
-                @onclick="OnClickNextButton"
-                disabled="@isLoading">
+            <ui-button variant="primary" fill="outline" @onclick="OnClickNextButton" disabled="@isLoading">
                 @(isLoading ? "가져오는 중" : "다음")
             </ui-button>
         </div>
@@ -89,7 +71,7 @@
     IJSObjectReference? elementUtils;
     InputFile? inputFileElement;
     ElementReference dropzoneElement;
-    
+
     IBrowserFile? targetFile;
     bool isLoading = false;
     bool isSecondFilterOpened = false;
@@ -98,15 +80,15 @@
     List<bool> filterGroup = new();
     bool filterCheckedIn = true;
 
-    string InfoButtonVariant (bool isSelected) => isSelected ? "primary" : "secondary";
-    string InfoButtonTreatment (bool isSelected) => isSelected ? "fill" : "outline";
+    string InfoButtonVariant(bool isSelected) => isSelected ? "primary" : "secondary";
+    string InfoButtonTreatment(bool isSelected) => isSelected ? "fill" : "outline";
 
     protected override async Task OnInitializedAsync()
     {
-        elementUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/Pages/Main.razor.js");
+        elementUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./Pages/Main.razor.js");
         await elementUtils.InvokeVoidAsync("addDropEventToChangeInputFile", dropzoneElement);
     }
-    
+
     private void OnClickIndexButton(int index)
     {
         selectedEventCompanyIndex = index;
@@ -148,9 +130,9 @@
             await EventService.LoadUserInfoListAsync(selectedEventCompanyIndex, targetFile);
             isSecondFilterOpened = true;
             groupNames = EventService.UserInfos
-                .GroupBy((userInfo) => userInfo.ticketType)
-                .Select((userInfoGroup) => userInfoGroup.First().ticketType ?? string.Empty)
-                .ToList();
+            .GroupBy((userInfo) => userInfo.ticketType)
+            .Select((userInfoGroup) => userInfoGroup.First().ticketType ?? string.Empty)
+            .ToList();
             filterGroup = groupNames.Select((_) => true).ToList();
         }
         catch (Exception e)

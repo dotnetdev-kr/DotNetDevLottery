@@ -3,16 +3,14 @@
 
 <div class="container">
     <div class="button-row">
-        <ui-button
-            treatment="outline"
-            @onclick="OnClickButton"
+        <ui-button treatment="outline" @onclick="OnClickButton"
             variant="@TriggerButtonVariant(Status == DrawMachineStatus.Pending)"
             class="@TriggerButtonClass(Status == DrawMachineStatus.Pending)">
             추첨 진행
         </ui-button>
     </div>
     <div class="machine-wrapper">
-        <div class="machine"  @ref="machineElement" />
+        <div class="machine" @ref="machineElement" />
     </div>
 </div>
 
@@ -41,27 +39,29 @@
     {
         PersonCount = UserInfoList.Count();
         RemainedPersonCount = PersonCount;
-        if (PersonCount == 0) {
+        if (PersonCount == 0)
+        {
             return;
         }
         machineUtils = await JSRuntime.InvokeAsync<IJSObjectReference>(
-            "import",
-            "/js/Components/MachineAnimation.razor.js"
+        "import",
+        "./Components/Random/MachineAnimation.razor.js"
         );
         componentRef = DotNetObjectReference.Create(this);
         await machineUtils.InvokeVoidAsync(
-            "init",
-            PersonCount,
-            machineElement,
-            componentRef,
-            nameof(OnDrawMachine),
-            nameof(OnDrawMachineAnimationEnd)
+        "init",
+        PersonCount,
+        machineElement,
+        componentRef,
+        nameof(OnDrawMachine),
+        nameof(OnDrawMachineAnimationEnd)
         );
     }
 
     public async Task OnClickButton()
     {
-        if (machineUtils == null || Status == DrawMachineStatus.Pending) {
+        if (machineUtils == null || Status == DrawMachineStatus.Pending)
+        {
             return;
         }
         SelectedUserInfo = null;
@@ -92,7 +92,8 @@
         WinnedUserList.Add(index);
         Status = DrawMachineStatus.Drawed;
         // TODO: 현재에는 사용하고 있지 않음. 추후 관련 기능 추가 없을 경우 삭제.
-        await OnDrawUser.InvokeAsync(new DrawUserEventArgs{
+        await OnDrawUser.InvokeAsync(new DrawUserEventArgs
+        {
             Status = Status
         });
         return SelectedUserInfo;
@@ -106,7 +107,8 @@
         }
         Status = DrawMachineStatus.Done;
         Console.WriteLine("ASDF");
-        await OnDrawAnimationEnd.InvokeAsync(new DrawAnimationEndEventArgs{
+        await OnDrawAnimationEnd.InvokeAsync(new DrawAnimationEndEventArgs
+        {
             user = SelectedUserInfo,
             Status = Status
         });

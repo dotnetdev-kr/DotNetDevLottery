@@ -5,16 +5,14 @@
 @inject IEventService EventService
 <div class="container">
 
-<MachineAnimation
-    UserInfoList="@UserInfoList.ToArray()"
-    OnBeforeDrawMachine="OnBeforeDrawMachine"
-    OnDrawAnimationEnd="OnDrawAnimationEnd"
-/>
-<ui-divider vertical />
+    <MachineAnimation UserInfoList="@UserInfoList.ToArray()" OnBeforeDrawMachine="OnBeforeDrawMachine"
+        OnDrawAnimationEnd="OnDrawAnimationEnd" />
+    <ui-divider vertical />
     <div class="text">
         <h2 class="text-row">@PersonCount 명 중에 당첨자에요!</h2>
         <div class="record">
-            @foreach(var WinnedUserInfo in WinnedUserList) {
+            @foreach (var WinnedUserInfo in WinnedUserList)
+            {
                 <div class="record-row">
                     <span>@WinnedUserInfo.personName</span>
                     <span>@WinnedUserInfo.email</span>
@@ -24,10 +22,7 @@
         </div>
     </div>
 </div>
-<dotlottie-wc
-    @ref="animationElement"
-    class="@EffectClass(IsPlayAnimation)"
-    autoplay="false"
+<dotlottie-wc @ref="animationElement" class="@EffectClass(IsPlayAnimation)" autoplay="false"
     src="/assets/tada.lottie" />
 @code {
     IJSObjectReference? lottieUtils;
@@ -50,7 +45,7 @@
             return;
         }
 
-        lottieUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/Pages/Random.razor.js");
+        lottieUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./Pages/Random.razor.js");
     }
 
     public void OnBeforeDrawMachine()
@@ -59,7 +54,7 @@
     }
     public async Task OnDrawAnimationEnd(DrawAnimationEndEventArgs eventArgs)
     {
-        if(eventArgs.user == null)
+        if (eventArgs.user == null)
         {
             NavigationManager.NavigateTo("/");
             return;

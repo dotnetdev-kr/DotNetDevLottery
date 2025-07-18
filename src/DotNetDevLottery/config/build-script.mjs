@@ -34,7 +34,7 @@ const baseOptions = {
 /** @type {import('esbuild').BuildOptions} */
 const pageEntryPointOptions = {
   ...baseOptions,
-  entryPoints: componentEntryPoints,
+  entryPoints: pageEntryPoints,
   outdir: path.resolve(cwd, "./Pages"),
   outbase: path.resolve(cwd, "./typescript/Pages"),
 };
