@@ -1,10 +1,10 @@
 import type { DotNet } from "@microsoft/dotnet-js-interop";
-import type { RapierNamespace } from "../utils/getRapier";
-import type { Engine } from "../utils/defineEngine";
+import type { RapierNamespace } from "../../utils/getRapier";
+import type { Engine } from "../../utils/defineEngine";
 
-import { defineEngine } from "../utils/defineEngine";
-import { coords } from "../utils/rapierCoordUtility";
-import { getRapier, Rapier } from "../utils/getRapier";
+import { defineEngine } from "../../utils/defineEngine";
+import { coords } from "../../utils/rapierCoordUtility";
+import { getRapier, Rapier } from "../../utils/getRapier";
 
 interface Size {
   machine: number;
@@ -95,13 +95,13 @@ async function defineDrawMachineAnimation({
     const ball = document.createElement('div');
     ball.classList.add('ball', 'ball--drawed');
     const nameElement = document.createElement('div');
-    nameElement.classList.add('ball-text','name');
+    nameElement.classList.add('ball-text', 'name');
     nameElement.innerText = response.personName;
     const emailElement = document.createElement('div');
-    emailElement.classList.add('ball-text','email');
+    emailElement.classList.add('ball-text', 'email');
     emailElement.innerText = response.email;
     const phoneElement = document.createElement('div');
-    phoneElement.classList.add('ball-text','phone');
+    phoneElement.classList.add('ball-text', 'phone');
     phoneElement.innerText = response.phone;
     ball.style.transform = transformString;
     ball.style.setProperty(Ball.BALL_SIZE_PROPERTY_NAME, String(ballSize));
@@ -109,7 +109,7 @@ async function defineDrawMachineAnimation({
     ball.append(nameElement, emailElement, phoneElement);
     element.append(ball);
 
-    window.setTimeout(async ()=> {
+    window.setTimeout(async () => {
       const animation = ball.animate([
         { transform: transformString, color: "#666666", backgroundColor: "#666666" },
         {
@@ -124,15 +124,15 @@ async function defineDrawMachineAnimation({
           backgroundColor: "#DDDDDD"
         },
       ],
-      {
-        duration: 2000,
-      }
-    );
-    const onAnimationEnd = async () => {
-      await animationEndCallback();
-      animation.removeEventListener("finish", onAnimationEnd);
-    };
-    animation.addEventListener("finish", onAnimationEnd);
+        {
+          duration: 2000,
+        }
+      );
+      const onAnimationEnd = async () => {
+        await animationEndCallback();
+        animation.removeEventListener("finish", onAnimationEnd);
+      };
+      animation.addEventListener("finish", onAnimationEnd);
       ball.style.transform = `translate(${center}px, ${center}px) scale(${(width) / ballSize})`;
       ball.style.color = "#000000";
       ball.style.backgroundColor = "#DDDDDD";
@@ -165,7 +165,7 @@ async function defineDrawMachineAnimation({
       );
 
       const PULSE_INTERVAL_MS = 800;
-      for(let i = 0; i < DURATION / PULSE_INTERVAL_MS; i++) {
+      for (let i = 0; i < DURATION / PULSE_INTERVAL_MS; i++) {
         timeouts.push(
           window.setTimeout(() => {
             balls.forEach((ball) => {
