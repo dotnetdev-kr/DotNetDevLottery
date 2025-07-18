@@ -5,16 +5,14 @@
 @inject IEventService EventService
 <div class="container">
 
-<MachineAnimation
-    UserInfoList="@UserInfoList.ToArray()"
-    OnBeforeDrawMachine="OnBeforeDrawMachine"
-    OnDrawAnimationEnd="OnDrawAnimationEnd"
-/>
-<ui-divider vertical />
+    <MachineAnimation UserInfoList="@UserInfoList.ToArray()" OnBeforeDrawMachine="OnBeforeDrawMachine"
+        OnDrawAnimationEnd="OnDrawAnimationEnd" />
+    <ui-divider vertical />
     <div class="text">
         <h2 class="text-row">@PersonCount 명 중에 당첨자에요!</h2>
         <div class="record">
-            @foreach(var WinnedUserInfo in WinnedUserList) {
+            @foreach (var WinnedUserInfo in WinnedUserList)
+            {
                 <div class="record-row">
                     <span>@WinnedUserInfo.personName</span>
                     <span>@WinnedUserInfo.email</span>
@@ -24,59 +22,5 @@
         </div>
     </div>
 </div>
-<dotlottie-wc
-    @ref="animationElement"
-    class="@EffectClass(IsPlayAnimation)"
-    autoplay="false"
+<dotlottie-wc @ref="animationElement" class="@EffectClass(IsPlayAnimation)" autoplay="false"
     src="/assets/tada.lottie" />
-@code {
-    IJSObjectReference? lottieUtils;
-    ElementReference animationElement;
-    List<UserInfo> UserInfoList = new List<UserInfo>();
-    List<UserInfo> WinnedUserList = new List<UserInfo>();
-    Boolean IsPlayAnimation = false;
-    int PersonCount = 0;
-
-    string EffectClass(bool IsPlayAnimation) => IsPlayAnimation ? "effect" : "effect effect--disabled";
-
-    protected override async Task OnInitializedAsync()
-    {
-        UserInfoList = EventService.UserInfos.ToList();
-        PersonCount = UserInfoList.Count;
-
-        if (PersonCount == 0)
-        {
-            NavigationManager.NavigateTo("/");
-            return;
-        }
-
-        lottieUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/Pages/Random.razor.js");
-    }
-
-    public void OnBeforeDrawMachine()
-    {
-        IsPlayAnimation = false;
-    }
-    public async Task OnDrawAnimationEnd(DrawAnimationEndEventArgs eventArgs)
-    {
-        if(eventArgs.user == null)
-        {
-            NavigationManager.NavigateTo("/");
-            return;
-        }
-        WinnedUserList.Add(eventArgs.user);
-        if (lottieUtils == null)
-        {
-            return;
-        }
-        IsPlayAnimation = true;
-        await lottieUtils.InvokeVoidAsync("startLottie", animationElement);
-    }
-    async ValueTask IAsyncDisposable.DisposeAsync()
-    {
-        if (lottieUtils is not null)
-        {
-            await lottieUtils.DisposeAsync();
-        }
-    }
-}

@@ -371,3 +371,5 @@ appsettings.json
 
 .idea/
 .DS_Store
+**/*.js
+**/*.wasm

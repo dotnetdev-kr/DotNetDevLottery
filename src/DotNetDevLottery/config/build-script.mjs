@@ -7,43 +7,20 @@ import path from "node:path";
 
 const cwd = process.cwd();
 
-const outDirectory = path.resolve(cwd, "./wwwroot/js/");
-const outBaseDirectory = path.resolve(cwd, "./typescript/");
+const indexEntryPoint = path.resolve(cwd, "./typescript/index.ts");
 
-try {
-  await fs.access(outDirectory);
-  await fs.rm(outDirectory, {
-    recursive: true,
-    force: true,
-  });
-} catch (e) {
-}
-await fs.mkdir(outDirectory, { recursive: true });
-
-const SPLITTING_FILTER_STRING = [
-  "MachineAnimation"
-];
-
-const allEntryPoints = await glob([
-    "./typescript/Components/*.razor.ts",
-    "./typescript/Pages/*.razor.ts",
-    "./typescript/index.ts",
-  ], {
-    cwd
-  });
-const defaultEntryPoints = allEntryPoints
-  .filter((entryPoint) =>
-    SPLITTING_FILTER_STRING.findIndex((filterString) => entryPoint.includes(filterString)) === -1
-  );
-
-const splittingEntryPoints = allEntryPoints
-  .filter((entryPoint) =>
-    SPLITTING_FILTER_STRING.findIndex((filterString) => entryPoint.includes(filterString)) !== -1
-  );
+const componentEntryPoints = await glob([
+  "./typescript/Components/**/*.razor.ts",
+], {
+  cwd
+});
+const pageEntryPoints = await glob([
+  "./typescript/Pages/**/*.razor.ts",
+], {
+  cwd
+});
 
 const baseOptions = {
-  outdir: outDirectory,
-  outbase: outBaseDirectory,
   bundle: true,
   format: "esm",
   platform: "browser",
@@ -55,19 +32,29 @@ const baseOptions = {
 }
 
 /** @type {import('esbuild').BuildOptions} */
-const defaultOptions = {
+const pageEntryPointOptions = {
   ...baseOptions,
-  entryPoints: defaultEntryPoints,
+  entryPoints: pageEntryPoints,
+  outdir: path.resolve(cwd, "./wwwroot/Pages"),
+  outbase: path.resolve(cwd, "./typescript/Pages"),
 };
 /** @type {import('esbuild').BuildOptions} */
-const splittingOptions = {
+const componentEntryPointOptions = {
   ...baseOptions,
   ignoreAnnotations: true,
   splitting: true,
-  entryPoints: splittingEntryPoints,
+  entryPoints: componentEntryPoints,
+  outdir: path.resolve(cwd, "./wwwroot/Components"),
+  outbase: path.resolve(cwd, "./typescript/Components"),
+};
+const indexOptions = {
+  ...baseOptions,
+  entryPoints: [indexEntryPoint],
+  outdir: path.resolve(cwd, "./wwwroot/js"),
 };
 
 await Promise.allSettled([
-  esbuild.build(defaultOptions),
-  esbuild.build(splittingOptions),
+  esbuild.build(indexOptions),
+  esbuild.build(pageEntryPointOptions),
+  esbuild.build(componentEntryPointOptions),
 ]);
