@@ -35,7 +35,7 @@ const baseOptions = {
 const pageEntryPointOptions = {
   ...baseOptions,
   entryPoints: pageEntryPoints,
-  outdir: path.resolve(cwd, "./Pages"),
+  outdir: path.resolve(cwd, "./wwwroot/Pages"),
   outbase: path.resolve(cwd, "./typescript/Pages"),
 };
 /** @type {import('esbuild').BuildOptions} */
@@ -44,7 +44,7 @@ const componentEntryPointOptions = {
   ignoreAnnotations: true,
   splitting: true,
   entryPoints: componentEntryPoints,
-  outdir: path.resolve(cwd, "./Components"),
+  outdir: path.resolve(cwd, "./wwwroot/Components"),
   outbase: path.resolve(cwd, "./typescript/Components"),
 };
 const indexOptions = {
