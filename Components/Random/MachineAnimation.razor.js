@@ -153,7 +153,7 @@ function getRapier() {
   return import("../rapier-KBZQ7HBV.js");
 }
 
-// typescript/Components/MachineAnimation.razor.ts
+// typescript/Components/Random/MachineAnimation.razor.ts
 async function defineDrawMachineAnimation({
   count,
   drawCallback,
