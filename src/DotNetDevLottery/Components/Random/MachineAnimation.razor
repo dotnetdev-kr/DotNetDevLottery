@@ -3,13 +3,13 @@
 
 <div class="container">
     <div class="button-row">
-        <ui-button type="" variant="primary" @onclick="@(() => TargetPersonCount--)">
+        <ui-button variant="primary" icon-only @onclick="@(() => TargetPersonCount--)">
             <span slot="icon">-</span>
         </ui-button>
         <span>
             @TargetPersonCount
         </span>
-        <ui-button variant="primary" @onclick="@(() => TargetPersonCount++)">
+        <ui-button variant="primary" icon-only @onclick="@(() => TargetPersonCount++)">
             <span slot="icon">+</span>
         </ui-button>
         <ui-button @onclick="OnClickButton" variant="@TriggerButtonVariant(Status == DrawMachineStatus.Pending)"
