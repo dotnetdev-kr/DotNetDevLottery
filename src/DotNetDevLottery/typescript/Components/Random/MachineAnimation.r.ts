@@ -152,20 +152,23 @@ async function defineDrawMachineAnimation({
 
   return {
     removeEngine,
-    drawBall: () => {
-      const drawedBallList = document.querySelectorAll('.ball--drawed');
-      drawedBallList.forEach((ballElement) => {
-        ballElement.remove();
-      })
-      const DURATION = 10000
+    drawBall: async (duration: number) => {
+      let isEventEnded = false;
       timeouts.push(
         window.setTimeout(() => {
           isEventEnabled = true;
-        }, DURATION / 2)
+          const drawedBallList = document.querySelectorAll('.ball--drawed');
+          drawedBallList.forEach((ballElement) => {
+            ballElement.remove();
+          });
+        }, duration * 0.7),
+        window.setTimeout(() => {
+          isEventEnded = true;
+        }, duration)
       );
 
       const PULSE_INTERVAL_MS = 800;
-      for (let i = 0; i < DURATION / PULSE_INTERVAL_MS; i++) {
+      for (let i = 0; i < duration / PULSE_INTERVAL_MS; i++) {
         timeouts.push(
           window.setTimeout(() => {
             balls.forEach((ball) => {
@@ -174,6 +177,18 @@ async function defineDrawMachineAnimation({
           }, i * PULSE_INTERVAL_MS)
         );
       }
+      return new Promise<void>((resolve) => {
+        function waitForBallsToStop() {
+          if (isEventEnded) {
+            resolve();
+          } else {
+            window.requestAnimationFrame(() => {
+              setTimeout(waitForBallsToStop, 1000 / 60);
+            });
+          }
+        }
+        waitForBallsToStop();
+      });
     }
   }
 }
@@ -331,8 +346,10 @@ function addBallsToEngine(option: AddBallsToEngineOption): Ball[] {
 let ballInterface: Awaited<ReturnType<typeof defineDrawMachineAnimation>>;
 
 
-export function executeDrawBall() {
-  ballInterface?.drawBall();
+export async function executeDrawBall(count: number) {
+  for (let i = 0; i < count; i++) {
+    await ballInterface?.drawBall(5000);
+  }
 }
 
 export function executeRemoveEngine() {

@@ -10,12 +10,12 @@ const cwd = process.cwd();
 const indexEntryPoint = path.resolve(cwd, "./typescript/index.ts");
 
 const componentEntryPoints = await glob([
-  "./typescript/Components/**/*.razor.ts",
+  "./typescript/Components/**/*.r.ts",
 ], {
   cwd
 });
 const pageEntryPoints = await glob([
-  "./typescript/Pages/**/*.razor.ts",
+  "./typescript/Pages/**/*.r.ts",
 ], {
   cwd
 });
@@ -35,7 +35,7 @@ const baseOptions = {
 const pageEntryPointOptions = {
   ...baseOptions,
   entryPoints: pageEntryPoints,
-  outdir: path.resolve(cwd, "./wwwroot/Pages"),
+  outdir: path.resolve(cwd, "./wwwroot/js/Pages"),
   outbase: path.resolve(cwd, "./typescript/Pages"),
 };
 /** @type {import('esbuild').BuildOptions} */
@@ -44,7 +44,7 @@ const componentEntryPointOptions = {
   ignoreAnnotations: true,
   splitting: true,
   entryPoints: componentEntryPoints,
-  outdir: path.resolve(cwd, "./wwwroot/Components"),
+  outdir: path.resolve(cwd, "./wwwroot/js/Components"),
   outbase: path.resolve(cwd, "./typescript/Components"),
 };
 const indexOptions = {

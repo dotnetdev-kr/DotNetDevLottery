@@ -3,8 +3,16 @@
 
 <div class="container">
     <div class="button-row">
-        <ui-button treatment="outline" @onclick="OnClickButton"
-            variant="@TriggerButtonVariant(Status == DrawMachineStatus.Pending)"
+        <ui-button type="" variant="primary" @onclick="@(() => TargetPersonCount--)">
+            <span slot="icon">-</span>
+        </ui-button>
+        <span>
+            @TargetPersonCount
+        </span>
+        <ui-button variant="primary" @onclick="@(() => TargetPersonCount++)">
+            <span slot="icon">+</span>
+        </ui-button>
+        <ui-button @onclick="OnClickButton" variant="@TriggerButtonVariant(Status == DrawMachineStatus.Pending)"
             class="@TriggerButtonClass(Status == DrawMachineStatus.Pending)">
             추첨 진행
         </ui-button>
@@ -32,6 +40,7 @@
     string TriggerButtonClass(bool isDisabled) => isDisabled ? "" : "success";
     string TriggerButtonVariant(bool isDisabled) => isDisabled ? "secondary" : "";
     int PersonCount = 0;
+    int TargetPersonCount = 1;
     int RemainedPersonCount = 0;
     List<int> WinnedUserList = new List<int>();
 
@@ -45,7 +54,7 @@
         }
         machineUtils = await JSRuntime.InvokeAsync<IJSObjectReference>(
         "import",
-        "./Components/Random/MachineAnimation.razor.js"
+        "/js/Components/Random/MachineAnimation.r.js"
         );
         componentRef = DotNetObjectReference.Create(this);
         await machineUtils.InvokeVoidAsync(
@@ -66,7 +75,8 @@
         }
         SelectedUserInfo = null;
         Status = DrawMachineStatus.Pending;
-        await machineUtils.InvokeVoidAsync("executeDrawBall");
+        Console.WriteLine($"TargetPersonCount: {TargetPersonCount}");
+        await machineUtils.InvokeVoidAsync("executeDrawBall", TargetPersonCount);
         await OnBeforeDrawMachine.InvokeAsync();
     }
 
@@ -106,7 +116,7 @@
             return;
         }
         Status = DrawMachineStatus.Done;
-        Console.WriteLine("ASDF");
+
         await OnDrawAnimationEnd.InvokeAsync(new DrawAnimationEndEventArgs
         {
             user = SelectedUserInfo,

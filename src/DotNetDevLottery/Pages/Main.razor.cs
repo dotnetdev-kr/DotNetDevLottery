@@ -27,7 +27,7 @@ public partial class Main : ComponentBase, IAsyncDisposable
 
   protected override async Task OnInitializedAsync()
   {
-    elementUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./Pages/Main.razor.js");
+    elementUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/Pages/Main.r.js");
     await elementUtils.InvokeVoidAsync("addDropEventToChangeInputFile", dropzoneElement);
   }
 

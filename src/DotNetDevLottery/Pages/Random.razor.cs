@@ -30,7 +30,7 @@ public partial class Random : ComponentBase, IAsyncDisposable
       return;
     }
 
-    lottieUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./Pages/Random.razor.js");
+    lottieUtils = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/js/Pages/Random.r.js");
   }
 
   public void OnBeforeDrawMachine()

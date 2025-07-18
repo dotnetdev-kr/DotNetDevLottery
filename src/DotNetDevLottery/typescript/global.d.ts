@@ -4,5 +4,11 @@ declare global {
   interface Window {
     DotNet: typeof DotNet;
   }
+  interface ImportMetaEnv {
+    MODE: 'development' | 'production';
+  }
+  export interface ImportMeta {
+    env: ImportMetaEnv;
+  }
 }
 

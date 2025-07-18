@@ -7,6 +7,7 @@ import {
   Tooltip,
   Theme,
 } from '@spectrum-web-components/bundle';
+import { Textfield } from '@spectrum-web-components/textfield';
 // 테마
 import '@spectrum-web-components/theme/theme-light.js';
 import '@spectrum-web-components/theme/scale-large.js';
@@ -21,5 +22,6 @@ const elementsList = {
   'ui-divider': Divider,
   'ui-dropzone': Dropzone,
   'ui-tooltip': Tooltip,
+  'ui-textfield': Textfield,
 }
 applyCustomElements(elementsList);

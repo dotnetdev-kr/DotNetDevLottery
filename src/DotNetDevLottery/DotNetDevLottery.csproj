@@ -5,12 +5,6 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
-    <ItemGroup>
-      <Compile Remove="wwwroot\js\**" />
-      <Content Remove="wwwroot\js\**" />
-      <EmbeddedResource Remove="wwwroot\js\**" />
-      <None Remove="wwwroot\js\**" />
-    </ItemGroup>
     <Target Name="NpmInstall" Inputs="package.json" Outputs="node_modules/.install-stamp">
         <Exec Command="pnpm i" Condition="$(RestorePackagesWithLockFile) != 'true'" ConsoleToMsBuild="true" />
 
