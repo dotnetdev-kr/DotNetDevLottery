@@ -25,13 +25,15 @@
     flex: 0 0 auto;
     padding: 5px 0;
     gap: 1rem;
-    line-height: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
 
     & ui-button:has(span) {
+        width: 40px;
+        min-width: 40px;
         padding: 0;
     }
 }
