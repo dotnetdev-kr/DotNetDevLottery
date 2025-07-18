@@ -150,10 +150,10 @@ var coords = {
 
 // typescript/utils/getRapier.ts
 function getRapier() {
-  return import("../rapier-KBZQ7HBV.js");
+  return import("../rapier-OZO6B3DJ.js");
 }
 
-// typescript/Components/Random/MachineAnimation.razor.ts
+// typescript/Components/Random/MachineAnimation.r.ts
 async function defineDrawMachineAnimation({
   count,
   drawCallback,
@@ -270,19 +270,22 @@ async function defineDrawMachineAnimation({
   }
   return {
     removeEngine,
-    drawBall: () => {
-      const drawedBallList = document.querySelectorAll(".ball--drawed");
-      drawedBallList.forEach((ballElement) => {
-        ballElement.remove();
-      });
-      const DURATION = 1e4;
+    drawBall: async (duration) => {
+      let isEventEnded = false;
       timeouts.push(
         window.setTimeout(() => {
           isEventEnabled = true;
-        }, DURATION / 2)
+          const drawedBallList = document.querySelectorAll(".ball--drawed");
+          drawedBallList.forEach((ballElement) => {
+            ballElement.remove();
+          });
+        }, duration * 0.7),
+        window.setTimeout(() => {
+          isEventEnded = true;
+        }, duration)
       );
       const PULSE_INTERVAL_MS = 800;
-      for (let i = 0; i < DURATION / PULSE_INTERVAL_MS; i++) {
+      for (let i = 0; i < duration / PULSE_INTERVAL_MS; i++) {
         timeouts.push(
           window.setTimeout(() => {
             balls.forEach((ball) => {
@@ -291,6 +294,18 @@ async function defineDrawMachineAnimation({
           }, i * PULSE_INTERVAL_MS)
         );
       }
+      return new Promise((resolve) => {
+        function waitForBallsToStop() {
+          if (isEventEnded) {
+            resolve();
+          } else {
+            window.requestAnimationFrame(() => {
+              setTimeout(waitForBallsToStop, 1e3 / 60);
+            });
+          }
+        }
+        waitForBallsToStop();
+      });
     }
   };
 }
@@ -411,8 +426,10 @@ function addBallsToEngine(option) {
   return balls;
 }
 var ballInterface;
-function executeDrawBall() {
-  ballInterface?.drawBall();
+async function executeDrawBall(count) {
+  for (let i = 0; i < count; i++) {
+    await ballInterface?.drawBall(5e3);
+  }
 }
 function executeRemoveEngine() {
   ballInterface?.removeEngine();

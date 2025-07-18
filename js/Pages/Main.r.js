@@ -1,4 +1,4 @@
-// typescript/Pages/Main.razor.ts
+// typescript/Pages/Main.r.ts
 function clickElement(element) {
   element?.click();
 }

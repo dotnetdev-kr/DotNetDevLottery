@@ -20,23 +20,33 @@
     --spectrum-button-content-color-down: hsl(355.7 100% 97.3%/.9);
     --spectrum-button-content-color-focus: hsl(355.7 100% 97.3%/.9);
 }
+
 .button-row[b-565zw19esn] {
     flex: 0 0 auto;
     padding: 5px 0;
+    gap: 1rem;
+    line-height: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
+
+    & ui-button:has(span) {
+        padding: 0;
+    }
 }
+
 .machine-wrapper[b-565zw19esn] {
     flex: 1 1 auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .machine[b-565zw19esn] {
     position: relative;
 }
+
 .machine[b-565zw19esn]  .machine-inner {
     position: absolute;
     top: 50%;
@@ -46,6 +56,7 @@
     border-radius: 50%;
     padding: 0;
 }
+
 .machine[b-565zw19esn]  .ball {
     position: absolute;
     background-color: #666666;

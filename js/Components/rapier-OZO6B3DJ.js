@@ -2,7 +2,7 @@ import {
   __export
 } from "./chunk-MLKGABMK.js";
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/exports.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/exports.js
 var exports_exports = {};
 __export(exports_exports, {
   ActiveCollisionTypes: () => ActiveCollisionTypes,
@@ -42,6 +42,8 @@ __export(exports_exports, {
   MultibodyJointSet: () => MultibodyJointSet,
   NarrowPhase: () => NarrowPhase,
   PhysicsPipeline: () => PhysicsPipeline,
+  PidAxesMask: () => PidAxesMask,
+  PidController: () => PidController,
   PointColliderProjection: () => PointColliderProjection,
   PointProjection: () => PointProjection,
   Polyline: () => Polyline,
@@ -81,11 +83,13 @@ __export(exports_exports, {
   UnitMultibodyJoint: () => UnitMultibodyJoint,
   Vector2: () => Vector2,
   VectorOps: () => VectorOps,
+  Voxels: () => Voxels,
   World: () => World,
+  reserveMemory: () => reserveMemory,
   version: () => version3
 });
 
-// wasm-module:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
+// wasm-module:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
 var rapier_wasm2d_bg_exports = {};
 __export(rapier_wasm2d_bg_exports, {
   __wbg_rawbroadphase_free: () => __wbg_rawbroadphase_free,
@@ -107,6 +111,7 @@ __export(rapier_wasm2d_bg_exports, {
   __wbg_rawmultibodyjointset_free: () => __wbg_rawmultibodyjointset_free,
   __wbg_rawnarrowphase_free: () => __wbg_rawnarrowphase_free,
   __wbg_rawphysicspipeline_free: () => __wbg_rawphysicspipeline_free,
+  __wbg_rawpidcontroller_free: () => __wbg_rawpidcontroller_free,
   __wbg_rawpointcolliderprojection_free: () => __wbg_rawpointcolliderprojection_free,
   __wbg_rawpointprojection_free: () => __wbg_rawpointprojection_free,
   __wbg_rawquerypipeline_free: () => __wbg_rawquerypipeline_free,
@@ -121,9 +126,9 @@ __export(rapier_wasm2d_bg_exports, {
   __wbg_rawshapecontact_free: () => __wbg_rawshapecontact_free,
   __wbg_rawvector_free: () => __wbg_rawvector_free,
   __wbindgen_add_to_stack_pointer: () => __wbindgen_add_to_stack_pointer,
-  __wbindgen_exn_store: () => __wbindgen_exn_store,
-  __wbindgen_free: () => __wbindgen_free,
-  __wbindgen_malloc: () => __wbindgen_malloc,
+  __wbindgen_export_0: () => __wbindgen_export_0,
+  __wbindgen_export_1: () => __wbindgen_export_1,
+  __wbindgen_export_2: () => __wbindgen_export_2,
   instance: () => instance,
   memory: () => memory,
   module: () => module2,
@@ -146,6 +151,7 @@ __export(rapier_wasm2d_bg_exports, {
   rawcolliderset_coCastRayAndGetNormal: () => rawcolliderset_coCastRayAndGetNormal,
   rawcolliderset_coCastShape: () => rawcolliderset_coCastShape,
   rawcolliderset_coCollisionGroups: () => rawcolliderset_coCollisionGroups,
+  rawcolliderset_coCombineVoxelStates: () => rawcolliderset_coCombineVoxelStates,
   rawcolliderset_coContactCollider: () => rawcolliderset_coContactCollider,
   rawcolliderset_coContactForceEventThreshold: () => rawcolliderset_coContactForceEventThreshold,
   rawcolliderset_coContactShape: () => rawcolliderset_coContactShape,
@@ -167,6 +173,7 @@ __export(rapier_wasm2d_bg_exports, {
   rawcolliderset_coMass: () => rawcolliderset_coMass,
   rawcolliderset_coParent: () => rawcolliderset_coParent,
   rawcolliderset_coProjectPoint: () => rawcolliderset_coProjectPoint,
+  rawcolliderset_coPropagateVoxelChange: () => rawcolliderset_coPropagateVoxelChange,
   rawcolliderset_coRadius: () => rawcolliderset_coRadius,
   rawcolliderset_coRestitution: () => rawcolliderset_coRestitution,
   rawcolliderset_coRestitutionCombineRule: () => rawcolliderset_coRestitutionCombineRule,
@@ -197,12 +204,15 @@ __export(rapier_wasm2d_bg_exports, {
   rawcolliderset_coSetSolverGroups: () => rawcolliderset_coSetSolverGroups,
   rawcolliderset_coSetTranslation: () => rawcolliderset_coSetTranslation,
   rawcolliderset_coSetTranslationWrtParent: () => rawcolliderset_coSetTranslationWrtParent,
+  rawcolliderset_coSetVoxel: () => rawcolliderset_coSetVoxel,
   rawcolliderset_coShapeType: () => rawcolliderset_coShapeType,
   rawcolliderset_coSolverGroups: () => rawcolliderset_coSolverGroups,
   rawcolliderset_coTranslation: () => rawcolliderset_coTranslation,
   rawcolliderset_coTriMeshFlags: () => rawcolliderset_coTriMeshFlags,
   rawcolliderset_coVertices: () => rawcolliderset_coVertices,
   rawcolliderset_coVolume: () => rawcolliderset_coVolume,
+  rawcolliderset_coVoxelData: () => rawcolliderset_coVoxelData,
+  rawcolliderset_coVoxelSize: () => rawcolliderset_coVoxelSize,
   rawcolliderset_contains: () => rawcolliderset_contains,
   rawcolliderset_createCollider: () => rawcolliderset_createCollider,
   rawcolliderset_forEachColliderHandle: () => rawcolliderset_forEachColliderHandle,
@@ -371,6 +381,16 @@ __export(rapier_wasm2d_bg_exports, {
   rawphysicspipeline_new: () => rawphysicspipeline_new,
   rawphysicspipeline_step: () => rawphysicspipeline_step,
   rawphysicspipeline_stepWithEvents: () => rawphysicspipeline_stepWithEvents,
+  rawpidcontroller_angular_correction: () => rawpidcontroller_angular_correction,
+  rawpidcontroller_apply_angular_correction: () => rawpidcontroller_apply_angular_correction,
+  rawpidcontroller_apply_linear_correction: () => rawpidcontroller_apply_linear_correction,
+  rawpidcontroller_linear_correction: () => rawpidcontroller_linear_correction,
+  rawpidcontroller_new: () => rawpidcontroller_new,
+  rawpidcontroller_reset_integrals: () => rawpidcontroller_reset_integrals,
+  rawpidcontroller_set_axes_mask: () => rawpidcontroller_set_axes_mask,
+  rawpidcontroller_set_kd: () => rawpidcontroller_set_kd,
+  rawpidcontroller_set_ki: () => rawpidcontroller_set_ki,
+  rawpidcontroller_set_kp: () => rawpidcontroller_set_kp,
   rawpointcolliderprojection_colliderHandle: () => rawpointcolliderprojection_colliderHandle,
   rawpointcolliderprojection_featureId: () => rawpointcolliderprojection_featureId,
   rawpointcolliderprojection_featureType: () => rawpointcolliderprojection_featureType,
@@ -471,6 +491,7 @@ __export(rapier_wasm2d_bg_exports, {
   rawrigidbodyset_rbUserData: () => rawrigidbodyset_rbUserData,
   rawrigidbodyset_rbUserForce: () => rawrigidbodyset_rbUserForce,
   rawrigidbodyset_rbUserTorque: () => rawrigidbodyset_rbUserTorque,
+  rawrigidbodyset_rbVelocityAtPoint: () => rawrigidbodyset_rbVelocityAtPoint,
   rawrigidbodyset_rbWakeUp: () => rawrigidbodyset_rbWakeUp,
   rawrigidbodyset_rbWorldCom: () => rawrigidbodyset_rbWorldCom,
   rawrigidbodyset_remove: () => rawrigidbodyset_remove,
@@ -505,6 +526,8 @@ __export(rapier_wasm2d_bg_exports, {
   rawshape_segment: () => rawshape_segment,
   rawshape_triangle: () => rawshape_triangle,
   rawshape_trimesh: () => rawshape_trimesh,
+  rawshape_voxels: () => rawshape_voxels,
+  rawshape_voxelsFromPoints: () => rawshape_voxelsFromPoints,
   rawshapecasthit_normal1: () => rawshapecasthit_normal1,
   rawshapecasthit_normal2: () => rawshapecasthit_normal2,
   rawshapecasthit_time_of_impact: () => rawshapecasthit_time_of_impact,
@@ -523,19 +546,23 @@ __export(rapier_wasm2d_bg_exports, {
   rawvector_y: () => rawvector_y,
   rawvector_yx: () => rawvector_yx,
   rawvector_zero: () => rawvector_zero,
+  reserve_memory: () => reserve_memory2,
   version: () => version2
 });
 
-// wasm-deferred:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
+// wasm-deferred:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
 var rapier_wasm2d_bg_default = "./rapier_wasm2d_bg.wasm";
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js
 var wasm;
 function __wbg_set_wasm(val) {
   wasm = val;
 }
 var heap = new Array(128).fill(void 0);
 heap.push(void 0, null, true, false);
+function getObject(idx) {
+  return heap[idx];
+}
 var heap_next = heap.length;
 function addHeapObject(obj) {
   if (heap_next === heap.length) heap.push(heap.length + 1);
@@ -544,8 +571,22 @@ function addHeapObject(obj) {
   heap[idx] = obj;
   return idx;
 }
-function getObject(idx) {
-  return heap[idx];
+function handleError(f, args) {
+  try {
+    return f.apply(this, args);
+  } catch (e) {
+    wasm.__wbindgen_export_0(addHeapObject(e));
+  }
+}
+function isLikeNone(x) {
+  return x === void 0 || x === null;
+}
+var cachedDataViewMemory0 = null;
+function getDataViewMemory0() {
+  if (cachedDataViewMemory0 === null || cachedDataViewMemory0.buffer.detached === true || cachedDataViewMemory0.buffer.detached === void 0 && cachedDataViewMemory0.buffer !== wasm.memory.buffer) {
+    cachedDataViewMemory0 = new DataView(wasm.memory.buffer);
+  }
+  return cachedDataViewMemory0;
 }
 function dropObject(idx) {
   if (idx < 132) return;
@@ -557,36 +598,19 @@ function takeObject(idx) {
   dropObject(idx);
   return ret;
 }
-function isLikeNone(x) {
-  return x === void 0 || x === null;
-}
-var cachedFloat64Memory0 = null;
-function getFloat64Memory0() {
-  if (cachedFloat64Memory0 === null || cachedFloat64Memory0.byteLength === 0) {
-    cachedFloat64Memory0 = new Float64Array(wasm.memory.buffer);
-  }
-  return cachedFloat64Memory0;
-}
-var cachedInt32Memory0 = null;
-function getInt32Memory0() {
-  if (cachedInt32Memory0 === null || cachedInt32Memory0.byteLength === 0) {
-    cachedInt32Memory0 = new Int32Array(wasm.memory.buffer);
-  }
-  return cachedInt32Memory0;
-}
 var lTextDecoder = typeof TextDecoder === "undefined" ? (0, module.require)("util").TextDecoder : TextDecoder;
 var cachedTextDecoder = new lTextDecoder("utf-8", { ignoreBOM: true, fatal: true });
 cachedTextDecoder.decode();
-var cachedUint8Memory0 = null;
-function getUint8Memory0() {
-  if (cachedUint8Memory0 === null || cachedUint8Memory0.byteLength === 0) {
-    cachedUint8Memory0 = new Uint8Array(wasm.memory.buffer);
+var cachedUint8ArrayMemory0 = null;
+function getUint8ArrayMemory0() {
+  if (cachedUint8ArrayMemory0 === null || cachedUint8ArrayMemory0.byteLength === 0) {
+    cachedUint8ArrayMemory0 = new Uint8Array(wasm.memory.buffer);
   }
-  return cachedUint8Memory0;
+  return cachedUint8ArrayMemory0;
 }
 function getStringFromWasm0(ptr, len) {
   ptr = ptr >>> 0;
-  return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
+  return cachedTextDecoder.decode(getUint8ArrayMemory0().subarray(ptr, ptr + len));
 }
 function version() {
   let deferred1_0;
@@ -594,28 +618,23 @@ function version() {
   try {
     const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
     wasm.version(retptr);
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+    var r1 = getDataViewMemory0().getInt32(retptr + 4 * 1, true);
     deferred1_0 = r0;
     deferred1_1 = r1;
     return getStringFromWasm0(r0, r1);
   } finally {
     wasm.__wbindgen_add_to_stack_pointer(16);
-    wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+    wasm.__wbindgen_export_1(deferred1_0, deferred1_1, 1);
   }
+}
+function reserve_memory(extra_bytes_count) {
+  wasm.reserve_memory(extra_bytes_count);
 }
 function _assertClass(instance2, klass) {
   if (!(instance2 instanceof klass)) {
     throw new Error(`expected instance of ${klass.name}`);
   }
-  return instance2.ptr;
-}
-var cachedFloat32Memory0 = null;
-function getFloat32Memory0() {
-  if (cachedFloat32Memory0 === null || cachedFloat32Memory0.byteLength === 0) {
-    cachedFloat32Memory0 = new Float32Array(wasm.memory.buffer);
-  }
-  return cachedFloat32Memory0;
 }
 var stack_pointer = 128;
 function addBorrowedObject(obj) {
@@ -623,50 +642,133 @@ function addBorrowedObject(obj) {
   heap[--stack_pointer] = obj;
   return stack_pointer;
 }
+var cachedInt32ArrayMemory0 = null;
+function getInt32ArrayMemory0() {
+  if (cachedInt32ArrayMemory0 === null || cachedInt32ArrayMemory0.byteLength === 0) {
+    cachedInt32ArrayMemory0 = new Int32Array(wasm.memory.buffer);
+  }
+  return cachedInt32ArrayMemory0;
+}
+function getArrayI32FromWasm0(ptr, len) {
+  ptr = ptr >>> 0;
+  return getInt32ArrayMemory0().subarray(ptr / 4, ptr / 4 + len);
+}
+var cachedFloat32ArrayMemory0 = null;
+function getFloat32ArrayMemory0() {
+  if (cachedFloat32ArrayMemory0 === null || cachedFloat32ArrayMemory0.byteLength === 0) {
+    cachedFloat32ArrayMemory0 = new Float32Array(wasm.memory.buffer);
+  }
+  return cachedFloat32ArrayMemory0;
+}
 function getArrayF32FromWasm0(ptr, len) {
   ptr = ptr >>> 0;
-  return getFloat32Memory0().subarray(ptr / 4, ptr / 4 + len);
+  return getFloat32ArrayMemory0().subarray(ptr / 4, ptr / 4 + len);
 }
-var cachedUint32Memory0 = null;
-function getUint32Memory0() {
-  if (cachedUint32Memory0 === null || cachedUint32Memory0.byteLength === 0) {
-    cachedUint32Memory0 = new Uint32Array(wasm.memory.buffer);
+var cachedUint32ArrayMemory0 = null;
+function getUint32ArrayMemory0() {
+  if (cachedUint32ArrayMemory0 === null || cachedUint32ArrayMemory0.byteLength === 0) {
+    cachedUint32ArrayMemory0 = new Uint32Array(wasm.memory.buffer);
   }
-  return cachedUint32Memory0;
+  return cachedUint32ArrayMemory0;
 }
 function getArrayU32FromWasm0(ptr, len) {
   ptr = ptr >>> 0;
-  return getUint32Memory0().subarray(ptr / 4, ptr / 4 + len);
+  return getUint32ArrayMemory0().subarray(ptr / 4, ptr / 4 + len);
 }
 var WASM_VECTOR_LEN = 0;
-function passArrayF32ToWasm0(arg, malloc) {
-  const ptr = malloc(arg.length * 4, 4) >>> 0;
-  getFloat32Memory0().set(arg, ptr / 4);
-  WASM_VECTOR_LEN = arg.length;
-  return ptr;
-}
 function passArray32ToWasm0(arg, malloc) {
   const ptr = malloc(arg.length * 4, 4) >>> 0;
-  getUint32Memory0().set(arg, ptr / 4);
+  getUint32ArrayMemory0().set(arg, ptr / 4);
   WASM_VECTOR_LEN = arg.length;
   return ptr;
 }
-function handleError(f, args) {
-  try {
-    return f.apply(this, args);
-  } catch (e) {
-    wasm.__wbindgen_exn_store(addHeapObject(e));
-  }
+function passArrayF32ToWasm0(arg, malloc) {
+  const ptr = malloc(arg.length * 4, 4) >>> 0;
+  getFloat32ArrayMemory0().set(arg, ptr / 4);
+  WASM_VECTOR_LEN = arg.length;
+  return ptr;
 }
-var RawRigidBodyType = Object.freeze({ Dynamic: 0, "0": "Dynamic", Fixed: 1, "1": "Fixed", KinematicPositionBased: 2, "2": "KinematicPositionBased", KinematicVelocityBased: 3, "3": "KinematicVelocityBased" });
-var RawShapeType = Object.freeze({ Ball: 0, "0": "Ball", Cuboid: 1, "1": "Cuboid", Capsule: 2, "2": "Capsule", Segment: 3, "3": "Segment", Polyline: 4, "4": "Polyline", Triangle: 5, "5": "Triangle", TriMesh: 6, "6": "TriMesh", HeightField: 7, "7": "HeightField", Compound: 8, "8": "Compound", ConvexPolygon: 9, "9": "ConvexPolygon", RoundCuboid: 10, "10": "RoundCuboid", RoundTriangle: 11, "11": "RoundTriangle", RoundConvexPolygon: 12, "12": "RoundConvexPolygon", HalfSpace: 13, "13": "HalfSpace" });
-var RawJointType = Object.freeze({ Revolute: 0, "0": "Revolute", Fixed: 1, "1": "Fixed", Prismatic: 2, "2": "Prismatic", Rope: 3, "3": "Rope", Spring: 4, "4": "Spring", Generic: 5, "5": "Generic" });
-var RawMotorModel = Object.freeze({ AccelerationBased: 0, "0": "AccelerationBased", ForceBased: 1, "1": "ForceBased" });
-var RawFeatureType = Object.freeze({ Vertex: 0, "0": "Vertex", Face: 1, "1": "Face", Unknown: 2, "2": "Unknown" });
-var RawJointAxis = Object.freeze({ LinX: 0, "0": "LinX", LinY: 1, "1": "LinY", AngX: 2, "2": "AngX" });
+var RawFeatureType = Object.freeze({
+  Vertex: 0,
+  "0": "Vertex",
+  Face: 1,
+  "1": "Face",
+  Unknown: 2,
+  "2": "Unknown"
+});
+var RawJointAxis = Object.freeze({
+  LinX: 0,
+  "0": "LinX",
+  LinY: 1,
+  "1": "LinY",
+  AngX: 2,
+  "2": "AngX"
+});
+var RawJointType = Object.freeze({
+  Revolute: 0,
+  "0": "Revolute",
+  Fixed: 1,
+  "1": "Fixed",
+  Prismatic: 2,
+  "2": "Prismatic",
+  Rope: 3,
+  "3": "Rope",
+  Spring: 4,
+  "4": "Spring",
+  Generic: 5,
+  "5": "Generic"
+});
+var RawMotorModel = Object.freeze({
+  AccelerationBased: 0,
+  "0": "AccelerationBased",
+  ForceBased: 1,
+  "1": "ForceBased"
+});
+var RawRigidBodyType = Object.freeze({
+  Dynamic: 0,
+  "0": "Dynamic",
+  Fixed: 1,
+  "1": "Fixed",
+  KinematicPositionBased: 2,
+  "2": "KinematicPositionBased",
+  KinematicVelocityBased: 3,
+  "3": "KinematicVelocityBased"
+});
+var RawShapeType = Object.freeze({
+  Ball: 0,
+  "0": "Ball",
+  Cuboid: 1,
+  "1": "Cuboid",
+  Capsule: 2,
+  "2": "Capsule",
+  Segment: 3,
+  "3": "Segment",
+  Polyline: 4,
+  "4": "Polyline",
+  Triangle: 5,
+  "5": "Triangle",
+  TriMesh: 6,
+  "6": "TriMesh",
+  HeightField: 7,
+  "7": "HeightField",
+  Compound: 8,
+  "8": "Compound",
+  ConvexPolygon: 9,
+  "9": "ConvexPolygon",
+  RoundCuboid: 10,
+  "10": "RoundCuboid",
+  RoundTriangle: 11,
+  "11": "RoundTriangle",
+  RoundConvexPolygon: 12,
+  "12": "RoundConvexPolygon",
+  HalfSpace: 13,
+  "13": "HalfSpace",
+  Voxels: 14,
+  "14": "Voxels"
+});
 var RawBroadPhaseFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawbroadphase_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawbroadphase_free(ptr >>> 0, 1));
 var RawBroadPhase = class _RawBroadPhase {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -683,19 +785,18 @@ var RawBroadPhase = class _RawBroadPhase {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawbroadphase_free(ptr);
+    wasm.__wbg_rawbroadphase_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawbroadphase_new();
     this.__wbg_ptr = ret >>> 0;
+    RawBroadPhaseFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
 };
 var RawCCDSolverFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawccdsolver_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawccdsolver_free(ptr >>> 0, 1));
 var RawCCDSolver = class {
   __destroy_into_raw() {
     const ptr = this.__wbg_ptr;
@@ -705,19 +806,18 @@ var RawCCDSolver = class {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawccdsolver_free(ptr);
+    wasm.__wbg_rawccdsolver_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawccdsolver_new();
     this.__wbg_ptr = ret >>> 0;
+    RawCCDSolverFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
 };
 var RawCharacterCollisionFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcharactercollision_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcharactercollision_free(ptr >>> 0, 1));
 var RawCharacterCollision = class {
   __destroy_into_raw() {
     const ptr = this.__wbg_ptr;
@@ -727,67 +827,66 @@ var RawCharacterCollision = class {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawcharactercollision_free(ptr);
+    wasm.__wbg_rawcharactercollision_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawcharactercollision_new();
     this.__wbg_ptr = ret >>> 0;
+    RawCharacterCollisionFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   handle() {
     const ret = wasm.rawcharactercollision_handle(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   translationDeltaApplied() {
     const ret = wasm.rawcharactercollision_translationDeltaApplied(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   translationDeltaRemaining() {
     const ret = wasm.rawcharactercollision_translationDeltaRemaining(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   toi() {
     const ret = wasm.rawcharactercollision_toi(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   worldWitness1() {
     const ret = wasm.rawcharactercollision_worldWitness1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   worldWitness2() {
     const ret = wasm.rawcharactercollision_worldWitness2(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   worldNormal1() {
     const ret = wasm.rawcharactercollision_worldNormal1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   worldNormal2() {
     const ret = wasm.rawcharactercollision_worldNormal2(this.__wbg_ptr);
     return RawVector.__wrap(ret);
@@ -795,7 +894,7 @@ var RawCharacterCollision = class {
 };
 var RawColliderSetFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcolliderset_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcolliderset_free(ptr >>> 0, 1));
 var RawColliderSet = class _RawColliderSet {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -812,200 +911,236 @@ var RawColliderSet = class _RawColliderSet {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawcolliderset_free(ptr);
+    wasm.__wbg_rawcolliderset_free(ptr, 0);
   }
   /**
-  * The world-space translation of this collider.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The world-space translation of this collider.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   coTranslation(handle) {
     const ret = wasm.rawcolliderset_coTranslation(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The world-space orientation of this collider.
-  * @param {number} handle
-  * @returns {RawRotation}
-  */
+   * The world-space orientation of this collider.
+   * @param {number} handle
+   * @returns {RawRotation}
+   */
   coRotation(handle) {
     const ret = wasm.rawcolliderset_coRotation(this.__wbg_ptr, handle);
     return RawRotation.__wrap(ret);
   }
   /**
-  * Sets the translation of this collider.
-  *
-  * # Parameters
-  * - `x`: the world-space position of the collider along the `x` axis.
-  * - `y`: the world-space position of the collider along the `y` axis.
-  * - `wakeUp`: forces the collider to wake-up so it is properly affected by forces if it
-  * wasn't moving before modifying its position.
-  * @param {number} handle
-  * @param {number} x
-  * @param {number} y
-  */
+   * Sets the translation of this collider.
+   *
+   * # Parameters
+   * - `x`: the world-space position of the collider along the `x` axis.
+   * - `y`: the world-space position of the collider along the `y` axis.
+   * - `wakeUp`: forces the collider to wake-up so it is properly affected by forces if it
+   * wasn't moving before modifying its position.
+   * @param {number} handle
+   * @param {number} x
+   * @param {number} y
+   */
   coSetTranslation(handle, x, y) {
     wasm.rawcolliderset_coSetTranslation(this.__wbg_ptr, handle, x, y);
   }
   /**
-  * @param {number} handle
-  * @param {number} x
-  * @param {number} y
-  */
+   * @param {number} handle
+   * @param {number} x
+   * @param {number} y
+   */
   coSetTranslationWrtParent(handle, x, y) {
     wasm.rawcolliderset_coSetTranslationWrtParent(this.__wbg_ptr, handle, x, y);
   }
   /**
-  * Sets the rotation angle of this collider.
-  *
-  * # Parameters
-  * - `angle`: the rotation angle, in radians.
-  * - `wakeUp`: forces the collider to wake-up so it is properly affected by forces if it
-  * wasn't moving before modifying its position.
-  * @param {number} handle
-  * @param {number} angle
-  */
+   * Sets the rotation angle of this collider.
+   *
+   * # Parameters
+   * - `angle`: the rotation angle, in radians.
+   * - `wakeUp`: forces the collider to wake-up so it is properly affected by forces if it
+   * wasn't moving before modifying its position.
+   * @param {number} handle
+   * @param {number} angle
+   */
   coSetRotation(handle, angle) {
     wasm.rawcolliderset_coSetRotation(this.__wbg_ptr, handle, angle);
   }
   /**
-  * @param {number} handle
-  * @param {number} angle
-  */
+   * @param {number} handle
+   * @param {number} angle
+   */
   coSetRotationWrtParent(handle, angle) {
     wasm.rawcolliderset_coSetRotationWrtParent(this.__wbg_ptr, handle, angle);
   }
   /**
-  * Is this collider a sensor?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Is this collider a sensor?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   coIsSensor(handle) {
     const ret = wasm.rawcolliderset_coIsSensor(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * The type of the shape of this collider.
-  * @param {number} handle
-  * @returns {RawShapeType}
-  */
+   * The type of the shape of this collider.
+   * @param {number} handle
+   * @returns {RawShapeType}
+   */
   coShapeType(handle) {
     const ret = wasm.rawcolliderset_coShapeType(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * @param {number} handle
-  * @returns {RawVector | undefined}
-  */
+   * @param {number} handle
+   * @returns {RawVector | undefined}
+   */
   coHalfspaceNormal(handle) {
     const ret = wasm.rawcolliderset_coHalfspaceNormal(this.__wbg_ptr, handle);
     return ret === 0 ? void 0 : RawVector.__wrap(ret);
   }
   /**
-  * The half-extents of this collider if it is has a cuboid shape.
-  * @param {number} handle
-  * @returns {RawVector | undefined}
-  */
+   * The half-extents of this collider if it is has a cuboid shape.
+   * @param {number} handle
+   * @returns {RawVector | undefined}
+   */
   coHalfExtents(handle) {
     const ret = wasm.rawcolliderset_coHalfExtents(this.__wbg_ptr, handle);
     return ret === 0 ? void 0 : RawVector.__wrap(ret);
   }
   /**
-  * Set the half-extents of this collider if it has a cuboid shape.
-  * @param {number} handle
-  * @param {RawVector} newHalfExtents
-  */
+   * Set the half-extents of this collider if it has a cuboid shape.
+   * @param {number} handle
+   * @param {RawVector} newHalfExtents
+   */
   coSetHalfExtents(handle, newHalfExtents) {
     _assertClass(newHalfExtents, RawVector);
     wasm.rawcolliderset_coSetHalfExtents(this.__wbg_ptr, handle, newHalfExtents.__wbg_ptr);
   }
   /**
-  * The radius of this collider if it is a ball, capsule, cylinder, or cone shape.
-  * @param {number} handle
-  * @returns {number | undefined}
-  */
+   * The radius of this collider if it is a ball, capsule, cylinder, or cone shape.
+   * @param {number} handle
+   * @returns {number | undefined}
+   */
   coRadius(handle) {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawcolliderset_coRadius(retptr, this.__wbg_ptr, handle);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getFloat32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawcolliderset_coRadius(this.__wbg_ptr, handle);
+    return ret === 4294967297 ? void 0 : ret;
   }
   /**
-  * Set the radius of this collider if it is a ball, capsule, cylinder, or cone shape.
-  * @param {number} handle
-  * @param {number} newRadius
-  */
+   * Set the radius of this collider if it is a ball, capsule, cylinder, or cone shape.
+   * @param {number} handle
+   * @param {number} newRadius
+   */
   coSetRadius(handle, newRadius) {
     wasm.rawcolliderset_coSetRadius(this.__wbg_ptr, handle, newRadius);
   }
   /**
-  * The half height of this collider if it is a capsule, cylinder, or cone shape.
-  * @param {number} handle
-  * @returns {number | undefined}
-  */
+   * The half height of this collider if it is a capsule, cylinder, or cone shape.
+   * @param {number} handle
+   * @returns {number | undefined}
+   */
   coHalfHeight(handle) {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawcolliderset_coHalfHeight(retptr, this.__wbg_ptr, handle);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getFloat32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawcolliderset_coHalfHeight(this.__wbg_ptr, handle);
+    return ret === 4294967297 ? void 0 : ret;
   }
   /**
-  * Set the half height of this collider if it is a capsule, cylinder, or cone shape.
-  * @param {number} handle
-  * @param {number} newHalfheight
-  */
+   * Set the half height of this collider if it is a capsule, cylinder, or cone shape.
+   * @param {number} handle
+   * @param {number} newHalfheight
+   */
   coSetHalfHeight(handle, newHalfheight) {
     wasm.rawcolliderset_coSetHalfHeight(this.__wbg_ptr, handle, newHalfheight);
   }
   /**
-  * The radius of the round edges of this collider.
-  * @param {number} handle
-  * @returns {number | undefined}
-  */
+   * The radius of the round edges of this collider.
+   * @param {number} handle
+   * @returns {number | undefined}
+   */
   coRoundRadius(handle) {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawcolliderset_coRoundRadius(retptr, this.__wbg_ptr, handle);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getFloat32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawcolliderset_coRoundRadius(this.__wbg_ptr, handle);
+    return ret === 4294967297 ? void 0 : ret;
   }
   /**
-  * Set the radius of the round edges of this collider.
-  * @param {number} handle
-  * @param {number} newBorderRadius
-  */
+   * Set the radius of the round edges of this collider.
+   * @param {number} handle
+   * @param {number} newBorderRadius
+   */
   coSetRoundRadius(handle, newBorderRadius) {
     wasm.rawcolliderset_coSetRoundRadius(this.__wbg_ptr, handle, newBorderRadius);
   }
   /**
-  * The vertices of this triangle mesh, polyline, convex polyhedron, segment, triangle or convex polyhedron, if it is one.
-  * @param {number} handle
-  * @returns {Float32Array | undefined}
-  */
+   * @param {number} handle
+   * @returns {Int32Array | undefined}
+   */
+  coVoxelData(handle) {
+    try {
+      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+      wasm.rawcolliderset_coVoxelData(retptr, this.__wbg_ptr, handle);
+      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+      var r1 = getDataViewMemory0().getInt32(retptr + 4 * 1, true);
+      let v1;
+      if (r0 !== 0) {
+        v1 = getArrayI32FromWasm0(r0, r1).slice();
+        wasm.__wbindgen_export_1(r0, r1 * 4, 4);
+      }
+      return v1;
+    } finally {
+      wasm.__wbindgen_add_to_stack_pointer(16);
+    }
+  }
+  /**
+   * @param {number} handle
+   * @returns {RawVector | undefined}
+   */
+  coVoxelSize(handle) {
+    const ret = wasm.rawcolliderset_coVoxelSize(this.__wbg_ptr, handle);
+    return ret === 0 ? void 0 : RawVector.__wrap(ret);
+  }
+  /**
+   * @param {number} handle
+   * @param {number} ix
+   * @param {number} iy
+   * @param {boolean} filled
+   */
+  coSetVoxel(handle, ix, iy, filled) {
+    wasm.rawcolliderset_coSetVoxel(this.__wbg_ptr, handle, ix, iy, filled);
+  }
+  /**
+   * @param {number} handle1
+   * @param {number} handle2
+   * @param {number} ix
+   * @param {number} iy
+   * @param {number} shift_x
+   * @param {number} shift_y
+   */
+  coPropagateVoxelChange(handle1, handle2, ix, iy, shift_x, shift_y) {
+    wasm.rawcolliderset_coPropagateVoxelChange(this.__wbg_ptr, handle1, handle2, ix, iy, shift_x, shift_y);
+  }
+  /**
+   * @param {number} handle1
+   * @param {number} handle2
+   * @param {number} shift_x
+   * @param {number} shift_y
+   */
+  coCombineVoxelStates(handle1, handle2, shift_x, shift_y) {
+    wasm.rawcolliderset_coCombineVoxelStates(this.__wbg_ptr, handle1, handle2, shift_x, shift_y);
+  }
+  /**
+   * The vertices of this triangle mesh, polyline, convex polyhedron, segment, triangle or convex polyhedron, if it is one.
+   * @param {number} handle
+   * @returns {Float32Array | undefined}
+   */
   coVertices(handle) {
     try {
       const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
       wasm.rawcolliderset_coVertices(retptr, this.__wbg_ptr, handle);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getInt32Memory0()[retptr / 4 + 1];
+      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+      var r1 = getDataViewMemory0().getInt32(retptr + 4 * 1, true);
       let v1;
       if (r0 !== 0) {
         v1 = getArrayF32FromWasm0(r0, r1).slice();
-        wasm.__wbindgen_free(r0, r1 * 4, 4);
+        wasm.__wbindgen_export_1(r0, r1 * 4, 4);
       }
       return v1;
     } finally {
@@ -1013,20 +1148,20 @@ var RawColliderSet = class _RawColliderSet {
     }
   }
   /**
-  * The indices of this triangle mesh, polyline, or convex polyhedron, if it is one.
-  * @param {number} handle
-  * @returns {Uint32Array | undefined}
-  */
+   * The indices of this triangle mesh, polyline, or convex polyhedron, if it is one.
+   * @param {number} handle
+   * @returns {Uint32Array | undefined}
+   */
   coIndices(handle) {
     try {
       const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
       wasm.rawcolliderset_coIndices(retptr, this.__wbg_ptr, handle);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getInt32Memory0()[retptr / 4 + 1];
+      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+      var r1 = getDataViewMemory0().getInt32(retptr + 4 * 1, true);
       let v1;
       if (r0 !== 0) {
         v1 = getArrayU32FromWasm0(r0, r1).slice();
-        wasm.__wbindgen_free(r0, r1 * 4, 4);
+        wasm.__wbindgen_export_1(r0, r1 * 4, 4);
       }
       return v1;
     } finally {
@@ -1034,35 +1169,28 @@ var RawColliderSet = class _RawColliderSet {
     }
   }
   /**
-  * @param {number} handle
-  * @returns {number | undefined}
-  */
+   * @param {number} handle
+   * @returns {number | undefined}
+   */
   coTriMeshFlags(handle) {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawcolliderset_coTriMeshFlags(retptr, this.__wbg_ptr, handle);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getInt32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1 >>> 0;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawcolliderset_coTriMeshFlags(this.__wbg_ptr, handle);
+    return ret === 4294967297 ? void 0 : ret;
   }
   /**
-  * The height of this heightfield if it is one.
-  * @param {number} handle
-  * @returns {Float32Array | undefined}
-  */
+   * The height of this heightfield if it is one.
+   * @param {number} handle
+   * @returns {Float32Array | undefined}
+   */
   coHeightfieldHeights(handle) {
     try {
       const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
       wasm.rawcolliderset_coHeightfieldHeights(retptr, this.__wbg_ptr, handle);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getInt32Memory0()[retptr / 4 + 1];
+      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+      var r1 = getDataViewMemory0().getInt32(retptr + 4 * 1, true);
       let v1;
       if (r0 !== 0) {
         v1 = getArrayF32FromWasm0(r0, r1).slice();
-        wasm.__wbindgen_free(r0, r1 * 4, 4);
+        wasm.__wbindgen_export_1(r0, r1 * 4, 4);
       }
       return v1;
     } finally {
@@ -1070,181 +1198,181 @@ var RawColliderSet = class _RawColliderSet {
     }
   }
   /**
-  * The scaling factor applied of this heightfield if it is one.
-  * @param {number} handle
-  * @returns {RawVector | undefined}
-  */
+   * The scaling factor applied of this heightfield if it is one.
+   * @param {number} handle
+   * @returns {RawVector | undefined}
+   */
   coHeightfieldScale(handle) {
     const ret = wasm.rawcolliderset_coHeightfieldScale(this.__wbg_ptr, handle);
     return ret === 0 ? void 0 : RawVector.__wrap(ret);
   }
   /**
-  * The unique integer identifier of the collider this collider is attached to.
-  * @param {number} handle
-  * @returns {number | undefined}
-  */
+   * The unique integer identifier of the collider this collider is attached to.
+   * @param {number} handle
+   * @returns {number | undefined}
+   */
   coParent(handle) {
     try {
       const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
       wasm.rawcolliderset_coParent(retptr, this.__wbg_ptr, handle);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r2 = getFloat64Memory0()[retptr / 8 + 1];
+      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+      var r2 = getDataViewMemory0().getFloat64(retptr + 8 * 1, true);
       return r0 === 0 ? void 0 : r2;
     } finally {
       wasm.__wbindgen_add_to_stack_pointer(16);
     }
   }
   /**
-  * @param {number} handle
-  * @param {boolean} enabled
-  */
+   * @param {number} handle
+   * @param {boolean} enabled
+   */
   coSetEnabled(handle, enabled) {
     wasm.rawcolliderset_coSetEnabled(this.__wbg_ptr, handle, enabled);
   }
   /**
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * @param {number} handle
+   * @returns {boolean}
+   */
   coIsEnabled(handle) {
     const ret = wasm.rawcolliderset_coIsEnabled(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * @param {number} handle
-  * @param {number} contact_skin
-  */
+   * @param {number} handle
+   * @param {number} contact_skin
+   */
   coSetContactSkin(handle, contact_skin) {
     wasm.rawcolliderset_coSetContactSkin(this.__wbg_ptr, handle, contact_skin);
   }
   /**
-  * @param {number} handle
-  * @returns {number}
-  */
+   * @param {number} handle
+   * @returns {number}
+   */
   coContactSkin(handle) {
     const ret = wasm.rawcolliderset_coContactSkin(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The friction coefficient of this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The friction coefficient of this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coFriction(handle) {
     const ret = wasm.rawcolliderset_coFriction(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The restitution coefficient of this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The restitution coefficient of this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coRestitution(handle) {
     const ret = wasm.rawcolliderset_coRestitution(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The density of this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The density of this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coDensity(handle) {
     const ret = wasm.rawcolliderset_coDensity(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The mass of this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The mass of this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coMass(handle) {
     const ret = wasm.rawcolliderset_coMass(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The volume of this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The volume of this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coVolume(handle) {
     const ret = wasm.rawcolliderset_coVolume(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The collision groups of this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The collision groups of this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coCollisionGroups(handle) {
     const ret = wasm.rawcolliderset_coCollisionGroups(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * The solver groups of this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The solver groups of this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coSolverGroups(handle) {
     const ret = wasm.rawcolliderset_coSolverGroups(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * The physics hooks enabled for this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The physics hooks enabled for this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coActiveHooks(handle) {
     const ret = wasm.rawcolliderset_coActiveHooks(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * The collision types enabled for this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The collision types enabled for this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coActiveCollisionTypes(handle) {
     const ret = wasm.rawcolliderset_coActiveCollisionTypes(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The events enabled for this collider.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The events enabled for this collider.
+   * @param {number} handle
+   * @returns {number}
+   */
   coActiveEvents(handle) {
     const ret = wasm.rawcolliderset_coActiveEvents(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * The total force magnitude beyond which a contact force event can be emitted.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The total force magnitude beyond which a contact force event can be emitted.
+   * @param {number} handle
+   * @returns {number}
+   */
   coContactForceEventThreshold(handle) {
     const ret = wasm.rawcolliderset_coContactForceEventThreshold(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {RawVector} point
-  * @returns {boolean}
-  */
+   * @param {number} handle
+   * @param {RawVector} point
+   * @returns {boolean}
+   */
   coContainsPoint(handle, point) {
     _assertClass(point, RawVector);
     const ret = wasm.rawcolliderset_coContainsPoint(this.__wbg_ptr, handle, point.__wbg_ptr);
     return ret !== 0;
   }
   /**
-  * @param {number} handle
-  * @param {RawVector} colliderVel
-  * @param {RawShape} shape2
-  * @param {RawVector} shape2Pos
-  * @param {RawRotation} shape2Rot
-  * @param {RawVector} shape2Vel
-  * @param {number} target_distance
-  * @param {number} maxToi
-  * @param {boolean} stop_at_penetration
-  * @returns {RawShapeCastHit | undefined}
-  */
+   * @param {number} handle
+   * @param {RawVector} colliderVel
+   * @param {RawShape} shape2
+   * @param {RawVector} shape2Pos
+   * @param {RawRotation} shape2Rot
+   * @param {RawVector} shape2Vel
+   * @param {number} target_distance
+   * @param {number} maxToi
+   * @param {boolean} stop_at_penetration
+   * @returns {RawShapeCastHit | undefined}
+   */
   coCastShape(handle, colliderVel, shape2, shape2Pos, shape2Rot, shape2Vel, target_distance, maxToi, stop_at_penetration) {
     _assertClass(colliderVel, RawVector);
     _assertClass(shape2, RawShape);
@@ -1255,15 +1383,15 @@ var RawColliderSet = class _RawColliderSet {
     return ret === 0 ? void 0 : RawShapeCastHit.__wrap(ret);
   }
   /**
-  * @param {number} handle
-  * @param {RawVector} collider1Vel
-  * @param {number} collider2handle
-  * @param {RawVector} collider2Vel
-  * @param {number} target_distance
-  * @param {number} max_toi
-  * @param {boolean} stop_at_penetration
-  * @returns {RawColliderShapeCastHit | undefined}
-  */
+   * @param {number} handle
+   * @param {RawVector} collider1Vel
+   * @param {number} collider2handle
+   * @param {RawVector} collider2Vel
+   * @param {number} target_distance
+   * @param {number} max_toi
+   * @param {boolean} stop_at_penetration
+   * @returns {RawColliderShapeCastHit | undefined}
+   */
   coCastCollider(handle, collider1Vel, collider2handle, collider2Vel, target_distance, max_toi, stop_at_penetration) {
     _assertClass(collider1Vel, RawVector);
     _assertClass(collider2Vel, RawVector);
@@ -1271,12 +1399,12 @@ var RawColliderSet = class _RawColliderSet {
     return ret === 0 ? void 0 : RawColliderShapeCastHit.__wrap(ret);
   }
   /**
-  * @param {number} handle
-  * @param {RawShape} shape2
-  * @param {RawVector} shapePos2
-  * @param {RawRotation} shapeRot2
-  * @returns {boolean}
-  */
+   * @param {number} handle
+   * @param {RawShape} shape2
+   * @param {RawVector} shapePos2
+   * @param {RawRotation} shapeRot2
+   * @returns {boolean}
+   */
   coIntersectsShape(handle, shape2, shapePos2, shapeRot2) {
     _assertClass(shape2, RawShape);
     _assertClass(shapePos2, RawVector);
@@ -1285,13 +1413,13 @@ var RawColliderSet = class _RawColliderSet {
     return ret !== 0;
   }
   /**
-  * @param {number} handle
-  * @param {RawShape} shape2
-  * @param {RawVector} shapePos2
-  * @param {RawRotation} shapeRot2
-  * @param {number} prediction
-  * @returns {RawShapeContact | undefined}
-  */
+   * @param {number} handle
+   * @param {RawShape} shape2
+   * @param {RawVector} shapePos2
+   * @param {RawRotation} shapeRot2
+   * @param {number} prediction
+   * @returns {RawShapeContact | undefined}
+   */
   coContactShape(handle, shape2, shapePos2, shapeRot2, prediction) {
     _assertClass(shape2, RawShape);
     _assertClass(shapePos2, RawVector);
@@ -1300,33 +1428,33 @@ var RawColliderSet = class _RawColliderSet {
     return ret === 0 ? void 0 : RawShapeContact.__wrap(ret);
   }
   /**
-  * @param {number} handle
-  * @param {number} collider2handle
-  * @param {number} prediction
-  * @returns {RawShapeContact | undefined}
-  */
+   * @param {number} handle
+   * @param {number} collider2handle
+   * @param {number} prediction
+   * @returns {RawShapeContact | undefined}
+   */
   coContactCollider(handle, collider2handle, prediction) {
     const ret = wasm.rawcolliderset_coContactCollider(this.__wbg_ptr, handle, collider2handle, prediction);
     return ret === 0 ? void 0 : RawShapeContact.__wrap(ret);
   }
   /**
-  * @param {number} handle
-  * @param {RawVector} point
-  * @param {boolean} solid
-  * @returns {RawPointProjection}
-  */
+   * @param {number} handle
+   * @param {RawVector} point
+   * @param {boolean} solid
+   * @returns {RawPointProjection}
+   */
   coProjectPoint(handle, point, solid) {
     _assertClass(point, RawVector);
     const ret = wasm.rawcolliderset_coProjectPoint(this.__wbg_ptr, handle, point.__wbg_ptr, solid);
     return RawPointProjection.__wrap(ret);
   }
   /**
-  * @param {number} handle
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @returns {boolean}
-  */
+   * @param {number} handle
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @returns {boolean}
+   */
   coIntersectsRay(handle, rayOrig, rayDir, maxToi) {
     _assertClass(rayOrig, RawVector);
     _assertClass(rayDir, RawVector);
@@ -1334,13 +1462,13 @@ var RawColliderSet = class _RawColliderSet {
     return ret !== 0;
   }
   /**
-  * @param {number} handle
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @param {boolean} solid
-  * @returns {number}
-  */
+   * @param {number} handle
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @returns {number}
+   */
   coCastRay(handle, rayOrig, rayDir, maxToi, solid) {
     _assertClass(rayOrig, RawVector);
     _assertClass(rayDir, RawVector);
@@ -1348,13 +1476,13 @@ var RawColliderSet = class _RawColliderSet {
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @param {boolean} solid
-  * @returns {RawRayIntersection | undefined}
-  */
+   * @param {number} handle
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @returns {RawRayIntersection | undefined}
+   */
   coCastRayAndGetNormal(handle, rayOrig, rayDir, maxToi, solid) {
     _assertClass(rayOrig, RawVector);
     _assertClass(rayDir, RawVector);
@@ -1362,179 +1490,178 @@ var RawColliderSet = class _RawColliderSet {
     return ret === 0 ? void 0 : RawRayIntersection.__wrap(ret);
   }
   /**
-  * @param {number} handle
-  * @param {boolean} is_sensor
-  */
+   * @param {number} handle
+   * @param {boolean} is_sensor
+   */
   coSetSensor(handle, is_sensor) {
     wasm.rawcolliderset_coSetSensor(this.__wbg_ptr, handle, is_sensor);
   }
   /**
-  * @param {number} handle
-  * @param {number} restitution
-  */
+   * @param {number} handle
+   * @param {number} restitution
+   */
   coSetRestitution(handle, restitution) {
     wasm.rawcolliderset_coSetRestitution(this.__wbg_ptr, handle, restitution);
   }
   /**
-  * @param {number} handle
-  * @param {number} friction
-  */
+   * @param {number} handle
+   * @param {number} friction
+   */
   coSetFriction(handle, friction) {
     wasm.rawcolliderset_coSetFriction(this.__wbg_ptr, handle, friction);
   }
   /**
-  * @param {number} handle
-  * @returns {number}
-  */
+   * @param {number} handle
+   * @returns {number}
+   */
   coFrictionCombineRule(handle) {
     const ret = wasm.rawcolliderset_coFrictionCombineRule(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * @param {number} handle
-  * @param {number} rule
-  */
+   * @param {number} handle
+   * @param {number} rule
+   */
   coSetFrictionCombineRule(handle, rule) {
     wasm.rawcolliderset_coSetFrictionCombineRule(this.__wbg_ptr, handle, rule);
   }
   /**
-  * @param {number} handle
-  * @returns {number}
-  */
+   * @param {number} handle
+   * @returns {number}
+   */
   coRestitutionCombineRule(handle) {
     const ret = wasm.rawcolliderset_coRestitutionCombineRule(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * @param {number} handle
-  * @param {number} rule
-  */
+   * @param {number} handle
+   * @param {number} rule
+   */
   coSetRestitutionCombineRule(handle, rule) {
     wasm.rawcolliderset_coSetRestitutionCombineRule(this.__wbg_ptr, handle, rule);
   }
   /**
-  * @param {number} handle
-  * @param {number} groups
-  */
+   * @param {number} handle
+   * @param {number} groups
+   */
   coSetCollisionGroups(handle, groups) {
     wasm.rawcolliderset_coSetCollisionGroups(this.__wbg_ptr, handle, groups);
   }
   /**
-  * @param {number} handle
-  * @param {number} groups
-  */
+   * @param {number} handle
+   * @param {number} groups
+   */
   coSetSolverGroups(handle, groups) {
     wasm.rawcolliderset_coSetSolverGroups(this.__wbg_ptr, handle, groups);
   }
   /**
-  * @param {number} handle
-  * @param {number} hooks
-  */
+   * @param {number} handle
+   * @param {number} hooks
+   */
   coSetActiveHooks(handle, hooks) {
     wasm.rawcolliderset_coSetActiveHooks(this.__wbg_ptr, handle, hooks);
   }
   /**
-  * @param {number} handle
-  * @param {number} events
-  */
+   * @param {number} handle
+   * @param {number} events
+   */
   coSetActiveEvents(handle, events) {
     wasm.rawcolliderset_coSetActiveEvents(this.__wbg_ptr, handle, events);
   }
   /**
-  * @param {number} handle
-  * @param {number} types
-  */
+   * @param {number} handle
+   * @param {number} types
+   */
   coSetActiveCollisionTypes(handle, types) {
     wasm.rawcolliderset_coSetActiveCollisionTypes(this.__wbg_ptr, handle, types);
   }
   /**
-  * @param {number} handle
-  * @param {RawShape} shape
-  */
+   * @param {number} handle
+   * @param {RawShape} shape
+   */
   coSetShape(handle, shape) {
     _assertClass(shape, RawShape);
     wasm.rawcolliderset_coSetShape(this.__wbg_ptr, handle, shape.__wbg_ptr);
   }
   /**
-  * @param {number} handle
-  * @param {number} threshold
-  */
+   * @param {number} handle
+   * @param {number} threshold
+   */
   coSetContactForceEventThreshold(handle, threshold) {
     wasm.rawcolliderset_coSetContactForceEventThreshold(this.__wbg_ptr, handle, threshold);
   }
   /**
-  * @param {number} handle
-  * @param {number} density
-  */
+   * @param {number} handle
+   * @param {number} density
+   */
   coSetDensity(handle, density) {
     wasm.rawcolliderset_coSetDensity(this.__wbg_ptr, handle, density);
   }
   /**
-  * @param {number} handle
-  * @param {number} mass
-  */
+   * @param {number} handle
+   * @param {number} mass
+   */
   coSetMass(handle, mass) {
     wasm.rawcolliderset_coSetMass(this.__wbg_ptr, handle, mass);
   }
   /**
-  * @param {number} handle
-  * @param {number} mass
-  * @param {RawVector} centerOfMass
-  * @param {number} principalAngularInertia
-  */
+   * @param {number} handle
+   * @param {number} mass
+   * @param {RawVector} centerOfMass
+   * @param {number} principalAngularInertia
+   */
   coSetMassProperties(handle, mass, centerOfMass, principalAngularInertia) {
     _assertClass(centerOfMass, RawVector);
     wasm.rawcolliderset_coSetMassProperties(this.__wbg_ptr, handle, mass, centerOfMass.__wbg_ptr, principalAngularInertia);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawcolliderset_new();
     this.__wbg_ptr = ret >>> 0;
+    RawColliderSetFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   len() {
     const ret = wasm.rawcolliderset_len(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * @param {number} handle
+   * @returns {boolean}
+   */
   contains(handle) {
     const ret = wasm.rawcolliderset_contains(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * @param {boolean} enabled
-  * @param {RawShape} shape
-  * @param {RawVector} translation
-  * @param {RawRotation} rotation
-  * @param {number} massPropsMode
-  * @param {number} mass
-  * @param {RawVector} centerOfMass
-  * @param {number} principalAngularInertia
-  * @param {number} density
-  * @param {number} friction
-  * @param {number} restitution
-  * @param {number} frictionCombineRule
-  * @param {number} restitutionCombineRule
-  * @param {boolean} isSensor
-  * @param {number} collisionGroups
-  * @param {number} solverGroups
-  * @param {number} activeCollisionTypes
-  * @param {number} activeHooks
-  * @param {number} activeEvents
-  * @param {number} contactForceEventThreshold
-  * @param {number} contactSkin
-  * @param {boolean} hasParent
-  * @param {number} parent
-  * @param {RawRigidBodySet} bodies
-  * @returns {number | undefined}
-  */
+   * @param {boolean} enabled
+   * @param {RawShape} shape
+   * @param {RawVector} translation
+   * @param {RawRotation} rotation
+   * @param {number} massPropsMode
+   * @param {number} mass
+   * @param {RawVector} centerOfMass
+   * @param {number} principalAngularInertia
+   * @param {number} density
+   * @param {number} friction
+   * @param {number} restitution
+   * @param {number} frictionCombineRule
+   * @param {number} restitutionCombineRule
+   * @param {boolean} isSensor
+   * @param {number} collisionGroups
+   * @param {number} solverGroups
+   * @param {number} activeCollisionTypes
+   * @param {number} activeHooks
+   * @param {number} activeEvents
+   * @param {number} contactForceEventThreshold
+   * @param {number} contactSkin
+   * @param {boolean} hasParent
+   * @param {number} parent
+   * @param {RawRigidBodySet} bodies
+   * @returns {number | undefined}
+   */
   createCollider(enabled, shape, translation, rotation, massPropsMode, mass, centerOfMass, principalAngularInertia, density, friction, restitution, frictionCombineRule, restitutionCombineRule, isSensor, collisionGroups, solverGroups, activeCollisionTypes, activeHooks, activeEvents, contactForceEventThreshold, contactSkin, hasParent, parent, bodies) {
     try {
       const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
@@ -1544,41 +1671,41 @@ var RawColliderSet = class _RawColliderSet {
       _assertClass(centerOfMass, RawVector);
       _assertClass(bodies, RawRigidBodySet);
       wasm.rawcolliderset_createCollider(retptr, this.__wbg_ptr, enabled, shape.__wbg_ptr, translation.__wbg_ptr, rotation.__wbg_ptr, massPropsMode, mass, centerOfMass.__wbg_ptr, principalAngularInertia, density, friction, restitution, frictionCombineRule, restitutionCombineRule, isSensor, collisionGroups, solverGroups, activeCollisionTypes, activeHooks, activeEvents, contactForceEventThreshold, contactSkin, hasParent, parent, bodies.__wbg_ptr);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r2 = getFloat64Memory0()[retptr / 8 + 1];
+      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+      var r2 = getDataViewMemory0().getFloat64(retptr + 8 * 1, true);
       return r0 === 0 ? void 0 : r2;
     } finally {
       wasm.__wbindgen_add_to_stack_pointer(16);
     }
   }
   /**
-  * Removes a collider from this set and wake-up the rigid-body it is attached to.
-  * @param {number} handle
-  * @param {RawIslandManager} islands
-  * @param {RawRigidBodySet} bodies
-  * @param {boolean} wakeUp
-  */
+   * Removes a collider from this set and wake-up the rigid-body it is attached to.
+   * @param {number} handle
+   * @param {RawIslandManager} islands
+   * @param {RawRigidBodySet} bodies
+   * @param {boolean} wakeUp
+   */
   remove(handle, islands, bodies, wakeUp) {
     _assertClass(islands, RawIslandManager);
     _assertClass(bodies, RawRigidBodySet);
     wasm.rawcolliderset_remove(this.__wbg_ptr, handle, islands.__wbg_ptr, bodies.__wbg_ptr, wakeUp);
   }
   /**
-  * Checks if a collider with the given integer handle exists.
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Checks if a collider with the given integer handle exists.
+   * @param {number} handle
+   * @returns {boolean}
+   */
   isHandleValid(handle) {
     const ret = wasm.rawcolliderset_contains(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Applies the given JavaScript function to the integer handle of each collider managed by this collider set.
-  *
-  * # Parameters
-  * - `f(handle)`: the function to apply to the integer handle of each collider managed by this collider set. Called as `f(handle)`.
-  * @param {Function} f
-  */
+   * Applies the given JavaScript function to the integer handle of each collider managed by this collider set.
+   *
+   * # Parameters
+   * - `f(handle)`: the function to apply to the integer handle of each collider managed by this collider set. Called as `f(handle)`.
+   * @param {Function} f
+   */
   forEachColliderHandle(f) {
     try {
       wasm.rawcolliderset_forEachColliderHandle(this.__wbg_ptr, addBorrowedObject(f));
@@ -1589,7 +1716,7 @@ var RawColliderSet = class _RawColliderSet {
 };
 var RawColliderShapeCastHitFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcollidershapecasthit_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcollidershapecasthit_free(ptr >>> 0, 1));
 var RawColliderShapeCastHit = class _RawColliderShapeCastHit {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -1606,46 +1733,46 @@ var RawColliderShapeCastHit = class _RawColliderShapeCastHit {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawcollidershapecasthit_free(ptr);
+    wasm.__wbg_rawcollidershapecasthit_free(ptr, 0);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   colliderHandle() {
     const ret = wasm.rawcollidershapecasthit_colliderHandle(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   time_of_impact() {
     const ret = wasm.rawcollidershapecasthit_time_of_impact(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   witness1() {
     const ret = wasm.rawcollidershapecasthit_witness1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   witness2() {
     const ret = wasm.rawcollidershapecasthit_witness2(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal1() {
     const ret = wasm.rawcollidershapecasthit_normal1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal2() {
     const ret = wasm.rawcollidershapecasthit_normal2(this.__wbg_ptr);
     return RawVector.__wrap(ret);
@@ -1653,7 +1780,7 @@ var RawColliderShapeCastHit = class _RawColliderShapeCastHit {
 };
 var RawContactForceEventFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcontactforceevent_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcontactforceevent_free(ptr >>> 0, 1));
 var RawContactForceEvent = class _RawContactForceEvent {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -1670,56 +1797,56 @@ var RawContactForceEvent = class _RawContactForceEvent {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawcontactforceevent_free(ptr);
+    wasm.__wbg_rawcontactforceevent_free(ptr, 0);
   }
   /**
-  * The first collider involved in the contact.
-  * @returns {number}
-  */
+   * The first collider involved in the contact.
+   * @returns {number}
+   */
   collider1() {
     const ret = wasm.rawcollidershapecasthit_colliderHandle(this.__wbg_ptr);
     return ret;
   }
   /**
-  * The second collider involved in the contact.
-  * @returns {number}
-  */
+   * The second collider involved in the contact.
+   * @returns {number}
+   */
   collider2() {
     const ret = wasm.rawcontactforceevent_collider2(this.__wbg_ptr);
     return ret;
   }
   /**
-  * The sum of all the forces between the two colliders.
-  * @returns {RawVector}
-  */
+   * The sum of all the forces between the two colliders.
+   * @returns {RawVector}
+   */
   total_force() {
     const ret = wasm.rawcontactforceevent_total_force(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * The sum of the magnitudes of each force between the two colliders.
-  *
-  * Note that this is **not** the same as the magnitude of `self.total_force`.
-  * Here we are summing the magnitude of all the forces, instead of taking
-  * the magnitude of their sum.
-  * @returns {number}
-  */
+   * The sum of the magnitudes of each force between the two colliders.
+   *
+   * Note that this is **not** the same as the magnitude of `self.total_force`.
+   * Here we are summing the magnitude of all the forces, instead of taking
+   * the magnitude of their sum.
+   * @returns {number}
+   */
   total_force_magnitude() {
     const ret = wasm.rawcontactforceevent_total_force_magnitude(this.__wbg_ptr);
     return ret;
   }
   /**
-  * The world-space (unit) direction of the force with strongest magnitude.
-  * @returns {RawVector}
-  */
+   * The world-space (unit) direction of the force with strongest magnitude.
+   * @returns {RawVector}
+   */
   max_force_direction() {
     const ret = wasm.rawcharactercollision_translationDeltaApplied(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * The magnitude of the largest force at a contact point of this contact pair.
-  * @returns {number}
-  */
+   * The magnitude of the largest force at a contact point of this contact pair.
+   * @returns {number}
+   */
   max_force_magnitude() {
     const ret = wasm.rawcontactforceevent_max_force_magnitude(this.__wbg_ptr);
     return ret;
@@ -1727,7 +1854,7 @@ var RawContactForceEvent = class _RawContactForceEvent {
 };
 var RawContactManifoldFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcontactmanifold_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcontactmanifold_free(ptr >>> 0, 1));
 var RawContactManifold = class _RawContactManifold {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -1744,149 +1871,149 @@ var RawContactManifold = class _RawContactManifold {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawcontactmanifold_free(ptr);
+    wasm.__wbg_rawcontactmanifold_free(ptr, 0);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal() {
     const ret = wasm.rawcontactmanifold_normal(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   local_n1() {
     const ret = wasm.rawcontactmanifold_local_n1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   local_n2() {
     const ret = wasm.rawcontactmanifold_local_n2(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   subshape1() {
     const ret = wasm.rawcontactmanifold_subshape1(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   subshape2() {
     const ret = wasm.rawcontactmanifold_subshape2(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   num_contacts() {
     const ret = wasm.rawcontactmanifold_num_contacts(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @param {number} i
-  * @returns {RawVector | undefined}
-  */
+   * @param {number} i
+   * @returns {RawVector | undefined}
+   */
   contact_local_p1(i) {
     const ret = wasm.rawcontactmanifold_contact_local_p1(this.__wbg_ptr, i);
     return ret === 0 ? void 0 : RawVector.__wrap(ret);
   }
   /**
-  * @param {number} i
-  * @returns {RawVector | undefined}
-  */
+   * @param {number} i
+   * @returns {RawVector | undefined}
+   */
   contact_local_p2(i) {
     const ret = wasm.rawcontactmanifold_contact_local_p2(this.__wbg_ptr, i);
     return ret === 0 ? void 0 : RawVector.__wrap(ret);
   }
   /**
-  * @param {number} i
-  * @returns {number}
-  */
+   * @param {number} i
+   * @returns {number}
+   */
   contact_dist(i) {
     const ret = wasm.rawcontactmanifold_contact_dist(this.__wbg_ptr, i);
     return ret;
   }
   /**
-  * @param {number} i
-  * @returns {number}
-  */
+   * @param {number} i
+   * @returns {number}
+   */
   contact_fid1(i) {
     const ret = wasm.rawcontactmanifold_contact_fid1(this.__wbg_ptr, i);
     return ret >>> 0;
   }
   /**
-  * @param {number} i
-  * @returns {number}
-  */
+   * @param {number} i
+   * @returns {number}
+   */
   contact_fid2(i) {
     const ret = wasm.rawcontactmanifold_contact_fid2(this.__wbg_ptr, i);
     return ret >>> 0;
   }
   /**
-  * @param {number} i
-  * @returns {number}
-  */
+   * @param {number} i
+   * @returns {number}
+   */
   contact_impulse(i) {
     const ret = wasm.rawcontactmanifold_contact_impulse(this.__wbg_ptr, i);
     return ret;
   }
   /**
-  * @param {number} i
-  * @returns {number}
-  */
+   * @param {number} i
+   * @returns {number}
+   */
   contact_tangent_impulse(i) {
     const ret = wasm.rawcontactmanifold_contact_tangent_impulse(this.__wbg_ptr, i);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   num_solver_contacts() {
     const ret = wasm.rawcontactmanifold_num_solver_contacts(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @param {number} i
-  * @returns {RawVector | undefined}
-  */
+   * @param {number} i
+   * @returns {RawVector | undefined}
+   */
   solver_contact_point(i) {
     const ret = wasm.rawcontactmanifold_solver_contact_point(this.__wbg_ptr, i);
     return ret === 0 ? void 0 : RawVector.__wrap(ret);
   }
   /**
-  * @param {number} i
-  * @returns {number}
-  */
+   * @param {number} i
+   * @returns {number}
+   */
   solver_contact_dist(i) {
     const ret = wasm.rawcontactmanifold_solver_contact_dist(this.__wbg_ptr, i);
     return ret;
   }
   /**
-  * @param {number} i
-  * @returns {number}
-  */
+   * @param {number} i
+   * @returns {number}
+   */
   solver_contact_friction(i) {
     const ret = wasm.rawcontactmanifold_solver_contact_friction(this.__wbg_ptr, i);
     return ret;
   }
   /**
-  * @param {number} i
-  * @returns {number}
-  */
+   * @param {number} i
+   * @returns {number}
+   */
   solver_contact_restitution(i) {
     const ret = wasm.rawcontactmanifold_solver_contact_restitution(this.__wbg_ptr, i);
     return ret;
   }
   /**
-  * @param {number} i
-  * @returns {RawVector}
-  */
+   * @param {number} i
+   * @returns {RawVector}
+   */
   solver_contact_tangent_velocity(i) {
     const ret = wasm.rawcontactmanifold_solver_contact_tangent_velocity(this.__wbg_ptr, i);
     return RawVector.__wrap(ret);
@@ -1894,7 +2021,7 @@ var RawContactManifold = class _RawContactManifold {
 };
 var RawContactPairFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcontactpair_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawcontactpair_free(ptr >>> 0, 1));
 var RawContactPair = class _RawContactPair {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -1911,33 +2038,33 @@ var RawContactPair = class _RawContactPair {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawcontactpair_free(ptr);
+    wasm.__wbg_rawcontactpair_free(ptr, 0);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   collider1() {
     const ret = wasm.rawcontactpair_collider1(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   collider2() {
     const ret = wasm.rawcontactpair_collider2(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   numContactManifolds() {
     const ret = wasm.rawcontactpair_numContactManifolds(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @param {number} i
-  * @returns {RawContactManifold | undefined}
-  */
+   * @param {number} i
+   * @returns {RawContactManifold | undefined}
+   */
   contactManifold(i) {
     const ret = wasm.rawcontactpair_contactManifold(this.__wbg_ptr, i);
     return ret === 0 ? void 0 : RawContactManifold.__wrap(ret);
@@ -1945,7 +2072,7 @@ var RawContactPair = class _RawContactPair {
 };
 var RawDebugRenderPipelineFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawdebugrenderpipeline_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawdebugrenderpipeline_free(ptr >>> 0, 1));
 var RawDebugRenderPipeline = class {
   __destroy_into_raw() {
     const ptr = this.__wbg_ptr;
@@ -1955,48 +2082,53 @@ var RawDebugRenderPipeline = class {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawdebugrenderpipeline_free(ptr);
+    wasm.__wbg_rawdebugrenderpipeline_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawdebugrenderpipeline_new();
     this.__wbg_ptr = ret >>> 0;
+    RawDebugRenderPipelineFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @returns {Float32Array}
-  */
+   * @returns {Float32Array}
+   */
   vertices() {
     const ret = wasm.rawdebugrenderpipeline_vertices(this.__wbg_ptr);
     return takeObject(ret);
   }
   /**
-  * @returns {Float32Array}
-  */
+   * @returns {Float32Array}
+   */
   colors() {
     const ret = wasm.rawdebugrenderpipeline_colors(this.__wbg_ptr);
     return takeObject(ret);
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawImpulseJointSet} impulse_joints
-  * @param {RawMultibodyJointSet} multibody_joints
-  * @param {RawNarrowPhase} narrow_phase
-  */
-  render(bodies, colliders, impulse_joints, multibody_joints, narrow_phase) {
-    _assertClass(bodies, RawRigidBodySet);
-    _assertClass(colliders, RawColliderSet);
-    _assertClass(impulse_joints, RawImpulseJointSet);
-    _assertClass(multibody_joints, RawMultibodyJointSet);
-    _assertClass(narrow_phase, RawNarrowPhase);
-    wasm.rawdebugrenderpipeline_render(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, impulse_joints.__wbg_ptr, multibody_joints.__wbg_ptr, narrow_phase.__wbg_ptr);
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawImpulseJointSet} impulse_joints
+   * @param {RawMultibodyJointSet} multibody_joints
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {number} filter_flags
+   * @param {Function} filter_predicate
+   */
+  render(bodies, colliders, impulse_joints, multibody_joints, narrow_phase, filter_flags, filter_predicate) {
+    try {
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(impulse_joints, RawImpulseJointSet);
+      _assertClass(multibody_joints, RawMultibodyJointSet);
+      _assertClass(narrow_phase, RawNarrowPhase);
+      wasm.rawdebugrenderpipeline_render(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, impulse_joints.__wbg_ptr, multibody_joints.__wbg_ptr, narrow_phase.__wbg_ptr, filter_flags, addBorrowedObject(filter_predicate));
+    } finally {
+      heap[stack_pointer++] = void 0;
+    }
   }
 };
 var RawDeserializedWorldFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawdeserializedworld_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawdeserializedworld_free(ptr >>> 0, 1));
 var RawDeserializedWorld = class _RawDeserializedWorld {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -2013,67 +2145,67 @@ var RawDeserializedWorld = class _RawDeserializedWorld {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawdeserializedworld_free(ptr);
+    wasm.__wbg_rawdeserializedworld_free(ptr, 0);
   }
   /**
-  * @returns {RawVector | undefined}
-  */
+   * @returns {RawVector | undefined}
+   */
   takeGravity() {
     const ret = wasm.rawdeserializedworld_takeGravity(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawIntegrationParameters | undefined}
-  */
+   * @returns {RawIntegrationParameters | undefined}
+   */
   takeIntegrationParameters() {
     const ret = wasm.rawdeserializedworld_takeIntegrationParameters(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawIntegrationParameters.__wrap(ret);
   }
   /**
-  * @returns {RawIslandManager | undefined}
-  */
+   * @returns {RawIslandManager | undefined}
+   */
   takeIslandManager() {
     const ret = wasm.rawdeserializedworld_takeIslandManager(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawIslandManager.__wrap(ret);
   }
   /**
-  * @returns {RawBroadPhase | undefined}
-  */
+   * @returns {RawBroadPhase | undefined}
+   */
   takeBroadPhase() {
     const ret = wasm.rawdeserializedworld_takeBroadPhase(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawBroadPhase.__wrap(ret);
   }
   /**
-  * @returns {RawNarrowPhase | undefined}
-  */
+   * @returns {RawNarrowPhase | undefined}
+   */
   takeNarrowPhase() {
     const ret = wasm.rawdeserializedworld_takeNarrowPhase(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawNarrowPhase.__wrap(ret);
   }
   /**
-  * @returns {RawRigidBodySet | undefined}
-  */
+   * @returns {RawRigidBodySet | undefined}
+   */
   takeBodies() {
     const ret = wasm.rawdeserializedworld_takeBodies(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawRigidBodySet.__wrap(ret);
   }
   /**
-  * @returns {RawColliderSet | undefined}
-  */
+   * @returns {RawColliderSet | undefined}
+   */
   takeColliders() {
     const ret = wasm.rawdeserializedworld_takeColliders(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawColliderSet.__wrap(ret);
   }
   /**
-  * @returns {RawImpulseJointSet | undefined}
-  */
+   * @returns {RawImpulseJointSet | undefined}
+   */
   takeImpulseJoints() {
     const ret = wasm.rawdeserializedworld_takeImpulseJoints(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawImpulseJointSet.__wrap(ret);
   }
   /**
-  * @returns {RawMultibodyJointSet | undefined}
-  */
+   * @returns {RawMultibodyJointSet | undefined}
+   */
   takeMultibodyJoints() {
     const ret = wasm.rawdeserializedworld_takeMultibodyJoints(this.__wbg_ptr);
     return ret === 0 ? void 0 : RawMultibodyJointSet.__wrap(ret);
@@ -2081,7 +2213,7 @@ var RawDeserializedWorld = class _RawDeserializedWorld {
 };
 var RawEventQueueFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_raweventqueue_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_raweventqueue_free(ptr >>> 0, 1));
 var RawEventQueue = class {
   __destroy_into_raw() {
     const ptr = this.__wbg_ptr;
@@ -2091,34 +2223,35 @@ var RawEventQueue = class {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_raweventqueue_free(ptr);
+    wasm.__wbg_raweventqueue_free(ptr, 0);
   }
   /**
-  * Creates a new event collector.
-  *
-  * # Parameters
-  * - `autoDrain`: setting this to `true` is strongly recommended. If true, the collector will
-  * be automatically drained before each `world.step(collector)`. If false, the collector will
-  * keep all events in memory unless it is manually drained/cleared; this may lead to unbounded use of
-  * RAM if no drain is performed.
-  * @param {boolean} autoDrain
-  */
+   * Creates a new event collector.
+   *
+   * # Parameters
+   * - `autoDrain`: setting this to `true` is strongly recommended. If true, the collector will
+   * be automatically drained before each `world.step(collector)`. If false, the collector will
+   * keep all events in memory unless it is manually drained/cleared; this may lead to unbounded use of
+   * RAM if no drain is performed.
+   * @param {boolean} autoDrain
+   */
   constructor(autoDrain) {
     const ret = wasm.raweventqueue_new(autoDrain);
     this.__wbg_ptr = ret >>> 0;
+    RawEventQueueFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * Applies the given javascript closure on each collision event of this collector, then clear
-  * the internal collision event buffer.
-  *
-  * # Parameters
-  * - `f(handle1, handle2, started)`:  JavaScript closure applied to each collision event. The
-  * closure should take three arguments: two integers representing the handles of the colliders
-  * involved in the collision, and a boolean indicating if the collision started (true) or stopped
-  * (false).
-  * @param {Function} f
-  */
+   * Applies the given javascript closure on each collision event of this collector, then clear
+   * the internal collision event buffer.
+   *
+   * # Parameters
+   * - `f(handle1, handle2, started)`:  JavaScript closure applied to each collision event. The
+   * closure should take three arguments: two integers representing the handles of the colliders
+   * involved in the collision, and a boolean indicating if the collision started (true) or stopped
+   * (false).
+   * @param {Function} f
+   */
   drainCollisionEvents(f) {
     try {
       wasm.raweventqueue_drainCollisionEvents(this.__wbg_ptr, addBorrowedObject(f));
@@ -2127,8 +2260,8 @@ var RawEventQueue = class {
     }
   }
   /**
-  * @param {Function} f
-  */
+   * @param {Function} f
+   */
   drainContactForceEvents(f) {
     try {
       wasm.raweventqueue_drainContactForceEvents(this.__wbg_ptr, addBorrowedObject(f));
@@ -2137,15 +2270,15 @@ var RawEventQueue = class {
     }
   }
   /**
-  * Removes all events contained by this collector.
-  */
+   * Removes all events contained by this collector.
+   */
   clear() {
     wasm.raweventqueue_clear(this.__wbg_ptr);
   }
 };
 var RawGenericJointFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawgenericjoint_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawgenericjoint_free(ptr >>> 0, 1));
 var RawGenericJoint = class _RawGenericJoint {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -2162,16 +2295,16 @@ var RawGenericJoint = class _RawGenericJoint {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawgenericjoint_free(ptr);
+    wasm.__wbg_rawgenericjoint_free(ptr, 0);
   }
   /**
-  * @param {number} rest_length
-  * @param {number} stiffness
-  * @param {number} damping
-  * @param {RawVector} anchor1
-  * @param {RawVector} anchor2
-  * @returns {RawGenericJoint}
-  */
+   * @param {number} rest_length
+   * @param {number} stiffness
+   * @param {number} damping
+   * @param {RawVector} anchor1
+   * @param {RawVector} anchor2
+   * @returns {RawGenericJoint}
+   */
   static spring(rest_length, stiffness, damping, anchor1, anchor2) {
     _assertClass(anchor1, RawVector);
     _assertClass(anchor2, RawVector);
@@ -2179,11 +2312,11 @@ var RawGenericJoint = class _RawGenericJoint {
     return _RawGenericJoint.__wrap(ret);
   }
   /**
-  * @param {number} length
-  * @param {RawVector} anchor1
-  * @param {RawVector} anchor2
-  * @returns {RawGenericJoint}
-  */
+   * @param {number} length
+   * @param {RawVector} anchor1
+   * @param {RawVector} anchor2
+   * @returns {RawGenericJoint}
+   */
   static rope(length, anchor1, anchor2) {
     _assertClass(anchor1, RawVector);
     _assertClass(anchor2, RawVector);
@@ -2191,20 +2324,20 @@ var RawGenericJoint = class _RawGenericJoint {
     return _RawGenericJoint.__wrap(ret);
   }
   /**
-  * Creates a new joint descriptor that builds a Prismatic joint.
-  *
-  * A prismatic joint removes all the degrees of freedom between the
-  * affected bodies, except for the translation along one axis.
-  *
-  * Returns `None` if any of the provided axes cannot be normalized.
-  * @param {RawVector} anchor1
-  * @param {RawVector} anchor2
-  * @param {RawVector} axis
-  * @param {boolean} limitsEnabled
-  * @param {number} limitsMin
-  * @param {number} limitsMax
-  * @returns {RawGenericJoint | undefined}
-  */
+   * Creates a new joint descriptor that builds a Prismatic joint.
+   *
+   * A prismatic joint removes all the degrees of freedom between the
+   * affected bodies, except for the translation along one axis.
+   *
+   * Returns `None` if any of the provided axes cannot be normalized.
+   * @param {RawVector} anchor1
+   * @param {RawVector} anchor2
+   * @param {RawVector} axis
+   * @param {boolean} limitsEnabled
+   * @param {number} limitsMin
+   * @param {number} limitsMax
+   * @returns {RawGenericJoint | undefined}
+   */
   static prismatic(anchor1, anchor2, axis, limitsEnabled, limitsMin, limitsMax) {
     _assertClass(anchor1, RawVector);
     _assertClass(anchor2, RawVector);
@@ -2213,15 +2346,15 @@ var RawGenericJoint = class _RawGenericJoint {
     return ret === 0 ? void 0 : _RawGenericJoint.__wrap(ret);
   }
   /**
-  * Creates a new joint descriptor that builds a Fixed joint.
-  *
-  * A fixed joint removes all the degrees of freedom between the affected bodies.
-  * @param {RawVector} anchor1
-  * @param {RawRotation} axes1
-  * @param {RawVector} anchor2
-  * @param {RawRotation} axes2
-  * @returns {RawGenericJoint}
-  */
+   * Creates a new joint descriptor that builds a Fixed joint.
+   *
+   * A fixed joint removes all the degrees of freedom between the affected bodies.
+   * @param {RawVector} anchor1
+   * @param {RawRotation} axes1
+   * @param {RawVector} anchor2
+   * @param {RawRotation} axes2
+   * @returns {RawGenericJoint}
+   */
   static fixed(anchor1, axes1, anchor2, axes2) {
     _assertClass(anchor1, RawVector);
     _assertClass(axes1, RawRotation);
@@ -2231,14 +2364,14 @@ var RawGenericJoint = class _RawGenericJoint {
     return _RawGenericJoint.__wrap(ret);
   }
   /**
-  * Create a new joint descriptor that builds Revolute joints.
-  *
-  * A revolute joint removes all degrees of freedom between the affected
-  * bodies except for the rotation.
-  * @param {RawVector} anchor1
-  * @param {RawVector} anchor2
-  * @returns {RawGenericJoint | undefined}
-  */
+   * Create a new joint descriptor that builds Revolute joints.
+   *
+   * A revolute joint removes all degrees of freedom between the affected
+   * bodies except for the rotation.
+   * @param {RawVector} anchor1
+   * @param {RawVector} anchor2
+   * @returns {RawGenericJoint | undefined}
+   */
   static revolute(anchor1, anchor2) {
     _assertClass(anchor1, RawVector);
     _assertClass(anchor2, RawVector);
@@ -2248,7 +2381,7 @@ var RawGenericJoint = class _RawGenericJoint {
 };
 var RawImpulseJointSetFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawimpulsejointset_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawimpulsejointset_free(ptr >>> 0, 1));
 var RawImpulseJointSet = class _RawImpulseJointSet {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -2265,238 +2398,237 @@ var RawImpulseJointSet = class _RawImpulseJointSet {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawimpulsejointset_free(ptr);
+    wasm.__wbg_rawimpulsejointset_free(ptr, 0);
   }
   /**
-  * The type of this joint.
-  * @param {number} handle
-  * @returns {RawJointType}
-  */
+   * The type of this joint.
+   * @param {number} handle
+   * @returns {RawJointType}
+   */
   jointType(handle) {
     const ret = wasm.rawimpulsejointset_jointType(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The unique integer identifier of the first rigid-body this joint it attached to.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The unique integer identifier of the first rigid-body this joint it attached to.
+   * @param {number} handle
+   * @returns {number}
+   */
   jointBodyHandle1(handle) {
     const ret = wasm.rawimpulsejointset_jointBodyHandle1(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The unique integer identifier of the second rigid-body this joint is attached to.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The unique integer identifier of the second rigid-body this joint is attached to.
+   * @param {number} handle
+   * @returns {number}
+   */
   jointBodyHandle2(handle) {
     const ret = wasm.rawimpulsejointset_jointBodyHandle2(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The angular part of the joint’s local frame relative to the first rigid-body it is attached to.
-  * @param {number} handle
-  * @returns {RawRotation}
-  */
+   * The angular part of the joint’s local frame relative to the first rigid-body it is attached to.
+   * @param {number} handle
+   * @returns {RawRotation}
+   */
   jointFrameX1(handle) {
     const ret = wasm.rawimpulsejointset_jointFrameX1(this.__wbg_ptr, handle);
     return RawRotation.__wrap(ret);
   }
   /**
-  * The angular part of the joint’s local frame relative to the second rigid-body it is attached to.
-  * @param {number} handle
-  * @returns {RawRotation}
-  */
+   * The angular part of the joint’s local frame relative to the second rigid-body it is attached to.
+   * @param {number} handle
+   * @returns {RawRotation}
+   */
   jointFrameX2(handle) {
     const ret = wasm.rawimpulsejointset_jointFrameX2(this.__wbg_ptr, handle);
     return RawRotation.__wrap(ret);
   }
   /**
-  * The position of the first anchor of this joint.
-  *
-  * The first anchor gives the position of the points application point on the
-  * local frame of the first rigid-body it is attached to.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The position of the first anchor of this joint.
+   *
+   * The first anchor gives the position of the points application point on the
+   * local frame of the first rigid-body it is attached to.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   jointAnchor1(handle) {
     const ret = wasm.rawimpulsejointset_jointAnchor1(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The position of the second anchor of this joint.
-  *
-  * The second anchor gives the position of the points application point on the
-  * local frame of the second rigid-body it is attached to.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The position of the second anchor of this joint.
+   *
+   * The second anchor gives the position of the points application point on the
+   * local frame of the second rigid-body it is attached to.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   jointAnchor2(handle) {
     const ret = wasm.rawimpulsejointset_jointAnchor2(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * Sets the position of the first local anchor
-  * @param {number} handle
-  * @param {RawVector} newPos
-  */
+   * Sets the position of the first local anchor
+   * @param {number} handle
+   * @param {RawVector} newPos
+   */
   jointSetAnchor1(handle, newPos) {
     _assertClass(newPos, RawVector);
     wasm.rawimpulsejointset_jointSetAnchor1(this.__wbg_ptr, handle, newPos.__wbg_ptr);
   }
   /**
-  * Sets the position of the second local anchor
-  * @param {number} handle
-  * @param {RawVector} newPos
-  */
+   * Sets the position of the second local anchor
+   * @param {number} handle
+   * @param {RawVector} newPos
+   */
   jointSetAnchor2(handle, newPos) {
     _assertClass(newPos, RawVector);
     wasm.rawimpulsejointset_jointSetAnchor2(this.__wbg_ptr, handle, newPos.__wbg_ptr);
   }
   /**
-  * Are contacts between the rigid-bodies attached by this joint enabled?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Are contacts between the rigid-bodies attached by this joint enabled?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   jointContactsEnabled(handle) {
     const ret = wasm.rawimpulsejointset_jointContactsEnabled(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Sets whether contacts are enabled between the rigid-bodies attached by this joint.
-  * @param {number} handle
-  * @param {boolean} enabled
-  */
+   * Sets whether contacts are enabled between the rigid-bodies attached by this joint.
+   * @param {number} handle
+   * @param {boolean} enabled
+   */
   jointSetContactsEnabled(handle, enabled) {
     wasm.rawimpulsejointset_jointSetContactsEnabled(this.__wbg_ptr, handle, enabled);
   }
   /**
-  * Are the limits for this joint enabled?
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @returns {boolean}
-  */
+   * Are the limits for this joint enabled?
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @returns {boolean}
+   */
   jointLimitsEnabled(handle, axis) {
     const ret = wasm.rawimpulsejointset_jointLimitsEnabled(this.__wbg_ptr, handle, axis);
     return ret !== 0;
   }
   /**
-  * Return the lower limit along the given joint axis.
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @returns {number}
-  */
+   * Return the lower limit along the given joint axis.
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @returns {number}
+   */
   jointLimitsMin(handle, axis) {
     const ret = wasm.rawimpulsejointset_jointLimitsMin(this.__wbg_ptr, handle, axis);
     return ret;
   }
   /**
-  * If this is a prismatic joint, returns its upper limit.
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @returns {number}
-  */
+   * If this is a prismatic joint, returns its upper limit.
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @returns {number}
+   */
   jointLimitsMax(handle, axis) {
     const ret = wasm.rawimpulsejointset_jointLimitsMax(this.__wbg_ptr, handle, axis);
     return ret;
   }
   /**
-  * Enables and sets the joint limits
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @param {number} min
-  * @param {number} max
-  */
+   * Enables and sets the joint limits
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @param {number} min
+   * @param {number} max
+   */
   jointSetLimits(handle, axis, min, max) {
     wasm.rawimpulsejointset_jointSetLimits(this.__wbg_ptr, handle, axis, min, max);
   }
   /**
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @param {RawMotorModel} model
-  */
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @param {RawMotorModel} model
+   */
   jointConfigureMotorModel(handle, axis, model) {
     wasm.rawimpulsejointset_jointConfigureMotorModel(this.__wbg_ptr, handle, axis, model);
   }
   /**
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @param {number} targetVel
-  * @param {number} factor
-  */
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @param {number} targetVel
+   * @param {number} factor
+   */
   jointConfigureMotorVelocity(handle, axis, targetVel, factor) {
     wasm.rawimpulsejointset_jointConfigureMotorVelocity(this.__wbg_ptr, handle, axis, targetVel, factor);
   }
   /**
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @param {number} targetPos
-  * @param {number} stiffness
-  * @param {number} damping
-  */
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @param {number} targetPos
+   * @param {number} stiffness
+   * @param {number} damping
+   */
   jointConfigureMotorPosition(handle, axis, targetPos, stiffness, damping) {
     wasm.rawimpulsejointset_jointConfigureMotorPosition(this.__wbg_ptr, handle, axis, targetPos, stiffness, damping);
   }
   /**
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @param {number} targetPos
-  * @param {number} targetVel
-  * @param {number} stiffness
-  * @param {number} damping
-  */
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @param {number} targetPos
+   * @param {number} targetVel
+   * @param {number} stiffness
+   * @param {number} damping
+   */
   jointConfigureMotor(handle, axis, targetPos, targetVel, stiffness, damping) {
     wasm.rawimpulsejointset_jointConfigureMotor(this.__wbg_ptr, handle, axis, targetPos, targetVel, stiffness, damping);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawimpulsejointset_new();
     this.__wbg_ptr = ret >>> 0;
+    RawImpulseJointSetFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @param {RawGenericJoint} params
-  * @param {number} parent1
-  * @param {number} parent2
-  * @param {boolean} wake_up
-  * @returns {number}
-  */
+   * @param {RawGenericJoint} params
+   * @param {number} parent1
+   * @param {number} parent2
+   * @param {boolean} wake_up
+   * @returns {number}
+   */
   createJoint(params, parent1, parent2, wake_up) {
     _assertClass(params, RawGenericJoint);
     const ret = wasm.rawimpulsejointset_createJoint(this.__wbg_ptr, params.__wbg_ptr, parent1, parent2, wake_up);
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {boolean} wakeUp
-  */
+   * @param {number} handle
+   * @param {boolean} wakeUp
+   */
   remove(handle, wakeUp) {
     wasm.rawimpulsejointset_remove(this.__wbg_ptr, handle, wakeUp);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   len() {
     const ret = wasm.rawimpulsejointset_len(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * @param {number} handle
+   * @returns {boolean}
+   */
   contains(handle) {
     const ret = wasm.rawimpulsejointset_contains(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Applies the given JavaScript function to the integer handle of each joint managed by this physics world.
-  *
-  * # Parameters
-  * - `f(handle)`: the function to apply to the integer handle of each joint managed by this set. Called as `f(collider)`.
-  * @param {Function} f
-  */
+   * Applies the given JavaScript function to the integer handle of each joint managed by this physics world.
+   *
+   * # Parameters
+   * - `f(handle)`: the function to apply to the integer handle of each joint managed by this set. Called as `f(collider)`.
+   * @param {Function} f
+   */
   forEachJointHandle(f) {
     try {
       wasm.rawimpulsejointset_forEachJointHandle(this.__wbg_ptr, addBorrowedObject(f));
@@ -2505,13 +2637,13 @@ var RawImpulseJointSet = class _RawImpulseJointSet {
     }
   }
   /**
-  * Applies the given JavaScript function to the integer handle of each joint attached to the given rigid-body.
-  *
-  * # Parameters
-  * - `f(handle)`: the function to apply to the integer handle of each joint attached to the rigid-body. Called as `f(collider)`.
-  * @param {number} body
-  * @param {Function} f
-  */
+   * Applies the given JavaScript function to the integer handle of each joint attached to the given rigid-body.
+   *
+   * # Parameters
+   * - `f(handle)`: the function to apply to the integer handle of each joint attached to the rigid-body. Called as `f(collider)`.
+   * @param {number} body
+   * @param {Function} f
+   */
   forEachJointAttachedToRigidBody(body, f) {
     try {
       wasm.rawimpulsejointset_forEachJointAttachedToRigidBody(this.__wbg_ptr, body, addBorrowedObject(f));
@@ -2522,7 +2654,7 @@ var RawImpulseJointSet = class _RawImpulseJointSet {
 };
 var RawIntegrationParametersFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawintegrationparameters_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawintegrationparameters_free(ptr >>> 0, 1));
 var RawIntegrationParameters = class _RawIntegrationParameters {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -2539,164 +2671,157 @@ var RawIntegrationParameters = class _RawIntegrationParameters {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawintegrationparameters_free(ptr);
+    wasm.__wbg_rawintegrationparameters_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawintegrationparameters_new();
     this.__wbg_ptr = ret >>> 0;
+    RawIntegrationParametersFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get dt() {
     const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get contact_erp() {
     const ret = wasm.rawintegrationparameters_contact_erp(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get normalizedAllowedLinearError() {
     const ret = wasm.rawcontactforceevent_max_force_magnitude(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get normalizedPredictionDistance() {
     const ret = wasm.rawintegrationparameters_normalizedPredictionDistance(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get numSolverIterations() {
     const ret = wasm.rawintegrationparameters_numSolverIterations(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get numAdditionalFrictionIterations() {
     const ret = wasm.rawintegrationparameters_numAdditionalFrictionIterations(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get numInternalPgsIterations() {
     const ret = wasm.rawintegrationparameters_numInternalPgsIterations(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get minIslandSize() {
-    const ret = wasm.rawimpulsejointset_len(this.__wbg_ptr);
+    const ret = wasm.rawintegrationparameters_minIslandSize(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get maxCcdSubsteps() {
     const ret = wasm.rawintegrationparameters_maxCcdSubsteps(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   get lengthUnit() {
     const ret = wasm.rawcontactforceevent_total_force_magnitude(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set dt(value) {
     wasm.rawintegrationparameters_set_dt(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set contact_natural_frequency(value) {
     wasm.rawintegrationparameters_set_contact_natural_frequency(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set normalizedAllowedLinearError(value) {
     wasm.rawintegrationparameters_set_normalizedAllowedLinearError(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set normalizedPredictionDistance(value) {
     wasm.rawintegrationparameters_set_normalizedPredictionDistance(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set numSolverIterations(value) {
     wasm.rawintegrationparameters_set_numSolverIterations(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set numAdditionalFrictionIterations(value) {
     wasm.rawintegrationparameters_set_numAdditionalFrictionIterations(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set numInternalPgsIterations(value) {
     wasm.rawintegrationparameters_set_numInternalPgsIterations(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set minIslandSize(value) {
     wasm.rawintegrationparameters_set_minIslandSize(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set maxCcdSubsteps(value) {
     wasm.rawintegrationparameters_set_maxCcdSubsteps(this.__wbg_ptr, value);
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   set lengthUnit(value) {
     wasm.rawintegrationparameters_set_lengthUnit(this.__wbg_ptr, value);
   }
-  /**
-  */
   switchToStandardPgsSolver() {
     wasm.rawintegrationparameters_switchToStandardPgsSolver(this.__wbg_ptr);
   }
-  /**
-  */
   switchToSmallStepsPgsSolver() {
     wasm.rawintegrationparameters_switchToSmallStepsPgsSolver(this.__wbg_ptr);
   }
-  /**
-  */
   switchToSmallStepsPgsSolverWithoutWarmstart() {
     wasm.rawintegrationparameters_switchToSmallStepsPgsSolverWithoutWarmstart(this.__wbg_ptr);
   }
 };
 var RawIslandManagerFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawislandmanager_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawislandmanager_free(ptr >>> 0, 1));
 var RawIslandManager = class _RawIslandManager {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -2713,28 +2838,27 @@ var RawIslandManager = class _RawIslandManager {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawislandmanager_free(ptr);
+    wasm.__wbg_rawislandmanager_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawislandmanager_new();
     this.__wbg_ptr = ret >>> 0;
+    RawIslandManagerFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * Applies the given JavaScript function to the integer handle of each active rigid-body
-  * managed by this island manager.
-  *
-  * After a short time of inactivity, a rigid-body is automatically deactivated ("asleep") by
-  * the physics engine in order to save computational power. A sleeping rigid-body never moves
-  * unless it is moved manually by the user.
-  *
-  * # Parameters
-  * - `f(handle)`: the function to apply to the integer handle of each active rigid-body managed by this
-  *   set. Called as `f(collider)`.
-  * @param {Function} f
-  */
+   * Applies the given JavaScript function to the integer handle of each active rigid-body
+   * managed by this island manager.
+   *
+   * After a short time of inactivity, a rigid-body is automatically deactivated ("asleep") by
+   * the physics engine in order to save computational power. A sleeping rigid-body never moves
+   * unless it is moved manually by the user.
+   *
+   * # Parameters
+   * - `f(handle)`: the function to apply to the integer handle of each active rigid-body managed by this
+   *   set. Called as `f(collider)`.
+   * @param {Function} f
+   */
   forEachActiveRigidBodyHandle(f) {
     try {
       wasm.rawislandmanager_forEachActiveRigidBodyHandle(this.__wbg_ptr, addBorrowedObject(f));
@@ -2745,7 +2869,7 @@ var RawIslandManager = class _RawIslandManager {
 };
 var RawKinematicCharacterControllerFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawkinematiccharactercontroller_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawkinematiccharactercontroller_free(ptr >>> 0, 1));
 var RawKinematicCharacterController = class {
   __destroy_into_raw() {
     const ptr = this.__wbg_ptr;
@@ -2755,232 +2879,208 @@ var RawKinematicCharacterController = class {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawkinematiccharactercontroller_free(ptr);
+    wasm.__wbg_rawkinematiccharactercontroller_free(ptr, 0);
   }
   /**
-  * @param {number} offset
-  */
+   * @param {number} offset
+   */
   constructor(offset) {
     const ret = wasm.rawkinematiccharactercontroller_new(offset);
     this.__wbg_ptr = ret >>> 0;
+    RawKinematicCharacterControllerFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   up() {
     const ret = wasm.rawcollidershapecasthit_normal2(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @param {RawVector} vector
-  */
+   * @param {RawVector} vector
+   */
   setUp(vector) {
     _assertClass(vector, RawVector);
     wasm.rawkinematiccharactercontroller_setUp(this.__wbg_ptr, vector.__wbg_ptr);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   normalNudgeFactor() {
     const ret = wasm.rawkinematiccharactercontroller_normalNudgeFactor(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   setNormalNudgeFactor(value) {
     wasm.rawkinematiccharactercontroller_setNormalNudgeFactor(this.__wbg_ptr, value);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   offset() {
     const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @param {number} value
-  */
+   * @param {number} value
+   */
   setOffset(value) {
     wasm.rawkinematiccharactercontroller_setOffset(this.__wbg_ptr, value);
   }
   /**
-  * @returns {boolean}
-  */
+   * @returns {boolean}
+   */
   slideEnabled() {
     const ret = wasm.rawkinematiccharactercontroller_slideEnabled(this.__wbg_ptr);
     return ret !== 0;
   }
   /**
-  * @param {boolean} enabled
-  */
+   * @param {boolean} enabled
+   */
   setSlideEnabled(enabled) {
     wasm.rawkinematiccharactercontroller_setSlideEnabled(this.__wbg_ptr, enabled);
   }
   /**
-  * @returns {number | undefined}
-  */
+   * @returns {number | undefined}
+   */
   autostepMaxHeight() {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawkinematiccharactercontroller_autostepMaxHeight(retptr, this.__wbg_ptr);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getFloat32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawkinematiccharactercontroller_autostepMaxHeight(this.__wbg_ptr);
+    return ret === 4294967297 ? void 0 : ret;
   }
   /**
-  * @returns {number | undefined}
-  */
+   * @returns {number | undefined}
+   */
   autostepMinWidth() {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawkinematiccharactercontroller_autostepMinWidth(retptr, this.__wbg_ptr);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getFloat32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawkinematiccharactercontroller_autostepMinWidth(this.__wbg_ptr);
+    return ret === 4294967297 ? void 0 : ret;
   }
   /**
-  * @returns {boolean | undefined}
-  */
+   * @returns {boolean | undefined}
+   */
   autostepIncludesDynamicBodies() {
     const ret = wasm.rawkinematiccharactercontroller_autostepIncludesDynamicBodies(this.__wbg_ptr);
     return ret === 16777215 ? void 0 : ret !== 0;
   }
   /**
-  * @returns {boolean}
-  */
+   * @returns {boolean}
+   */
   autostepEnabled() {
     const ret = wasm.rawkinematiccharactercontroller_autostepEnabled(this.__wbg_ptr);
     return ret !== 0;
   }
   /**
-  * @param {number} maxHeight
-  * @param {number} minWidth
-  * @param {boolean} includeDynamicBodies
-  */
+   * @param {number} maxHeight
+   * @param {number} minWidth
+   * @param {boolean} includeDynamicBodies
+   */
   enableAutostep(maxHeight, minWidth, includeDynamicBodies) {
     wasm.rawkinematiccharactercontroller_enableAutostep(this.__wbg_ptr, maxHeight, minWidth, includeDynamicBodies);
   }
-  /**
-  */
   disableAutostep() {
     wasm.rawkinematiccharactercontroller_disableAutostep(this.__wbg_ptr);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   maxSlopeClimbAngle() {
     const ret = wasm.rawintegrationparameters_normalizedPredictionDistance(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @param {number} angle
-  */
+   * @param {number} angle
+   */
   setMaxSlopeClimbAngle(angle) {
     wasm.rawintegrationparameters_set_normalizedPredictionDistance(this.__wbg_ptr, angle);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   minSlopeSlideAngle() {
     const ret = wasm.rawkinematiccharactercontroller_minSlopeSlideAngle(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @param {number} angle
-  */
+   * @param {number} angle
+   */
   setMinSlopeSlideAngle(angle) {
     wasm.rawkinematiccharactercontroller_setMinSlopeSlideAngle(this.__wbg_ptr, angle);
   }
   /**
-  * @returns {number | undefined}
-  */
+   * @returns {number | undefined}
+   */
   snapToGroundDistance() {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawkinematiccharactercontroller_snapToGroundDistance(retptr, this.__wbg_ptr);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getFloat32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawkinematiccharactercontroller_snapToGroundDistance(this.__wbg_ptr);
+    return ret === 4294967297 ? void 0 : ret;
   }
   /**
-  * @param {number} distance
-  */
+   * @param {number} distance
+   */
   enableSnapToGround(distance) {
     wasm.rawkinematiccharactercontroller_enableSnapToGround(this.__wbg_ptr, distance);
   }
-  /**
-  */
   disableSnapToGround() {
     wasm.rawkinematiccharactercontroller_disableSnapToGround(this.__wbg_ptr);
   }
   /**
-  * @returns {boolean}
-  */
+   * @returns {boolean}
+   */
   snapToGroundEnabled() {
     const ret = wasm.rawkinematiccharactercontroller_snapToGroundEnabled(this.__wbg_ptr);
     return ret !== 0;
   }
   /**
-  * @param {number} dt
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawQueryPipeline} queries
-  * @param {number} collider_handle
-  * @param {RawVector} desired_translation_delta
-  * @param {boolean} apply_impulses_to_dynamic_bodies
-  * @param {number | undefined} character_mass
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {Function} filter_predicate
-  */
+   * @param {number} dt
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawQueryPipeline} queries
+   * @param {number} collider_handle
+   * @param {RawVector} desired_translation_delta
+   * @param {boolean} apply_impulses_to_dynamic_bodies
+   * @param {number | null | undefined} character_mass
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {Function} filter_predicate
+   */
   computeColliderMovement(dt, bodies, colliders, queries, collider_handle, desired_translation_delta, apply_impulses_to_dynamic_bodies, character_mass, filter_flags, filter_groups, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
       _assertClass(colliders, RawColliderSet);
       _assertClass(queries, RawQueryPipeline);
       _assertClass(desired_translation_delta, RawVector);
-      wasm.rawkinematiccharactercontroller_computeColliderMovement(this.__wbg_ptr, dt, bodies.__wbg_ptr, colliders.__wbg_ptr, queries.__wbg_ptr, collider_handle, desired_translation_delta.__wbg_ptr, apply_impulses_to_dynamic_bodies, !isLikeNone(character_mass), isLikeNone(character_mass) ? 0 : character_mass, filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, addBorrowedObject(filter_predicate));
+      wasm.rawkinematiccharactercontroller_computeColliderMovement(this.__wbg_ptr, dt, bodies.__wbg_ptr, colliders.__wbg_ptr, queries.__wbg_ptr, collider_handle, desired_translation_delta.__wbg_ptr, apply_impulses_to_dynamic_bodies, isLikeNone(character_mass) ? 4294967297 : Math.fround(character_mass), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, addBorrowedObject(filter_predicate));
     } finally {
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   computedMovement() {
     const ret = wasm.rawkinematiccharactercontroller_computedMovement(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {boolean}
-  */
+   * @returns {boolean}
+   */
   computedGrounded() {
     const ret = wasm.rawkinematiccharactercontroller_computedGrounded(this.__wbg_ptr);
     return ret !== 0;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   numComputedCollisions() {
     const ret = wasm.rawkinematiccharactercontroller_numComputedCollisions(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * @param {number} i
-  * @param {RawCharacterCollision} collision
-  * @returns {boolean}
-  */
+   * @param {number} i
+   * @param {RawCharacterCollision} collision
+   * @returns {boolean}
+   */
   computedCollision(i, collision) {
     _assertClass(collision, RawCharacterCollision);
     const ret = wasm.rawkinematiccharactercontroller_computedCollision(this.__wbg_ptr, i, collision.__wbg_ptr);
@@ -2989,7 +3089,7 @@ var RawKinematicCharacterController = class {
 };
 var RawMultibodyJointSetFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawmultibodyjointset_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawmultibodyjointset_free(ptr >>> 0, 1));
 var RawMultibodyJointSet = class _RawMultibodyJointSet {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -3006,147 +3106,146 @@ var RawMultibodyJointSet = class _RawMultibodyJointSet {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawmultibodyjointset_free(ptr);
+    wasm.__wbg_rawmultibodyjointset_free(ptr, 0);
   }
   /**
-  * The type of this joint.
-  * @param {number} handle
-  * @returns {RawJointType}
-  */
+   * The type of this joint.
+   * @param {number} handle
+   * @returns {RawJointType}
+   */
   jointType(handle) {
     const ret = wasm.rawmultibodyjointset_jointType(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The angular part of the joint’s local frame relative to the first rigid-body it is attached to.
-  * @param {number} handle
-  * @returns {RawRotation}
-  */
+   * The angular part of the joint’s local frame relative to the first rigid-body it is attached to.
+   * @param {number} handle
+   * @returns {RawRotation}
+   */
   jointFrameX1(handle) {
     const ret = wasm.rawmultibodyjointset_jointFrameX1(this.__wbg_ptr, handle);
     return RawRotation.__wrap(ret);
   }
   /**
-  * The angular part of the joint’s local frame relative to the second rigid-body it is attached to.
-  * @param {number} handle
-  * @returns {RawRotation}
-  */
+   * The angular part of the joint’s local frame relative to the second rigid-body it is attached to.
+   * @param {number} handle
+   * @returns {RawRotation}
+   */
   jointFrameX2(handle) {
     const ret = wasm.rawmultibodyjointset_jointFrameX2(this.__wbg_ptr, handle);
     return RawRotation.__wrap(ret);
   }
   /**
-  * The position of the first anchor of this joint.
-  *
-  * The first anchor gives the position of the points application point on the
-  * local frame of the first rigid-body it is attached to.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The position of the first anchor of this joint.
+   *
+   * The first anchor gives the position of the points application point on the
+   * local frame of the first rigid-body it is attached to.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   jointAnchor1(handle) {
     const ret = wasm.rawmultibodyjointset_jointAnchor1(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The position of the second anchor of this joint.
-  *
-  * The second anchor gives the position of the points application point on the
-  * local frame of the second rigid-body it is attached to.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The position of the second anchor of this joint.
+   *
+   * The second anchor gives the position of the points application point on the
+   * local frame of the second rigid-body it is attached to.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   jointAnchor2(handle) {
     const ret = wasm.rawmultibodyjointset_jointAnchor2(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * Are contacts between the rigid-bodies attached by this joint enabled?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Are contacts between the rigid-bodies attached by this joint enabled?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   jointContactsEnabled(handle) {
     const ret = wasm.rawmultibodyjointset_jointContactsEnabled(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Sets whether contacts are enabled between the rigid-bodies attached by this joint.
-  * @param {number} handle
-  * @param {boolean} enabled
-  */
+   * Sets whether contacts are enabled between the rigid-bodies attached by this joint.
+   * @param {number} handle
+   * @param {boolean} enabled
+   */
   jointSetContactsEnabled(handle, enabled) {
     wasm.rawmultibodyjointset_jointSetContactsEnabled(this.__wbg_ptr, handle, enabled);
   }
   /**
-  * Are the limits for this joint enabled?
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @returns {boolean}
-  */
+   * Are the limits for this joint enabled?
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @returns {boolean}
+   */
   jointLimitsEnabled(handle, axis) {
     const ret = wasm.rawmultibodyjointset_jointLimitsEnabled(this.__wbg_ptr, handle, axis);
     return ret !== 0;
   }
   /**
-  * Return the lower limit along the given joint axis.
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @returns {number}
-  */
+   * Return the lower limit along the given joint axis.
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @returns {number}
+   */
   jointLimitsMin(handle, axis) {
     const ret = wasm.rawmultibodyjointset_jointLimitsMin(this.__wbg_ptr, handle, axis);
     return ret;
   }
   /**
-  * If this is a prismatic joint, returns its upper limit.
-  * @param {number} handle
-  * @param {RawJointAxis} axis
-  * @returns {number}
-  */
+   * If this is a prismatic joint, returns its upper limit.
+   * @param {number} handle
+   * @param {RawJointAxis} axis
+   * @returns {number}
+   */
   jointLimitsMax(handle, axis) {
     const ret = wasm.rawmultibodyjointset_jointLimitsMax(this.__wbg_ptr, handle, axis);
     return ret;
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawmultibodyjointset_new();
     this.__wbg_ptr = ret >>> 0;
+    RawMultibodyJointSetFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @param {RawGenericJoint} params
-  * @param {number} parent1
-  * @param {number} parent2
-  * @param {boolean} wakeUp
-  * @returns {number}
-  */
+   * @param {RawGenericJoint} params
+   * @param {number} parent1
+   * @param {number} parent2
+   * @param {boolean} wakeUp
+   * @returns {number}
+   */
   createJoint(params, parent1, parent2, wakeUp) {
     _assertClass(params, RawGenericJoint);
     const ret = wasm.rawmultibodyjointset_createJoint(this.__wbg_ptr, params.__wbg_ptr, parent1, parent2, wakeUp);
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {boolean} wakeUp
-  */
+   * @param {number} handle
+   * @param {boolean} wakeUp
+   */
   remove(handle, wakeUp) {
     wasm.rawmultibodyjointset_remove(this.__wbg_ptr, handle, wakeUp);
   }
   /**
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * @param {number} handle
+   * @returns {boolean}
+   */
   contains(handle) {
     const ret = wasm.rawmultibodyjointset_contains(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Applies the given JavaScript function to the integer handle of each joint managed by this physics world.
-  *
-  * # Parameters
-  * - `f(handle)`: the function to apply to the integer handle of each joint managed by this set. Called as `f(collider)`.
-  * @param {Function} f
-  */
+   * Applies the given JavaScript function to the integer handle of each joint managed by this physics world.
+   *
+   * # Parameters
+   * - `f(handle)`: the function to apply to the integer handle of each joint managed by this set. Called as `f(collider)`.
+   * @param {Function} f
+   */
   forEachJointHandle(f) {
     try {
       wasm.rawmultibodyjointset_forEachJointHandle(this.__wbg_ptr, addBorrowedObject(f));
@@ -3155,13 +3254,13 @@ var RawMultibodyJointSet = class _RawMultibodyJointSet {
     }
   }
   /**
-  * Applies the given JavaScript function to the integer handle of each joint attached to the given rigid-body.
-  *
-  * # Parameters
-  * - `f(handle)`: the function to apply to the integer handle of each joint attached to the rigid-body. Called as `f(collider)`.
-  * @param {number} body
-  * @param {Function} f
-  */
+   * Applies the given JavaScript function to the integer handle of each joint attached to the given rigid-body.
+   *
+   * # Parameters
+   * - `f(handle)`: the function to apply to the integer handle of each joint attached to the rigid-body. Called as `f(collider)`.
+   * @param {number} body
+   * @param {Function} f
+   */
   forEachJointAttachedToRigidBody(body, f) {
     try {
       wasm.rawmultibodyjointset_forEachJointAttachedToRigidBody(this.__wbg_ptr, body, addBorrowedObject(f));
@@ -3172,7 +3271,7 @@ var RawMultibodyJointSet = class _RawMultibodyJointSet {
 };
 var RawNarrowPhaseFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawnarrowphase_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawnarrowphase_free(ptr >>> 0, 1));
 var RawNarrowPhase = class _RawNarrowPhase {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -3189,43 +3288,42 @@ var RawNarrowPhase = class _RawNarrowPhase {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawnarrowphase_free(ptr);
+    wasm.__wbg_rawnarrowphase_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawnarrowphase_new();
     this.__wbg_ptr = ret >>> 0;
+    RawNarrowPhaseFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @param {number} handle1
-  * @param {Function} f
-  */
+   * @param {number} handle1
+   * @param {Function} f
+   */
   contact_pairs_with(handle1, f) {
     wasm.rawnarrowphase_contact_pairs_with(this.__wbg_ptr, handle1, addHeapObject(f));
   }
   /**
-  * @param {number} handle1
-  * @param {number} handle2
-  * @returns {RawContactPair | undefined}
-  */
+   * @param {number} handle1
+   * @param {number} handle2
+   * @returns {RawContactPair | undefined}
+   */
   contact_pair(handle1, handle2) {
     const ret = wasm.rawnarrowphase_contact_pair(this.__wbg_ptr, handle1, handle2);
     return ret === 0 ? void 0 : RawContactPair.__wrap(ret);
   }
   /**
-  * @param {number} handle1
-  * @param {Function} f
-  */
+   * @param {number} handle1
+   * @param {Function} f
+   */
   intersection_pairs_with(handle1, f) {
     wasm.rawnarrowphase_intersection_pairs_with(this.__wbg_ptr, handle1, addHeapObject(f));
   }
   /**
-  * @param {number} handle1
-  * @param {number} handle2
-  * @returns {boolean}
-  */
+   * @param {number} handle1
+   * @param {number} handle2
+   * @returns {boolean}
+   */
   intersection_pair(handle1, handle2) {
     const ret = wasm.rawnarrowphase_intersection_pair(this.__wbg_ptr, handle1, handle2);
     return ret !== 0;
@@ -3233,7 +3331,7 @@ var RawNarrowPhase = class _RawNarrowPhase {
 };
 var RawPhysicsPipelineFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawphysicspipeline_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawphysicspipeline_free(ptr >>> 0, 1));
 var RawPhysicsPipeline = class {
   __destroy_into_raw() {
     const ptr = this.__wbg_ptr;
@@ -3243,27 +3341,26 @@ var RawPhysicsPipeline = class {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawphysicspipeline_free(ptr);
+    wasm.__wbg_rawphysicspipeline_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawphysicspipeline_new();
     this.__wbg_ptr = ret >>> 0;
+    RawPhysicsPipelineFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @param {RawVector} gravity
-  * @param {RawIntegrationParameters} integrationParameters
-  * @param {RawIslandManager} islands
-  * @param {RawBroadPhase} broadPhase
-  * @param {RawNarrowPhase} narrowPhase
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawImpulseJointSet} joints
-  * @param {RawMultibodyJointSet} articulations
-  * @param {RawCCDSolver} ccd_solver
-  */
+   * @param {RawVector} gravity
+   * @param {RawIntegrationParameters} integrationParameters
+   * @param {RawIslandManager} islands
+   * @param {RawBroadPhase} broadPhase
+   * @param {RawNarrowPhase} narrowPhase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawImpulseJointSet} joints
+   * @param {RawMultibodyJointSet} articulations
+   * @param {RawCCDSolver} ccd_solver
+   */
   step(gravity, integrationParameters, islands, broadPhase, narrowPhase, bodies, colliders, joints, articulations, ccd_solver) {
     _assertClass(gravity, RawVector);
     _assertClass(integrationParameters, RawIntegrationParameters);
@@ -3278,21 +3375,21 @@ var RawPhysicsPipeline = class {
     wasm.rawphysicspipeline_step(this.__wbg_ptr, gravity.__wbg_ptr, integrationParameters.__wbg_ptr, islands.__wbg_ptr, broadPhase.__wbg_ptr, narrowPhase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, joints.__wbg_ptr, articulations.__wbg_ptr, ccd_solver.__wbg_ptr);
   }
   /**
-  * @param {RawVector} gravity
-  * @param {RawIntegrationParameters} integrationParameters
-  * @param {RawIslandManager} islands
-  * @param {RawBroadPhase} broadPhase
-  * @param {RawNarrowPhase} narrowPhase
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawImpulseJointSet} joints
-  * @param {RawMultibodyJointSet} articulations
-  * @param {RawCCDSolver} ccd_solver
-  * @param {RawEventQueue} eventQueue
-  * @param {object} hookObject
-  * @param {Function} hookFilterContactPair
-  * @param {Function} hookFilterIntersectionPair
-  */
+   * @param {RawVector} gravity
+   * @param {RawIntegrationParameters} integrationParameters
+   * @param {RawIslandManager} islands
+   * @param {RawBroadPhase} broadPhase
+   * @param {RawNarrowPhase} narrowPhase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawImpulseJointSet} joints
+   * @param {RawMultibodyJointSet} articulations
+   * @param {RawCCDSolver} ccd_solver
+   * @param {RawEventQueue} eventQueue
+   * @param {object} hookObject
+   * @param {Function} hookFilterContactPair
+   * @param {Function} hookFilterIntersectionPair
+   */
   stepWithEvents(gravity, integrationParameters, islands, broadPhase, narrowPhase, bodies, colliders, joints, articulations, ccd_solver, eventQueue, hookObject, hookFilterContactPair, hookFilterIntersectionPair) {
     _assertClass(gravity, RawVector);
     _assertClass(integrationParameters, RawIntegrationParameters);
@@ -3308,9 +3405,118 @@ var RawPhysicsPipeline = class {
     wasm.rawphysicspipeline_stepWithEvents(this.__wbg_ptr, gravity.__wbg_ptr, integrationParameters.__wbg_ptr, islands.__wbg_ptr, broadPhase.__wbg_ptr, narrowPhase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, joints.__wbg_ptr, articulations.__wbg_ptr, ccd_solver.__wbg_ptr, eventQueue.__wbg_ptr, addHeapObject(hookObject), addHeapObject(hookFilterContactPair), addHeapObject(hookFilterIntersectionPair));
   }
 };
+var RawPidControllerFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
+}, unregister: () => {
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawpidcontroller_free(ptr >>> 0, 1));
+var RawPidController = class {
+  __destroy_into_raw() {
+    const ptr = this.__wbg_ptr;
+    this.__wbg_ptr = 0;
+    RawPidControllerFinalization.unregister(this);
+    return ptr;
+  }
+  free() {
+    const ptr = this.__destroy_into_raw();
+    wasm.__wbg_rawpidcontroller_free(ptr, 0);
+  }
+  /**
+   * @param {number} kp
+   * @param {number} ki
+   * @param {number} kd
+   * @param {number} axes_mask
+   */
+  constructor(kp, ki, kd, axes_mask) {
+    const ret = wasm.rawpidcontroller_new(kp, ki, kd, axes_mask);
+    this.__wbg_ptr = ret >>> 0;
+    RawPidControllerFinalization.register(this, this.__wbg_ptr, this);
+    return this;
+  }
+  /**
+   * @param {number} kp
+   * @param {number} axes
+   */
+  set_kp(kp, axes) {
+    wasm.rawpidcontroller_set_kp(this.__wbg_ptr, kp, axes);
+  }
+  /**
+   * @param {number} ki
+   * @param {number} axes
+   */
+  set_ki(ki, axes) {
+    wasm.rawpidcontroller_set_ki(this.__wbg_ptr, ki, axes);
+  }
+  /**
+   * @param {number} kd
+   * @param {number} axes
+   */
+  set_kd(kd, axes) {
+    wasm.rawpidcontroller_set_kd(this.__wbg_ptr, kd, axes);
+  }
+  /**
+   * @param {number} axes_mask
+   */
+  set_axes_mask(axes_mask) {
+    wasm.rawpidcontroller_set_axes_mask(this.__wbg_ptr, axes_mask);
+  }
+  reset_integrals() {
+    wasm.rawpidcontroller_reset_integrals(this.__wbg_ptr);
+  }
+  /**
+   * @param {number} dt
+   * @param {RawRigidBodySet} bodies
+   * @param {number} rb_handle
+   * @param {RawVector} target_translation
+   * @param {RawVector} target_linvel
+   */
+  apply_linear_correction(dt, bodies, rb_handle, target_translation, target_linvel) {
+    _assertClass(bodies, RawRigidBodySet);
+    _assertClass(target_translation, RawVector);
+    _assertClass(target_linvel, RawVector);
+    wasm.rawpidcontroller_apply_linear_correction(this.__wbg_ptr, dt, bodies.__wbg_ptr, rb_handle, target_translation.__wbg_ptr, target_linvel.__wbg_ptr);
+  }
+  /**
+   * @param {number} dt
+   * @param {RawRigidBodySet} bodies
+   * @param {number} rb_handle
+   * @param {number} target_rotation
+   * @param {number} target_angvel
+   */
+  apply_angular_correction(dt, bodies, rb_handle, target_rotation, target_angvel) {
+    _assertClass(bodies, RawRigidBodySet);
+    wasm.rawpidcontroller_apply_angular_correction(this.__wbg_ptr, dt, bodies.__wbg_ptr, rb_handle, target_rotation, target_angvel);
+  }
+  /**
+   * @param {number} dt
+   * @param {RawRigidBodySet} bodies
+   * @param {number} rb_handle
+   * @param {RawVector} target_translation
+   * @param {RawVector} target_linvel
+   * @returns {RawVector}
+   */
+  linear_correction(dt, bodies, rb_handle, target_translation, target_linvel) {
+    _assertClass(bodies, RawRigidBodySet);
+    _assertClass(target_translation, RawVector);
+    _assertClass(target_linvel, RawVector);
+    const ret = wasm.rawpidcontroller_linear_correction(this.__wbg_ptr, dt, bodies.__wbg_ptr, rb_handle, target_translation.__wbg_ptr, target_linvel.__wbg_ptr);
+    return RawVector.__wrap(ret);
+  }
+  /**
+   * @param {number} dt
+   * @param {RawRigidBodySet} bodies
+   * @param {number} rb_handle
+   * @param {number} target_rotation
+   * @param {number} target_angvel
+   * @returns {number}
+   */
+  angular_correction(dt, bodies, rb_handle, target_rotation, target_angvel) {
+    _assertClass(bodies, RawRigidBodySet);
+    const ret = wasm.rawpidcontroller_angular_correction(this.__wbg_ptr, dt, bodies.__wbg_ptr, rb_handle, target_rotation, target_angvel);
+    return ret;
+  }
+};
 var RawPointColliderProjectionFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawpointcolliderprojection_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawpointcolliderprojection_free(ptr >>> 0, 1));
 var RawPointColliderProjection = class _RawPointColliderProjection {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -3327,54 +3533,47 @@ var RawPointColliderProjection = class _RawPointColliderProjection {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawpointcolliderprojection_free(ptr);
+    wasm.__wbg_rawpointcolliderprojection_free(ptr, 0);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   colliderHandle() {
     const ret = wasm.rawpointcolliderprojection_colliderHandle(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   point() {
     const ret = wasm.rawpointcolliderprojection_point(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {boolean}
-  */
+   * @returns {boolean}
+   */
   isInside() {
     const ret = wasm.rawpointcolliderprojection_isInside(this.__wbg_ptr);
     return ret !== 0;
   }
   /**
-  * @returns {RawFeatureType}
-  */
+   * @returns {RawFeatureType}
+   */
   featureType() {
     const ret = wasm.rawpointcolliderprojection_featureType(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number | undefined}
-  */
+   * @returns {number | undefined}
+   */
   featureId() {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawpointcolliderprojection_featureId(retptr, this.__wbg_ptr);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getInt32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1 >>> 0;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawpointcolliderprojection_featureId(this.__wbg_ptr);
+    return ret === 4294967297 ? void 0 : ret;
   }
 };
 var RawPointProjectionFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawpointprojection_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawpointprojection_free(ptr >>> 0, 1));
 var RawPointProjection = class _RawPointProjection {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -3391,18 +3590,18 @@ var RawPointProjection = class _RawPointProjection {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawpointprojection_free(ptr);
+    wasm.__wbg_rawpointprojection_free(ptr, 0);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   point() {
     const ret = wasm.rawpointprojection_point(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {boolean}
-  */
+   * @returns {boolean}
+   */
   isInside() {
     const ret = wasm.rawpointprojection_isInside(this.__wbg_ptr);
     return ret !== 0;
@@ -3410,7 +3609,7 @@ var RawPointProjection = class _RawPointProjection {
 };
 var RawQueryPipelineFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawquerypipeline_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawquerypipeline_free(ptr >>> 0, 1));
 var RawQueryPipeline = class {
   __destroy_into_raw() {
     const ptr = this.__wbg_ptr;
@@ -3420,113 +3619,112 @@ var RawQueryPipeline = class {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawquerypipeline_free(ptr);
+    wasm.__wbg_rawquerypipeline_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawquerypipeline_new();
     this.__wbg_ptr = ret >>> 0;
+    RawQueryPipelineFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @param {RawColliderSet} colliders
-  */
+   * @param {RawColliderSet} colliders
+   */
   update(colliders) {
     _assertClass(colliders, RawColliderSet);
     wasm.rawquerypipeline_update(this.__wbg_ptr, colliders.__wbg_ptr);
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @param {boolean} solid
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  * @returns {RawRayColliderHit | undefined}
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawRayColliderHit | undefined}
+   */
   castRay(bodies, colliders, rayOrig, rayDir, maxToi, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
       _assertClass(colliders, RawColliderSet);
       _assertClass(rayOrig, RawVector);
       _assertClass(rayDir, RawVector);
-      const ret = wasm.rawquerypipeline_castRay(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      const ret = wasm.rawquerypipeline_castRay(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
       return ret === 0 ? void 0 : RawRayColliderHit.__wrap(ret);
     } finally {
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @param {boolean} solid
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  * @returns {RawRayColliderIntersection | undefined}
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawRayColliderIntersection | undefined}
+   */
   castRayAndGetNormal(bodies, colliders, rayOrig, rayDir, maxToi, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
       _assertClass(colliders, RawColliderSet);
       _assertClass(rayOrig, RawVector);
       _assertClass(rayDir, RawVector);
-      const ret = wasm.rawquerypipeline_castRayAndGetNormal(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      const ret = wasm.rawquerypipeline_castRayAndGetNormal(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
       return ret === 0 ? void 0 : RawRayColliderIntersection.__wrap(ret);
     } finally {
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @param {boolean} solid
-  * @param {Function} callback
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @param {Function} callback
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   */
   intersectionsWithRay(bodies, colliders, rayOrig, rayDir, maxToi, solid, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
       _assertClass(colliders, RawColliderSet);
       _assertClass(rayOrig, RawVector);
       _assertClass(rayDir, RawVector);
-      wasm.rawquerypipeline_intersectionsWithRay(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, addBorrowedObject(callback), filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      wasm.rawquerypipeline_intersectionsWithRay(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
     } finally {
       heap[stack_pointer++] = void 0;
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} shapePos
-  * @param {RawRotation} shapeRot
-  * @param {RawShape} shape
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  * @returns {number | undefined}
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawShape} shape
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {number | undefined}
+   */
   intersectionWithShape(bodies, colliders, shapePos, shapeRot, shape, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
@@ -3535,9 +3733,9 @@ var RawQueryPipeline = class {
       _assertClass(shapePos, RawVector);
       _assertClass(shapeRot, RawRotation);
       _assertClass(shape, RawShape);
-      wasm.rawquerypipeline_intersectionWithShape(retptr, this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shape.__wbg_ptr, filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r2 = getFloat64Memory0()[retptr / 8 + 1];
+      wasm.rawquerypipeline_intersectionWithShape(retptr, this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shape.__wbg_ptr, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+      var r2 = getDataViewMemory0().getFloat64(retptr + 8 * 1, true);
       return r0 === 0 ? void 0 : r2;
     } finally {
       wasm.__wbindgen_add_to_stack_pointer(16);
@@ -3545,89 +3743,89 @@ var RawQueryPipeline = class {
     }
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} point
-  * @param {boolean} solid
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  * @returns {RawPointColliderProjection | undefined}
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} point
+   * @param {boolean} solid
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawPointColliderProjection | undefined}
+   */
   projectPoint(bodies, colliders, point, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
       _assertClass(colliders, RawColliderSet);
       _assertClass(point, RawVector);
-      const ret = wasm.rawquerypipeline_projectPoint(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, solid, filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      const ret = wasm.rawquerypipeline_projectPoint(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
       return ret === 0 ? void 0 : RawPointColliderProjection.__wrap(ret);
     } finally {
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} point
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  * @returns {RawPointColliderProjection | undefined}
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} point
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawPointColliderProjection | undefined}
+   */
   projectPointAndGetFeature(bodies, colliders, point, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
       _assertClass(colliders, RawColliderSet);
       _assertClass(point, RawVector);
-      const ret = wasm.rawquerypipeline_projectPointAndGetFeature(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      const ret = wasm.rawquerypipeline_projectPointAndGetFeature(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
       return ret === 0 ? void 0 : RawPointColliderProjection.__wrap(ret);
     } finally {
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} point
-  * @param {Function} callback
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} point
+   * @param {Function} callback
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   */
   intersectionsWithPoint(bodies, colliders, point, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
       _assertClass(colliders, RawColliderSet);
       _assertClass(point, RawVector);
-      wasm.rawquerypipeline_intersectionsWithPoint(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, addBorrowedObject(callback), filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      wasm.rawquerypipeline_intersectionsWithPoint(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
     } finally {
       heap[stack_pointer++] = void 0;
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} shapePos
-  * @param {RawRotation} shapeRot
-  * @param {RawVector} shapeVel
-  * @param {RawShape} shape
-  * @param {number} target_distance
-  * @param {number} maxToi
-  * @param {boolean} stop_at_penetration
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  * @returns {RawColliderShapeCastHit | undefined}
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawVector} shapeVel
+   * @param {RawShape} shape
+   * @param {number} target_distance
+   * @param {number} maxToi
+   * @param {boolean} stop_at_penetration
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawColliderShapeCastHit | undefined}
+   */
   castShape(bodies, colliders, shapePos, shapeRot, shapeVel, shape, target_distance, maxToi, stop_at_penetration, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
@@ -3636,25 +3834,25 @@ var RawQueryPipeline = class {
       _assertClass(shapeRot, RawRotation);
       _assertClass(shapeVel, RawVector);
       _assertClass(shape, RawShape);
-      const ret = wasm.rawquerypipeline_castShape(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shapeVel.__wbg_ptr, shape.__wbg_ptr, target_distance, maxToi, stop_at_penetration, filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      const ret = wasm.rawquerypipeline_castShape(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shapeVel.__wbg_ptr, shape.__wbg_ptr, target_distance, maxToi, stop_at_penetration, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
       return ret === 0 ? void 0 : RawColliderShapeCastHit.__wrap(ret);
     } finally {
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawVector} shapePos
-  * @param {RawRotation} shapeRot
-  * @param {RawShape} shape
-  * @param {Function} callback
-  * @param {number} filter_flags
-  * @param {number | undefined} filter_groups
-  * @param {number | undefined} filter_exclude_collider
-  * @param {number | undefined} filter_exclude_rigid_body
-  * @param {Function} filter_predicate
-  */
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawShape} shape
+   * @param {Function} callback
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   */
   intersectionsWithShape(bodies, colliders, shapePos, shapeRot, shape, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
     try {
       _assertClass(bodies, RawRigidBodySet);
@@ -3662,17 +3860,17 @@ var RawQueryPipeline = class {
       _assertClass(shapePos, RawVector);
       _assertClass(shapeRot, RawRotation);
       _assertClass(shape, RawShape);
-      wasm.rawquerypipeline_intersectionsWithShape(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shape.__wbg_ptr, addBorrowedObject(callback), filter_flags, !isLikeNone(filter_groups), isLikeNone(filter_groups) ? 0 : filter_groups, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      wasm.rawquerypipeline_intersectionsWithShape(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shape.__wbg_ptr, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
     } finally {
       heap[stack_pointer++] = void 0;
       heap[stack_pointer++] = void 0;
     }
   }
   /**
-  * @param {RawVector} aabbCenter
-  * @param {RawVector} aabbHalfExtents
-  * @param {Function} callback
-  */
+   * @param {RawVector} aabbCenter
+   * @param {RawVector} aabbHalfExtents
+   * @param {Function} callback
+   */
   collidersWithAabbIntersectingAabb(aabbCenter, aabbHalfExtents, callback) {
     try {
       _assertClass(aabbCenter, RawVector);
@@ -3685,7 +3883,7 @@ var RawQueryPipeline = class {
 };
 var RawRayColliderHitFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawraycolliderhit_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawraycolliderhit_free(ptr >>> 0, 1));
 var RawRayColliderHit = class _RawRayColliderHit {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -3702,18 +3900,18 @@ var RawRayColliderHit = class _RawRayColliderHit {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawraycolliderhit_free(ptr);
+    wasm.__wbg_rawraycolliderhit_free(ptr, 0);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   colliderHandle() {
     const ret = wasm.rawcollidershapecasthit_colliderHandle(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   timeOfImpact() {
     const ret = wasm.rawcollidershapecasthit_time_of_impact(this.__wbg_ptr);
     return ret;
@@ -3721,7 +3919,7 @@ var RawRayColliderHit = class _RawRayColliderHit {
 };
 var RawRayColliderIntersectionFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawraycolliderintersection_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawraycolliderintersection_free(ptr >>> 0, 1));
 var RawRayColliderIntersection = class _RawRayColliderIntersection {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -3738,54 +3936,47 @@ var RawRayColliderIntersection = class _RawRayColliderIntersection {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawraycolliderintersection_free(ptr);
+    wasm.__wbg_rawraycolliderintersection_free(ptr, 0);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   colliderHandle() {
     const ret = wasm.rawpointcolliderprojection_colliderHandle(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal() {
     const ret = wasm.rawcollidershapecasthit_witness1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   time_of_impact() {
     const ret = wasm.rawcollidershapecasthit_time_of_impact(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawFeatureType}
-  */
+   * @returns {RawFeatureType}
+   */
   featureType() {
     const ret = wasm.rawpointcolliderprojection_featureType(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number | undefined}
-  */
+   * @returns {number | undefined}
+   */
   featureId() {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawpointcolliderprojection_featureId(retptr, this.__wbg_ptr);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getInt32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1 >>> 0;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawpointcolliderprojection_featureId(this.__wbg_ptr);
+    return ret === 4294967297 ? void 0 : ret;
   }
 };
 var RawRayIntersectionFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawrayintersection_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawrayintersection_free(ptr >>> 0, 1));
 var RawRayIntersection = class _RawRayIntersection {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -3802,47 +3993,40 @@ var RawRayIntersection = class _RawRayIntersection {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawrayintersection_free(ptr);
+    wasm.__wbg_rawrayintersection_free(ptr, 0);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal() {
     const ret = wasm.rawcollidershapecasthit_witness1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   time_of_impact() {
     const ret = wasm.rawcollidershapecasthit_time_of_impact(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawFeatureType}
-  */
+   * @returns {RawFeatureType}
+   */
   featureType() {
     const ret = wasm.rawpointcolliderprojection_featureType(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {number | undefined}
-  */
+   * @returns {number | undefined}
+   */
   featureId() {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.rawpointcolliderprojection_featureId(retptr, this.__wbg_ptr);
-      var r0 = getInt32Memory0()[retptr / 4 + 0];
-      var r1 = getInt32Memory0()[retptr / 4 + 1];
-      return r0 === 0 ? void 0 : r1 >>> 0;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-    }
+    const ret = wasm.rawpointcolliderprojection_featureId(this.__wbg_ptr);
+    return ret === 4294967297 ? void 0 : ret;
   }
 };
 var RawRigidBodySetFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawrigidbodyset_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawrigidbodyset_free(ptr >>> 0, 1));
 var RawRigidBodySet = class _RawRigidBodySet {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -3859,700 +4043,710 @@ var RawRigidBodySet = class _RawRigidBodySet {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawrigidbodyset_free(ptr);
+    wasm.__wbg_rawrigidbodyset_free(ptr, 0);
   }
   /**
-  * The world-space translation of this rigid-body.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The world-space translation of this rigid-body.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   rbTranslation(handle) {
     const ret = wasm.rawrigidbodyset_rbTranslation(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The world-space orientation of this rigid-body.
-  * @param {number} handle
-  * @returns {RawRotation}
-  */
+   * The world-space orientation of this rigid-body.
+   * @param {number} handle
+   * @returns {RawRotation}
+   */
   rbRotation(handle) {
     const ret = wasm.rawrigidbodyset_rbRotation(this.__wbg_ptr, handle);
     return RawRotation.__wrap(ret);
   }
   /**
-  * Put the given rigid-body to sleep.
-  * @param {number} handle
-  */
+   * Put the given rigid-body to sleep.
+   * @param {number} handle
+   */
   rbSleep(handle) {
     wasm.rawrigidbodyset_rbSleep(this.__wbg_ptr, handle);
   }
   /**
-  * Is this rigid-body sleeping?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Is this rigid-body sleeping?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   rbIsSleeping(handle) {
     const ret = wasm.rawrigidbodyset_rbIsSleeping(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Is the velocity of this rigid-body not zero?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Is the velocity of this rigid-body not zero?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   rbIsMoving(handle) {
     const ret = wasm.rawrigidbodyset_rbIsMoving(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * The world-space predicted translation of this rigid-body.
-  *
-  * If this rigid-body is kinematic this value is set by the `setNextKinematicTranslation`
-  * method and is used for estimating the kinematic body velocity at the next timestep.
-  * For non-kinematic bodies, this value is currently unspecified.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The world-space predicted translation of this rigid-body.
+   *
+   * If this rigid-body is kinematic this value is set by the `setNextKinematicTranslation`
+   * method and is used for estimating the kinematic body velocity at the next timestep.
+   * For non-kinematic bodies, this value is currently unspecified.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   rbNextTranslation(handle) {
     const ret = wasm.rawrigidbodyset_rbNextTranslation(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The world-space predicted orientation of this rigid-body.
-  *
-  * If this rigid-body is kinematic this value is set by the `setNextKinematicRotation`
-  * method and is used for estimating the kinematic body velocity at the next timestep.
-  * For non-kinematic bodies, this value is currently unspecified.
-  * @param {number} handle
-  * @returns {RawRotation}
-  */
+   * The world-space predicted orientation of this rigid-body.
+   *
+   * If this rigid-body is kinematic this value is set by the `setNextKinematicRotation`
+   * method and is used for estimating the kinematic body velocity at the next timestep.
+   * For non-kinematic bodies, this value is currently unspecified.
+   * @param {number} handle
+   * @returns {RawRotation}
+   */
   rbNextRotation(handle) {
     const ret = wasm.rawrigidbodyset_rbNextRotation(this.__wbg_ptr, handle);
     return RawRotation.__wrap(ret);
   }
   /**
-  * Sets the translation of this rigid-body.
-  *
-  * # Parameters
-  * - `x`: the world-space position of the rigid-body along the `x` axis.
-  * - `y`: the world-space position of the rigid-body along the `y` axis.
-  * - `wakeUp`: forces the rigid-body to wake-up so it is properly affected by forces if it
-  * wasn't moving before modifying its position.
-  * @param {number} handle
-  * @param {number} x
-  * @param {number} y
-  * @param {boolean} wakeUp
-  */
+   * Sets the translation of this rigid-body.
+   *
+   * # Parameters
+   * - `x`: the world-space position of the rigid-body along the `x` axis.
+   * - `y`: the world-space position of the rigid-body along the `y` axis.
+   * - `wakeUp`: forces the rigid-body to wake-up so it is properly affected by forces if it
+   * wasn't moving before modifying its position.
+   * @param {number} handle
+   * @param {number} x
+   * @param {number} y
+   * @param {boolean} wakeUp
+   */
   rbSetTranslation(handle, x, y, wakeUp) {
     wasm.rawrigidbodyset_rbSetTranslation(this.__wbg_ptr, handle, x, y, wakeUp);
   }
   /**
-  * Sets the rotation angle of this rigid-body.
-  *
-  * # Parameters
-  * - `angle`: the rotation angle, in radians.
-  * - `wakeUp`: forces the rigid-body to wake-up so it is properly affected by forces if it
-  * wasn't moving before modifying its position.
-  * @param {number} handle
-  * @param {number} angle
-  * @param {boolean} wakeUp
-  */
+   * Sets the rotation angle of this rigid-body.
+   *
+   * # Parameters
+   * - `angle`: the rotation angle, in radians.
+   * - `wakeUp`: forces the rigid-body to wake-up so it is properly affected by forces if it
+   * wasn't moving before modifying its position.
+   * @param {number} handle
+   * @param {number} angle
+   * @param {boolean} wakeUp
+   */
   rbSetRotation(handle, angle, wakeUp) {
     wasm.rawrigidbodyset_rbSetRotation(this.__wbg_ptr, handle, angle, wakeUp);
   }
   /**
-  * Sets the linear velocity of this rigid-body.
-  * @param {number} handle
-  * @param {RawVector} linvel
-  * @param {boolean} wakeUp
-  */
+   * Sets the linear velocity of this rigid-body.
+   * @param {number} handle
+   * @param {RawVector} linvel
+   * @param {boolean} wakeUp
+   */
   rbSetLinvel(handle, linvel, wakeUp) {
     _assertClass(linvel, RawVector);
     wasm.rawrigidbodyset_rbSetLinvel(this.__wbg_ptr, handle, linvel.__wbg_ptr, wakeUp);
   }
   /**
-  * Sets the angular velocity of this rigid-body.
-  * @param {number} handle
-  * @param {number} angvel
-  * @param {boolean} wakeUp
-  */
+   * Sets the angular velocity of this rigid-body.
+   * @param {number} handle
+   * @param {number} angvel
+   * @param {boolean} wakeUp
+   */
   rbSetAngvel(handle, angvel, wakeUp) {
     wasm.rawrigidbodyset_rbSetAngvel(this.__wbg_ptr, handle, angvel, wakeUp);
   }
   /**
-  * If this rigid body is kinematic, sets its future translation after the next timestep integration.
-  *
-  * This should be used instead of `rigidBody.setTranslation` to make the dynamic object
-  * interacting with this kinematic body behave as expected. Internally, Rapier will compute
-  * an artificial velocity for this rigid-body from its current position and its next kinematic
-  * position. This velocity will be used to compute forces on dynamic bodies interacting with
-  * this body.
-  *
-  * # Parameters
-  * - `x`: the world-space position of the rigid-body along the `x` axis.
-  * - `y`: the world-space position of the rigid-body along the `y` axis.
-  * @param {number} handle
-  * @param {number} x
-  * @param {number} y
-  */
+   * If this rigid body is kinematic, sets its future translation after the next timestep integration.
+   *
+   * This should be used instead of `rigidBody.setTranslation` to make the dynamic object
+   * interacting with this kinematic body behave as expected. Internally, Rapier will compute
+   * an artificial velocity for this rigid-body from its current position and its next kinematic
+   * position. This velocity will be used to compute forces on dynamic bodies interacting with
+   * this body.
+   *
+   * # Parameters
+   * - `x`: the world-space position of the rigid-body along the `x` axis.
+   * - `y`: the world-space position of the rigid-body along the `y` axis.
+   * @param {number} handle
+   * @param {number} x
+   * @param {number} y
+   */
   rbSetNextKinematicTranslation(handle, x, y) {
     wasm.rawrigidbodyset_rbSetNextKinematicTranslation(this.__wbg_ptr, handle, x, y);
   }
   /**
-  * If this rigid body is kinematic, sets its future rotation after the next timestep integration.
-  *
-  * This should be used instead of `rigidBody.setRotation` to make the dynamic object
-  * interacting with this kinematic body behave as expected. Internally, Rapier will compute
-  * an artificial velocity for this rigid-body from its current position and its next kinematic
-  * position. This velocity will be used to compute forces on dynamic bodies interacting with
-  * this body.
-  *
-  * # Parameters
-  * - `angle`: the rotation angle, in radians.
-  * @param {number} handle
-  * @param {number} angle
-  */
+   * If this rigid body is kinematic, sets its future rotation after the next timestep integration.
+   *
+   * This should be used instead of `rigidBody.setRotation` to make the dynamic object
+   * interacting with this kinematic body behave as expected. Internally, Rapier will compute
+   * an artificial velocity for this rigid-body from its current position and its next kinematic
+   * position. This velocity will be used to compute forces on dynamic bodies interacting with
+   * this body.
+   *
+   * # Parameters
+   * - `angle`: the rotation angle, in radians.
+   * @param {number} handle
+   * @param {number} angle
+   */
   rbSetNextKinematicRotation(handle, angle) {
     wasm.rawrigidbodyset_rbSetNextKinematicRotation(this.__wbg_ptr, handle, angle);
   }
   /**
-  * @param {number} handle
-  * @param {RawColliderSet} colliders
-  */
+   * @param {number} handle
+   * @param {RawColliderSet} colliders
+   */
   rbRecomputeMassPropertiesFromColliders(handle, colliders) {
     _assertClass(colliders, RawColliderSet);
     wasm.rawrigidbodyset_rbRecomputeMassPropertiesFromColliders(this.__wbg_ptr, handle, colliders.__wbg_ptr);
   }
   /**
-  * @param {number} handle
-  * @param {number} mass
-  * @param {boolean} wake_up
-  */
+   * @param {number} handle
+   * @param {number} mass
+   * @param {boolean} wake_up
+   */
   rbSetAdditionalMass(handle, mass, wake_up) {
     wasm.rawrigidbodyset_rbSetAdditionalMass(this.__wbg_ptr, handle, mass, wake_up);
   }
   /**
-  * @param {number} handle
-  * @param {number} mass
-  * @param {RawVector} centerOfMass
-  * @param {number} principalAngularInertia
-  * @param {boolean} wake_up
-  */
+   * @param {number} handle
+   * @param {number} mass
+   * @param {RawVector} centerOfMass
+   * @param {number} principalAngularInertia
+   * @param {boolean} wake_up
+   */
   rbSetAdditionalMassProperties(handle, mass, centerOfMass, principalAngularInertia, wake_up) {
     _assertClass(centerOfMass, RawVector);
     wasm.rawrigidbodyset_rbSetAdditionalMassProperties(this.__wbg_ptr, handle, mass, centerOfMass.__wbg_ptr, principalAngularInertia, wake_up);
   }
   /**
-  * The linear velocity of this rigid-body.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The linear velocity of this rigid-body.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   rbLinvel(handle) {
     const ret = wasm.rawrigidbodyset_rbLinvel(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The angular velocity of this rigid-body.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The angular velocity of this rigid-body.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbAngvel(handle) {
     const ret = wasm.rawrigidbodyset_rbAngvel(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {boolean} locked
-  * @param {boolean} wake_up
-  */
+   * The velocity of the given world-space point on this rigid-body.
+   * @param {number} handle
+   * @param {RawVector} point
+   * @returns {RawVector}
+   */
+  rbVelocityAtPoint(handle, point) {
+    _assertClass(point, RawVector);
+    const ret = wasm.rawrigidbodyset_rbVelocityAtPoint(this.__wbg_ptr, handle, point.__wbg_ptr);
+    return RawVector.__wrap(ret);
+  }
+  /**
+   * @param {number} handle
+   * @param {boolean} locked
+   * @param {boolean} wake_up
+   */
   rbLockTranslations(handle, locked, wake_up) {
     wasm.rawrigidbodyset_rbLockTranslations(this.__wbg_ptr, handle, locked, wake_up);
   }
   /**
-  * @param {number} handle
-  * @param {boolean} allow_x
-  * @param {boolean} allow_y
-  * @param {boolean} wake_up
-  */
+   * @param {number} handle
+   * @param {boolean} allow_x
+   * @param {boolean} allow_y
+   * @param {boolean} wake_up
+   */
   rbSetEnabledTranslations(handle, allow_x, allow_y, wake_up) {
     wasm.rawrigidbodyset_rbSetEnabledTranslations(this.__wbg_ptr, handle, allow_x, allow_y, wake_up);
   }
   /**
-  * @param {number} handle
-  * @param {boolean} locked
-  * @param {boolean} wake_up
-  */
+   * @param {number} handle
+   * @param {boolean} locked
+   * @param {boolean} wake_up
+   */
   rbLockRotations(handle, locked, wake_up) {
     wasm.rawrigidbodyset_rbLockRotations(this.__wbg_ptr, handle, locked, wake_up);
   }
   /**
-  * @param {number} handle
-  * @returns {number}
-  */
+   * @param {number} handle
+   * @returns {number}
+   */
   rbDominanceGroup(handle) {
     const ret = wasm.rawrigidbodyset_rbDominanceGroup(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {number} group
-  */
+   * @param {number} handle
+   * @param {number} group
+   */
   rbSetDominanceGroup(handle, group) {
     wasm.rawrigidbodyset_rbSetDominanceGroup(this.__wbg_ptr, handle, group);
   }
   /**
-  * @param {number} handle
-  * @param {boolean} enabled
-  */
+   * @param {number} handle
+   * @param {boolean} enabled
+   */
   rbEnableCcd(handle, enabled) {
     wasm.rawrigidbodyset_rbEnableCcd(this.__wbg_ptr, handle, enabled);
   }
   /**
-  * @param {number} handle
-  * @param {number} prediction
-  */
+   * @param {number} handle
+   * @param {number} prediction
+   */
   rbSetSoftCcdPrediction(handle, prediction) {
     wasm.rawrigidbodyset_rbSetSoftCcdPrediction(this.__wbg_ptr, handle, prediction);
   }
   /**
-  * The mass of this rigid-body.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The mass of this rigid-body.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbMass(handle) {
     const ret = wasm.rawrigidbodyset_rbMass(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The inverse of the mass of a rigid-body.
-  *
-  * If this is zero, the rigid-body is assumed to have infinite mass.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The inverse of the mass of a rigid-body.
+   *
+   * If this is zero, the rigid-body is assumed to have infinite mass.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbInvMass(handle) {
     const ret = wasm.rawrigidbodyset_rbInvMass(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The inverse mass taking into account translation locking.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The inverse mass taking into account translation locking.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   rbEffectiveInvMass(handle) {
     const ret = wasm.rawrigidbodyset_rbEffectiveInvMass(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The center of mass of a rigid-body expressed in its local-space.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The center of mass of a rigid-body expressed in its local-space.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   rbLocalCom(handle) {
     const ret = wasm.rawrigidbodyset_rbLocalCom(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The world-space center of mass of the rigid-body.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * The world-space center of mass of the rigid-body.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   rbWorldCom(handle) {
     const ret = wasm.rawrigidbodyset_rbWorldCom(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * The inverse of the principal angular inertia of the rigid-body.
-  *
-  * Components set to zero are assumed to be infinite along the corresponding principal axis.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The inverse of the principal angular inertia of the rigid-body.
+   *
+   * Components set to zero are assumed to be infinite along the corresponding principal axis.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbInvPrincipalInertiaSqrt(handle) {
     const ret = wasm.rawrigidbodyset_rbInvPrincipalInertiaSqrt(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The angular inertia along the principal inertia axes of the rigid-body.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The angular inertia along the principal inertia axes of the rigid-body.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbPrincipalInertia(handle) {
     const ret = wasm.rawrigidbodyset_rbPrincipalInertia(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The square-root of the world-space inverse angular inertia tensor of the rigid-body,
-  * taking into account rotation locking.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The square-root of the world-space inverse angular inertia tensor of the rigid-body,
+   * taking into account rotation locking.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbEffectiveWorldInvInertiaSqrt(handle) {
     const ret = wasm.rawrigidbodyset_rbEffectiveWorldInvInertiaSqrt(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The effective world-space angular inertia (that takes the potential rotation locking into account) of
-  * this rigid-body.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The effective world-space angular inertia (that takes the potential rotation locking into account) of
+   * this rigid-body.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbEffectiveAngularInertia(handle) {
     const ret = wasm.rawrigidbodyset_rbEffectiveAngularInertia(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * Wakes this rigid-body up.
-  *
-  * A dynamic rigid-body that does not move during several consecutive frames will
-  * be put to sleep by the physics engine, i.e., it will stop being simulated in order
-  * to avoid useless computations.
-  * This method forces a sleeping rigid-body to wake-up. This is useful, e.g., before modifying
-  * the position of a dynamic body so that it is properly simulated afterwards.
-  * @param {number} handle
-  */
+   * Wakes this rigid-body up.
+   *
+   * A dynamic rigid-body that does not move during several consecutive frames will
+   * be put to sleep by the physics engine, i.e., it will stop being simulated in order
+   * to avoid useless computations.
+   * This method forces a sleeping rigid-body to wake-up. This is useful, e.g., before modifying
+   * the position of a dynamic body so that it is properly simulated afterwards.
+   * @param {number} handle
+   */
   rbWakeUp(handle) {
     wasm.rawrigidbodyset_rbWakeUp(this.__wbg_ptr, handle);
   }
   /**
-  * Is Continuous Collision Detection enabled for this rigid-body?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Is Continuous Collision Detection enabled for this rigid-body?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   rbIsCcdEnabled(handle) {
     const ret = wasm.rawrigidbodyset_rbIsCcdEnabled(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * @param {number} handle
-  * @returns {number}
-  */
+   * @param {number} handle
+   * @returns {number}
+   */
   rbSoftCcdPrediction(handle) {
     const ret = wasm.rawrigidbodyset_rbSoftCcdPrediction(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The number of colliders attached to this rigid-body.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The number of colliders attached to this rigid-body.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbNumColliders(handle) {
     const ret = wasm.rawrigidbodyset_rbNumColliders(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * Retrieves the `i-th` collider attached to this rigid-body.
-  *
-  * # Parameters
-  * - `at`: The index of the collider to retrieve. Must be a number in `[0, this.numColliders()[`.
-  *         This index is **not** the same as the unique identifier of the collider.
-  * @param {number} handle
-  * @param {number} at
-  * @returns {number}
-  */
+   * Retrieves the `i-th` collider attached to this rigid-body.
+   *
+   * # Parameters
+   * - `at`: The index of the collider to retrieve. Must be a number in `[0, this.numColliders()[`.
+   *         This index is **not** the same as the unique identifier of the collider.
+   * @param {number} handle
+   * @param {number} at
+   * @returns {number}
+   */
   rbCollider(handle, at) {
     const ret = wasm.rawrigidbodyset_rbCollider(this.__wbg_ptr, handle, at);
     return ret;
   }
   /**
-  * The status of this rigid-body: fixed, dynamic, or kinematic.
-  * @param {number} handle
-  * @returns {RawRigidBodyType}
-  */
+   * The status of this rigid-body: fixed, dynamic, or kinematic.
+   * @param {number} handle
+   * @returns {RawRigidBodyType}
+   */
   rbBodyType(handle) {
     const ret = wasm.rawrigidbodyset_rbBodyType(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * Set a new status for this rigid-body: fixed, dynamic, or kinematic.
-  * @param {number} handle
-  * @param {RawRigidBodyType} status
-  * @param {boolean} wake_up
-  */
+   * Set a new status for this rigid-body: fixed, dynamic, or kinematic.
+   * @param {number} handle
+   * @param {RawRigidBodyType} status
+   * @param {boolean} wake_up
+   */
   rbSetBodyType(handle, status, wake_up) {
     wasm.rawrigidbodyset_rbSetBodyType(this.__wbg_ptr, handle, status, wake_up);
   }
   /**
-  * Is this rigid-body fixed?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Is this rigid-body fixed?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   rbIsFixed(handle) {
     const ret = wasm.rawrigidbodyset_rbIsFixed(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Is this rigid-body kinematic?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Is this rigid-body kinematic?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   rbIsKinematic(handle) {
     const ret = wasm.rawrigidbodyset_rbIsKinematic(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Is this rigid-body dynamic?
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Is this rigid-body dynamic?
+   * @param {number} handle
+   * @returns {boolean}
+   */
   rbIsDynamic(handle) {
     const ret = wasm.rawrigidbodyset_rbIsDynamic(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * The linear damping coefficient of this rigid-body.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The linear damping coefficient of this rigid-body.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbLinearDamping(handle) {
     const ret = wasm.rawrigidbodyset_rbLinearDamping(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * The angular damping coefficient of this rigid-body.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * The angular damping coefficient of this rigid-body.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbAngularDamping(handle) {
     const ret = wasm.rawrigidbodyset_rbAngularDamping(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {number} factor
-  */
+   * @param {number} handle
+   * @param {number} factor
+   */
   rbSetLinearDamping(handle, factor) {
     wasm.rawrigidbodyset_rbSetLinearDamping(this.__wbg_ptr, handle, factor);
   }
   /**
-  * @param {number} handle
-  * @param {number} factor
-  */
+   * @param {number} handle
+   * @param {number} factor
+   */
   rbSetAngularDamping(handle, factor) {
     wasm.rawrigidbodyset_rbSetAngularDamping(this.__wbg_ptr, handle, factor);
   }
   /**
-  * @param {number} handle
-  * @param {boolean} enabled
-  */
+   * @param {number} handle
+   * @param {boolean} enabled
+   */
   rbSetEnabled(handle, enabled) {
     wasm.rawrigidbodyset_rbSetEnabled(this.__wbg_ptr, handle, enabled);
   }
   /**
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * @param {number} handle
+   * @returns {boolean}
+   */
   rbIsEnabled(handle) {
     const ret = wasm.rawrigidbodyset_rbIsEnabled(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * @param {number} handle
-  * @returns {number}
-  */
+   * @param {number} handle
+   * @returns {number}
+   */
   rbGravityScale(handle) {
     const ret = wasm.rawrigidbodyset_rbGravityScale(this.__wbg_ptr, handle);
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {number} factor
-  * @param {boolean} wakeUp
-  */
+   * @param {number} handle
+   * @param {number} factor
+   * @param {boolean} wakeUp
+   */
   rbSetGravityScale(handle, factor, wakeUp) {
     wasm.rawrigidbodyset_rbSetGravityScale(this.__wbg_ptr, handle, factor, wakeUp);
   }
   /**
-  * Resets to zero all user-added forces added to this rigid-body.
-  * @param {number} handle
-  * @param {boolean} wakeUp
-  */
+   * Resets to zero all user-added forces added to this rigid-body.
+   * @param {number} handle
+   * @param {boolean} wakeUp
+   */
   rbResetForces(handle, wakeUp) {
     wasm.rawrigidbodyset_rbResetForces(this.__wbg_ptr, handle, wakeUp);
   }
   /**
-  * Resets to zero all user-added torques added to this rigid-body.
-  * @param {number} handle
-  * @param {boolean} wakeUp
-  */
+   * Resets to zero all user-added torques added to this rigid-body.
+   * @param {number} handle
+   * @param {boolean} wakeUp
+   */
   rbResetTorques(handle, wakeUp) {
     wasm.rawrigidbodyset_rbResetTorques(this.__wbg_ptr, handle, wakeUp);
   }
   /**
-  * Adds a force at the center-of-mass of this rigid-body.
-  *
-  * # Parameters
-  * - `force`: the world-space force to apply on the rigid-body.
-  * - `wakeUp`: should the rigid-body be automatically woken-up?
-  * @param {number} handle
-  * @param {RawVector} force
-  * @param {boolean} wakeUp
-  */
+   * Adds a force at the center-of-mass of this rigid-body.
+   *
+   * # Parameters
+   * - `force`: the world-space force to apply on the rigid-body.
+   * - `wakeUp`: should the rigid-body be automatically woken-up?
+   * @param {number} handle
+   * @param {RawVector} force
+   * @param {boolean} wakeUp
+   */
   rbAddForce(handle, force, wakeUp) {
     _assertClass(force, RawVector);
     wasm.rawrigidbodyset_rbAddForce(this.__wbg_ptr, handle, force.__wbg_ptr, wakeUp);
   }
   /**
-  * Applies an impulse at the center-of-mass of this rigid-body.
-  *
-  * # Parameters
-  * - `impulse`: the world-space impulse to apply on the rigid-body.
-  * - `wakeUp`: should the rigid-body be automatically woken-up?
-  * @param {number} handle
-  * @param {RawVector} impulse
-  * @param {boolean} wakeUp
-  */
+   * Applies an impulse at the center-of-mass of this rigid-body.
+   *
+   * # Parameters
+   * - `impulse`: the world-space impulse to apply on the rigid-body.
+   * - `wakeUp`: should the rigid-body be automatically woken-up?
+   * @param {number} handle
+   * @param {RawVector} impulse
+   * @param {boolean} wakeUp
+   */
   rbApplyImpulse(handle, impulse, wakeUp) {
     _assertClass(impulse, RawVector);
     wasm.rawrigidbodyset_rbApplyImpulse(this.__wbg_ptr, handle, impulse.__wbg_ptr, wakeUp);
   }
   /**
-  * Adds a torque at the center-of-mass of this rigid-body.
-  *
-  * # Parameters
-  * - `torque`: the torque to apply on the rigid-body.
-  * - `wakeUp`: should the rigid-body be automatically woken-up?
-  * @param {number} handle
-  * @param {number} torque
-  * @param {boolean} wakeUp
-  */
+   * Adds a torque at the center-of-mass of this rigid-body.
+   *
+   * # Parameters
+   * - `torque`: the torque to apply on the rigid-body.
+   * - `wakeUp`: should the rigid-body be automatically woken-up?
+   * @param {number} handle
+   * @param {number} torque
+   * @param {boolean} wakeUp
+   */
   rbAddTorque(handle, torque, wakeUp) {
     wasm.rawrigidbodyset_rbAddTorque(this.__wbg_ptr, handle, torque, wakeUp);
   }
   /**
-  * Applies an impulsive torque at the center-of-mass of this rigid-body.
-  *
-  * # Parameters
-  * - `torque impulse`: the torque impulse to apply on the rigid-body.
-  * - `wakeUp`: should the rigid-body be automatically woken-up?
-  * @param {number} handle
-  * @param {number} torque_impulse
-  * @param {boolean} wakeUp
-  */
+   * Applies an impulsive torque at the center-of-mass of this rigid-body.
+   *
+   * # Parameters
+   * - `torque impulse`: the torque impulse to apply on the rigid-body.
+   * - `wakeUp`: should the rigid-body be automatically woken-up?
+   * @param {number} handle
+   * @param {number} torque_impulse
+   * @param {boolean} wakeUp
+   */
   rbApplyTorqueImpulse(handle, torque_impulse, wakeUp) {
     wasm.rawrigidbodyset_rbApplyTorqueImpulse(this.__wbg_ptr, handle, torque_impulse, wakeUp);
   }
   /**
-  * Adds a force at the given world-space point of this rigid-body.
-  *
-  * # Parameters
-  * - `force`: the world-space force to apply on the rigid-body.
-  * - `point`: the world-space point where the impulse is to be applied on the rigid-body.
-  * - `wakeUp`: should the rigid-body be automatically woken-up?
-  * @param {number} handle
-  * @param {RawVector} force
-  * @param {RawVector} point
-  * @param {boolean} wakeUp
-  */
+   * Adds a force at the given world-space point of this rigid-body.
+   *
+   * # Parameters
+   * - `force`: the world-space force to apply on the rigid-body.
+   * - `point`: the world-space point where the impulse is to be applied on the rigid-body.
+   * - `wakeUp`: should the rigid-body be automatically woken-up?
+   * @param {number} handle
+   * @param {RawVector} force
+   * @param {RawVector} point
+   * @param {boolean} wakeUp
+   */
   rbAddForceAtPoint(handle, force, point, wakeUp) {
     _assertClass(force, RawVector);
     _assertClass(point, RawVector);
     wasm.rawrigidbodyset_rbAddForceAtPoint(this.__wbg_ptr, handle, force.__wbg_ptr, point.__wbg_ptr, wakeUp);
   }
   /**
-  * Applies an impulse at the given world-space point of this rigid-body.
-  *
-  * # Parameters
-  * - `impulse`: the world-space impulse to apply on the rigid-body.
-  * - `point`: the world-space point where the impulse is to be applied on the rigid-body.
-  * - `wakeUp`: should the rigid-body be automatically woken-up?
-  * @param {number} handle
-  * @param {RawVector} impulse
-  * @param {RawVector} point
-  * @param {boolean} wakeUp
-  */
+   * Applies an impulse at the given world-space point of this rigid-body.
+   *
+   * # Parameters
+   * - `impulse`: the world-space impulse to apply on the rigid-body.
+   * - `point`: the world-space point where the impulse is to be applied on the rigid-body.
+   * - `wakeUp`: should the rigid-body be automatically woken-up?
+   * @param {number} handle
+   * @param {RawVector} impulse
+   * @param {RawVector} point
+   * @param {boolean} wakeUp
+   */
   rbApplyImpulseAtPoint(handle, impulse, point, wakeUp) {
     _assertClass(impulse, RawVector);
     _assertClass(point, RawVector);
     wasm.rawrigidbodyset_rbApplyImpulseAtPoint(this.__wbg_ptr, handle, impulse.__wbg_ptr, point.__wbg_ptr, wakeUp);
   }
   /**
-  * @param {number} handle
-  * @returns {number}
-  */
+   * @param {number} handle
+   * @returns {number}
+   */
   rbAdditionalSolverIterations(handle) {
     const ret = wasm.rawrigidbodyset_rbAdditionalSolverIterations(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * @param {number} handle
-  * @param {number} iters
-  */
+   * @param {number} handle
+   * @param {number} iters
+   */
   rbSetAdditionalSolverIterations(handle, iters) {
     wasm.rawrigidbodyset_rbSetAdditionalSolverIterations(this.__wbg_ptr, handle, iters);
   }
   /**
-  * An arbitrary user-defined 32-bit integer
-  * @param {number} handle
-  * @returns {number}
-  */
+   * An arbitrary user-defined 32-bit integer
+   * @param {number} handle
+   * @returns {number}
+   */
   rbUserData(handle) {
     const ret = wasm.rawrigidbodyset_rbUserData(this.__wbg_ptr, handle);
     return ret >>> 0;
   }
   /**
-  * Sets the user-defined 32-bit integer of this rigid-body.
-  *
-  * # Parameters
-  * - `data`: an arbitrary user-defined 32-bit integer.
-  * @param {number} handle
-  * @param {number} data
-  */
+   * Sets the user-defined 32-bit integer of this rigid-body.
+   *
+   * # Parameters
+   * - `data`: an arbitrary user-defined 32-bit integer.
+   * @param {number} handle
+   * @param {number} data
+   */
   rbSetUserData(handle, data) {
     wasm.rawrigidbodyset_rbSetUserData(this.__wbg_ptr, handle, data);
   }
   /**
-  * Retrieves the constant force(s) the user added to this rigid-body.
-  * Returns zero if the rigid-body is not dynamic.
-  * @param {number} handle
-  * @returns {RawVector}
-  */
+   * Retrieves the constant force(s) the user added to this rigid-body.
+   * Returns zero if the rigid-body is not dynamic.
+   * @param {number} handle
+   * @returns {RawVector}
+   */
   rbUserForce(handle) {
     const ret = wasm.rawrigidbodyset_rbUserForce(this.__wbg_ptr, handle);
     return RawVector.__wrap(ret);
   }
   /**
-  * Retrieves the constant torque(s) the user added to this rigid-body.
-  * Returns zero if the rigid-body is not dynamic.
-  * @param {number} handle
-  * @returns {number}
-  */
+   * Retrieves the constant torque(s) the user added to this rigid-body.
+   * Returns zero if the rigid-body is not dynamic.
+   * @param {number} handle
+   * @returns {number}
+   */
   rbUserTorque(handle) {
     const ret = wasm.rawrigidbodyset_rbUserTorque(this.__wbg_ptr, handle);
     return ret;
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawrigidbodyset_new();
     this.__wbg_ptr = ret >>> 0;
+    RawRigidBodySetFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @param {boolean} enabled
-  * @param {RawVector} translation
-  * @param {RawRotation} rotation
-  * @param {number} gravityScale
-  * @param {number} mass
-  * @param {boolean} massOnly
-  * @param {RawVector} centerOfMass
-  * @param {RawVector} linvel
-  * @param {number} angvel
-  * @param {number} principalAngularInertia
-  * @param {boolean} translationEnabledX
-  * @param {boolean} translationEnabledY
-  * @param {boolean} rotationsEnabled
-  * @param {number} linearDamping
-  * @param {number} angularDamping
-  * @param {RawRigidBodyType} rb_type
-  * @param {boolean} canSleep
-  * @param {boolean} sleeping
-  * @param {number} softCcdPrediciton
-  * @param {boolean} ccdEnabled
-  * @param {number} dominanceGroup
-  * @param {number} additional_solver_iterations
-  * @returns {number}
-  */
+   * @param {boolean} enabled
+   * @param {RawVector} translation
+   * @param {RawRotation} rotation
+   * @param {number} gravityScale
+   * @param {number} mass
+   * @param {boolean} massOnly
+   * @param {RawVector} centerOfMass
+   * @param {RawVector} linvel
+   * @param {number} angvel
+   * @param {number} principalAngularInertia
+   * @param {boolean} translationEnabledX
+   * @param {boolean} translationEnabledY
+   * @param {boolean} rotationsEnabled
+   * @param {number} linearDamping
+   * @param {number} angularDamping
+   * @param {RawRigidBodyType} rb_type
+   * @param {boolean} canSleep
+   * @param {boolean} sleeping
+   * @param {number} softCcdPrediciton
+   * @param {boolean} ccdEnabled
+   * @param {number} dominanceGroup
+   * @param {number} additional_solver_iterations
+   * @returns {number}
+   */
   createRigidBody(enabled, translation, rotation, gravityScale, mass, massOnly, centerOfMass, linvel, angvel, principalAngularInertia, translationEnabledX, translationEnabledY, rotationsEnabled, linearDamping, angularDamping, rb_type, canSleep, sleeping, softCcdPrediciton, ccdEnabled, dominanceGroup, additional_solver_iterations) {
     _assertClass(translation, RawVector);
     _assertClass(rotation, RawRotation);
@@ -4562,12 +4756,12 @@ var RawRigidBodySet = class _RawRigidBodySet {
     return ret;
   }
   /**
-  * @param {number} handle
-  * @param {RawIslandManager} islands
-  * @param {RawColliderSet} colliders
-  * @param {RawImpulseJointSet} joints
-  * @param {RawMultibodyJointSet} articulations
-  */
+   * @param {number} handle
+   * @param {RawIslandManager} islands
+   * @param {RawColliderSet} colliders
+   * @param {RawImpulseJointSet} joints
+   * @param {RawMultibodyJointSet} articulations
+   */
   remove(handle, islands, colliders, joints, articulations) {
     _assertClass(islands, RawIslandManager);
     _assertClass(colliders, RawColliderSet);
@@ -4576,29 +4770,29 @@ var RawRigidBodySet = class _RawRigidBodySet {
     wasm.rawrigidbodyset_remove(this.__wbg_ptr, handle, islands.__wbg_ptr, colliders.__wbg_ptr, joints.__wbg_ptr, articulations.__wbg_ptr);
   }
   /**
-  * The number of rigid-bodies on this set.
-  * @returns {number}
-  */
+   * The number of rigid-bodies on this set.
+   * @returns {number}
+   */
   len() {
     const ret = wasm.rawcolliderset_len(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
-  * Checks if a rigid-body with the given integer handle exists.
-  * @param {number} handle
-  * @returns {boolean}
-  */
+   * Checks if a rigid-body with the given integer handle exists.
+   * @param {number} handle
+   * @returns {boolean}
+   */
   contains(handle) {
     const ret = wasm.rawrigidbodyset_contains(this.__wbg_ptr, handle);
     return ret !== 0;
   }
   /**
-  * Applies the given JavaScript function to the integer handle of each rigid-body managed by this set.
-  *
-  * # Parameters
-  * - `f(handle)`: the function to apply to the integer handle of each rigid-body managed by this set. Called as `f(collider)`.
-  * @param {Function} f
-  */
+   * Applies the given JavaScript function to the integer handle of each rigid-body managed by this set.
+   *
+   * # Parameters
+   * - `f(handle)`: the function to apply to the integer handle of each rigid-body managed by this set. Called as `f(collider)`.
+   * @param {Function} f
+   */
   forEachRigidBodyHandle(f) {
     try {
       wasm.rawrigidbodyset_forEachRigidBodyHandle(this.__wbg_ptr, addBorrowedObject(f));
@@ -4607,8 +4801,8 @@ var RawRigidBodySet = class _RawRigidBodySet {
     }
   }
   /**
-  * @param {RawColliderSet} colliders
-  */
+   * @param {RawColliderSet} colliders
+   */
   propagateModifiedBodyPositionsToColliders(colliders) {
     _assertClass(colliders, RawColliderSet);
     wasm.rawrigidbodyset_propagateModifiedBodyPositionsToColliders(this.__wbg_ptr, colliders.__wbg_ptr);
@@ -4616,7 +4810,7 @@ var RawRigidBodySet = class _RawRigidBodySet {
 };
 var RawRotationFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawrotation_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawrotation_free(ptr >>> 0, 1));
 var RawRotation = class _RawRotation {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -4633,45 +4827,45 @@ var RawRotation = class _RawRotation {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawrotation_free(ptr);
+    wasm.__wbg_rawrotation_free(ptr, 0);
   }
   /**
-  * The identity rotation.
-  * @returns {RawRotation}
-  */
+   * The identity rotation.
+   * @returns {RawRotation}
+   */
   static identity() {
     const ret = wasm.rawrotation_identity();
     return _RawRotation.__wrap(ret);
   }
   /**
-  * The rotation with thegiven angle.
-  * @param {number} angle
-  * @returns {RawRotation}
-  */
+   * The rotation with thegiven angle.
+   * @param {number} angle
+   * @returns {RawRotation}
+   */
   static fromAngle(angle) {
     const ret = wasm.rawrotation_fromAngle(angle);
     return _RawRotation.__wrap(ret);
   }
   /**
-  * The imaginary part of this complex number.
-  * @returns {number}
-  */
+   * The imaginary part of this complex number.
+   * @returns {number}
+   */
   get im() {
     const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
     return ret;
   }
   /**
-  * The real part of this complex number.
-  * @returns {number}
-  */
+   * The real part of this complex number.
+   * @returns {number}
+   */
   get re() {
     const ret = wasm.rawrotation_re(this.__wbg_ptr);
     return ret;
   }
   /**
-  * The rotation angle in radians.
-  * @returns {number}
-  */
+   * The rotation angle in radians.
+   * @returns {number}
+   */
   get angle() {
     const ret = wasm.rawrotation_angle(this.__wbg_ptr);
     return ret;
@@ -4679,7 +4873,7 @@ var RawRotation = class _RawRotation {
 };
 var RawSerializationPipelineFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawserializationpipeline_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawserializationpipeline_free(ptr >>> 0, 1));
 var RawSerializationPipeline = class {
   __destroy_into_raw() {
     const ptr = this.__wbg_ptr;
@@ -4689,27 +4883,26 @@ var RawSerializationPipeline = class {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawserializationpipeline_free(ptr);
+    wasm.__wbg_rawserializationpipeline_free(ptr, 0);
   }
-  /**
-  */
   constructor() {
     const ret = wasm.rawserializationpipeline_new();
     this.__wbg_ptr = ret >>> 0;
+    RawSerializationPipelineFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * @param {RawVector} gravity
-  * @param {RawIntegrationParameters} integrationParameters
-  * @param {RawIslandManager} islands
-  * @param {RawBroadPhase} broadPhase
-  * @param {RawNarrowPhase} narrowPhase
-  * @param {RawRigidBodySet} bodies
-  * @param {RawColliderSet} colliders
-  * @param {RawImpulseJointSet} impulse_joints
-  * @param {RawMultibodyJointSet} multibody_joints
-  * @returns {Uint8Array | undefined}
-  */
+   * @param {RawVector} gravity
+   * @param {RawIntegrationParameters} integrationParameters
+   * @param {RawIslandManager} islands
+   * @param {RawBroadPhase} broadPhase
+   * @param {RawNarrowPhase} narrowPhase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawImpulseJointSet} impulse_joints
+   * @param {RawMultibodyJointSet} multibody_joints
+   * @returns {Uint8Array | undefined}
+   */
   serializeAll(gravity, integrationParameters, islands, broadPhase, narrowPhase, bodies, colliders, impulse_joints, multibody_joints) {
     _assertClass(gravity, RawVector);
     _assertClass(integrationParameters, RawIntegrationParameters);
@@ -4724,9 +4917,9 @@ var RawSerializationPipeline = class {
     return takeObject(ret);
   }
   /**
-  * @param {Uint8Array} data
-  * @returns {RawDeserializedWorld | undefined}
-  */
+   * @param {Uint8Array} data
+   * @returns {RawDeserializedWorld | undefined}
+   */
   deserializeAll(data) {
     const ret = wasm.rawserializationpipeline_deserializeAll(this.__wbg_ptr, addHeapObject(data));
     return ret === 0 ? void 0 : RawDeserializedWorld.__wrap(ret);
@@ -4734,7 +4927,7 @@ var RawSerializationPipeline = class {
 };
 var RawShapeFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawshape_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawshape_free(ptr >>> 0, 1));
 var RawShape = class _RawShape {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -4751,97 +4944,121 @@ var RawShape = class _RawShape {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawshape_free(ptr);
+    wasm.__wbg_rawshape_free(ptr, 0);
   }
   /**
-  * @param {number} hx
-  * @param {number} hy
-  * @returns {RawShape}
-  */
+   * @param {number} hx
+   * @param {number} hy
+   * @returns {RawShape}
+   */
   static cuboid(hx, hy) {
     const ret = wasm.rawshape_cuboid(hx, hy);
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {number} hx
-  * @param {number} hy
-  * @param {number} borderRadius
-  * @returns {RawShape}
-  */
+   * @param {number} hx
+   * @param {number} hy
+   * @param {number} borderRadius
+   * @returns {RawShape}
+   */
   static roundCuboid(hx, hy, borderRadius) {
     const ret = wasm.rawshape_roundCuboid(hx, hy, borderRadius);
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {number} radius
-  * @returns {RawShape}
-  */
+   * @param {number} radius
+   * @returns {RawShape}
+   */
   static ball(radius) {
     const ret = wasm.rawshape_ball(radius);
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {RawVector} normal
-  * @returns {RawShape}
-  */
+   * @param {RawVector} normal
+   * @returns {RawShape}
+   */
   static halfspace(normal) {
     _assertClass(normal, RawVector);
     const ret = wasm.rawshape_halfspace(normal.__wbg_ptr);
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {number} halfHeight
-  * @param {number} radius
-  * @returns {RawShape}
-  */
+   * @param {number} halfHeight
+   * @param {number} radius
+   * @returns {RawShape}
+   */
   static capsule(halfHeight, radius) {
     const ret = wasm.rawshape_capsule(halfHeight, radius);
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {Float32Array} vertices
-  * @param {Uint32Array} indices
-  * @returns {RawShape}
-  */
-  static polyline(vertices, indices) {
-    const ptr0 = passArrayF32ToWasm0(vertices, wasm.__wbindgen_malloc);
+   * @param {RawVector} voxel_size
+   * @param {Int32Array} grid_coords
+   * @returns {RawShape}
+   */
+  static voxels(voxel_size, grid_coords) {
+    _assertClass(voxel_size, RawVector);
+    const ptr0 = passArray32ToWasm0(grid_coords, wasm.__wbindgen_export_2);
     const len0 = WASM_VECTOR_LEN;
-    const ptr1 = passArray32ToWasm0(indices, wasm.__wbindgen_malloc);
+    const ret = wasm.rawshape_voxels(voxel_size.__wbg_ptr, ptr0, len0);
+    return _RawShape.__wrap(ret);
+  }
+  /**
+   * @param {RawVector} voxel_size
+   * @param {Float32Array} points
+   * @returns {RawShape}
+   */
+  static voxelsFromPoints(voxel_size, points) {
+    _assertClass(voxel_size, RawVector);
+    const ptr0 = passArrayF32ToWasm0(points, wasm.__wbindgen_export_2);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.rawshape_voxelsFromPoints(voxel_size.__wbg_ptr, ptr0, len0);
+    return _RawShape.__wrap(ret);
+  }
+  /**
+   * @param {Float32Array} vertices
+   * @param {Uint32Array} indices
+   * @returns {RawShape}
+   */
+  static polyline(vertices, indices) {
+    const ptr0 = passArrayF32ToWasm0(vertices, wasm.__wbindgen_export_2);
+    const len0 = WASM_VECTOR_LEN;
+    const ptr1 = passArray32ToWasm0(indices, wasm.__wbindgen_export_2);
     const len1 = WASM_VECTOR_LEN;
     const ret = wasm.rawshape_polyline(ptr0, len0, ptr1, len1);
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {Float32Array} vertices
-  * @param {Uint32Array} indices
-  * @param {number} flags
-  * @returns {RawShape}
-  */
+   * @param {Float32Array} vertices
+   * @param {Uint32Array} indices
+   * @param {number} flags
+   * @returns {RawShape | undefined}
+   */
   static trimesh(vertices, indices, flags) {
-    const ptr0 = passArrayF32ToWasm0(vertices, wasm.__wbindgen_malloc);
+    const ptr0 = passArrayF32ToWasm0(vertices, wasm.__wbindgen_export_2);
     const len0 = WASM_VECTOR_LEN;
-    const ptr1 = passArray32ToWasm0(indices, wasm.__wbindgen_malloc);
+    const ptr1 = passArray32ToWasm0(indices, wasm.__wbindgen_export_2);
     const len1 = WASM_VECTOR_LEN;
     const ret = wasm.rawshape_trimesh(ptr0, len0, ptr1, len1, flags);
-    return _RawShape.__wrap(ret);
+    return ret === 0 ? void 0 : _RawShape.__wrap(ret);
   }
   /**
-  * @param {Float32Array} heights
-  * @param {RawVector} scale
-  * @returns {RawShape}
-  */
+   * @param {Float32Array} heights
+   * @param {RawVector} scale
+   * @returns {RawShape}
+   */
   static heightfield(heights, scale) {
-    const ptr0 = passArrayF32ToWasm0(heights, wasm.__wbindgen_malloc);
+    const ptr0 = passArrayF32ToWasm0(heights, wasm.__wbindgen_export_2);
     const len0 = WASM_VECTOR_LEN;
     _assertClass(scale, RawVector);
     const ret = wasm.rawshape_heightfield(ptr0, len0, scale.__wbg_ptr);
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {RawVector} p1
-  * @param {RawVector} p2
-  * @returns {RawShape}
-  */
+   * @param {RawVector} p1
+   * @param {RawVector} p2
+   * @returns {RawShape}
+   */
   static segment(p1, p2) {
     _assertClass(p1, RawVector);
     _assertClass(p2, RawVector);
@@ -4849,11 +5066,11 @@ var RawShape = class _RawShape {
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {RawVector} p1
-  * @param {RawVector} p2
-  * @param {RawVector} p3
-  * @returns {RawShape}
-  */
+   * @param {RawVector} p1
+   * @param {RawVector} p2
+   * @param {RawVector} p3
+   * @returns {RawShape}
+   */
   static triangle(p1, p2, p3) {
     _assertClass(p1, RawVector);
     _assertClass(p2, RawVector);
@@ -4862,12 +5079,12 @@ var RawShape = class _RawShape {
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {RawVector} p1
-  * @param {RawVector} p2
-  * @param {RawVector} p3
-  * @param {number} borderRadius
-  * @returns {RawShape}
-  */
+   * @param {RawVector} p1
+   * @param {RawVector} p2
+   * @param {RawVector} p3
+   * @param {number} borderRadius
+   * @returns {RawShape}
+   */
   static roundTriangle(p1, p2, p3, borderRadius) {
     _assertClass(p1, RawVector);
     _assertClass(p2, RawVector);
@@ -4876,60 +5093,60 @@ var RawShape = class _RawShape {
     return _RawShape.__wrap(ret);
   }
   /**
-  * @param {Float32Array} points
-  * @returns {RawShape | undefined}
-  */
+   * @param {Float32Array} points
+   * @returns {RawShape | undefined}
+   */
   static convexHull(points) {
-    const ptr0 = passArrayF32ToWasm0(points, wasm.__wbindgen_malloc);
+    const ptr0 = passArrayF32ToWasm0(points, wasm.__wbindgen_export_2);
     const len0 = WASM_VECTOR_LEN;
     const ret = wasm.rawshape_convexHull(ptr0, len0);
     return ret === 0 ? void 0 : _RawShape.__wrap(ret);
   }
   /**
-  * @param {Float32Array} points
-  * @param {number} borderRadius
-  * @returns {RawShape | undefined}
-  */
+   * @param {Float32Array} points
+   * @param {number} borderRadius
+   * @returns {RawShape | undefined}
+   */
   static roundConvexHull(points, borderRadius) {
-    const ptr0 = passArrayF32ToWasm0(points, wasm.__wbindgen_malloc);
+    const ptr0 = passArrayF32ToWasm0(points, wasm.__wbindgen_export_2);
     const len0 = WASM_VECTOR_LEN;
     const ret = wasm.rawshape_roundConvexHull(ptr0, len0, borderRadius);
     return ret === 0 ? void 0 : _RawShape.__wrap(ret);
   }
   /**
-  * @param {Float32Array} vertices
-  * @returns {RawShape | undefined}
-  */
+   * @param {Float32Array} vertices
+   * @returns {RawShape | undefined}
+   */
   static convexPolyline(vertices) {
-    const ptr0 = passArrayF32ToWasm0(vertices, wasm.__wbindgen_malloc);
+    const ptr0 = passArrayF32ToWasm0(vertices, wasm.__wbindgen_export_2);
     const len0 = WASM_VECTOR_LEN;
     const ret = wasm.rawshape_convexPolyline(ptr0, len0);
     return ret === 0 ? void 0 : _RawShape.__wrap(ret);
   }
   /**
-  * @param {Float32Array} vertices
-  * @param {number} borderRadius
-  * @returns {RawShape | undefined}
-  */
+   * @param {Float32Array} vertices
+   * @param {number} borderRadius
+   * @returns {RawShape | undefined}
+   */
   static roundConvexPolyline(vertices, borderRadius) {
-    const ptr0 = passArrayF32ToWasm0(vertices, wasm.__wbindgen_malloc);
+    const ptr0 = passArrayF32ToWasm0(vertices, wasm.__wbindgen_export_2);
     const len0 = WASM_VECTOR_LEN;
     const ret = wasm.rawshape_roundConvexPolyline(ptr0, len0, borderRadius);
     return ret === 0 ? void 0 : _RawShape.__wrap(ret);
   }
   /**
-  * @param {RawVector} shapePos1
-  * @param {RawRotation} shapeRot1
-  * @param {RawVector} shapeVel1
-  * @param {RawShape} shape2
-  * @param {RawVector} shapePos2
-  * @param {RawRotation} shapeRot2
-  * @param {RawVector} shapeVel2
-  * @param {number} target_distance
-  * @param {number} maxToi
-  * @param {boolean} stop_at_penetration
-  * @returns {RawShapeCastHit | undefined}
-  */
+   * @param {RawVector} shapePos1
+   * @param {RawRotation} shapeRot1
+   * @param {RawVector} shapeVel1
+   * @param {RawShape} shape2
+   * @param {RawVector} shapePos2
+   * @param {RawRotation} shapeRot2
+   * @param {RawVector} shapeVel2
+   * @param {number} target_distance
+   * @param {number} maxToi
+   * @param {boolean} stop_at_penetration
+   * @returns {RawShapeCastHit | undefined}
+   */
   castShape(shapePos1, shapeRot1, shapeVel1, shape2, shapePos2, shapeRot2, shapeVel2, target_distance, maxToi, stop_at_penetration) {
     _assertClass(shapePos1, RawVector);
     _assertClass(shapeRot1, RawRotation);
@@ -4942,13 +5159,13 @@ var RawShape = class _RawShape {
     return ret === 0 ? void 0 : RawShapeCastHit.__wrap(ret);
   }
   /**
-  * @param {RawVector} shapePos1
-  * @param {RawRotation} shapeRot1
-  * @param {RawShape} shape2
-  * @param {RawVector} shapePos2
-  * @param {RawRotation} shapeRot2
-  * @returns {boolean}
-  */
+   * @param {RawVector} shapePos1
+   * @param {RawRotation} shapeRot1
+   * @param {RawShape} shape2
+   * @param {RawVector} shapePos2
+   * @param {RawRotation} shapeRot2
+   * @returns {boolean}
+   */
   intersectsShape(shapePos1, shapeRot1, shape2, shapePos2, shapeRot2) {
     _assertClass(shapePos1, RawVector);
     _assertClass(shapeRot1, RawRotation);
@@ -4959,14 +5176,14 @@ var RawShape = class _RawShape {
     return ret !== 0;
   }
   /**
-  * @param {RawVector} shapePos1
-  * @param {RawRotation} shapeRot1
-  * @param {RawShape} shape2
-  * @param {RawVector} shapePos2
-  * @param {RawRotation} shapeRot2
-  * @param {number} prediction
-  * @returns {RawShapeContact | undefined}
-  */
+   * @param {RawVector} shapePos1
+   * @param {RawRotation} shapeRot1
+   * @param {RawShape} shape2
+   * @param {RawVector} shapePos2
+   * @param {RawRotation} shapeRot2
+   * @param {number} prediction
+   * @returns {RawShapeContact | undefined}
+   */
   contactShape(shapePos1, shapeRot1, shape2, shapePos2, shapeRot2, prediction) {
     _assertClass(shapePos1, RawVector);
     _assertClass(shapeRot1, RawRotation);
@@ -4977,11 +5194,11 @@ var RawShape = class _RawShape {
     return ret === 0 ? void 0 : RawShapeContact.__wrap(ret);
   }
   /**
-  * @param {RawVector} shapePos
-  * @param {RawRotation} shapeRot
-  * @param {RawVector} point
-  * @returns {boolean}
-  */
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawVector} point
+   * @returns {boolean}
+   */
   containsPoint(shapePos, shapeRot, point) {
     _assertClass(shapePos, RawVector);
     _assertClass(shapeRot, RawRotation);
@@ -4990,12 +5207,12 @@ var RawShape = class _RawShape {
     return ret !== 0;
   }
   /**
-  * @param {RawVector} shapePos
-  * @param {RawRotation} shapeRot
-  * @param {RawVector} point
-  * @param {boolean} solid
-  * @returns {RawPointProjection}
-  */
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawVector} point
+   * @param {boolean} solid
+   * @returns {RawPointProjection}
+   */
   projectPoint(shapePos, shapeRot, point, solid) {
     _assertClass(shapePos, RawVector);
     _assertClass(shapeRot, RawRotation);
@@ -5004,13 +5221,13 @@ var RawShape = class _RawShape {
     return RawPointProjection.__wrap(ret);
   }
   /**
-  * @param {RawVector} shapePos
-  * @param {RawRotation} shapeRot
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @returns {boolean}
-  */
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @returns {boolean}
+   */
   intersectsRay(shapePos, shapeRot, rayOrig, rayDir, maxToi) {
     _assertClass(shapePos, RawVector);
     _assertClass(shapeRot, RawRotation);
@@ -5020,14 +5237,14 @@ var RawShape = class _RawShape {
     return ret !== 0;
   }
   /**
-  * @param {RawVector} shapePos
-  * @param {RawRotation} shapeRot
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @param {boolean} solid
-  * @returns {number}
-  */
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @returns {number}
+   */
   castRay(shapePos, shapeRot, rayOrig, rayDir, maxToi, solid) {
     _assertClass(shapePos, RawVector);
     _assertClass(shapeRot, RawRotation);
@@ -5037,14 +5254,14 @@ var RawShape = class _RawShape {
     return ret;
   }
   /**
-  * @param {RawVector} shapePos
-  * @param {RawRotation} shapeRot
-  * @param {RawVector} rayOrig
-  * @param {RawVector} rayDir
-  * @param {number} maxToi
-  * @param {boolean} solid
-  * @returns {RawRayIntersection | undefined}
-  */
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @returns {RawRayIntersection | undefined}
+   */
   castRayAndGetNormal(shapePos, shapeRot, rayOrig, rayDir, maxToi, solid) {
     _assertClass(shapePos, RawVector);
     _assertClass(shapeRot, RawRotation);
@@ -5056,7 +5273,7 @@ var RawShape = class _RawShape {
 };
 var RawShapeCastHitFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawshapecasthit_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawshapecasthit_free(ptr >>> 0, 1));
 var RawShapeCastHit = class _RawShapeCastHit {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -5073,39 +5290,39 @@ var RawShapeCastHit = class _RawShapeCastHit {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawshapecasthit_free(ptr);
+    wasm.__wbg_rawshapecasthit_free(ptr, 0);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   time_of_impact() {
     const ret = wasm.rawrotation_re(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   witness1() {
     const ret = wasm.rawshapecasthit_witness1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   witness2() {
     const ret = wasm.rawcollidershapecasthit_witness1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal1() {
     const ret = wasm.rawcollidershapecasthit_witness2(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal2() {
     const ret = wasm.rawcollidershapecasthit_normal1(this.__wbg_ptr);
     return RawVector.__wrap(ret);
@@ -5113,7 +5330,7 @@ var RawShapeCastHit = class _RawShapeCastHit {
 };
 var RawShapeContactFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawshapecontact_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawshapecontact_free(ptr >>> 0, 1));
 var RawShapeContact = class _RawShapeContact {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -5130,39 +5347,39 @@ var RawShapeContact = class _RawShapeContact {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawshapecontact_free(ptr);
+    wasm.__wbg_rawshapecontact_free(ptr, 0);
   }
   /**
-  * @returns {number}
-  */
+   * @returns {number}
+   */
   distance() {
     const ret = wasm.rawcontactforceevent_total_force_magnitude(this.__wbg_ptr);
     return ret;
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   point1() {
     const ret = wasm.rawpointprojection_point(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   point2() {
     const ret = wasm.rawpointcolliderprojection_point(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal1() {
     const ret = wasm.rawcontactforceevent_total_force(this.__wbg_ptr);
     return RawVector.__wrap(ret);
   }
   /**
-  * @returns {RawVector}
-  */
+   * @returns {RawVector}
+   */
   normal2() {
     const ret = wasm.rawcharactercollision_translationDeltaApplied(this.__wbg_ptr);
     return RawVector.__wrap(ret);
@@ -5170,7 +5387,7 @@ var RawShapeContact = class _RawShapeContact {
 };
 var RawVectorFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawvector_free(ptr >>> 0));
+} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawvector_free(ptr >>> 0, 1));
 var RawVector = class _RawVector {
   static __wrap(ptr) {
     ptr = ptr >>> 0;
@@ -5187,172 +5404,173 @@ var RawVector = class _RawVector {
   }
   free() {
     const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawvector_free(ptr);
+    wasm.__wbg_rawvector_free(ptr, 0);
   }
   /**
-  * Creates a new vector filled with zeros.
-  * @returns {RawVector}
-  */
+   * Creates a new vector filled with zeros.
+   * @returns {RawVector}
+   */
   static zero() {
     const ret = wasm.rawvector_zero();
     return _RawVector.__wrap(ret);
   }
   /**
-  * Creates a new 2D vector from its two components.
-  *
-  * # Parameters
-  * - `x`: the `x` component of this 2D vector.
-  * - `y`: the `y` component of this 2D vector.
-  * @param {number} x
-  * @param {number} y
-  */
+   * Creates a new 2D vector from its two components.
+   *
+   * # Parameters
+   * - `x`: the `x` component of this 2D vector.
+   * - `y`: the `y` component of this 2D vector.
+   * @param {number} x
+   * @param {number} y
+   */
   constructor(x, y) {
     const ret = wasm.rawvector_new(x, y);
     this.__wbg_ptr = ret >>> 0;
+    RawVectorFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
   /**
-  * The `x` component of this vector.
-  * @returns {number}
-  */
+   * The `x` component of this vector.
+   * @returns {number}
+   */
   get x() {
     const ret = wasm.rawrotation_re(this.__wbg_ptr);
     return ret;
   }
   /**
-  * Sets the `x` component of this vector.
-  * @param {number} x
-  */
+   * Sets the `x` component of this vector.
+   * @param {number} x
+   */
   set x(x) {
     wasm.rawvector_set_x(this.__wbg_ptr, x);
   }
   /**
-  * The `y` component of this vector.
-  * @returns {number}
-  */
+   * The `y` component of this vector.
+   * @returns {number}
+   */
   get y() {
     const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
     return ret;
   }
   /**
-  * Sets the `y` component of this vector.
-  * @param {number} y
-  */
+   * Sets the `y` component of this vector.
+   * @param {number} y
+   */
   set y(y) {
     wasm.rawintegrationparameters_set_dt(this.__wbg_ptr, y);
   }
   /**
-  * Create a new 2D vector from this vector with its components rearranged as `{x, y}`.
-  * @returns {RawVector}
-  */
+   * Create a new 2D vector from this vector with its components rearranged as `{x, y}`.
+   * @returns {RawVector}
+   */
   xy() {
     const ret = wasm.rawvector_xy(this.__wbg_ptr);
     return _RawVector.__wrap(ret);
   }
   /**
-  * Create a new 2D vector from this vector with its components rearranged as `{y, x}`.
-  * @returns {RawVector}
-  */
+   * Create a new 2D vector from this vector with its components rearranged as `{y, x}`.
+   * @returns {RawVector}
+   */
   yx() {
     const ret = wasm.rawvector_yx(this.__wbg_ptr);
     return _RawVector.__wrap(ret);
   }
 };
-function __wbindgen_number_new(arg0) {
-  const ret = arg0;
+function __wbg_bind_c8359b1cba058168(arg0, arg1, arg2, arg3) {
+  const ret = getObject(arg0).bind(getObject(arg1), getObject(arg2), getObject(arg3));
   return addHeapObject(ret);
 }
-function __wbindgen_boolean_get(arg0) {
-  const v = getObject(arg0);
-  const ret = typeof v === "boolean" ? v ? 1 : 0 : 2;
+function __wbg_buffer_609cc3eee51ed158(arg0) {
+  const ret = getObject(arg0).buffer;
+  return addHeapObject(ret);
+}
+function __wbg_call_7cccdd69e0791ae2() {
+  return handleError(function(arg0, arg1, arg2) {
+    const ret = getObject(arg0).call(getObject(arg1), getObject(arg2));
+    return addHeapObject(ret);
+  }, arguments);
+}
+function __wbg_call_833bed5770ea2041() {
+  return handleError(function(arg0, arg1, arg2, arg3) {
+    const ret = getObject(arg0).call(getObject(arg1), getObject(arg2), getObject(arg3));
+    return addHeapObject(ret);
+  }, arguments);
+}
+function __wbg_call_b8adc8b1d0a0d8eb() {
+  return handleError(function(arg0, arg1, arg2, arg3, arg4) {
+    const ret = getObject(arg0).call(getObject(arg1), getObject(arg2), getObject(arg3), getObject(arg4));
+    return addHeapObject(ret);
+  }, arguments);
+}
+function __wbg_length_3b4f022188ae8db6(arg0) {
+  const ret = getObject(arg0).length;
   return ret;
 }
-function __wbindgen_object_drop_ref(arg0) {
-  takeObject(arg0);
-}
-function __wbindgen_number_get(arg0, arg1) {
-  const obj = getObject(arg1);
-  const ret = typeof obj === "number" ? obj : void 0;
-  getFloat64Memory0()[arg0 / 8 + 1] = isLikeNone(ret) ? 0 : ret;
-  getInt32Memory0()[arg0 / 4 + 0] = !isLikeNone(ret);
-}
-function __wbindgen_is_function(arg0) {
-  const ret = typeof getObject(arg0) === "function";
+function __wbg_length_a446193dc22c12f8(arg0) {
+  const ret = getObject(arg0).length;
   return ret;
 }
-function __wbg_rawraycolliderintersection_new(arg0) {
-  const ret = RawRayColliderIntersection.__wrap(arg0);
+function __wbg_new_a12002a7f91c75be(arg0) {
+  const ret = new Uint8Array(getObject(arg0));
+  return addHeapObject(ret);
+}
+function __wbg_newwithbyteoffsetandlength_d97e637ebe145a9a(arg0, arg1, arg2) {
+  const ret = new Uint8Array(getObject(arg0), arg1 >>> 0, arg2 >>> 0);
+  return addHeapObject(ret);
+}
+function __wbg_newwithbyteoffsetandlength_e6b7e69acd4c7354(arg0, arg1, arg2) {
+  const ret = new Float32Array(getObject(arg0), arg1 >>> 0, arg2 >>> 0);
+  return addHeapObject(ret);
+}
+function __wbg_newwithlength_5a5efe313cfd59f1(arg0) {
+  const ret = new Float32Array(arg0 >>> 0);
   return addHeapObject(ret);
 }
 function __wbg_rawcontactforceevent_new(arg0) {
   const ret = RawContactForceEvent.__wrap(arg0);
   return addHeapObject(ret);
 }
-function __wbg_call_b3ca7c6051f9bec1() {
-  return handleError(function(arg0, arg1, arg2) {
-    const ret = getObject(arg0).call(getObject(arg1), getObject(arg2));
-    return addHeapObject(ret);
-  }, arguments);
-}
-function __wbg_call_8e7cb608789c2528() {
-  return handleError(function(arg0, arg1, arg2, arg3) {
-    const ret = getObject(arg0).call(getObject(arg1), getObject(arg2), getObject(arg3));
-    return addHeapObject(ret);
-  }, arguments);
-}
-function __wbg_call_938992c832f74314() {
-  return handleError(function(arg0, arg1, arg2, arg3, arg4) {
-    const ret = getObject(arg0).call(getObject(arg1), getObject(arg2), getObject(arg3), getObject(arg4));
-    return addHeapObject(ret);
-  }, arguments);
-}
-function __wbg_bind_4d857b598695205e(arg0, arg1, arg2, arg3) {
-  const ret = getObject(arg0).bind(getObject(arg1), getObject(arg2), getObject(arg3));
+function __wbg_rawraycolliderintersection_new(arg0) {
+  const ret = RawRayColliderIntersection.__wrap(arg0);
   return addHeapObject(ret);
 }
-function __wbg_buffer_12d079cc21e14bdb(arg0) {
-  const ret = getObject(arg0).buffer;
-  return addHeapObject(ret);
-}
-function __wbg_newwithbyteoffsetandlength_aa4a17c33a06e5cb(arg0, arg1, arg2) {
-  const ret = new Uint8Array(getObject(arg0), arg1 >>> 0, arg2 >>> 0);
-  return addHeapObject(ret);
-}
-function __wbg_new_63b92bc8671ed464(arg0) {
-  const ret = new Uint8Array(getObject(arg0));
-  return addHeapObject(ret);
-}
-function __wbg_set_a47bac70306a19a7(arg0, arg1, arg2) {
+function __wbg_set_10bad9bee0e9c58b(arg0, arg1, arg2) {
   getObject(arg0).set(getObject(arg1), arg2 >>> 0);
 }
-function __wbg_length_c20a40f15020d68a(arg0) {
-  const ret = getObject(arg0).length;
-  return ret;
-}
-function __wbg_newwithbyteoffsetandlength_4a659d079a1650e0(arg0, arg1, arg2) {
-  const ret = new Float32Array(getObject(arg0), arg1 >>> 0, arg2 >>> 0);
-  return addHeapObject(ret);
-}
-function __wbg_set_bd975934d1b1fddb(arg0, arg1, arg2) {
+function __wbg_set_65595bdd868b3009(arg0, arg1, arg2) {
   getObject(arg0).set(getObject(arg1), arg2 >>> 0);
 }
-function __wbg_length_d25bbcbc3367f684(arg0) {
-  const ret = getObject(arg0).length;
+function __wbindgen_boolean_get(arg0) {
+  const v = getObject(arg0);
+  const ret = typeof v === "boolean" ? v ? 1 : 0 : 2;
   return ret;
 }
-function __wbg_newwithlength_1e8b839a06de01c5(arg0) {
-  const ret = new Float32Array(arg0 >>> 0);
-  return addHeapObject(ret);
-}
-function __wbindgen_throw(arg0, arg1) {
-  throw new Error(getStringFromWasm0(arg0, arg1));
+function __wbindgen_is_function(arg0) {
+  const ret = typeof getObject(arg0) === "function";
+  return ret;
 }
 function __wbindgen_memory() {
   const ret = wasm.memory;
   return addHeapObject(ret);
 }
+function __wbindgen_number_get(arg0, arg1) {
+  const obj = getObject(arg1);
+  const ret = typeof obj === "number" ? obj : void 0;
+  getDataViewMemory0().setFloat64(arg0 + 8 * 1, isLikeNone(ret) ? 0 : ret, true);
+  getDataViewMemory0().setInt32(arg0 + 4 * 0, !isLikeNone(ret), true);
+}
+function __wbindgen_number_new(arg0) {
+  const ret = arg0;
+  return addHeapObject(ret);
+}
+function __wbindgen_object_drop_ref(arg0) {
+  takeObject(arg0);
+}
+function __wbindgen_throw(arg0, arg1) {
+  throw new Error(getStringFromWasm0(arg0, arg1));
+}
 
-// wasm-module:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
+// wasm-module:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
 var imports = {
   ["./rapier_wasm2d_bg.js"]: {
     __wbindgen_number_new,
@@ -5362,19 +5580,19 @@ var imports = {
     __wbindgen_is_function,
     __wbg_rawraycolliderintersection_new,
     __wbg_rawcontactforceevent_new,
-    __wbg_call_b3ca7c6051f9bec1,
-    __wbg_call_8e7cb608789c2528,
-    __wbg_call_938992c832f74314,
-    __wbg_bind_4d857b598695205e,
-    __wbg_buffer_12d079cc21e14bdb,
-    __wbg_newwithbyteoffsetandlength_aa4a17c33a06e5cb,
-    __wbg_new_63b92bc8671ed464,
-    __wbg_set_a47bac70306a19a7,
-    __wbg_length_c20a40f15020d68a,
-    __wbg_newwithbyteoffsetandlength_4a659d079a1650e0,
-    __wbg_set_bd975934d1b1fddb,
-    __wbg_length_d25bbcbc3367f684,
-    __wbg_newwithlength_1e8b839a06de01c5,
+    __wbg_call_7cccdd69e0791ae2,
+    __wbg_call_833bed5770ea2041,
+    __wbg_call_b8adc8b1d0a0d8eb,
+    __wbg_bind_c8359b1cba058168,
+    __wbg_buffer_609cc3eee51ed158,
+    __wbg_newwithbyteoffsetandlength_d97e637ebe145a9a,
+    __wbg_new_a12002a7f91c75be,
+    __wbg_set_65595bdd868b3009,
+    __wbg_length_a446193dc22c12f8,
+    __wbg_newwithbyteoffsetandlength_e6b7e69acd4c7354,
+    __wbg_set_10bad9bee0e9c58b,
+    __wbg_length_3b4f022188ae8db6,
+    __wbg_newwithlength_5a5efe313cfd59f1,
     __wbindgen_throw,
     __wbindgen_memory
   }
@@ -5438,6 +5656,17 @@ var rawcharactercollision_worldWitness1 = instance.exports.rawcharactercollision
 var rawcharactercollision_worldWitness2 = instance.exports.rawcharactercollision_worldWitness2;
 var rawcharactercollision_worldNormal1 = instance.exports.rawcharactercollision_worldNormal1;
 var rawcharactercollision_worldNormal2 = instance.exports.rawcharactercollision_worldNormal2;
+var __wbg_rawpidcontroller_free = instance.exports.__wbg_rawpidcontroller_free;
+var rawpidcontroller_new = instance.exports.rawpidcontroller_new;
+var rawpidcontroller_set_kp = instance.exports.rawpidcontroller_set_kp;
+var rawpidcontroller_set_ki = instance.exports.rawpidcontroller_set_ki;
+var rawpidcontroller_set_kd = instance.exports.rawpidcontroller_set_kd;
+var rawpidcontroller_set_axes_mask = instance.exports.rawpidcontroller_set_axes_mask;
+var rawpidcontroller_reset_integrals = instance.exports.rawpidcontroller_reset_integrals;
+var rawpidcontroller_apply_linear_correction = instance.exports.rawpidcontroller_apply_linear_correction;
+var rawpidcontroller_apply_angular_correction = instance.exports.rawpidcontroller_apply_angular_correction;
+var rawpidcontroller_linear_correction = instance.exports.rawpidcontroller_linear_correction;
+var rawpidcontroller_angular_correction = instance.exports.rawpidcontroller_angular_correction;
 var __wbg_rawccdsolver_free = instance.exports.__wbg_rawccdsolver_free;
 var rawccdsolver_new = instance.exports.rawccdsolver_new;
 var rawimpulsejointset_jointType = instance.exports.rawimpulsejointset_jointType;
@@ -5475,6 +5704,7 @@ var rawintegrationparameters_normalizedPredictionDistance = instance.exports.raw
 var rawintegrationparameters_numSolverIterations = instance.exports.rawintegrationparameters_numSolverIterations;
 var rawintegrationparameters_numAdditionalFrictionIterations = instance.exports.rawintegrationparameters_numAdditionalFrictionIterations;
 var rawintegrationparameters_numInternalPgsIterations = instance.exports.rawintegrationparameters_numInternalPgsIterations;
+var rawintegrationparameters_minIslandSize = instance.exports.rawintegrationparameters_minIslandSize;
 var rawintegrationparameters_maxCcdSubsteps = instance.exports.rawintegrationparameters_maxCcdSubsteps;
 var rawintegrationparameters_set_dt = instance.exports.rawintegrationparameters_set_dt;
 var rawintegrationparameters_set_contact_natural_frequency = instance.exports.rawintegrationparameters_set_contact_natural_frequency;
@@ -5533,6 +5763,7 @@ var rawrigidbodyset_rbSetAdditionalMass = instance.exports.rawrigidbodyset_rbSet
 var rawrigidbodyset_rbSetAdditionalMassProperties = instance.exports.rawrigidbodyset_rbSetAdditionalMassProperties;
 var rawrigidbodyset_rbLinvel = instance.exports.rawrigidbodyset_rbLinvel;
 var rawrigidbodyset_rbAngvel = instance.exports.rawrigidbodyset_rbAngvel;
+var rawrigidbodyset_rbVelocityAtPoint = instance.exports.rawrigidbodyset_rbVelocityAtPoint;
 var rawrigidbodyset_rbLockTranslations = instance.exports.rawrigidbodyset_rbLockTranslations;
 var rawrigidbodyset_rbSetEnabledTranslations = instance.exports.rawrigidbodyset_rbSetEnabledTranslations;
 var rawrigidbodyset_rbLockRotations = instance.exports.rawrigidbodyset_rbLockRotations;
@@ -5607,6 +5838,11 @@ var rawcolliderset_coHalfHeight = instance.exports.rawcolliderset_coHalfHeight;
 var rawcolliderset_coSetHalfHeight = instance.exports.rawcolliderset_coSetHalfHeight;
 var rawcolliderset_coRoundRadius = instance.exports.rawcolliderset_coRoundRadius;
 var rawcolliderset_coSetRoundRadius = instance.exports.rawcolliderset_coSetRoundRadius;
+var rawcolliderset_coVoxelData = instance.exports.rawcolliderset_coVoxelData;
+var rawcolliderset_coVoxelSize = instance.exports.rawcolliderset_coVoxelSize;
+var rawcolliderset_coSetVoxel = instance.exports.rawcolliderset_coSetVoxel;
+var rawcolliderset_coPropagateVoxelChange = instance.exports.rawcolliderset_coPropagateVoxelChange;
+var rawcolliderset_coCombineVoxelStates = instance.exports.rawcolliderset_coCombineVoxelStates;
 var rawcolliderset_coVertices = instance.exports.rawcolliderset_coVertices;
 var rawcolliderset_coIndices = instance.exports.rawcolliderset_coIndices;
 var rawcolliderset_coTriMeshFlags = instance.exports.rawcolliderset_coTriMeshFlags;
@@ -5709,6 +5945,8 @@ var rawshape_roundCuboid = instance.exports.rawshape_roundCuboid;
 var rawshape_ball = instance.exports.rawshape_ball;
 var rawshape_halfspace = instance.exports.rawshape_halfspace;
 var rawshape_capsule = instance.exports.rawshape_capsule;
+var rawshape_voxels = instance.exports.rawshape_voxels;
+var rawshape_voxelsFromPoints = instance.exports.rawshape_voxelsFromPoints;
 var rawshape_polyline = instance.exports.rawshape_polyline;
 var rawshape_trimesh = instance.exports.rawshape_trimesh;
 var rawshape_heightfield = instance.exports.rawshape_heightfield;
@@ -5787,12 +6025,13 @@ var rawdeserializedworld_takeBodies = instance.exports.rawdeserializedworld_take
 var rawdeserializedworld_takeColliders = instance.exports.rawdeserializedworld_takeColliders;
 var rawdeserializedworld_takeImpulseJoints = instance.exports.rawdeserializedworld_takeImpulseJoints;
 var rawdeserializedworld_takeMultibodyJoints = instance.exports.rawdeserializedworld_takeMultibodyJoints;
+var __wbg_rawserializationpipeline_free = instance.exports.__wbg_rawserializationpipeline_free;
 var rawserializationpipeline_new = instance.exports.rawserializationpipeline_new;
 var rawserializationpipeline_serializeAll = instance.exports.rawserializationpipeline_serializeAll;
 var rawserializationpipeline_deserializeAll = instance.exports.rawserializationpipeline_deserializeAll;
+var rawcolliderset_isHandleValid = instance.exports.rawcolliderset_isHandleValid;
 var rawkinematiccharactercontroller_offset = instance.exports.rawkinematiccharactercontroller_offset;
 var rawkinematiccharactercontroller_maxSlopeClimbAngle = instance.exports.rawkinematiccharactercontroller_maxSlopeClimbAngle;
-var rawintegrationparameters_minIslandSize = instance.exports.rawintegrationparameters_minIslandSize;
 var rawrigidbodyset_len = instance.exports.rawrigidbodyset_len;
 var rawshapecontact_distance = instance.exports.rawshapecontact_distance;
 var rawrayintersection_featureType = instance.exports.rawrayintersection_featureType;
@@ -5809,7 +6048,10 @@ var rawvector_y = instance.exports.rawvector_y;
 var rawcontactforceevent_collider1 = instance.exports.rawcontactforceevent_collider1;
 var rawintegrationparameters_lengthUnit = instance.exports.rawintegrationparameters_lengthUnit;
 var rawintegrationparameters_normalizedAllowedLinearError = instance.exports.rawintegrationparameters_normalizedAllowedLinearError;
-var rawcolliderset_isHandleValid = instance.exports.rawcolliderset_isHandleValid;
+var reserve_memory2 = instance.exports.reserve_memory;
+var rawrayintersection_featureId = instance.exports.rawrayintersection_featureId;
+var rawraycolliderintersection_featureId = instance.exports.rawraycolliderintersection_featureId;
+var __wbg_rawquerypipeline_free = instance.exports.__wbg_rawquerypipeline_free;
 var rawshapecontact_normal2 = instance.exports.rawshapecontact_normal2;
 var rawshapecontact_point1 = instance.exports.rawshapecontact_point1;
 var rawshapecontact_point2 = instance.exports.rawshapecontact_point2;
@@ -5823,23 +6065,19 @@ var rawshapecontact_normal1 = instance.exports.rawshapecontact_normal1;
 var rawcontactforceevent_max_force_direction = instance.exports.rawcontactforceevent_max_force_direction;
 var rawkinematiccharactercontroller_setMaxSlopeClimbAngle = instance.exports.rawkinematiccharactercontroller_setMaxSlopeClimbAngle;
 var rawvector_set_y = instance.exports.rawvector_set_y;
-var __wbg_rawcontactpair_free = instance.exports.__wbg_rawcontactpair_free;
-var __wbg_rawraycolliderintersection_free = instance.exports.__wbg_rawraycolliderintersection_free;
 var __wbg_rawraycolliderhit_free = instance.exports.__wbg_rawraycolliderhit_free;
 var __wbg_rawshapecasthit_free = instance.exports.__wbg_rawshapecasthit_free;
-var __wbg_rawserializationpipeline_free = instance.exports.__wbg_rawserializationpipeline_free;
-var rawrayintersection_featureId = instance.exports.rawrayintersection_featureId;
-var rawraycolliderintersection_featureId = instance.exports.rawraycolliderintersection_featureId;
-var __wbg_rawquerypipeline_free = instance.exports.__wbg_rawquerypipeline_free;
+var __wbg_rawcontactpair_free = instance.exports.__wbg_rawcontactpair_free;
+var __wbg_rawraycolliderintersection_free = instance.exports.__wbg_rawraycolliderintersection_free;
+var __wbindgen_export_0 = instance.exports.__wbindgen_export_0;
 var __wbindgen_add_to_stack_pointer = instance.exports.__wbindgen_add_to_stack_pointer;
-var __wbindgen_free = instance.exports.__wbindgen_free;
-var __wbindgen_malloc = instance.exports.__wbindgen_malloc;
-var __wbindgen_exn_store = instance.exports.__wbindgen_exn_store;
+var __wbindgen_export_1 = instance.exports.__wbindgen_export_1;
+var __wbindgen_export_2 = instance.exports.__wbindgen_export_2;
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/rapier_wasm2d.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d.js
 __wbg_set_wasm(rapier_wasm2d_bg_exports);
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/math.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/math.js
 var Vector2 = class {
   constructor(x, y) {
     this.x = x;
@@ -5885,7 +6123,7 @@ var RotationOps = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/rigid_body.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/rigid_body.js
 var RigidBodyType;
 (function(RigidBodyType2) {
   RigidBodyType2[RigidBodyType2["Dynamic"] = 0] = "Dynamic";
@@ -6144,6 +6382,15 @@ var RigidBody = class {
    */
   linvel() {
     return VectorOps.fromRaw(this.rawSet.rbLinvel(this.handle));
+  }
+  /**
+   * The velocity of the given world-space point on this rigid-body.
+   */
+  velocityAtPoint(point) {
+    const rawPoint = VectorOps.intoRaw(point);
+    let result = VectorOps.fromRaw(this.rawSet.rbVelocityAtPoint(this.handle, rawPoint));
+    rawPoint.free();
+    return result;
   }
   // #if DIM2
   /**
@@ -6810,7 +7057,7 @@ var RigidBodyDesc = class _RigidBodyDesc {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/coarena.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/coarena.js
 var Coarena = class {
   constructor() {
     this.fconv = new Float64Array(1);
@@ -6864,17 +7111,8 @@ var Coarena = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/rigid_body_set.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/rigid_body_set.js
 var RigidBodySet = class {
-  constructor(raw) {
-    this.raw = raw || new RawRigidBodySet();
-    this.map = new Coarena();
-    if (raw) {
-      raw.forEachRigidBodyHandle((handle) => {
-        this.map.set(handle, new RigidBody(raw, null, handle));
-      });
-    }
-  }
   /**
    * Release the WASM memory occupied by this rigid-body set.
    */
@@ -6887,6 +7125,15 @@ var RigidBodySet = class {
       this.map.clear();
     }
     this.map = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawRigidBodySet();
+    this.map = new Coarena();
+    if (raw) {
+      raw.forEachRigidBodyHandle((handle) => {
+        this.map.set(handle, new RigidBody(raw, null, handle));
+      });
+    }
   }
   /**
    * Internal method, do not call this explicitly.
@@ -7010,7 +7257,7 @@ var RigidBodySet = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/integration_parameters.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/integration_parameters.js
 var IntegrationParameters = class {
   constructor(raw) {
     this.raw = raw || new RawIntegrationParameters();
@@ -7136,7 +7383,7 @@ var IntegrationParameters = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/impulse_joint.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/impulse_joint.js
 var JointType;
 (function(JointType2) {
   JointType2[JointType2["Revolute"] = 0] = "Revolute";
@@ -7449,17 +7696,8 @@ var JointData = class _JointData {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/impulse_joint_set.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/impulse_joint_set.js
 var ImpulseJointSet = class {
-  constructor(raw) {
-    this.raw = raw || new RawImpulseJointSet();
-    this.map = new Coarena();
-    if (raw) {
-      raw.forEachJointHandle((handle) => {
-        this.map.set(handle, ImpulseJoint.newTyped(raw, null, handle));
-      });
-    }
-  }
   /**
    * Release the WASM memory occupied by this joint set.
    */
@@ -7472,6 +7710,15 @@ var ImpulseJointSet = class {
       this.map.clear();
     }
     this.map = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawImpulseJointSet();
+    this.map = new Coarena();
+    if (raw) {
+      raw.forEachJointHandle((handle) => {
+        this.map.set(handle, ImpulseJoint.newTyped(raw, null, handle));
+      });
+    }
   }
   /** @internal */
   finalizeDeserialization(bodies) {
@@ -7561,7 +7808,7 @@ var ImpulseJointSet = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/multibody_joint.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/multibody_joint.js
 var MultibodyJoint = class _MultibodyJoint {
   constructor(rawSet, handle) {
     this.rawSet = rawSet;
@@ -7658,17 +7905,8 @@ var RevoluteMultibodyJoint = class extends UnitMultibodyJoint {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/multibody_joint_set.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/multibody_joint_set.js
 var MultibodyJointSet = class {
-  constructor(raw) {
-    this.raw = raw || new RawMultibodyJointSet();
-    this.map = new Coarena();
-    if (raw) {
-      raw.forEachJointHandle((handle) => {
-        this.map.set(handle, MultibodyJoint.newTyped(this.raw, handle));
-      });
-    }
-  }
   /**
    * Release the WASM memory occupied by this joint set.
    */
@@ -7681,6 +7919,15 @@ var MultibodyJointSet = class {
       this.map.clear();
     }
     this.map = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawMultibodyJointSet();
+    this.map = new Coarena();
+    if (raw) {
+      raw.forEachJointHandle((handle) => {
+        this.map.set(handle, MultibodyJoint.newTyped(this.raw, handle));
+      });
+    }
   }
   /**
    * Creates a new joint and return its integer handle.
@@ -7765,7 +8012,7 @@ var MultibodyJointSet = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/coefficient_combine_rule.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/coefficient_combine_rule.js
 var CoefficientCombineRule;
 (function(CoefficientCombineRule2) {
   CoefficientCombineRule2[CoefficientCombineRule2["Average"] = 0] = "Average";
@@ -7774,27 +8021,24 @@ var CoefficientCombineRule;
   CoefficientCombineRule2[CoefficientCombineRule2["Max"] = 3] = "Max";
 })(CoefficientCombineRule || (CoefficientCombineRule = {}));
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/ccd_solver.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/ccd_solver.js
 var CCDSolver = class {
+  /**
+   * Release the WASM memory occupied by this narrow-phase.
+   */
+  free() {
+    if (!!this.raw) {
+      this.raw.free();
+    }
+    this.raw = void 0;
+  }
   constructor(raw) {
     this.raw = raw || new RawCCDSolver();
   }
-  /**
-   * Release the WASM memory occupied by this narrow-phase.
-   */
-  free() {
-    if (!!this.raw) {
-      this.raw.free();
-    }
-    this.raw = void 0;
-  }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/dynamics/island_manager.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/island_manager.js
 var IslandManager = class {
-  constructor(raw) {
-    this.raw = raw || new RawIslandManager();
-  }
   /**
    * Release the WASM memory occupied by this narrow-phase.
    */
@@ -7803,6 +8047,9 @@ var IslandManager = class {
       this.raw.free();
     }
     this.raw = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawIslandManager();
   }
   /**
    * Applies the given closure to the handle of each active rigid-bodies contained by this set.
@@ -7816,11 +8063,8 @@ var IslandManager = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/broad_phase.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/broad_phase.js
 var BroadPhase = class {
-  constructor(raw) {
-    this.raw = raw || new RawBroadPhase();
-  }
   /**
    * Release the WASM memory occupied by this broad-phase.
    */
@@ -7830,14 +8074,13 @@ var BroadPhase = class {
     }
     this.raw = void 0;
   }
+  constructor(raw) {
+    this.raw = raw || new RawBroadPhase();
+  }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/narrow_phase.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/narrow_phase.js
 var NarrowPhase = class {
-  constructor(raw) {
-    this.raw = raw || new RawNarrowPhase();
-    this.tempManifold = new TempContactManifold(null);
-  }
   /**
    * Release the WASM memory occupied by this narrow-phase.
    */
@@ -7846,6 +8089,10 @@ var NarrowPhase = class {
       this.raw.free();
     }
     this.raw = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawNarrowPhase();
+    this.tempManifold = new TempContactManifold(null);
   }
   /**
    * Enumerates all the colliders potentially in contact with the given collider.
@@ -7897,14 +8144,14 @@ var NarrowPhase = class {
   }
 };
 var TempContactManifold = class {
-  constructor(raw) {
-    this.raw = raw;
-  }
   free() {
     if (!!this.raw) {
       this.raw.free();
     }
     this.raw = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw;
   }
   normal() {
     return VectorOps.fromRaw(this.raw.normal());
@@ -7967,7 +8214,7 @@ var TempContactManifold = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/contact.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/contact.js
 var ShapeContact = class _ShapeContact {
   constructor(dist, point1, point2, normal1, normal2) {
     this.distance = dist;
@@ -7985,7 +8232,7 @@ var ShapeContact = class _ShapeContact {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/feature.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/feature.js
 var FeatureType;
 (function(FeatureType2) {
   FeatureType2[FeatureType2["Vertex"] = 0] = "Vertex";
@@ -7993,7 +8240,7 @@ var FeatureType;
   FeatureType2[FeatureType2["Unknown"] = 2] = "Unknown";
 })(FeatureType || (FeatureType = {}));
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/point.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/point.js
 var PointProjection = class _PointProjection {
   constructor(point, isInside) {
     this.point = point;
@@ -8028,7 +8275,7 @@ var PointColliderProjection = class _PointColliderProjection {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/ray.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/ray.js
 var Ray = class {
   /**
    * Builds a ray from its origin and direction.
@@ -8100,7 +8347,7 @@ var RayColliderHit = class _RayColliderHit {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/toi.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/toi.js
 var ShapeCastHit = class _ShapeCastHit {
   constructor(time_of_impact, witness1, witness2, normal1, normal2) {
     this.time_of_impact = time_of_impact;
@@ -8131,7 +8378,7 @@ var ColliderShapeCastHit = class _ColliderShapeCastHit extends ShapeCastHit {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/shape.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/shape.js
 var Shape = class {
   /**
    * instant mode without cache
@@ -8181,6 +8428,10 @@ var Shape = class {
       case RawShapeType.HalfSpace:
         normal = VectorOps.fromRaw(rawSet.coHalfspaceNormal(handle));
         return new HalfSpace(normal);
+      case RawShapeType.Voxels:
+        const vox_data = rawSet.coVoxelData(handle);
+        const vox_size = rawSet.coVoxelSize(handle);
+        return new Voxels(vox_data, vox_size);
       case RawShapeType.TriMesh:
         vs = rawSet.coVertices(handle);
         indices = rawSet.coIndices(handle);
@@ -8378,6 +8629,7 @@ var ShapeType;
   ShapeType2[ShapeType2["RoundTriangle"] = 11] = "RoundTriangle";
   ShapeType2[ShapeType2["RoundConvexPolygon"] = 12] = "RoundConvexPolygon";
   ShapeType2[ShapeType2["HalfSpace"] = 13] = "HalfSpace";
+  ShapeType2[ShapeType2["Voxels"] = 14] = "Voxels";
 })(ShapeType || (ShapeType = {}));
 var TriMeshFlags;
 (function(TriMeshFlags2) {
@@ -8386,7 +8638,7 @@ var TriMeshFlags;
   TriMeshFlags2[TriMeshFlags2["MERGE_DUPLICATE_VERTICES"] = 16] = "MERGE_DUPLICATE_VERTICES";
   TriMeshFlags2[TriMeshFlags2["DELETE_DEGENERATE_TRIANGLES"] = 32] = "DELETE_DEGENERATE_TRIANGLES";
   TriMeshFlags2[TriMeshFlags2["DELETE_DUPLICATE_TRIANGLES"] = 64] = "DELETE_DUPLICATE_TRIANGLES";
-  TriMeshFlags2[TriMeshFlags2["FIX_INTERNAL_EDGES"] = 152] = "FIX_INTERNAL_EDGES";
+  TriMeshFlags2[TriMeshFlags2["FIX_INTERNAL_EDGES"] = 144] = "FIX_INTERNAL_EDGES";
 })(TriMeshFlags || (TriMeshFlags = {}));
 var Ball = class extends Shape {
   /**
@@ -8567,6 +8819,37 @@ var Polyline = class extends Shape {
     return RawShape.polyline(this.vertices, this.indices);
   }
 };
+var Voxels = class extends Shape {
+  /**
+   * Creates a new shape made of voxels.
+   *
+   * @param data - Defines the set of voxels. If this is a `Int32Array` then
+   *               each voxel is defined from its (signed) grid coordinates,
+   *               with 3 (resp 2) contiguous integers per voxel in 3D (resp 2D).
+   *               If this is a `Float32Array`, each voxel will be such that
+   *               they contain at least one point from this array (where each
+   *               point is defined from 3 (resp 2) contiguous numbers per point
+   *               in 3D (resp 2D).
+   * @param voxelSize - The size of each voxel.
+   */
+  constructor(data, voxelSize) {
+    super();
+    this.type = ShapeType.Voxels;
+    this.data = data;
+    this.voxelSize = voxelSize;
+  }
+  intoRaw() {
+    let voxelSize = VectorOps.intoRaw(this.voxelSize);
+    let result;
+    if (this.data instanceof Int32Array) {
+      result = RawShape.voxels(voxelSize, this.data);
+    } else {
+      result = RawShape.voxelsFromPoints(voxelSize, this.data);
+    }
+    voxelSize.free();
+    return result;
+  }
+};
 var TriMesh = class extends Shape {
   /**
    * Creates a new triangle mesh shape.
@@ -8654,16 +8937,16 @@ var Heightfield = class extends Shape {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/pipeline/physics_pipeline.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/physics_pipeline.js
 var PhysicsPipeline = class {
-  constructor(raw) {
-    this.raw = raw || new RawPhysicsPipeline();
-  }
   free() {
     if (!!this.raw) {
       this.raw.free();
     }
     this.raw = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawPhysicsPipeline();
   }
   step(gravity, integrationParameters, islands, broadPhase, narrowPhase, bodies, colliders, impulseJoints, multibodyJoints, ccdSolver, eventQueue, hooks) {
     let rawG = VectorOps.intoRaw(gravity);
@@ -8676,7 +8959,7 @@ var PhysicsPipeline = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/pipeline/query_pipeline.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/query_pipeline.js
 var QueryFilterFlags;
 (function(QueryFilterFlags2) {
   QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_FIXED"] = 1] = "EXCLUDE_FIXED";
@@ -8689,9 +8972,6 @@ var QueryFilterFlags;
   QueryFilterFlags2[QueryFilterFlags2["ONLY_FIXED"] = 6] = "ONLY_FIXED";
 })(QueryFilterFlags || (QueryFilterFlags = {}));
 var QueryPipeline = class {
-  constructor(raw) {
-    this.raw = raw || new RawQueryPipeline();
-  }
   /**
    * Release the WASM memory occupied by this query pipeline.
    */
@@ -8700,6 +8980,9 @@ var QueryPipeline = class {
       this.raw.free();
     }
     this.raw = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawQueryPipeline();
   }
   /**
    * Updates the acceleration structure of the query pipeline.
@@ -8911,11 +9194,8 @@ var QueryPipeline = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/pipeline/serialization_pipeline.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/serialization_pipeline.js
 var SerializationPipeline = class {
-  constructor(raw) {
-    this.raw = raw || new RawSerializationPipeline();
-  }
   /**
    * Release the WASM memory occupied by this serialization pipeline.
    */
@@ -8924,6 +9204,9 @@ var SerializationPipeline = class {
       this.raw.free();
     }
     this.raw = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawSerializationPipeline();
   }
   /**
    * Serialize a complete physics state into a single byte array.
@@ -8952,7 +9235,7 @@ var SerializationPipeline = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/pipeline/debug_render_pipeline.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/debug_render_pipeline.js
 var DebugRenderBuffers = class {
   constructor(vertices, colors) {
     this.vertices = vertices;
@@ -8960,9 +9243,6 @@ var DebugRenderBuffers = class {
   }
 };
 var DebugRenderPipeline = class {
-  constructor(raw) {
-    this.raw = raw || new RawDebugRenderPipeline();
-  }
   /**
    * Release the WASM memory occupied by this serialization pipeline.
    */
@@ -8974,14 +9254,17 @@ var DebugRenderPipeline = class {
     this.vertices = void 0;
     this.colors = void 0;
   }
-  render(bodies, colliders, impulse_joints, multibody_joints, narrow_phase) {
-    this.raw.render(bodies.raw, colliders.raw, impulse_joints.raw, multibody_joints.raw, narrow_phase.raw);
+  constructor(raw) {
+    this.raw = raw || new RawDebugRenderPipeline();
+  }
+  render(bodies, colliders, impulse_joints, multibody_joints, narrow_phase, filterFlags, filterPredicate) {
+    this.raw.render(bodies.raw, colliders.raw, impulse_joints.raw, multibody_joints.raw, narrow_phase.raw, filterFlags, colliders.castClosure(filterPredicate));
     this.vertices = this.raw.vertices();
     this.colors = this.raw.colors();
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/control/character_controller.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/control/character_controller.js
 var CharacterCollision = class {
 };
 var KinematicCharacterController = class {
@@ -9250,28 +9533,74 @@ var KinematicCharacterController = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/pipeline/world.js
-var World = class _World {
-  constructor(gravity, rawIntegrationParameters, rawIslands, rawBroadPhase, rawNarrowPhase, rawBodies, rawColliders, rawImpulseJoints, rawMultibodyJoints, rawCCDSolver, rawQueryPipeline, rawPhysicsPipeline, rawSerializationPipeline, rawDebugRenderPipeline) {
-    this.gravity = gravity;
-    this.integrationParameters = new IntegrationParameters(rawIntegrationParameters);
-    this.islands = new IslandManager(rawIslands);
-    this.broadPhase = new BroadPhase(rawBroadPhase);
-    this.narrowPhase = new NarrowPhase(rawNarrowPhase);
-    this.bodies = new RigidBodySet(rawBodies);
-    this.colliders = new ColliderSet(rawColliders);
-    this.impulseJoints = new ImpulseJointSet(rawImpulseJoints);
-    this.multibodyJoints = new MultibodyJointSet(rawMultibodyJoints);
-    this.ccdSolver = new CCDSolver(rawCCDSolver);
-    this.queryPipeline = new QueryPipeline(rawQueryPipeline);
-    this.physicsPipeline = new PhysicsPipeline(rawPhysicsPipeline);
-    this.serializationPipeline = new SerializationPipeline(rawSerializationPipeline);
-    this.debugRenderPipeline = new DebugRenderPipeline(rawDebugRenderPipeline);
-    this.characterControllers = /* @__PURE__ */ new Set();
-    this.impulseJoints.finalizeDeserialization(this.bodies);
-    this.bodies.finalizeDeserialization(this.colliders);
-    this.colliders.finalizeDeserialization(this.bodies);
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/control/pid_controller.js
+var PidAxesMask;
+(function(PidAxesMask2) {
+  PidAxesMask2[PidAxesMask2["None"] = 0] = "None";
+  PidAxesMask2[PidAxesMask2["LinX"] = 1] = "LinX";
+  PidAxesMask2[PidAxesMask2["LinY"] = 2] = "LinY";
+  PidAxesMask2[PidAxesMask2["LinZ"] = 4] = "LinZ";
+  PidAxesMask2[PidAxesMask2["AngZ"] = 32] = "AngZ";
+  PidAxesMask2[PidAxesMask2["AllLin"] = 3] = "AllLin";
+  PidAxesMask2[PidAxesMask2["AllAng"] = 32] = "AllAng";
+  PidAxesMask2[PidAxesMask2["All"] = 35] = "All";
+})(PidAxesMask || (PidAxesMask = {}));
+var PidController = class {
+  constructor(params, bodies, kp, ki, kd, axes) {
+    this.params = params;
+    this.bodies = bodies;
+    this.raw = new RawPidController(kp, ki, kd, axes);
   }
+  /** @internal */
+  free() {
+    if (!!this.raw) {
+      this.raw.free();
+    }
+    this.raw = void 0;
+  }
+  setKp(kp, axes) {
+    this.raw.set_kp(kp, axes);
+  }
+  setKi(ki, axes) {
+    this.raw.set_kp(ki, axes);
+  }
+  setKd(kd, axes) {
+    this.raw.set_kp(kd, axes);
+  }
+  setAxes(axes) {
+    this.raw.set_axes_mask(axes);
+  }
+  resetIntegrals() {
+    this.raw.reset_integrals();
+  }
+  applyLinearCorrection(body, targetPosition, targetLinvel) {
+    let rawPos = VectorOps.intoRaw(targetPosition);
+    let rawVel = VectorOps.intoRaw(targetLinvel);
+    this.raw.apply_linear_correction(this.params.dt, this.bodies.raw, body.handle, rawPos, rawVel);
+    rawPos.free();
+    rawVel.free();
+  }
+  // #if DIM2
+  applyAngularCorrection(body, targetRotation, targetAngVel) {
+    this.raw.apply_angular_correction(this.params.dt, this.bodies.raw, body.handle, targetRotation, targetAngVel);
+  }
+  // #endif
+  linearCorrection(body, targetPosition, targetLinvel) {
+    let rawPos = VectorOps.intoRaw(targetPosition);
+    let rawVel = VectorOps.intoRaw(targetLinvel);
+    let correction = this.raw.linear_correction(this.params.dt, this.bodies.raw, body.handle, rawPos, rawVel);
+    rawPos.free();
+    rawVel.free();
+    return VectorOps.fromRaw(correction);
+  }
+  // #if DIM2
+  angularCorrection(body, targetRotation, targetAngVel) {
+    return this.raw.angular_correction(this.params.dt, this.bodies.raw, body.handle, targetRotation, targetAngVel);
+  }
+};
+
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/world.js
+var World = class _World {
   /**
    * Release the WASM memory occupied by this physics world.
    *
@@ -9293,6 +9622,7 @@ var World = class _World {
     this.serializationPipeline.free();
     this.debugRenderPipeline.free();
     this.characterControllers.forEach((controller) => controller.free());
+    this.pidControllers.forEach((controller) => controller.free());
     this.integrationParameters = void 0;
     this.islands = void 0;
     this.broadPhase = void 0;
@@ -9307,6 +9637,28 @@ var World = class _World {
     this.serializationPipeline = void 0;
     this.debugRenderPipeline = void 0;
     this.characterControllers = void 0;
+    this.pidControllers = void 0;
+  }
+  constructor(gravity, rawIntegrationParameters, rawIslands, rawBroadPhase, rawNarrowPhase, rawBodies, rawColliders, rawImpulseJoints, rawMultibodyJoints, rawCCDSolver, rawQueryPipeline, rawPhysicsPipeline, rawSerializationPipeline, rawDebugRenderPipeline) {
+    this.gravity = gravity;
+    this.integrationParameters = new IntegrationParameters(rawIntegrationParameters);
+    this.islands = new IslandManager(rawIslands);
+    this.broadPhase = new BroadPhase(rawBroadPhase);
+    this.narrowPhase = new NarrowPhase(rawNarrowPhase);
+    this.bodies = new RigidBodySet(rawBodies);
+    this.colliders = new ColliderSet(rawColliders);
+    this.impulseJoints = new ImpulseJointSet(rawImpulseJoints);
+    this.multibodyJoints = new MultibodyJointSet(rawMultibodyJoints);
+    this.ccdSolver = new CCDSolver(rawCCDSolver);
+    this.queryPipeline = new QueryPipeline(rawQueryPipeline);
+    this.physicsPipeline = new PhysicsPipeline(rawPhysicsPipeline);
+    this.serializationPipeline = new SerializationPipeline(rawSerializationPipeline);
+    this.debugRenderPipeline = new DebugRenderPipeline(rawDebugRenderPipeline);
+    this.characterControllers = /* @__PURE__ */ new Set();
+    this.pidControllers = /* @__PURE__ */ new Set();
+    this.impulseJoints.finalizeDeserialization(this.bodies);
+    this.bodies.finalizeDeserialization(this.colliders);
+    this.colliders.finalizeDeserialization(this.bodies);
   }
   static fromRaw(raw) {
     if (!raw)
@@ -9333,9 +9685,13 @@ var World = class _World {
   }
   /**
    * Computes all the lines (and their colors) needed to render the scene.
+   *
+   * @param filterFlags - Flags for excluding whole subsets of colliders from rendering.
+   * @param filterPredicate - Any collider for which this closure returns `false` will be excluded from the
+   *                          debug rendering.
    */
-  debugRender() {
-    this.debugRenderPipeline.render(this.bodies, this.colliders, this.impulseJoints, this.multibodyJoints, this.narrowPhase);
+  debugRender(filterFlags, filterPredicate) {
+    this.debugRenderPipeline.render(this.bodies, this.colliders, this.impulseJoints, this.multibodyJoints, this.narrowPhase, filterFlags, filterPredicate);
     return new DebugRenderBuffers(this.debugRenderPipeline.vertices, this.debugRenderPipeline.colors);
   }
   /**
@@ -9530,6 +9886,35 @@ var World = class _World {
    */
   removeCharacterController(controller) {
     this.characterControllers.delete(controller);
+    controller.free();
+  }
+  /**
+   * Creates a new PID (Proportional-Integral-Derivative) controller.
+   *
+   * @param kp - The Proportional gain applied to the instantaneous linear position errors.
+   *             This is usually set to a multiple of the inverse of simulation step time
+   *             (e.g. `60` if the delta-time is `1.0 / 60.0`).
+   * @param ki - The linear gain applied to the Integral part of the PID controller.
+   * @param kd - The Derivative gain applied to the instantaneous linear velocity errors.
+   *             This is usually set to a value in `[0.0, 1.0]` where `0.0` implies no damping
+   *             (no correction of velocity errors) and `1.0` implies complete damping (velocity errors
+   *             are corrected in a single simulation step).
+   * @param axes - The axes affected by this controller.
+   *               Only coordinate axes with a bit flags set to `true` will be taken into
+   *               account when calculating the errors and corrections.
+   */
+  createPidController(kp, ki, kd, axes) {
+    let controller = new PidController(this.integrationParameters, this.bodies, kp, ki, kd, axes);
+    this.pidControllers.add(controller);
+    return controller;
+  }
+  /**
+   * Removes a PID controller from this world.
+   *
+   * @param controller - The PID controller to remove.
+   */
+  removePidController(controller) {
+    this.pidControllers.delete(controller);
     controller.free();
   }
   /**
@@ -9850,7 +10235,7 @@ var World = class _World {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/pipeline/event_queue.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/event_queue.js
 var ActiveEvents;
 (function(ActiveEvents2) {
   ActiveEvents2[ActiveEvents2["NONE"] = 0] = "NONE";
@@ -9961,7 +10346,7 @@ var EventQueue = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/pipeline/physics_hooks.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/physics_hooks.js
 var ActiveHooks;
 (function(ActiveHooks2) {
   ActiveHooks2[ActiveHooks2["NONE"] = 0] = "NONE";
@@ -9974,7 +10359,7 @@ var SolverFlags;
   SolverFlags2[SolverFlags2["COMPUTE_IMPULSE"] = 1] = "COMPUTE_IMPULSE";
 })(SolverFlags || (SolverFlags = {}));
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/collider.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/collider.js
 var ActiveCollisionTypes;
 (function(ActiveCollisionTypes2) {
   ActiveCollisionTypes2[ActiveCollisionTypes2["DYNAMIC_DYNAMIC"] = 1] = "DYNAMIC_DYNAMIC";
@@ -10011,6 +10396,17 @@ var Collider = class {
     return this._shape;
   }
   /**
+   * Set the internal cached JS shape to null.
+   *
+   * This can be useful if you want to free some memory (assuming you are not
+   * holding any other references to the shape object), or in order to force
+   * the recalculation of the JS shape (the next time the `shape` getter is
+   * accessed) from the WASM source of truth.
+   */
+  clearShapeCache() {
+    this._shape = null;
+  }
+  /**
    * Checks if this collider is still valid (i.e. that it has
    * not been deleted from the collider set yet).
    */
@@ -10036,7 +10432,7 @@ var Collider = class {
     return this.colliderSet.raw.coIsSensor(this.handle);
   }
   /**
-   * Sets whether or not this collider is a sensor.
+   * Sets whether this collider is a sensor.
    * @param isSensor - If `true`, the collider will be a sensor.
    */
   setSensor(isSensor) {
@@ -10364,6 +10760,63 @@ var Collider = class {
    */
   setHalfHeight(newHalfheight) {
     this.colliderSet.raw.coSetHalfHeight(this.handle, newHalfheight);
+  }
+  /**
+   * If this collider has a Voxels shape, this will mark the voxel at the
+   * given grid coordinates as filled or empty (depending on the `filled`
+   * argument).
+   *
+   * Each input value is assumed to be an integer.
+   *
+   * The operation is O(1), unless the provided coordinates are out of the
+   * bounds of the currently allocated internal grid in which case the grid
+   * will be grown automatically.
+   */
+  setVoxel(ix, iy, filled) {
+    this.colliderSet.raw.coSetVoxel(this.handle, ix, iy, filled);
+    this._shape = null;
+  }
+  /**
+   * If this and `voxels2` are voxel colliders, and a voxel from `this` was
+   * modified with `setVoxel`, this will ensure that a
+   * moving object transitioning across the boundaries of these colliders
+   * won’t suffer from the "internal edges" artifact.
+   *
+   * The indices `ix, iy, iz` indicate the integer coordinates of the voxel in
+   * the local coordinate frame of `this`.
+   *
+   * If the voxels in `voxels2` live in a different coordinate space from `this`,
+   * then the `shift_*` argument indicate the distance, in voxel units, between
+   * the origin of `this` to the origin of `voxels2`.
+   *
+   * This method is intended to be called between `this` and all the other
+   * voxels colliders with a domain intersecting `this` or sharing a domain
+   * boundary. This is an incremental maintenance of the effect of
+   * `combineVoxelStates`.
+   */
+  propagateVoxelChange(voxels2, ix, iy, shift_x, shift_y) {
+    this.colliderSet.raw.coPropagateVoxelChange(this.handle, voxels2.handle, ix, iy, shift_x, shift_y);
+    this._shape = null;
+  }
+  /**
+   * If this and `voxels2` are voxel colliders, this will ensure that a
+   * moving object transitioning across the boundaries of these colliders
+   * won’t suffer from the "internal edges" artifact.
+   *
+   * If the voxels in `voxels2` live in a different coordinate space from `this`,
+   * then the `shift_*` argument indicate the distance, in voxel units, between
+   * the origin of `this` to the origin of `voxels2`.
+   *
+   * This method is intended to be called once between all pairs of voxels
+   * colliders with intersecting domains or shared boundaries.
+   *
+   * If either voxels collider is then modified with `setVoxel`, the
+   * `propagateVoxelChange` method must be called to maintain the coupling
+   * between the voxels shapes after the modification.
+   */
+  combineVoxelStates(voxels2, shift_x, shift_y) {
+    this.colliderSet.raw.coCombineVoxelStates(this.handle, voxels2.handle, shift_x, shift_y);
+    this._shape = null;
   }
   /**
    * If this collider has a triangle mesh, polyline, convex polygon, or convex polyhedron shape,
@@ -10722,6 +11175,22 @@ var ColliderDesc = class _ColliderDesc {
     return new _ColliderDesc(shape);
   }
   /**
+   * Creates a new collider descriptor with a shape made of voxels.
+   *
+   * @param data - Defines the set of voxels. If this is a `Int32Array` then
+   *               each voxel is defined from its (signed) grid coordinates,
+   *               with 3 (resp 2) contiguous integers per voxel in 3D (resp 2D).
+   *               If this is a `Float32Array`, each voxel will be such that
+   *               they contain at least one point from this array (where each
+   *               point is defined from 3 (resp 2) contiguous numbers per point
+   *               in 3D (resp 2D).
+   * @param voxelSize - The size of each voxel.
+   */
+  static voxels(voxels, voxelSize) {
+    const shape = new Voxels(voxels, voxelSize);
+    return new _ColliderDesc(shape);
+  }
+  /**
    * Creates a new collider descriptor with a triangle mesh shape.
    *
    * @param vertices - The coordinates of the triangle mesh's vertices.
@@ -11024,17 +11493,8 @@ var ColliderDesc = class _ColliderDesc {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/geometry/collider_set.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/collider_set.js
 var ColliderSet = class {
-  constructor(raw) {
-    this.raw = raw || new RawColliderSet();
-    this.map = new Coarena();
-    if (raw) {
-      raw.forEachColliderHandle((handle) => {
-        this.map.set(handle, new Collider(this, handle, null));
-      });
-    }
-  }
   /**
    * Release the WASM memory occupied by this collider set.
    */
@@ -11047,6 +11507,15 @@ var ColliderSet = class {
       this.map.clear();
     }
     this.map = void 0;
+  }
+  constructor(raw) {
+    this.raw = raw || new RawColliderSet();
+    this.map = new Coarena();
+    if (raw) {
+      raw.forEachColliderHandle((handle) => {
+        this.map.set(handle, new Collider(this, handle, null));
+      });
+    }
   }
   /** @internal */
   castClosure(f) {
@@ -11172,12 +11641,15 @@ var ColliderSet = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/exports.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/exports.js
 function version3() {
   return version();
 }
+function reserveMemory(extraBytesCount) {
+  reserve_memory(extraBytesCount);
+}
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.14.0/node_modules/@dimforge/rapier2d/rapier.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier.js
 var rapier_default = exports_exports;
 export {
   ActiveCollisionTypes,
@@ -11217,6 +11689,8 @@ export {
   MultibodyJointSet,
   NarrowPhase,
   PhysicsPipeline,
+  PidAxesMask,
+  PidController,
   PointColliderProjection,
   PointProjection,
   Polyline,
@@ -11256,7 +11730,9 @@ export {
   UnitMultibodyJoint,
   Vector2,
   VectorOps,
+  Voxels,
   World,
   rapier_default as default,
+  reserveMemory,
   version3 as version
 };
