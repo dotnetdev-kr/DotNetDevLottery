@@ -31,25 +31,25 @@ public class EventService : IEventService
             nameCellString = "이름",
             phoneCellString = "휴대전화번호",
             emailCellString = "이메일",
-            // 현재 isEnumTicketCell은 EVENTUS를 위한 로직입니다.
-            // EVENTUS는 현재 티켓이 여러개인 경우를 대응하지 않았습니다.
-            // ticketCellString 이후 3개 셀 단위로 티켓 이름을 체크합니다.
             ticketCellString = "오프라인 전체 출석",
             checkedCellString = "오프라인 전체 출석",
             uncheckedString = "X",
             isOldExcel = false,
+            // 현재 isEnumTicketCell은 EVENTUS를 위한 로직입니다.
+            // EVENTUS는 현재 티켓이 여러개인 경우를 대응하지 않았습니다.
+            // ticketCellString 이후 3개 셀 단위로 티켓 이름을 체크합니다.
             isEnumTicketCell = false,
         },
         new()
         {
-            name = "FESTA",
-            firstRowCellString = "이름",
-            nameCellString = "이름",
-            phoneCellString = "휴대폰",
+            name = "TICKETTACO",
+            firstRowCellString = "예약번호",
+            nameCellString = "예매자",
+            phoneCellString = "전화번호",
             emailCellString = "이메일",
-            ticketCellString = "티켓",
-            checkedCellString = "체크인",
-            uncheckedString = "No",
+            ticketCellString = "티켓이름",
+            checkedCellString = "체크인 시간",
+            uncheckedString = "-",
             isOldExcel = false,
             isEnumTicketCell = true,
         },
@@ -178,7 +178,7 @@ public class EventService : IEventService
             var checkedString = eventInfo.uncheckedString ?? string.Empty;
             // ONOFFMIX = (Date) / (Empty)
             // EVENTUS = O / X
-            // FESTA = Yes / No
+            // TICKETTACO = (Date) / -
             var isChecked = (currentRow.GetCell(isCheckedIndex)?.ToString() ?? string.Empty) != checkedString;
 
             var ticketType = string.Empty;
