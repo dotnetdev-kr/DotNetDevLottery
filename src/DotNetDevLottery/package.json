@@ -9,21 +9,20 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.18.3",
   "dependencies": {
-    "@dimforge/rapier2d": "^0.17.3",
-    "@dimforge/rapier2d-compat": "^0.17.3",
-    "@lottiefiles/dotlottie-wc": "^0.6.3",
-    "@spectrum-web-components/bundle": "^1.7.0",
-    "@spectrum-web-components/textfield": "^1.7.0",
+    "@dimforge/rapier2d": "^0.19.2",
+    "@lottiefiles/dotlottie-wc": "^0.8.5",
+    "@spectrum-web-components/bundle": "^1.9.0",
+    "@spectrum-web-components/textfield": "^1.9.0",
     "mitt": "^3.0.1"
   },
   "devDependencies": {
-    "@microsoft/dotnet-js-interop": "^8.0.0",
-    "@types/node": "^24.0.14",
-    "esbuild": "^0.25.6",
+    "@microsoft/dotnet-js-interop": "^9.0.6",
+    "@types/node": "^24.9.1",
+    "esbuild": "^0.25.11",
     "esbuild-plugin-wasm": "^1.1.0",
-    "tinyglobby": "^0.2.14",
-    "typescript": "^5.8.3"
+    "tinyglobby": "^0.2.15",
+    "typescript": "^5.9.3"
   }
 }
