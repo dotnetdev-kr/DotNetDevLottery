@@ -150,7 +150,7 @@ var coords = {
 
 // typescript/utils/getRapier.ts
 function getRapier() {
-  return import("../rapier-OZO6B3DJ.js");
+  return import("../rapier-YI2CJCDR.js");
 }
 
 // typescript/Components/Random/MachineAnimation.r.ts

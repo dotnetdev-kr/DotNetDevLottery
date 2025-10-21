@@ -2,7 +2,7 @@ import {
   __export
 } from "./chunk-MLKGABMK.js";
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/exports.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/exports.js
 var exports_exports = {};
 __export(exports_exports, {
   ActiveCollisionTypes: () => ActiveCollisionTypes,
@@ -50,7 +50,6 @@ __export(exports_exports, {
   PrismaticImpulseJoint: () => PrismaticImpulseJoint,
   PrismaticMultibodyJoint: () => PrismaticMultibodyJoint,
   QueryFilterFlags: () => QueryFilterFlags,
-  QueryPipeline: () => QueryPipeline,
   Ray: () => Ray,
   RayColliderHit: () => RayColliderHit,
   RayColliderIntersection: () => RayColliderIntersection,
@@ -89,7 +88,7 @@ __export(exports_exports, {
   version: () => version3
 });
 
-// wasm-module:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
+// wasm-module:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
 var rapier_wasm2d_bg_exports = {};
 __export(rapier_wasm2d_bg_exports, {
   __wbg_rawbroadphase_free: () => __wbg_rawbroadphase_free,
@@ -114,7 +113,6 @@ __export(rapier_wasm2d_bg_exports, {
   __wbg_rawpidcontroller_free: () => __wbg_rawpidcontroller_free,
   __wbg_rawpointcolliderprojection_free: () => __wbg_rawpointcolliderprojection_free,
   __wbg_rawpointprojection_free: () => __wbg_rawpointprojection_free,
-  __wbg_rawquerypipeline_free: () => __wbg_rawquerypipeline_free,
   __wbg_rawraycolliderhit_free: () => __wbg_rawraycolliderhit_free,
   __wbg_rawraycolliderintersection_free: () => __wbg_rawraycolliderintersection_free,
   __wbg_rawrayintersection_free: () => __wbg_rawrayintersection_free,
@@ -132,7 +130,17 @@ __export(rapier_wasm2d_bg_exports, {
   instance: () => instance,
   memory: () => memory,
   module: () => module2,
+  rawbroadphase_castRay: () => rawbroadphase_castRay,
+  rawbroadphase_castRayAndGetNormal: () => rawbroadphase_castRayAndGetNormal,
+  rawbroadphase_castShape: () => rawbroadphase_castShape,
+  rawbroadphase_collidersWithAabbIntersectingAabb: () => rawbroadphase_collidersWithAabbIntersectingAabb,
+  rawbroadphase_intersectionWithShape: () => rawbroadphase_intersectionWithShape,
+  rawbroadphase_intersectionsWithPoint: () => rawbroadphase_intersectionsWithPoint,
+  rawbroadphase_intersectionsWithRay: () => rawbroadphase_intersectionsWithRay,
+  rawbroadphase_intersectionsWithShape: () => rawbroadphase_intersectionsWithShape,
   rawbroadphase_new: () => rawbroadphase_new,
+  rawbroadphase_projectPoint: () => rawbroadphase_projectPoint,
+  rawbroadphase_projectPointAndGetFeature: () => rawbroadphase_projectPointAndGetFeature,
   rawccdsolver_new: () => rawccdsolver_new,
   rawcharactercollision_handle: () => rawcharactercollision_handle,
   rawcharactercollision_new: () => rawcharactercollision_new,
@@ -178,6 +186,7 @@ __export(rapier_wasm2d_bg_exports, {
   rawcolliderset_coRestitution: () => rawcolliderset_coRestitution,
   rawcolliderset_coRestitutionCombineRule: () => rawcolliderset_coRestitutionCombineRule,
   rawcolliderset_coRotation: () => rawcolliderset_coRotation,
+  rawcolliderset_coRotationWrtParent: () => rawcolliderset_coRotationWrtParent,
   rawcolliderset_coRoundRadius: () => rawcolliderset_coRoundRadius,
   rawcolliderset_coSetActiveCollisionTypes: () => rawcolliderset_coSetActiveCollisionTypes,
   rawcolliderset_coSetActiveEvents: () => rawcolliderset_coSetActiveEvents,
@@ -208,6 +217,7 @@ __export(rapier_wasm2d_bg_exports, {
   rawcolliderset_coShapeType: () => rawcolliderset_coShapeType,
   rawcolliderset_coSolverGroups: () => rawcolliderset_coSolverGroups,
   rawcolliderset_coTranslation: () => rawcolliderset_coTranslation,
+  rawcolliderset_coTranslationWrtParent: () => rawcolliderset_coTranslationWrtParent,
   rawcolliderset_coTriMeshFlags: () => rawcolliderset_coTriMeshFlags,
   rawcolliderset_coVertices: () => rawcolliderset_coVertices,
   rawcolliderset_coVolume: () => rawcolliderset_coVolume,
@@ -311,7 +321,6 @@ __export(rapier_wasm2d_bg_exports, {
   rawintegrationparameters_new: () => rawintegrationparameters_new,
   rawintegrationparameters_normalizedAllowedLinearError: () => rawintegrationparameters_normalizedAllowedLinearError,
   rawintegrationparameters_normalizedPredictionDistance: () => rawintegrationparameters_normalizedPredictionDistance,
-  rawintegrationparameters_numAdditionalFrictionIterations: () => rawintegrationparameters_numAdditionalFrictionIterations,
   rawintegrationparameters_numInternalPgsIterations: () => rawintegrationparameters_numInternalPgsIterations,
   rawintegrationparameters_numSolverIterations: () => rawintegrationparameters_numSolverIterations,
   rawintegrationparameters_set_contact_natural_frequency: () => rawintegrationparameters_set_contact_natural_frequency,
@@ -321,12 +330,8 @@ __export(rapier_wasm2d_bg_exports, {
   rawintegrationparameters_set_minIslandSize: () => rawintegrationparameters_set_minIslandSize,
   rawintegrationparameters_set_normalizedAllowedLinearError: () => rawintegrationparameters_set_normalizedAllowedLinearError,
   rawintegrationparameters_set_normalizedPredictionDistance: () => rawintegrationparameters_set_normalizedPredictionDistance,
-  rawintegrationparameters_set_numAdditionalFrictionIterations: () => rawintegrationparameters_set_numAdditionalFrictionIterations,
   rawintegrationparameters_set_numInternalPgsIterations: () => rawintegrationparameters_set_numInternalPgsIterations,
   rawintegrationparameters_set_numSolverIterations: () => rawintegrationparameters_set_numSolverIterations,
-  rawintegrationparameters_switchToSmallStepsPgsSolver: () => rawintegrationparameters_switchToSmallStepsPgsSolver,
-  rawintegrationparameters_switchToSmallStepsPgsSolverWithoutWarmstart: () => rawintegrationparameters_switchToSmallStepsPgsSolverWithoutWarmstart,
-  rawintegrationparameters_switchToStandardPgsSolver: () => rawintegrationparameters_switchToStandardPgsSolver,
   rawislandmanager_forEachActiveRigidBodyHandle: () => rawislandmanager_forEachActiveRigidBodyHandle,
   rawislandmanager_new: () => rawislandmanager_new,
   rawkinematiccharactercontroller_autostepEnabled: () => rawkinematiccharactercontroller_autostepEnabled,
@@ -378,9 +383,27 @@ __export(rapier_wasm2d_bg_exports, {
   rawnarrowphase_intersection_pair: () => rawnarrowphase_intersection_pair,
   rawnarrowphase_intersection_pairs_with: () => rawnarrowphase_intersection_pairs_with,
   rawnarrowphase_new: () => rawnarrowphase_new,
+  rawphysicspipeline_is_profiler_enabled: () => rawphysicspipeline_is_profiler_enabled,
   rawphysicspipeline_new: () => rawphysicspipeline_new,
+  rawphysicspipeline_set_profiler_enabled: () => rawphysicspipeline_set_profiler_enabled,
   rawphysicspipeline_step: () => rawphysicspipeline_step,
   rawphysicspipeline_stepWithEvents: () => rawphysicspipeline_stepWithEvents,
+  rawphysicspipeline_timing_broad_phase: () => rawphysicspipeline_timing_broad_phase,
+  rawphysicspipeline_timing_ccd: () => rawphysicspipeline_timing_ccd,
+  rawphysicspipeline_timing_ccd_broad_phase: () => rawphysicspipeline_timing_ccd_broad_phase,
+  rawphysicspipeline_timing_ccd_narrow_phase: () => rawphysicspipeline_timing_ccd_narrow_phase,
+  rawphysicspipeline_timing_ccd_solver: () => rawphysicspipeline_timing_ccd_solver,
+  rawphysicspipeline_timing_ccd_toi_computation: () => rawphysicspipeline_timing_ccd_toi_computation,
+  rawphysicspipeline_timing_collision_detection: () => rawphysicspipeline_timing_collision_detection,
+  rawphysicspipeline_timing_island_construction: () => rawphysicspipeline_timing_island_construction,
+  rawphysicspipeline_timing_narrow_phase: () => rawphysicspipeline_timing_narrow_phase,
+  rawphysicspipeline_timing_solver: () => rawphysicspipeline_timing_solver,
+  rawphysicspipeline_timing_step: () => rawphysicspipeline_timing_step,
+  rawphysicspipeline_timing_user_changes: () => rawphysicspipeline_timing_user_changes,
+  rawphysicspipeline_timing_velocity_assembly: () => rawphysicspipeline_timing_velocity_assembly,
+  rawphysicspipeline_timing_velocity_resolution: () => rawphysicspipeline_timing_velocity_resolution,
+  rawphysicspipeline_timing_velocity_update: () => rawphysicspipeline_timing_velocity_update,
+  rawphysicspipeline_timing_velocity_writeback: () => rawphysicspipeline_timing_velocity_writeback,
   rawpidcontroller_angular_correction: () => rawpidcontroller_angular_correction,
   rawpidcontroller_apply_angular_correction: () => rawpidcontroller_apply_angular_correction,
   rawpidcontroller_apply_linear_correction: () => rawpidcontroller_apply_linear_correction,
@@ -398,18 +421,6 @@ __export(rapier_wasm2d_bg_exports, {
   rawpointcolliderprojection_point: () => rawpointcolliderprojection_point,
   rawpointprojection_isInside: () => rawpointprojection_isInside,
   rawpointprojection_point: () => rawpointprojection_point,
-  rawquerypipeline_castRay: () => rawquerypipeline_castRay,
-  rawquerypipeline_castRayAndGetNormal: () => rawquerypipeline_castRayAndGetNormal,
-  rawquerypipeline_castShape: () => rawquerypipeline_castShape,
-  rawquerypipeline_collidersWithAabbIntersectingAabb: () => rawquerypipeline_collidersWithAabbIntersectingAabb,
-  rawquerypipeline_intersectionWithShape: () => rawquerypipeline_intersectionWithShape,
-  rawquerypipeline_intersectionsWithPoint: () => rawquerypipeline_intersectionsWithPoint,
-  rawquerypipeline_intersectionsWithRay: () => rawquerypipeline_intersectionsWithRay,
-  rawquerypipeline_intersectionsWithShape: () => rawquerypipeline_intersectionsWithShape,
-  rawquerypipeline_new: () => rawquerypipeline_new,
-  rawquerypipeline_projectPoint: () => rawquerypipeline_projectPoint,
-  rawquerypipeline_projectPointAndGetFeature: () => rawquerypipeline_projectPointAndGetFeature,
-  rawquerypipeline_update: () => rawquerypipeline_update,
   rawraycolliderhit_colliderHandle: () => rawraycolliderhit_colliderHandle,
   rawraycolliderhit_timeOfImpact: () => rawraycolliderhit_timeOfImpact,
   rawraycolliderintersection_colliderHandle: () => rawraycolliderintersection_colliderHandle,
@@ -441,11 +452,11 @@ __export(rapier_wasm2d_bg_exports, {
   rawrigidbodyset_rbDominanceGroup: () => rawrigidbodyset_rbDominanceGroup,
   rawrigidbodyset_rbEffectiveAngularInertia: () => rawrigidbodyset_rbEffectiveAngularInertia,
   rawrigidbodyset_rbEffectiveInvMass: () => rawrigidbodyset_rbEffectiveInvMass,
-  rawrigidbodyset_rbEffectiveWorldInvInertiaSqrt: () => rawrigidbodyset_rbEffectiveWorldInvInertiaSqrt,
+  rawrigidbodyset_rbEffectiveWorldInvInertia: () => rawrigidbodyset_rbEffectiveWorldInvInertia,
   rawrigidbodyset_rbEnableCcd: () => rawrigidbodyset_rbEnableCcd,
   rawrigidbodyset_rbGravityScale: () => rawrigidbodyset_rbGravityScale,
   rawrigidbodyset_rbInvMass: () => rawrigidbodyset_rbInvMass,
-  rawrigidbodyset_rbInvPrincipalInertiaSqrt: () => rawrigidbodyset_rbInvPrincipalInertiaSqrt,
+  rawrigidbodyset_rbInvPrincipalInertia: () => rawrigidbodyset_rbInvPrincipalInertia,
   rawrigidbodyset_rbIsCcdEnabled: () => rawrigidbodyset_rbIsCcdEnabled,
   rawrigidbodyset_rbIsDynamic: () => rawrigidbodyset_rbIsDynamic,
   rawrigidbodyset_rbIsEnabled: () => rawrigidbodyset_rbIsEnabled,
@@ -550,10 +561,10 @@ __export(rapier_wasm2d_bg_exports, {
   version: () => version2
 });
 
-// wasm-deferred:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
+// wasm-deferred:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
 var rapier_wasm2d_bg_default = "./rapier_wasm2d_bg.wasm";
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js
 var wasm;
 function __wbg_set_wasm(val) {
   wasm = val;
@@ -578,6 +589,20 @@ function handleError(f, args) {
     wasm.__wbindgen_export_0(addHeapObject(e));
   }
 }
+var lTextDecoder = typeof TextDecoder === "undefined" ? (0, module.require)("util").TextDecoder : TextDecoder;
+var cachedTextDecoder = new lTextDecoder("utf-8", { ignoreBOM: true, fatal: true });
+cachedTextDecoder.decode();
+var cachedUint8ArrayMemory0 = null;
+function getUint8ArrayMemory0() {
+  if (cachedUint8ArrayMemory0 === null || cachedUint8ArrayMemory0.byteLength === 0) {
+    cachedUint8ArrayMemory0 = new Uint8Array(wasm.memory.buffer);
+  }
+  return cachedUint8ArrayMemory0;
+}
+function getStringFromWasm0(ptr, len) {
+  ptr = ptr >>> 0;
+  return cachedTextDecoder.decode(getUint8ArrayMemory0().subarray(ptr, ptr + len));
+}
 function isLikeNone(x) {
   return x === void 0 || x === null;
 }
@@ -597,20 +622,6 @@ function takeObject(idx) {
   const ret = getObject(idx);
   dropObject(idx);
   return ret;
-}
-var lTextDecoder = typeof TextDecoder === "undefined" ? (0, module.require)("util").TextDecoder : TextDecoder;
-var cachedTextDecoder = new lTextDecoder("utf-8", { ignoreBOM: true, fatal: true });
-cachedTextDecoder.decode();
-var cachedUint8ArrayMemory0 = null;
-function getUint8ArrayMemory0() {
-  if (cachedUint8ArrayMemory0 === null || cachedUint8ArrayMemory0.byteLength === 0) {
-    cachedUint8ArrayMemory0 = new Uint8Array(wasm.memory.buffer);
-  }
-  return cachedUint8ArrayMemory0;
-}
-function getStringFromWasm0(ptr, len) {
-  ptr = ptr >>> 0;
-  return cachedTextDecoder.decode(getUint8ArrayMemory0().subarray(ptr, ptr + len));
 }
 function version() {
   let deferred1_0;
@@ -793,6 +804,276 @@ var RawBroadPhase = class _RawBroadPhase {
     RawBroadPhaseFinalization.register(this, this.__wbg_ptr, this);
     return this;
   }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawRayColliderHit | undefined}
+   */
+  castRay(narrow_phase, bodies, colliders, rayOrig, rayDir, maxToi, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(rayOrig, RawVector);
+      _assertClass(rayDir, RawVector);
+      const ret = wasm.rawbroadphase_castRay(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      return ret === 0 ? void 0 : RawRayColliderHit.__wrap(ret);
+    } finally {
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawRayColliderIntersection | undefined}
+   */
+  castRayAndGetNormal(narrow_phase, bodies, colliders, rayOrig, rayDir, maxToi, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(rayOrig, RawVector);
+      _assertClass(rayDir, RawVector);
+      const ret = wasm.rawbroadphase_castRayAndGetNormal(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      return ret === 0 ? void 0 : RawRayColliderIntersection.__wrap(ret);
+    } finally {
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} rayOrig
+   * @param {RawVector} rayDir
+   * @param {number} maxToi
+   * @param {boolean} solid
+   * @param {Function} callback
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   */
+  intersectionsWithRay(narrow_phase, bodies, colliders, rayOrig, rayDir, maxToi, solid, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(rayOrig, RawVector);
+      _assertClass(rayDir, RawVector);
+      wasm.rawbroadphase_intersectionsWithRay(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+    } finally {
+      heap[stack_pointer++] = void 0;
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawShape} shape
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {number | undefined}
+   */
+  intersectionWithShape(narrow_phase, bodies, colliders, shapePos, shapeRot, shape, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(shapePos, RawVector);
+      _assertClass(shapeRot, RawRotation);
+      _assertClass(shape, RawShape);
+      wasm.rawbroadphase_intersectionWithShape(retptr, this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shape.__wbg_ptr, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
+      var r2 = getDataViewMemory0().getFloat64(retptr + 8 * 1, true);
+      return r0 === 0 ? void 0 : r2;
+    } finally {
+      wasm.__wbindgen_add_to_stack_pointer(16);
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} point
+   * @param {boolean} solid
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawPointColliderProjection | undefined}
+   */
+  projectPoint(narrow_phase, bodies, colliders, point, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(point, RawVector);
+      const ret = wasm.rawbroadphase_projectPoint(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      return ret === 0 ? void 0 : RawPointColliderProjection.__wrap(ret);
+    } finally {
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} point
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawPointColliderProjection | undefined}
+   */
+  projectPointAndGetFeature(narrow_phase, bodies, colliders, point, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(point, RawVector);
+      const ret = wasm.rawbroadphase_projectPointAndGetFeature(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      return ret === 0 ? void 0 : RawPointColliderProjection.__wrap(ret);
+    } finally {
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} point
+   * @param {Function} callback
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   */
+  intersectionsWithPoint(narrow_phase, bodies, colliders, point, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(point, RawVector);
+      wasm.rawbroadphase_intersectionsWithPoint(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+    } finally {
+      heap[stack_pointer++] = void 0;
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawVector} shapeVel
+   * @param {RawShape} shape
+   * @param {number} target_distance
+   * @param {number} maxToi
+   * @param {boolean} stop_at_penetration
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   * @returns {RawColliderShapeCastHit | undefined}
+   */
+  castShape(narrow_phase, bodies, colliders, shapePos, shapeRot, shapeVel, shape, target_distance, maxToi, stop_at_penetration, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(shapePos, RawVector);
+      _assertClass(shapeRot, RawRotation);
+      _assertClass(shapeVel, RawVector);
+      _assertClass(shape, RawShape);
+      const ret = wasm.rawbroadphase_castShape(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shapeVel.__wbg_ptr, shape.__wbg_ptr, target_distance, maxToi, stop_at_penetration, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+      return ret === 0 ? void 0 : RawColliderShapeCastHit.__wrap(ret);
+    } finally {
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} shapePos
+   * @param {RawRotation} shapeRot
+   * @param {RawShape} shape
+   * @param {Function} callback
+   * @param {number} filter_flags
+   * @param {number | null | undefined} filter_groups
+   * @param {number | null | undefined} filter_exclude_collider
+   * @param {number | null | undefined} filter_exclude_rigid_body
+   * @param {Function} filter_predicate
+   */
+  intersectionsWithShape(narrow_phase, bodies, colliders, shapePos, shapeRot, shape, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(shapePos, RawVector);
+      _assertClass(shapeRot, RawRotation);
+      _assertClass(shape, RawShape);
+      wasm.rawbroadphase_intersectionsWithShape(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shape.__wbg_ptr, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
+    } finally {
+      heap[stack_pointer++] = void 0;
+      heap[stack_pointer++] = void 0;
+    }
+  }
+  /**
+   * @param {RawNarrowPhase} narrow_phase
+   * @param {RawRigidBodySet} bodies
+   * @param {RawColliderSet} colliders
+   * @param {RawVector} aabbCenter
+   * @param {RawVector} aabbHalfExtents
+   * @param {Function} callback
+   */
+  collidersWithAabbIntersectingAabb(narrow_phase, bodies, colliders, aabbCenter, aabbHalfExtents, callback) {
+    try {
+      _assertClass(narrow_phase, RawNarrowPhase);
+      _assertClass(bodies, RawRigidBodySet);
+      _assertClass(colliders, RawColliderSet);
+      _assertClass(aabbCenter, RawVector);
+      _assertClass(aabbHalfExtents, RawVector);
+      wasm.rawbroadphase_collidersWithAabbIntersectingAabb(this.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, aabbCenter.__wbg_ptr, aabbHalfExtents.__wbg_ptr, addBorrowedObject(callback));
+    } finally {
+      heap[stack_pointer++] = void 0;
+    }
+  }
 };
 var RawCCDSolverFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
 }, unregister: () => {
@@ -930,6 +1211,28 @@ var RawColliderSet = class _RawColliderSet {
   coRotation(handle) {
     const ret = wasm.rawcolliderset_coRotation(this.__wbg_ptr, handle);
     return RawRotation.__wrap(ret);
+  }
+  /**
+   * The translation of this collider relative to its parent rigid-body.
+   *
+   * Returns the `None` if it doesn’t have a parent.
+   * @param {number} handle
+   * @returns {RawVector | undefined}
+   */
+  coTranslationWrtParent(handle) {
+    const ret = wasm.rawcolliderset_coTranslationWrtParent(this.__wbg_ptr, handle);
+    return ret === 0 ? void 0 : RawVector.__wrap(ret);
+  }
+  /**
+   * The orientation of this collider relative to its parent rigid-body.
+   *
+   * Returns the `None` if it doesn’t have a parent.
+   * @param {number} handle
+   * @returns {RawRotation | undefined}
+   */
+  coRotationWrtParent(handle) {
+    const ret = wasm.rawcolliderset_coRotationWrtParent(this.__wbg_ptr, handle);
+    return ret === 0 ? void 0 : RawRotation.__wrap(ret);
   }
   /**
    * Sets the translation of this collider.
@@ -2697,14 +3000,14 @@ var RawIntegrationParameters = class _RawIntegrationParameters {
    * @returns {number}
    */
   get normalizedAllowedLinearError() {
-    const ret = wasm.rawcontactforceevent_max_force_magnitude(this.__wbg_ptr);
+    const ret = wasm.rawcontactforceevent_total_force_magnitude(this.__wbg_ptr);
     return ret;
   }
   /**
    * @returns {number}
    */
   get normalizedPredictionDistance() {
-    const ret = wasm.rawintegrationparameters_normalizedPredictionDistance(this.__wbg_ptr);
+    const ret = wasm.rawcharactercollision_toi(this.__wbg_ptr);
     return ret;
   }
   /**
@@ -2712,13 +3015,6 @@ var RawIntegrationParameters = class _RawIntegrationParameters {
    */
   get numSolverIterations() {
     const ret = wasm.rawintegrationparameters_numSolverIterations(this.__wbg_ptr);
-    return ret >>> 0;
-  }
-  /**
-   * @returns {number}
-   */
-  get numAdditionalFrictionIterations() {
-    const ret = wasm.rawintegrationparameters_numAdditionalFrictionIterations(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
@@ -2746,7 +3042,7 @@ var RawIntegrationParameters = class _RawIntegrationParameters {
    * @returns {number}
    */
   get lengthUnit() {
-    const ret = wasm.rawcontactforceevent_total_force_magnitude(this.__wbg_ptr);
+    const ret = wasm.rawintegrationparameters_lengthUnit(this.__wbg_ptr);
     return ret;
   }
   /**
@@ -2782,12 +3078,6 @@ var RawIntegrationParameters = class _RawIntegrationParameters {
   /**
    * @param {number} value
    */
-  set numAdditionalFrictionIterations(value) {
-    wasm.rawintegrationparameters_set_numAdditionalFrictionIterations(this.__wbg_ptr, value);
-  }
-  /**
-   * @param {number} value
-   */
   set numInternalPgsIterations(value) {
     wasm.rawintegrationparameters_set_numInternalPgsIterations(this.__wbg_ptr, value);
   }
@@ -2808,15 +3098,6 @@ var RawIntegrationParameters = class _RawIntegrationParameters {
    */
   set lengthUnit(value) {
     wasm.rawintegrationparameters_set_lengthUnit(this.__wbg_ptr, value);
-  }
-  switchToStandardPgsSolver() {
-    wasm.rawintegrationparameters_switchToStandardPgsSolver(this.__wbg_ptr);
-  }
-  switchToSmallStepsPgsSolver() {
-    wasm.rawintegrationparameters_switchToSmallStepsPgsSolver(this.__wbg_ptr);
-  }
-  switchToSmallStepsPgsSolverWithoutWarmstart() {
-    wasm.rawintegrationparameters_switchToSmallStepsPgsSolverWithoutWarmstart(this.__wbg_ptr);
   }
 };
 var RawIslandManagerFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
@@ -2921,7 +3202,7 @@ var RawKinematicCharacterController = class {
    * @returns {number}
    */
   offset() {
-    const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
+    const ret = wasm.rawkinematiccharactercontroller_offset(this.__wbg_ptr);
     return ret;
   }
   /**
@@ -2986,14 +3267,14 @@ var RawKinematicCharacterController = class {
    * @returns {number}
    */
   maxSlopeClimbAngle() {
-    const ret = wasm.rawintegrationparameters_normalizedPredictionDistance(this.__wbg_ptr);
+    const ret = wasm.rawkinematiccharactercontroller_maxSlopeClimbAngle(this.__wbg_ptr);
     return ret;
   }
   /**
    * @param {number} angle
    */
   setMaxSlopeClimbAngle(angle) {
-    wasm.rawintegrationparameters_set_normalizedPredictionDistance(this.__wbg_ptr, angle);
+    wasm.rawkinematiccharactercontroller_setMaxSlopeClimbAngle(this.__wbg_ptr, angle);
   }
   /**
    * @returns {number}
@@ -3033,9 +3314,10 @@ var RawKinematicCharacterController = class {
   }
   /**
    * @param {number} dt
+   * @param {RawBroadPhase} broad_phase
+   * @param {RawNarrowPhase} narrow_phase
    * @param {RawRigidBodySet} bodies
    * @param {RawColliderSet} colliders
-   * @param {RawQueryPipeline} queries
    * @param {number} collider_handle
    * @param {RawVector} desired_translation_delta
    * @param {boolean} apply_impulses_to_dynamic_bodies
@@ -3044,13 +3326,14 @@ var RawKinematicCharacterController = class {
    * @param {number | null | undefined} filter_groups
    * @param {Function} filter_predicate
    */
-  computeColliderMovement(dt, bodies, colliders, queries, collider_handle, desired_translation_delta, apply_impulses_to_dynamic_bodies, character_mass, filter_flags, filter_groups, filter_predicate) {
+  computeColliderMovement(dt, broad_phase, narrow_phase, bodies, colliders, collider_handle, desired_translation_delta, apply_impulses_to_dynamic_bodies, character_mass, filter_flags, filter_groups, filter_predicate) {
     try {
+      _assertClass(broad_phase, RawBroadPhase);
+      _assertClass(narrow_phase, RawNarrowPhase);
       _assertClass(bodies, RawRigidBodySet);
       _assertClass(colliders, RawColliderSet);
-      _assertClass(queries, RawQueryPipeline);
       _assertClass(desired_translation_delta, RawVector);
-      wasm.rawkinematiccharactercontroller_computeColliderMovement(this.__wbg_ptr, dt, bodies.__wbg_ptr, colliders.__wbg_ptr, queries.__wbg_ptr, collider_handle, desired_translation_delta.__wbg_ptr, apply_impulses_to_dynamic_bodies, isLikeNone(character_mass) ? 4294967297 : Math.fround(character_mass), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, addBorrowedObject(filter_predicate));
+      wasm.rawkinematiccharactercontroller_computeColliderMovement(this.__wbg_ptr, dt, broad_phase.__wbg_ptr, narrow_phase.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, collider_handle, desired_translation_delta.__wbg_ptr, apply_impulses_to_dynamic_bodies, isLikeNone(character_mass) ? 4294967297 : Math.fround(character_mass), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, addBorrowedObject(filter_predicate));
     } finally {
       heap[stack_pointer++] = void 0;
     }
@@ -3350,6 +3633,131 @@ var RawPhysicsPipeline = class {
     return this;
   }
   /**
+   * @param {boolean} enabled
+   */
+  set_profiler_enabled(enabled) {
+    wasm.rawphysicspipeline_set_profiler_enabled(this.__wbg_ptr, enabled);
+  }
+  /**
+   * @returns {boolean}
+   */
+  is_profiler_enabled() {
+    const ret = wasm.rawphysicspipeline_is_profiler_enabled(this.__wbg_ptr);
+    return ret !== 0;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_step() {
+    const ret = wasm.rawphysicspipeline_timing_step(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_collision_detection() {
+    const ret = wasm.rawphysicspipeline_timing_collision_detection(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_broad_phase() {
+    const ret = wasm.rawphysicspipeline_timing_broad_phase(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_narrow_phase() {
+    const ret = wasm.rawphysicspipeline_timing_narrow_phase(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_solver() {
+    const ret = wasm.rawphysicspipeline_timing_solver(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_velocity_assembly() {
+    const ret = wasm.rawphysicspipeline_timing_velocity_assembly(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_velocity_resolution() {
+    const ret = wasm.rawphysicspipeline_timing_velocity_resolution(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_velocity_update() {
+    const ret = wasm.rawphysicspipeline_timing_velocity_update(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_velocity_writeback() {
+    const ret = wasm.rawphysicspipeline_timing_velocity_writeback(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_ccd() {
+    const ret = wasm.rawphysicspipeline_timing_ccd(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_ccd_toi_computation() {
+    const ret = wasm.rawphysicspipeline_timing_ccd_toi_computation(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_ccd_broad_phase() {
+    const ret = wasm.rawphysicspipeline_timing_ccd_broad_phase(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_ccd_narrow_phase() {
+    const ret = wasm.rawphysicspipeline_timing_ccd_narrow_phase(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_ccd_solver() {
+    const ret = wasm.rawphysicspipeline_timing_ccd_solver(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_island_construction() {
+    const ret = wasm.rawphysicspipeline_timing_island_construction(this.__wbg_ptr);
+    return ret;
+  }
+  /**
+   * @returns {number}
+   */
+  timing_user_changes() {
+    const ret = wasm.rawphysicspipeline_timing_user_changes(this.__wbg_ptr);
+    return ret;
+  }
+  /**
    * @param {RawVector} gravity
    * @param {RawIntegrationParameters} integrationParameters
    * @param {RawIslandManager} islands
@@ -3605,280 +4013,6 @@ var RawPointProjection = class _RawPointProjection {
   isInside() {
     const ret = wasm.rawpointprojection_isInside(this.__wbg_ptr);
     return ret !== 0;
-  }
-};
-var RawQueryPipelineFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
-}, unregister: () => {
-} } : new FinalizationRegistry((ptr) => wasm.__wbg_rawquerypipeline_free(ptr >>> 0, 1));
-var RawQueryPipeline = class {
-  __destroy_into_raw() {
-    const ptr = this.__wbg_ptr;
-    this.__wbg_ptr = 0;
-    RawQueryPipelineFinalization.unregister(this);
-    return ptr;
-  }
-  free() {
-    const ptr = this.__destroy_into_raw();
-    wasm.__wbg_rawquerypipeline_free(ptr, 0);
-  }
-  constructor() {
-    const ret = wasm.rawquerypipeline_new();
-    this.__wbg_ptr = ret >>> 0;
-    RawQueryPipelineFinalization.register(this, this.__wbg_ptr, this);
-    return this;
-  }
-  /**
-   * @param {RawColliderSet} colliders
-   */
-  update(colliders) {
-    _assertClass(colliders, RawColliderSet);
-    wasm.rawquerypipeline_update(this.__wbg_ptr, colliders.__wbg_ptr);
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} rayOrig
-   * @param {RawVector} rayDir
-   * @param {number} maxToi
-   * @param {boolean} solid
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   * @returns {RawRayColliderHit | undefined}
-   */
-  castRay(bodies, colliders, rayOrig, rayDir, maxToi, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(rayOrig, RawVector);
-      _assertClass(rayDir, RawVector);
-      const ret = wasm.rawquerypipeline_castRay(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-      return ret === 0 ? void 0 : RawRayColliderHit.__wrap(ret);
-    } finally {
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} rayOrig
-   * @param {RawVector} rayDir
-   * @param {number} maxToi
-   * @param {boolean} solid
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   * @returns {RawRayColliderIntersection | undefined}
-   */
-  castRayAndGetNormal(bodies, colliders, rayOrig, rayDir, maxToi, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(rayOrig, RawVector);
-      _assertClass(rayDir, RawVector);
-      const ret = wasm.rawquerypipeline_castRayAndGetNormal(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-      return ret === 0 ? void 0 : RawRayColliderIntersection.__wrap(ret);
-    } finally {
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} rayOrig
-   * @param {RawVector} rayDir
-   * @param {number} maxToi
-   * @param {boolean} solid
-   * @param {Function} callback
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   */
-  intersectionsWithRay(bodies, colliders, rayOrig, rayDir, maxToi, solid, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(rayOrig, RawVector);
-      _assertClass(rayDir, RawVector);
-      wasm.rawquerypipeline_intersectionsWithRay(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, rayOrig.__wbg_ptr, rayDir.__wbg_ptr, maxToi, solid, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-    } finally {
-      heap[stack_pointer++] = void 0;
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} shapePos
-   * @param {RawRotation} shapeRot
-   * @param {RawShape} shape
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   * @returns {number | undefined}
-   */
-  intersectionWithShape(bodies, colliders, shapePos, shapeRot, shape, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(shapePos, RawVector);
-      _assertClass(shapeRot, RawRotation);
-      _assertClass(shape, RawShape);
-      wasm.rawquerypipeline_intersectionWithShape(retptr, this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shape.__wbg_ptr, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-      var r0 = getDataViewMemory0().getInt32(retptr + 4 * 0, true);
-      var r2 = getDataViewMemory0().getFloat64(retptr + 8 * 1, true);
-      return r0 === 0 ? void 0 : r2;
-    } finally {
-      wasm.__wbindgen_add_to_stack_pointer(16);
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} point
-   * @param {boolean} solid
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   * @returns {RawPointColliderProjection | undefined}
-   */
-  projectPoint(bodies, colliders, point, solid, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(point, RawVector);
-      const ret = wasm.rawquerypipeline_projectPoint(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, solid, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-      return ret === 0 ? void 0 : RawPointColliderProjection.__wrap(ret);
-    } finally {
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} point
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   * @returns {RawPointColliderProjection | undefined}
-   */
-  projectPointAndGetFeature(bodies, colliders, point, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(point, RawVector);
-      const ret = wasm.rawquerypipeline_projectPointAndGetFeature(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-      return ret === 0 ? void 0 : RawPointColliderProjection.__wrap(ret);
-    } finally {
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} point
-   * @param {Function} callback
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   */
-  intersectionsWithPoint(bodies, colliders, point, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(point, RawVector);
-      wasm.rawquerypipeline_intersectionsWithPoint(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, point.__wbg_ptr, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-    } finally {
-      heap[stack_pointer++] = void 0;
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} shapePos
-   * @param {RawRotation} shapeRot
-   * @param {RawVector} shapeVel
-   * @param {RawShape} shape
-   * @param {number} target_distance
-   * @param {number} maxToi
-   * @param {boolean} stop_at_penetration
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   * @returns {RawColliderShapeCastHit | undefined}
-   */
-  castShape(bodies, colliders, shapePos, shapeRot, shapeVel, shape, target_distance, maxToi, stop_at_penetration, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(shapePos, RawVector);
-      _assertClass(shapeRot, RawRotation);
-      _assertClass(shapeVel, RawVector);
-      _assertClass(shape, RawShape);
-      const ret = wasm.rawquerypipeline_castShape(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shapeVel.__wbg_ptr, shape.__wbg_ptr, target_distance, maxToi, stop_at_penetration, filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-      return ret === 0 ? void 0 : RawColliderShapeCastHit.__wrap(ret);
-    } finally {
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawRigidBodySet} bodies
-   * @param {RawColliderSet} colliders
-   * @param {RawVector} shapePos
-   * @param {RawRotation} shapeRot
-   * @param {RawShape} shape
-   * @param {Function} callback
-   * @param {number} filter_flags
-   * @param {number | null | undefined} filter_groups
-   * @param {number | null | undefined} filter_exclude_collider
-   * @param {number | null | undefined} filter_exclude_rigid_body
-   * @param {Function} filter_predicate
-   */
-  intersectionsWithShape(bodies, colliders, shapePos, shapeRot, shape, callback, filter_flags, filter_groups, filter_exclude_collider, filter_exclude_rigid_body, filter_predicate) {
-    try {
-      _assertClass(bodies, RawRigidBodySet);
-      _assertClass(colliders, RawColliderSet);
-      _assertClass(shapePos, RawVector);
-      _assertClass(shapeRot, RawRotation);
-      _assertClass(shape, RawShape);
-      wasm.rawquerypipeline_intersectionsWithShape(this.__wbg_ptr, bodies.__wbg_ptr, colliders.__wbg_ptr, shapePos.__wbg_ptr, shapeRot.__wbg_ptr, shape.__wbg_ptr, addBorrowedObject(callback), filter_flags, isLikeNone(filter_groups) ? 4294967297 : filter_groups >>> 0, !isLikeNone(filter_exclude_collider), isLikeNone(filter_exclude_collider) ? 0 : filter_exclude_collider, !isLikeNone(filter_exclude_rigid_body), isLikeNone(filter_exclude_rigid_body) ? 0 : filter_exclude_rigid_body, addBorrowedObject(filter_predicate));
-    } finally {
-      heap[stack_pointer++] = void 0;
-      heap[stack_pointer++] = void 0;
-    }
-  }
-  /**
-   * @param {RawVector} aabbCenter
-   * @param {RawVector} aabbHalfExtents
-   * @param {Function} callback
-   */
-  collidersWithAabbIntersectingAabb(aabbCenter, aabbHalfExtents, callback) {
-    try {
-      _assertClass(aabbCenter, RawVector);
-      _assertClass(aabbHalfExtents, RawVector);
-      wasm.rawquerypipeline_collidersWithAabbIntersectingAabb(this.__wbg_ptr, aabbCenter.__wbg_ptr, aabbHalfExtents.__wbg_ptr, addBorrowedObject(callback));
-    } finally {
-      heap[stack_pointer++] = void 0;
-    }
   }
 };
 var RawRayColliderHitFinalization = typeof FinalizationRegistry === "undefined" ? { register: () => {
@@ -4363,8 +4497,8 @@ var RawRigidBodySet = class _RawRigidBodySet {
    * @param {number} handle
    * @returns {number}
    */
-  rbInvPrincipalInertiaSqrt(handle) {
-    const ret = wasm.rawrigidbodyset_rbInvPrincipalInertiaSqrt(this.__wbg_ptr, handle);
+  rbInvPrincipalInertia(handle) {
+    const ret = wasm.rawrigidbodyset_rbInvPrincipalInertia(this.__wbg_ptr, handle);
     return ret;
   }
   /**
@@ -4377,13 +4511,13 @@ var RawRigidBodySet = class _RawRigidBodySet {
     return ret;
   }
   /**
-   * The square-root of the world-space inverse angular inertia tensor of the rigid-body,
+   * The world-space inverse angular inertia tensor of the rigid-body,
    * taking into account rotation locking.
    * @param {number} handle
    * @returns {number}
    */
-  rbEffectiveWorldInvInertiaSqrt(handle) {
-    const ret = wasm.rawrigidbodyset_rbEffectiveWorldInvInertiaSqrt(this.__wbg_ptr, handle);
+  rbEffectiveWorldInvInertia(handle) {
+    const ret = wasm.rawrigidbodyset_rbEffectiveWorldInvInertia(this.__wbg_ptr, handle);
     return ret;
   }
   /**
@@ -4774,7 +4908,7 @@ var RawRigidBodySet = class _RawRigidBodySet {
    * @returns {number}
    */
   len() {
-    const ret = wasm.rawcolliderset_len(this.__wbg_ptr);
+    const ret = wasm.rawrigidbodyset_len(this.__wbg_ptr);
     return ret >>> 0;
   }
   /**
@@ -4851,7 +4985,7 @@ var RawRotation = class _RawRotation {
    * @returns {number}
    */
   get im() {
-    const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
+    const ret = wasm.rawkinematiccharactercontroller_offset(this.__wbg_ptr);
     return ret;
   }
   /**
@@ -4859,7 +4993,7 @@ var RawRotation = class _RawRotation {
    * @returns {number}
    */
   get re() {
-    const ret = wasm.rawrotation_re(this.__wbg_ptr);
+    const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
     return ret;
   }
   /**
@@ -4886,7 +5020,7 @@ var RawSerializationPipeline = class {
     wasm.__wbg_rawserializationpipeline_free(ptr, 0);
   }
   constructor() {
-    const ret = wasm.rawserializationpipeline_new();
+    const ret = wasm.rawccdsolver_new();
     this.__wbg_ptr = ret >>> 0;
     RawSerializationPipelineFinalization.register(this, this.__wbg_ptr, this);
     return this;
@@ -5296,7 +5430,7 @@ var RawShapeCastHit = class _RawShapeCastHit {
    * @returns {number}
    */
   time_of_impact() {
-    const ret = wasm.rawrotation_re(this.__wbg_ptr);
+    const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
     return ret;
   }
   /**
@@ -5434,7 +5568,7 @@ var RawVector = class _RawVector {
    * @returns {number}
    */
   get x() {
-    const ret = wasm.rawrotation_re(this.__wbg_ptr);
+    const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
     return ret;
   }
   /**
@@ -5442,14 +5576,14 @@ var RawVector = class _RawVector {
    * @param {number} x
    */
   set x(x) {
-    wasm.rawvector_set_x(this.__wbg_ptr, x);
+    wasm.rawintegrationparameters_set_dt(this.__wbg_ptr, x);
   }
   /**
    * The `y` component of this vector.
    * @returns {number}
    */
   get y() {
-    const ret = wasm.rawintegrationparameters_dt(this.__wbg_ptr);
+    const ret = wasm.rawkinematiccharactercontroller_offset(this.__wbg_ptr);
     return ret;
   }
   /**
@@ -5457,7 +5591,7 @@ var RawVector = class _RawVector {
    * @param {number} y
    */
   set y(y) {
-    wasm.rawintegrationparameters_set_dt(this.__wbg_ptr, y);
+    wasm.rawvector_set_y(this.__wbg_ptr, y);
   }
   /**
    * Create a new 2D vector from this vector with its components rearranged as `{x, y}`.
@@ -5483,6 +5617,12 @@ function __wbg_bind_c8359b1cba058168(arg0, arg1, arg2, arg3) {
 function __wbg_buffer_609cc3eee51ed158(arg0) {
   const ret = getObject(arg0).buffer;
   return addHeapObject(ret);
+}
+function __wbg_call_672a4d21634d4a24() {
+  return handleError(function(arg0, arg1) {
+    const ret = getObject(arg0).call(getObject(arg1));
+    return addHeapObject(ret);
+  }, arguments);
 }
 function __wbg_call_7cccdd69e0791ae2() {
   return handleError(function(arg0, arg1, arg2) {
@@ -5514,6 +5654,10 @@ function __wbg_new_a12002a7f91c75be(arg0) {
   const ret = new Uint8Array(getObject(arg0));
   return addHeapObject(ret);
 }
+function __wbg_newnoargs_105ed471475aaf50(arg0, arg1) {
+  const ret = new Function(getStringFromWasm0(arg0, arg1));
+  return addHeapObject(ret);
+}
 function __wbg_newwithbyteoffsetandlength_d97e637ebe145a9a(arg0, arg1, arg2) {
   const ret = new Uint8Array(getObject(arg0), arg1 >>> 0, arg2 >>> 0);
   return addHeapObject(ret);
@@ -5524,6 +5668,14 @@ function __wbg_newwithbyteoffsetandlength_e6b7e69acd4c7354(arg0, arg1, arg2) {
 }
 function __wbg_newwithlength_5a5efe313cfd59f1(arg0) {
   const ret = new Float32Array(arg0 >>> 0);
+  return addHeapObject(ret);
+}
+function __wbg_now_2c95c9de01293173(arg0) {
+  const ret = getObject(arg0).now();
+  return ret;
+}
+function __wbg_performance_7a3ffd0b17f663ad(arg0) {
+  const ret = getObject(arg0).performance;
   return addHeapObject(ret);
 }
 function __wbg_rawcontactforceevent_new(arg0) {
@@ -5540,6 +5692,22 @@ function __wbg_set_10bad9bee0e9c58b(arg0, arg1, arg2) {
 function __wbg_set_65595bdd868b3009(arg0, arg1, arg2) {
   getObject(arg0).set(getObject(arg1), arg2 >>> 0);
 }
+function __wbg_static_accessor_GLOBAL_88a902d13a557d07() {
+  const ret = typeof global === "undefined" ? null : global;
+  return isLikeNone(ret) ? 0 : addHeapObject(ret);
+}
+function __wbg_static_accessor_GLOBAL_THIS_56578be7e9f832b0() {
+  const ret = typeof globalThis === "undefined" ? null : globalThis;
+  return isLikeNone(ret) ? 0 : addHeapObject(ret);
+}
+function __wbg_static_accessor_SELF_37c5d418e4bf5819() {
+  const ret = typeof self === "undefined" ? null : self;
+  return isLikeNone(ret) ? 0 : addHeapObject(ret);
+}
+function __wbg_static_accessor_WINDOW_5de37043a91a9c40() {
+  const ret = typeof window === "undefined" ? null : window;
+  return isLikeNone(ret) ? 0 : addHeapObject(ret);
+}
 function __wbindgen_boolean_get(arg0) {
   const v = getObject(arg0);
   const ret = typeof v === "boolean" ? v ? 1 : 0 : 2;
@@ -5547,6 +5715,10 @@ function __wbindgen_boolean_get(arg0) {
 }
 function __wbindgen_is_function(arg0) {
   const ret = typeof getObject(arg0) === "function";
+  return ret;
+}
+function __wbindgen_is_undefined(arg0) {
+  const ret = getObject(arg0) === void 0;
   return ret;
 }
 function __wbindgen_memory() {
@@ -5563,6 +5735,10 @@ function __wbindgen_number_new(arg0) {
   const ret = arg0;
   return addHeapObject(ret);
 }
+function __wbindgen_object_clone_ref(arg0) {
+  const ret = getObject(arg0);
+  return addHeapObject(ret);
+}
 function __wbindgen_object_drop_ref(arg0) {
   takeObject(arg0);
 }
@@ -5570,7 +5746,7 @@ function __wbindgen_throw(arg0, arg1) {
   throw new Error(getStringFromWasm0(arg0, arg1));
 }
 
-// wasm-module:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
+// wasm-module:/home/runner/work/DotNetDevLottery/DotNetDevLottery/src/DotNetDevLottery/node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm
 var imports = {
   ["./rapier_wasm2d_bg.js"]: {
     __wbindgen_number_new,
@@ -5580,11 +5756,21 @@ var imports = {
     __wbindgen_is_function,
     __wbg_rawraycolliderintersection_new,
     __wbg_rawcontactforceevent_new,
+    __wbg_performance_7a3ffd0b17f663ad,
+    __wbindgen_is_undefined,
+    __wbg_now_2c95c9de01293173,
+    __wbindgen_object_clone_ref,
+    __wbg_newnoargs_105ed471475aaf50,
+    __wbg_call_672a4d21634d4a24,
     __wbg_call_7cccdd69e0791ae2,
     __wbg_call_833bed5770ea2041,
     __wbg_call_b8adc8b1d0a0d8eb,
     __wbg_bind_c8359b1cba058168,
     __wbg_buffer_609cc3eee51ed158,
+    __wbg_static_accessor_GLOBAL_THIS_56578be7e9f832b0,
+    __wbg_static_accessor_SELF_37c5d418e4bf5819,
+    __wbg_static_accessor_WINDOW_5de37043a91a9c40,
+    __wbg_static_accessor_GLOBAL_88a902d13a557d07,
     __wbg_newwithbyteoffsetandlength_d97e637ebe145a9a,
     __wbg_new_a12002a7f91c75be,
     __wbg_set_65595bdd868b3009,
@@ -5626,6 +5812,7 @@ var rawkinematiccharactercontroller_new = instance.exports.rawkinematiccharacter
 var rawkinematiccharactercontroller_setUp = instance.exports.rawkinematiccharactercontroller_setUp;
 var rawkinematiccharactercontroller_normalNudgeFactor = instance.exports.rawkinematiccharactercontroller_normalNudgeFactor;
 var rawkinematiccharactercontroller_setNormalNudgeFactor = instance.exports.rawkinematiccharactercontroller_setNormalNudgeFactor;
+var rawkinematiccharactercontroller_offset = instance.exports.rawkinematiccharactercontroller_offset;
 var rawkinematiccharactercontroller_setOffset = instance.exports.rawkinematiccharactercontroller_setOffset;
 var rawkinematiccharactercontroller_slideEnabled = instance.exports.rawkinematiccharactercontroller_slideEnabled;
 var rawkinematiccharactercontroller_setSlideEnabled = instance.exports.rawkinematiccharactercontroller_setSlideEnabled;
@@ -5635,6 +5822,8 @@ var rawkinematiccharactercontroller_autostepIncludesDynamicBodies = instance.exp
 var rawkinematiccharactercontroller_autostepEnabled = instance.exports.rawkinematiccharactercontroller_autostepEnabled;
 var rawkinematiccharactercontroller_enableAutostep = instance.exports.rawkinematiccharactercontroller_enableAutostep;
 var rawkinematiccharactercontroller_disableAutostep = instance.exports.rawkinematiccharactercontroller_disableAutostep;
+var rawkinematiccharactercontroller_maxSlopeClimbAngle = instance.exports.rawkinematiccharactercontroller_maxSlopeClimbAngle;
+var rawkinematiccharactercontroller_setMaxSlopeClimbAngle = instance.exports.rawkinematiccharactercontroller_setMaxSlopeClimbAngle;
 var rawkinematiccharactercontroller_minSlopeSlideAngle = instance.exports.rawkinematiccharactercontroller_minSlopeSlideAngle;
 var rawkinematiccharactercontroller_setMinSlopeSlideAngle = instance.exports.rawkinematiccharactercontroller_setMinSlopeSlideAngle;
 var rawkinematiccharactercontroller_snapToGroundDistance = instance.exports.rawkinematiccharactercontroller_snapToGroundDistance;
@@ -5668,7 +5857,6 @@ var rawpidcontroller_apply_angular_correction = instance.exports.rawpidcontrolle
 var rawpidcontroller_linear_correction = instance.exports.rawpidcontroller_linear_correction;
 var rawpidcontroller_angular_correction = instance.exports.rawpidcontroller_angular_correction;
 var __wbg_rawccdsolver_free = instance.exports.__wbg_rawccdsolver_free;
-var rawccdsolver_new = instance.exports.rawccdsolver_new;
 var rawimpulsejointset_jointType = instance.exports.rawimpulsejointset_jointType;
 var rawimpulsejointset_jointBodyHandle1 = instance.exports.rawimpulsejointset_jointBodyHandle1;
 var rawimpulsejointset_jointBodyHandle2 = instance.exports.rawimpulsejointset_jointBodyHandle2;
@@ -5700,25 +5888,20 @@ var __wbg_rawintegrationparameters_free = instance.exports.__wbg_rawintegrationp
 var rawintegrationparameters_new = instance.exports.rawintegrationparameters_new;
 var rawintegrationparameters_dt = instance.exports.rawintegrationparameters_dt;
 var rawintegrationparameters_contact_erp = instance.exports.rawintegrationparameters_contact_erp;
-var rawintegrationparameters_normalizedPredictionDistance = instance.exports.rawintegrationparameters_normalizedPredictionDistance;
 var rawintegrationparameters_numSolverIterations = instance.exports.rawintegrationparameters_numSolverIterations;
-var rawintegrationparameters_numAdditionalFrictionIterations = instance.exports.rawintegrationparameters_numAdditionalFrictionIterations;
 var rawintegrationparameters_numInternalPgsIterations = instance.exports.rawintegrationparameters_numInternalPgsIterations;
 var rawintegrationparameters_minIslandSize = instance.exports.rawintegrationparameters_minIslandSize;
 var rawintegrationparameters_maxCcdSubsteps = instance.exports.rawintegrationparameters_maxCcdSubsteps;
+var rawintegrationparameters_lengthUnit = instance.exports.rawintegrationparameters_lengthUnit;
 var rawintegrationparameters_set_dt = instance.exports.rawintegrationparameters_set_dt;
 var rawintegrationparameters_set_contact_natural_frequency = instance.exports.rawintegrationparameters_set_contact_natural_frequency;
 var rawintegrationparameters_set_normalizedAllowedLinearError = instance.exports.rawintegrationparameters_set_normalizedAllowedLinearError;
 var rawintegrationparameters_set_normalizedPredictionDistance = instance.exports.rawintegrationparameters_set_normalizedPredictionDistance;
 var rawintegrationparameters_set_numSolverIterations = instance.exports.rawintegrationparameters_set_numSolverIterations;
-var rawintegrationparameters_set_numAdditionalFrictionIterations = instance.exports.rawintegrationparameters_set_numAdditionalFrictionIterations;
 var rawintegrationparameters_set_numInternalPgsIterations = instance.exports.rawintegrationparameters_set_numInternalPgsIterations;
 var rawintegrationparameters_set_minIslandSize = instance.exports.rawintegrationparameters_set_minIslandSize;
 var rawintegrationparameters_set_maxCcdSubsteps = instance.exports.rawintegrationparameters_set_maxCcdSubsteps;
 var rawintegrationparameters_set_lengthUnit = instance.exports.rawintegrationparameters_set_lengthUnit;
-var rawintegrationparameters_switchToStandardPgsSolver = instance.exports.rawintegrationparameters_switchToStandardPgsSolver;
-var rawintegrationparameters_switchToSmallStepsPgsSolver = instance.exports.rawintegrationparameters_switchToSmallStepsPgsSolver;
-var rawintegrationparameters_switchToSmallStepsPgsSolverWithoutWarmstart = instance.exports.rawintegrationparameters_switchToSmallStepsPgsSolverWithoutWarmstart;
 var __wbg_rawislandmanager_free = instance.exports.__wbg_rawislandmanager_free;
 var rawislandmanager_new = instance.exports.rawislandmanager_new;
 var rawislandmanager_forEachActiveRigidBodyHandle = instance.exports.rawislandmanager_forEachActiveRigidBodyHandle;
@@ -5776,9 +5959,9 @@ var rawrigidbodyset_rbInvMass = instance.exports.rawrigidbodyset_rbInvMass;
 var rawrigidbodyset_rbEffectiveInvMass = instance.exports.rawrigidbodyset_rbEffectiveInvMass;
 var rawrigidbodyset_rbLocalCom = instance.exports.rawrigidbodyset_rbLocalCom;
 var rawrigidbodyset_rbWorldCom = instance.exports.rawrigidbodyset_rbWorldCom;
-var rawrigidbodyset_rbInvPrincipalInertiaSqrt = instance.exports.rawrigidbodyset_rbInvPrincipalInertiaSqrt;
+var rawrigidbodyset_rbInvPrincipalInertia = instance.exports.rawrigidbodyset_rbInvPrincipalInertia;
 var rawrigidbodyset_rbPrincipalInertia = instance.exports.rawrigidbodyset_rbPrincipalInertia;
-var rawrigidbodyset_rbEffectiveWorldInvInertiaSqrt = instance.exports.rawrigidbodyset_rbEffectiveWorldInvInertiaSqrt;
+var rawrigidbodyset_rbEffectiveWorldInvInertia = instance.exports.rawrigidbodyset_rbEffectiveWorldInvInertia;
 var rawrigidbodyset_rbEffectiveAngularInertia = instance.exports.rawrigidbodyset_rbEffectiveAngularInertia;
 var rawrigidbodyset_rbWakeUp = instance.exports.rawrigidbodyset_rbWakeUp;
 var rawrigidbodyset_rbIsCcdEnabled = instance.exports.rawrigidbodyset_rbIsCcdEnabled;
@@ -5816,13 +5999,26 @@ var __wbg_rawrigidbodyset_free = instance.exports.__wbg_rawrigidbodyset_free;
 var rawrigidbodyset_new = instance.exports.rawrigidbodyset_new;
 var rawrigidbodyset_createRigidBody = instance.exports.rawrigidbodyset_createRigidBody;
 var rawrigidbodyset_remove = instance.exports.rawrigidbodyset_remove;
+var rawrigidbodyset_len = instance.exports.rawrigidbodyset_len;
 var rawrigidbodyset_contains = instance.exports.rawrigidbodyset_contains;
 var rawrigidbodyset_forEachRigidBodyHandle = instance.exports.rawrigidbodyset_forEachRigidBodyHandle;
 var rawrigidbodyset_propagateModifiedBodyPositionsToColliders = instance.exports.rawrigidbodyset_propagateModifiedBodyPositionsToColliders;
 var __wbg_rawbroadphase_free = instance.exports.__wbg_rawbroadphase_free;
 var rawbroadphase_new = instance.exports.rawbroadphase_new;
+var rawbroadphase_castRay = instance.exports.rawbroadphase_castRay;
+var rawbroadphase_castRayAndGetNormal = instance.exports.rawbroadphase_castRayAndGetNormal;
+var rawbroadphase_intersectionsWithRay = instance.exports.rawbroadphase_intersectionsWithRay;
+var rawbroadphase_intersectionWithShape = instance.exports.rawbroadphase_intersectionWithShape;
+var rawbroadphase_projectPoint = instance.exports.rawbroadphase_projectPoint;
+var rawbroadphase_projectPointAndGetFeature = instance.exports.rawbroadphase_projectPointAndGetFeature;
+var rawbroadphase_intersectionsWithPoint = instance.exports.rawbroadphase_intersectionsWithPoint;
+var rawbroadphase_castShape = instance.exports.rawbroadphase_castShape;
+var rawbroadphase_intersectionsWithShape = instance.exports.rawbroadphase_intersectionsWithShape;
+var rawbroadphase_collidersWithAabbIntersectingAabb = instance.exports.rawbroadphase_collidersWithAabbIntersectingAabb;
 var rawcolliderset_coTranslation = instance.exports.rawcolliderset_coTranslation;
 var rawcolliderset_coRotation = instance.exports.rawcolliderset_coRotation;
+var rawcolliderset_coTranslationWrtParent = instance.exports.rawcolliderset_coTranslationWrtParent;
+var rawcolliderset_coRotationWrtParent = instance.exports.rawcolliderset_coRotationWrtParent;
 var rawcolliderset_coSetTranslation = instance.exports.rawcolliderset_coSetTranslation;
 var rawcolliderset_coSetTranslationWrtParent = instance.exports.rawcolliderset_coSetTranslationWrtParent;
 var rawcolliderset_coSetRotation = instance.exports.rawcolliderset_coSetRotation;
@@ -5976,12 +6172,11 @@ var rawcollidershapecasthit_normal2 = instance.exports.rawcollidershapecasthit_n
 var __wbg_rawrotation_free = instance.exports.__wbg_rawrotation_free;
 var rawrotation_identity = instance.exports.rawrotation_identity;
 var rawrotation_fromAngle = instance.exports.rawrotation_fromAngle;
-var rawrotation_re = instance.exports.rawrotation_re;
 var rawrotation_angle = instance.exports.rawrotation_angle;
 var __wbg_rawvector_free = instance.exports.__wbg_rawvector_free;
 var rawvector_zero = instance.exports.rawvector_zero;
 var rawvector_new = instance.exports.rawvector_new;
-var rawvector_set_x = instance.exports.rawvector_set_x;
+var rawvector_set_y = instance.exports.rawvector_set_y;
 var rawvector_xy = instance.exports.rawvector_xy;
 var rawvector_yx = instance.exports.rawvector_yx;
 var __wbg_rawdebugrenderpipeline_free = instance.exports.__wbg_rawdebugrenderpipeline_free;
@@ -6001,20 +6196,26 @@ var raweventqueue_drainContactForceEvents = instance.exports.raweventqueue_drain
 var raweventqueue_clear = instance.exports.raweventqueue_clear;
 var __wbg_rawphysicspipeline_free = instance.exports.__wbg_rawphysicspipeline_free;
 var rawphysicspipeline_new = instance.exports.rawphysicspipeline_new;
+var rawphysicspipeline_set_profiler_enabled = instance.exports.rawphysicspipeline_set_profiler_enabled;
+var rawphysicspipeline_is_profiler_enabled = instance.exports.rawphysicspipeline_is_profiler_enabled;
+var rawphysicspipeline_timing_step = instance.exports.rawphysicspipeline_timing_step;
+var rawphysicspipeline_timing_collision_detection = instance.exports.rawphysicspipeline_timing_collision_detection;
+var rawphysicspipeline_timing_broad_phase = instance.exports.rawphysicspipeline_timing_broad_phase;
+var rawphysicspipeline_timing_narrow_phase = instance.exports.rawphysicspipeline_timing_narrow_phase;
+var rawphysicspipeline_timing_solver = instance.exports.rawphysicspipeline_timing_solver;
+var rawphysicspipeline_timing_velocity_assembly = instance.exports.rawphysicspipeline_timing_velocity_assembly;
+var rawphysicspipeline_timing_velocity_resolution = instance.exports.rawphysicspipeline_timing_velocity_resolution;
+var rawphysicspipeline_timing_velocity_update = instance.exports.rawphysicspipeline_timing_velocity_update;
+var rawphysicspipeline_timing_velocity_writeback = instance.exports.rawphysicspipeline_timing_velocity_writeback;
+var rawphysicspipeline_timing_ccd = instance.exports.rawphysicspipeline_timing_ccd;
+var rawphysicspipeline_timing_ccd_toi_computation = instance.exports.rawphysicspipeline_timing_ccd_toi_computation;
+var rawphysicspipeline_timing_ccd_broad_phase = instance.exports.rawphysicspipeline_timing_ccd_broad_phase;
+var rawphysicspipeline_timing_ccd_narrow_phase = instance.exports.rawphysicspipeline_timing_ccd_narrow_phase;
+var rawphysicspipeline_timing_ccd_solver = instance.exports.rawphysicspipeline_timing_ccd_solver;
+var rawphysicspipeline_timing_island_construction = instance.exports.rawphysicspipeline_timing_island_construction;
+var rawphysicspipeline_timing_user_changes = instance.exports.rawphysicspipeline_timing_user_changes;
 var rawphysicspipeline_step = instance.exports.rawphysicspipeline_step;
 var rawphysicspipeline_stepWithEvents = instance.exports.rawphysicspipeline_stepWithEvents;
-var rawquerypipeline_new = instance.exports.rawquerypipeline_new;
-var rawquerypipeline_update = instance.exports.rawquerypipeline_update;
-var rawquerypipeline_castRay = instance.exports.rawquerypipeline_castRay;
-var rawquerypipeline_castRayAndGetNormal = instance.exports.rawquerypipeline_castRayAndGetNormal;
-var rawquerypipeline_intersectionsWithRay = instance.exports.rawquerypipeline_intersectionsWithRay;
-var rawquerypipeline_intersectionWithShape = instance.exports.rawquerypipeline_intersectionWithShape;
-var rawquerypipeline_projectPoint = instance.exports.rawquerypipeline_projectPoint;
-var rawquerypipeline_projectPointAndGetFeature = instance.exports.rawquerypipeline_projectPointAndGetFeature;
-var rawquerypipeline_intersectionsWithPoint = instance.exports.rawquerypipeline_intersectionsWithPoint;
-var rawquerypipeline_castShape = instance.exports.rawquerypipeline_castShape;
-var rawquerypipeline_intersectionsWithShape = instance.exports.rawquerypipeline_intersectionsWithShape;
-var rawquerypipeline_collidersWithAabbIntersectingAabb = instance.exports.rawquerypipeline_collidersWithAabbIntersectingAabb;
 var __wbg_rawdeserializedworld_free = instance.exports.__wbg_rawdeserializedworld_free;
 var rawdeserializedworld_takeGravity = instance.exports.rawdeserializedworld_takeGravity;
 var rawdeserializedworld_takeIntegrationParameters = instance.exports.rawdeserializedworld_takeIntegrationParameters;
@@ -6025,33 +6226,34 @@ var rawdeserializedworld_takeBodies = instance.exports.rawdeserializedworld_take
 var rawdeserializedworld_takeColliders = instance.exports.rawdeserializedworld_takeColliders;
 var rawdeserializedworld_takeImpulseJoints = instance.exports.rawdeserializedworld_takeImpulseJoints;
 var rawdeserializedworld_takeMultibodyJoints = instance.exports.rawdeserializedworld_takeMultibodyJoints;
-var __wbg_rawserializationpipeline_free = instance.exports.__wbg_rawserializationpipeline_free;
-var rawserializationpipeline_new = instance.exports.rawserializationpipeline_new;
 var rawserializationpipeline_serializeAll = instance.exports.rawserializationpipeline_serializeAll;
 var rawserializationpipeline_deserializeAll = instance.exports.rawserializationpipeline_deserializeAll;
 var rawcolliderset_isHandleValid = instance.exports.rawcolliderset_isHandleValid;
-var rawkinematiccharactercontroller_offset = instance.exports.rawkinematiccharactercontroller_offset;
-var rawkinematiccharactercontroller_maxSlopeClimbAngle = instance.exports.rawkinematiccharactercontroller_maxSlopeClimbAngle;
-var rawrigidbodyset_len = instance.exports.rawrigidbodyset_len;
+var rawvector_set_x = instance.exports.rawvector_set_x;
+var reserve_memory2 = instance.exports.reserve_memory;
+var rawrayintersection_featureId = instance.exports.rawrayintersection_featureId;
+var rawraycolliderintersection_featureId = instance.exports.rawraycolliderintersection_featureId;
+var rawintegrationparameters_normalizedPredictionDistance = instance.exports.rawintegrationparameters_normalizedPredictionDistance;
 var rawshapecontact_distance = instance.exports.rawshapecontact_distance;
 var rawrayintersection_featureType = instance.exports.rawrayintersection_featureType;
 var rawraycolliderintersection_colliderHandle = instance.exports.rawraycolliderintersection_colliderHandle;
 var rawrayintersection_time_of_impact = instance.exports.rawrayintersection_time_of_impact;
 var rawraycolliderintersection_featureType = instance.exports.rawraycolliderintersection_featureType;
 var rawraycolliderintersection_time_of_impact = instance.exports.rawraycolliderintersection_time_of_impact;
+var rawshapecasthit_time_of_impact = instance.exports.rawshapecasthit_time_of_impact;
 var rawraycolliderhit_colliderHandle = instance.exports.rawraycolliderhit_colliderHandle;
 var rawraycolliderhit_timeOfImpact = instance.exports.rawraycolliderhit_timeOfImpact;
 var rawrotation_im = instance.exports.rawrotation_im;
-var rawshapecasthit_time_of_impact = instance.exports.rawshapecasthit_time_of_impact;
+var rawrotation_re = instance.exports.rawrotation_re;
 var rawvector_x = instance.exports.rawvector_x;
 var rawvector_y = instance.exports.rawvector_y;
 var rawcontactforceevent_collider1 = instance.exports.rawcontactforceevent_collider1;
-var rawintegrationparameters_lengthUnit = instance.exports.rawintegrationparameters_lengthUnit;
 var rawintegrationparameters_normalizedAllowedLinearError = instance.exports.rawintegrationparameters_normalizedAllowedLinearError;
-var reserve_memory2 = instance.exports.reserve_memory;
-var rawrayintersection_featureId = instance.exports.rawrayintersection_featureId;
-var rawraycolliderintersection_featureId = instance.exports.rawraycolliderintersection_featureId;
-var __wbg_rawquerypipeline_free = instance.exports.__wbg_rawquerypipeline_free;
+var __wbg_rawcontactpair_free = instance.exports.__wbg_rawcontactpair_free;
+var __wbg_rawraycolliderintersection_free = instance.exports.__wbg_rawraycolliderintersection_free;
+var __wbg_rawraycolliderhit_free = instance.exports.__wbg_rawraycolliderhit_free;
+var __wbg_rawshapecasthit_free = instance.exports.__wbg_rawshapecasthit_free;
+var __wbg_rawserializationpipeline_free = instance.exports.__wbg_rawserializationpipeline_free;
 var rawshapecontact_normal2 = instance.exports.rawshapecontact_normal2;
 var rawshapecontact_point1 = instance.exports.rawshapecontact_point1;
 var rawshapecontact_point2 = instance.exports.rawshapecontact_point2;
@@ -6063,21 +6265,17 @@ var rawshapecasthit_normal2 = instance.exports.rawshapecasthit_normal2;
 var rawkinematiccharactercontroller_up = instance.exports.rawkinematiccharactercontroller_up;
 var rawshapecontact_normal1 = instance.exports.rawshapecontact_normal1;
 var rawcontactforceevent_max_force_direction = instance.exports.rawcontactforceevent_max_force_direction;
-var rawkinematiccharactercontroller_setMaxSlopeClimbAngle = instance.exports.rawkinematiccharactercontroller_setMaxSlopeClimbAngle;
-var rawvector_set_y = instance.exports.rawvector_set_y;
-var __wbg_rawraycolliderhit_free = instance.exports.__wbg_rawraycolliderhit_free;
-var __wbg_rawshapecasthit_free = instance.exports.__wbg_rawshapecasthit_free;
-var __wbg_rawcontactpair_free = instance.exports.__wbg_rawcontactpair_free;
-var __wbg_rawraycolliderintersection_free = instance.exports.__wbg_rawraycolliderintersection_free;
+var rawccdsolver_new = instance.exports.rawccdsolver_new;
+var rawserializationpipeline_new = instance.exports.rawserializationpipeline_new;
 var __wbindgen_export_0 = instance.exports.__wbindgen_export_0;
 var __wbindgen_add_to_stack_pointer = instance.exports.__wbindgen_add_to_stack_pointer;
 var __wbindgen_export_1 = instance.exports.__wbindgen_export_1;
 var __wbindgen_export_2 = instance.exports.__wbindgen_export_2;
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier_wasm2d.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/rapier_wasm2d.js
 __wbg_set_wasm(rapier_wasm2d_bg_exports);
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/math.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/math.js
 var Vector2 = class {
   constructor(x, y) {
     this.x = x;
@@ -6123,7 +6321,7 @@ var RotationOps = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/rigid_body.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/rigid_body.js
 var RigidBodyType;
 (function(RigidBodyType2) {
   RigidBodyType2[RigidBodyType2["Dynamic"] = 0] = "Dynamic";
@@ -6438,8 +6636,8 @@ var RigidBody = class {
    *
    * Components set to zero are assumed to be infinite along the corresponding principal axis.
    */
-  invPrincipalInertiaSqrt() {
-    return this.rawSet.rbInvPrincipalInertiaSqrt(this.handle);
+  invPrincipalInertia() {
+    return this.rawSet.rbInvPrincipalInertia(this.handle);
   }
   // #endif
   // #if DIM2
@@ -6452,11 +6650,11 @@ var RigidBody = class {
   // #endif
   // #if DIM2
   /**
-   * The square-root of the world-space inverse angular inertia tensor of the rigid-body,
+   * The world-space inverse angular inertia tensor of the rigid-body,
    * taking into account rotation locking.
    */
-  effectiveWorldInvInertiaSqrt() {
-    return this.rawSet.rbEffectiveWorldInvInertiaSqrt(this.handle);
+  effectiveWorldInvInertia() {
+    return this.rawSet.rbEffectiveWorldInvInertia(this.handle);
   }
   // #endif
   // #if DIM2
@@ -7057,7 +7255,7 @@ var RigidBodyDesc = class _RigidBodyDesc {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/coarena.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/coarena.js
 var Coarena = class {
   constructor() {
     this.fconv = new Float64Array(1);
@@ -7111,7 +7309,7 @@ var Coarena = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/rigid_body_set.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/rigid_body_set.js
 var RigidBodySet = class {
   /**
    * Release the WASM memory occupied by this rigid-body set.
@@ -7257,7 +7455,7 @@ var RigidBodySet = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/integration_parameters.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/integration_parameters.js
 var IntegrationParameters = class {
   constructor(raw) {
     this.raw = raw || new RawIntegrationParameters();
@@ -7310,12 +7508,6 @@ var IntegrationParameters = class {
     return this.raw.numSolverIterations;
   }
   /**
-   * Number of addition friction resolution iteration run during the last solver sub-step (default: `4`).
-   */
-  get numAdditionalFrictionIterations() {
-    return this.raw.numAdditionalFrictionIterations;
-  }
-  /**
    * Number of internal Project Gauss Seidel (PGS) iterations run at each solver iteration (default: `1`).
    */
   get numInternalPgsIterations() {
@@ -7355,12 +7547,6 @@ var IntegrationParameters = class {
     this.raw.numSolverIterations = value;
   }
   /**
-   * Sets the number of addition friction resolution iteration run during the last solver sub-step (default: `4`).
-   */
-  set numAdditionalFrictionIterations(value) {
-    this.raw.numAdditionalFrictionIterations = value;
-  }
-  /**
    * Sets the number of internal Project Gauss Seidel (PGS) iterations run at each solver iteration (default: `1`).
    */
   set numInternalPgsIterations(value) {
@@ -7372,18 +7558,9 @@ var IntegrationParameters = class {
   set maxCcdSubsteps(value) {
     this.raw.maxCcdSubsteps = value;
   }
-  switchToStandardPgsSolver() {
-    this.raw.switchToStandardPgsSolver();
-  }
-  switchToSmallStepsPgsSolver() {
-    this.raw.switchToSmallStepsPgsSolver();
-  }
-  switchToSmallStepsPgsSolverWithoutWarmstart() {
-    this.raw.switchToSmallStepsPgsSolverWithoutWarmstart();
-  }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/impulse_joint.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/impulse_joint.js
 var JointType;
 (function(JointType2) {
   JointType2[JointType2["Revolute"] = 0] = "Revolute";
@@ -7696,7 +7873,7 @@ var JointData = class _JointData {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/impulse_joint_set.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/impulse_joint_set.js
 var ImpulseJointSet = class {
   /**
    * Release the WASM memory occupied by this joint set.
@@ -7808,7 +7985,7 @@ var ImpulseJointSet = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/multibody_joint.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/multibody_joint.js
 var MultibodyJoint = class _MultibodyJoint {
   constructor(rawSet, handle) {
     this.rawSet = rawSet;
@@ -7905,7 +8082,7 @@ var RevoluteMultibodyJoint = class extends UnitMultibodyJoint {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/multibody_joint_set.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/multibody_joint_set.js
 var MultibodyJointSet = class {
   /**
    * Release the WASM memory occupied by this joint set.
@@ -8012,7 +8189,7 @@ var MultibodyJointSet = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/coefficient_combine_rule.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/coefficient_combine_rule.js
 var CoefficientCombineRule;
 (function(CoefficientCombineRule2) {
   CoefficientCombineRule2[CoefficientCombineRule2["Average"] = 0] = "Average";
@@ -8021,7 +8198,7 @@ var CoefficientCombineRule;
   CoefficientCombineRule2[CoefficientCombineRule2["Max"] = 3] = "Max";
 })(CoefficientCombineRule || (CoefficientCombineRule = {}));
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/ccd_solver.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/ccd_solver.js
 var CCDSolver = class {
   /**
    * Release the WASM memory occupied by this narrow-phase.
@@ -8037,7 +8214,7 @@ var CCDSolver = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/dynamics/island_manager.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/dynamics/island_manager.js
 var IslandManager = class {
   /**
    * Release the WASM memory occupied by this narrow-phase.
@@ -8063,7 +8240,153 @@ var IslandManager = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/broad_phase.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/feature.js
+var FeatureType;
+(function(FeatureType2) {
+  FeatureType2[FeatureType2["Vertex"] = 0] = "Vertex";
+  FeatureType2[FeatureType2["Face"] = 1] = "Face";
+  FeatureType2[FeatureType2["Unknown"] = 2] = "Unknown";
+})(FeatureType || (FeatureType = {}));
+
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/ray.js
+var Ray = class {
+  /**
+   * Builds a ray from its origin and direction.
+   *
+   * @param origin - The ray's starting point.
+   * @param dir - The ray's direction of propagation.
+   */
+  constructor(origin, dir) {
+    this.origin = origin;
+    this.dir = dir;
+  }
+  pointAt(t) {
+    return {
+      x: this.origin.x + this.dir.x * t,
+      y: this.origin.y + this.dir.y * t
+    };
+  }
+};
+var RayIntersection = class _RayIntersection {
+  constructor(timeOfImpact, normal, featureType, featureId) {
+    this.featureType = FeatureType.Unknown;
+    this.featureId = void 0;
+    this.timeOfImpact = timeOfImpact;
+    this.normal = normal;
+    if (featureId !== void 0)
+      this.featureId = featureId;
+    if (featureType !== void 0)
+      this.featureType = featureType;
+  }
+  static fromRaw(raw) {
+    if (!raw)
+      return null;
+    const result = new _RayIntersection(raw.time_of_impact(), VectorOps.fromRaw(raw.normal()), raw.featureType(), raw.featureId());
+    raw.free();
+    return result;
+  }
+};
+var RayColliderIntersection = class _RayColliderIntersection {
+  constructor(collider, timeOfImpact, normal, featureType, featureId) {
+    this.featureType = FeatureType.Unknown;
+    this.featureId = void 0;
+    this.collider = collider;
+    this.timeOfImpact = timeOfImpact;
+    this.normal = normal;
+    if (featureId !== void 0)
+      this.featureId = featureId;
+    if (featureType !== void 0)
+      this.featureType = featureType;
+  }
+  static fromRaw(colliderSet, raw) {
+    if (!raw)
+      return null;
+    const result = new _RayColliderIntersection(colliderSet.get(raw.colliderHandle()), raw.time_of_impact(), VectorOps.fromRaw(raw.normal()), raw.featureType(), raw.featureId());
+    raw.free();
+    return result;
+  }
+};
+var RayColliderHit = class _RayColliderHit {
+  constructor(collider, timeOfImpact) {
+    this.collider = collider;
+    this.timeOfImpact = timeOfImpact;
+  }
+  static fromRaw(colliderSet, raw) {
+    if (!raw)
+      return null;
+    const result = new _RayColliderHit(colliderSet.get(raw.colliderHandle()), raw.timeOfImpact());
+    raw.free();
+    return result;
+  }
+};
+
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/point.js
+var PointProjection = class _PointProjection {
+  constructor(point, isInside) {
+    this.point = point;
+    this.isInside = isInside;
+  }
+  static fromRaw(raw) {
+    if (!raw)
+      return null;
+    const result = new _PointProjection(VectorOps.fromRaw(raw.point()), raw.isInside());
+    raw.free();
+    return result;
+  }
+};
+var PointColliderProjection = class _PointColliderProjection {
+  constructor(collider, point, isInside, featureType, featureId) {
+    this.featureType = FeatureType.Unknown;
+    this.featureId = void 0;
+    this.collider = collider;
+    this.point = point;
+    this.isInside = isInside;
+    if (featureId !== void 0)
+      this.featureId = featureId;
+    if (featureType !== void 0)
+      this.featureType = featureType;
+  }
+  static fromRaw(colliderSet, raw) {
+    if (!raw)
+      return null;
+    const result = new _PointColliderProjection(colliderSet.get(raw.colliderHandle()), VectorOps.fromRaw(raw.point()), raw.isInside(), raw.featureType(), raw.featureId());
+    raw.free();
+    return result;
+  }
+};
+
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/toi.js
+var ShapeCastHit = class _ShapeCastHit {
+  constructor(time_of_impact, witness1, witness2, normal1, normal2) {
+    this.time_of_impact = time_of_impact;
+    this.witness1 = witness1;
+    this.witness2 = witness2;
+    this.normal1 = normal1;
+    this.normal2 = normal2;
+  }
+  static fromRaw(colliderSet, raw) {
+    if (!raw)
+      return null;
+    const result = new _ShapeCastHit(raw.time_of_impact(), VectorOps.fromRaw(raw.witness1()), VectorOps.fromRaw(raw.witness2()), VectorOps.fromRaw(raw.normal1()), VectorOps.fromRaw(raw.normal2()));
+    raw.free();
+    return result;
+  }
+};
+var ColliderShapeCastHit = class _ColliderShapeCastHit extends ShapeCastHit {
+  constructor(collider, time_of_impact, witness1, witness2, normal1, normal2) {
+    super(time_of_impact, witness1, witness2, normal1, normal2);
+    this.collider = collider;
+  }
+  static fromRaw(colliderSet, raw) {
+    if (!raw)
+      return null;
+    const result = new _ColliderShapeCastHit(colliderSet.get(raw.colliderHandle()), raw.time_of_impact(), VectorOps.fromRaw(raw.witness1()), VectorOps.fromRaw(raw.witness2()), VectorOps.fromRaw(raw.normal1()), VectorOps.fromRaw(raw.normal2()));
+    raw.free();
+    return result;
+  }
+};
+
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/broad_phase.js
 var BroadPhase = class {
   /**
    * Release the WASM memory occupied by this broad-phase.
@@ -8077,9 +8400,210 @@ var BroadPhase = class {
   constructor(raw) {
     this.raw = raw || new RawBroadPhase();
   }
+  /**
+   * Find the closest intersection between a ray and a set of collider.
+   *
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param ray - The ray to cast.
+   * @param maxToi - The maximum time-of-impact that can be reported by this cast. This effectively
+   *   limits the length of the ray to `ray.dir.norm() * maxToi`.
+   * @param solid - If `false` then the ray will attempt to hit the boundary of a shape, even if its
+   *   origin already lies inside of a shape. In other terms, `true` implies that all shapes are plain,
+   *   whereas `false` implies that all shapes are hollow for this ray-cast.
+   * @param groups - Used to filter the colliders that can or cannot be hit by the ray.
+   * @param filter - The callback to filter out which collider will be hit.
+   */
+  castRay(narrowPhase, bodies, colliders, ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawOrig = VectorOps.intoRaw(ray.origin);
+    let rawDir = VectorOps.intoRaw(ray.dir);
+    let result = RayColliderHit.fromRaw(colliders, this.raw.castRay(narrowPhase.raw, bodies.raw, colliders.raw, rawOrig, rawDir, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
+    rawOrig.free();
+    rawDir.free();
+    return result;
+  }
+  /**
+   * Find the closest intersection between a ray and a set of collider.
+   *
+   * This also computes the normal at the hit point.
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param ray - The ray to cast.
+   * @param maxToi - The maximum time-of-impact that can be reported by this cast. This effectively
+   *   limits the length of the ray to `ray.dir.norm() * maxToi`.
+   * @param solid - If `false` then the ray will attempt to hit the boundary of a shape, even if its
+   *   origin already lies inside of a shape. In other terms, `true` implies that all shapes are plain,
+   *   whereas `false` implies that all shapes are hollow for this ray-cast.
+   * @param groups - Used to filter the colliders that can or cannot be hit by the ray.
+   */
+  castRayAndGetNormal(narrowPhase, bodies, colliders, ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawOrig = VectorOps.intoRaw(ray.origin);
+    let rawDir = VectorOps.intoRaw(ray.dir);
+    let result = RayColliderIntersection.fromRaw(colliders, this.raw.castRayAndGetNormal(narrowPhase.raw, bodies.raw, colliders.raw, rawOrig, rawDir, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
+    rawOrig.free();
+    rawDir.free();
+    return result;
+  }
+  /**
+   * Cast a ray and collects all the intersections between a ray and the scene.
+   *
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param ray - The ray to cast.
+   * @param maxToi - The maximum time-of-impact that can be reported by this cast. This effectively
+   *   limits the length of the ray to `ray.dir.norm() * maxToi`.
+   * @param solid - If `false` then the ray will attempt to hit the boundary of a shape, even if its
+   *   origin already lies inside of a shape. In other terms, `true` implies that all shapes are plain,
+   *   whereas `false` implies that all shapes are hollow for this ray-cast.
+   * @param groups - Used to filter the colliders that can or cannot be hit by the ray.
+   * @param callback - The callback called once per hit (in no particular order) between a ray and a collider.
+   *   If this callback returns `false`, then the cast will stop and no further hits will be detected/reported.
+   */
+  intersectionsWithRay(narrowPhase, bodies, colliders, ray, maxToi, solid, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawOrig = VectorOps.intoRaw(ray.origin);
+    let rawDir = VectorOps.intoRaw(ray.dir);
+    let rawCallback = (rawInter) => {
+      return callback(RayColliderIntersection.fromRaw(colliders, rawInter));
+    };
+    this.raw.intersectionsWithRay(narrowPhase.raw, bodies.raw, colliders.raw, rawOrig, rawDir, maxToi, solid, rawCallback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate);
+    rawOrig.free();
+    rawDir.free();
+  }
+  /**
+   * Gets the handle of up to one collider intersecting the given shape.
+   *
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param shapePos - The position of the shape used for the intersection test.
+   * @param shapeRot - The orientation of the shape used for the intersection test.
+   * @param shape - The shape used for the intersection test.
+   * @param groups - The bit groups and filter associated to the ray, in order to only
+   *   hit the colliders with collision groups compatible with the ray's group.
+   */
+  intersectionWithShape(narrowPhase, bodies, colliders, shapePos, shapeRot, shape, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawPos = VectorOps.intoRaw(shapePos);
+    let rawRot = RotationOps.intoRaw(shapeRot);
+    let rawShape = shape.intoRaw();
+    let result = this.raw.intersectionWithShape(narrowPhase.raw, bodies.raw, colliders.raw, rawPos, rawRot, rawShape, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate);
+    rawPos.free();
+    rawRot.free();
+    rawShape.free();
+    return result;
+  }
+  /**
+   * Find the projection of a point on the closest collider.
+   *
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param point - The point to project.
+   * @param solid - If this is set to `true` then the collider shapes are considered to
+   *   be plain (if the point is located inside of a plain shape, its projection is the point
+   *   itself). If it is set to `false` the collider shapes are considered to be hollow
+   *   (if the point is located inside of an hollow shape, it is projected on the shape's
+   *   boundary).
+   * @param groups - The bit groups and filter associated to the point to project, in order to only
+   *   project on colliders with collision groups compatible with the ray's group.
+   */
+  projectPoint(narrowPhase, bodies, colliders, point, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawPoint = VectorOps.intoRaw(point);
+    let result = PointColliderProjection.fromRaw(colliders, this.raw.projectPoint(narrowPhase.raw, bodies.raw, colliders.raw, rawPoint, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
+    rawPoint.free();
+    return result;
+  }
+  /**
+   * Find the projection of a point on the closest collider.
+   *
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param point - The point to project.
+   * @param groups - The bit groups and filter associated to the point to project, in order to only
+   *   project on colliders with collision groups compatible with the ray's group.
+   */
+  projectPointAndGetFeature(narrowPhase, bodies, colliders, point, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawPoint = VectorOps.intoRaw(point);
+    let result = PointColliderProjection.fromRaw(colliders, this.raw.projectPointAndGetFeature(narrowPhase.raw, bodies.raw, colliders.raw, rawPoint, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
+    rawPoint.free();
+    return result;
+  }
+  /**
+   * Find all the colliders containing the given point.
+   *
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param point - The point used for the containment test.
+   * @param groups - The bit groups and filter associated to the point to test, in order to only
+   *   test on colliders with collision groups compatible with the ray's group.
+   * @param callback - A function called with the handles of each collider with a shape
+   *   containing the `point`.
+   */
+  intersectionsWithPoint(narrowPhase, bodies, colliders, point, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawPoint = VectorOps.intoRaw(point);
+    this.raw.intersectionsWithPoint(narrowPhase.raw, bodies.raw, colliders.raw, rawPoint, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate);
+    rawPoint.free();
+  }
+  /**
+   * Casts a shape at a constant linear velocity and retrieve the first collider it hits.
+   * This is similar to ray-casting except that we are casting a whole shape instead of
+   * just a point (the ray origin).
+   *
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param shapePos - The initial position of the shape to cast.
+   * @param shapeRot - The initial rotation of the shape to cast.
+   * @param shapeVel - The constant velocity of the shape to cast (i.e. the cast direction).
+   * @param shape - The shape to cast.
+   * @param targetDistance − If the shape moves closer to this distance from a collider, a hit
+   *                       will be returned.
+   * @param maxToi - The maximum time-of-impact that can be reported by this cast. This effectively
+   *   limits the distance traveled by the shape to `shapeVel.norm() * maxToi`.
+   * @param stopAtPenetration - If set to `false`, the linear shape-cast won’t immediately stop if
+   *   the shape is penetrating another shape at its starting point **and** its trajectory is such
+   *   that it’s on a path to exit that penetration state.
+   * @param groups - The bit groups and filter associated to the shape to cast, in order to only
+   *   test on colliders with collision groups compatible with this group.
+   */
+  castShape(narrowPhase, bodies, colliders, shapePos, shapeRot, shapeVel, shape, targetDistance, maxToi, stopAtPenetration, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawPos = VectorOps.intoRaw(shapePos);
+    let rawRot = RotationOps.intoRaw(shapeRot);
+    let rawVel = VectorOps.intoRaw(shapeVel);
+    let rawShape = shape.intoRaw();
+    let result = ColliderShapeCastHit.fromRaw(colliders, this.raw.castShape(narrowPhase.raw, bodies.raw, colliders.raw, rawPos, rawRot, rawVel, rawShape, targetDistance, maxToi, stopAtPenetration, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
+    rawPos.free();
+    rawRot.free();
+    rawVel.free();
+    rawShape.free();
+    return result;
+  }
+  /**
+   * Retrieve all the colliders intersecting the given shape.
+   *
+   * @param colliders - The set of colliders taking part in this pipeline.
+   * @param shapePos - The position of the shape to test.
+   * @param shapeRot - The orientation of the shape to test.
+   * @param shape - The shape to test.
+   * @param groups - The bit groups and filter associated to the shape to test, in order to only
+   *   test on colliders with collision groups compatible with this group.
+   * @param callback - A function called with the handles of each collider intersecting the `shape`.
+   */
+  intersectionsWithShape(narrowPhase, bodies, colliders, shapePos, shapeRot, shape, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
+    let rawPos = VectorOps.intoRaw(shapePos);
+    let rawRot = RotationOps.intoRaw(shapeRot);
+    let rawShape = shape.intoRaw();
+    this.raw.intersectionsWithShape(narrowPhase.raw, bodies.raw, colliders.raw, rawPos, rawRot, rawShape, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate);
+    rawPos.free();
+    rawRot.free();
+    rawShape.free();
+  }
+  /**
+   * Finds the handles of all the colliders with an AABB intersecting the given AABB.
+   *
+   * @param aabbCenter - The center of the AABB to test.
+   * @param aabbHalfExtents - The half-extents of the AABB to test.
+   * @param callback - The callback that will be called with the handles of all the colliders
+   *                   currently intersecting the given AABB.
+   */
+  collidersWithAabbIntersectingAabb(narrowPhase, bodies, colliders, aabbCenter, aabbHalfExtents, callback) {
+    let rawCenter = VectorOps.intoRaw(aabbCenter);
+    let rawHalfExtents = VectorOps.intoRaw(aabbHalfExtents);
+    this.raw.collidersWithAabbIntersectingAabb(narrowPhase.raw, bodies.raw, colliders.raw, rawCenter, rawHalfExtents, callback);
+    rawCenter.free();
+    rawHalfExtents.free();
+  }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/narrow_phase.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/narrow_phase.js
 var NarrowPhase = class {
   /**
    * Release the WASM memory occupied by this narrow-phase.
@@ -8214,7 +8738,7 @@ var TempContactManifold = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/contact.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/contact.js
 var ShapeContact = class _ShapeContact {
   constructor(dist, point1, point2, normal1, normal2) {
     this.distance = dist;
@@ -8232,153 +8756,7 @@ var ShapeContact = class _ShapeContact {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/feature.js
-var FeatureType;
-(function(FeatureType2) {
-  FeatureType2[FeatureType2["Vertex"] = 0] = "Vertex";
-  FeatureType2[FeatureType2["Face"] = 1] = "Face";
-  FeatureType2[FeatureType2["Unknown"] = 2] = "Unknown";
-})(FeatureType || (FeatureType = {}));
-
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/point.js
-var PointProjection = class _PointProjection {
-  constructor(point, isInside) {
-    this.point = point;
-    this.isInside = isInside;
-  }
-  static fromRaw(raw) {
-    if (!raw)
-      return null;
-    const result = new _PointProjection(VectorOps.fromRaw(raw.point()), raw.isInside());
-    raw.free();
-    return result;
-  }
-};
-var PointColliderProjection = class _PointColliderProjection {
-  constructor(collider, point, isInside, featureType, featureId) {
-    this.featureType = FeatureType.Unknown;
-    this.featureId = void 0;
-    this.collider = collider;
-    this.point = point;
-    this.isInside = isInside;
-    if (featureId !== void 0)
-      this.featureId = featureId;
-    if (featureType !== void 0)
-      this.featureType = featureType;
-  }
-  static fromRaw(colliderSet, raw) {
-    if (!raw)
-      return null;
-    const result = new _PointColliderProjection(colliderSet.get(raw.colliderHandle()), VectorOps.fromRaw(raw.point()), raw.isInside(), raw.featureType(), raw.featureId());
-    raw.free();
-    return result;
-  }
-};
-
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/ray.js
-var Ray = class {
-  /**
-   * Builds a ray from its origin and direction.
-   *
-   * @param origin - The ray's starting point.
-   * @param dir - The ray's direction of propagation.
-   */
-  constructor(origin, dir) {
-    this.origin = origin;
-    this.dir = dir;
-  }
-  pointAt(t) {
-    return {
-      x: this.origin.x + this.dir.x * t,
-      y: this.origin.y + this.dir.y * t
-    };
-  }
-};
-var RayIntersection = class _RayIntersection {
-  constructor(timeOfImpact, normal, featureType, featureId) {
-    this.featureType = FeatureType.Unknown;
-    this.featureId = void 0;
-    this.timeOfImpact = timeOfImpact;
-    this.normal = normal;
-    if (featureId !== void 0)
-      this.featureId = featureId;
-    if (featureType !== void 0)
-      this.featureType = featureType;
-  }
-  static fromRaw(raw) {
-    if (!raw)
-      return null;
-    const result = new _RayIntersection(raw.time_of_impact(), VectorOps.fromRaw(raw.normal()), raw.featureType(), raw.featureId());
-    raw.free();
-    return result;
-  }
-};
-var RayColliderIntersection = class _RayColliderIntersection {
-  constructor(collider, timeOfImpact, normal, featureType, featureId) {
-    this.featureType = FeatureType.Unknown;
-    this.featureId = void 0;
-    this.collider = collider;
-    this.timeOfImpact = timeOfImpact;
-    this.normal = normal;
-    if (featureId !== void 0)
-      this.featureId = featureId;
-    if (featureType !== void 0)
-      this.featureType = featureType;
-  }
-  static fromRaw(colliderSet, raw) {
-    if (!raw)
-      return null;
-    const result = new _RayColliderIntersection(colliderSet.get(raw.colliderHandle()), raw.time_of_impact(), VectorOps.fromRaw(raw.normal()), raw.featureType(), raw.featureId());
-    raw.free();
-    return result;
-  }
-};
-var RayColliderHit = class _RayColliderHit {
-  constructor(collider, timeOfImpact) {
-    this.collider = collider;
-    this.timeOfImpact = timeOfImpact;
-  }
-  static fromRaw(colliderSet, raw) {
-    if (!raw)
-      return null;
-    const result = new _RayColliderHit(colliderSet.get(raw.colliderHandle()), raw.timeOfImpact());
-    raw.free();
-    return result;
-  }
-};
-
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/toi.js
-var ShapeCastHit = class _ShapeCastHit {
-  constructor(time_of_impact, witness1, witness2, normal1, normal2) {
-    this.time_of_impact = time_of_impact;
-    this.witness1 = witness1;
-    this.witness2 = witness2;
-    this.normal1 = normal1;
-    this.normal2 = normal2;
-  }
-  static fromRaw(colliderSet, raw) {
-    if (!raw)
-      return null;
-    const result = new _ShapeCastHit(raw.time_of_impact(), VectorOps.fromRaw(raw.witness1()), VectorOps.fromRaw(raw.witness2()), VectorOps.fromRaw(raw.normal1()), VectorOps.fromRaw(raw.normal2()));
-    raw.free();
-    return result;
-  }
-};
-var ColliderShapeCastHit = class _ColliderShapeCastHit extends ShapeCastHit {
-  constructor(collider, time_of_impact, witness1, witness2, normal1, normal2) {
-    super(time_of_impact, witness1, witness2, normal1, normal2);
-    this.collider = collider;
-  }
-  static fromRaw(colliderSet, raw) {
-    if (!raw)
-      return null;
-    const result = new _ColliderShapeCastHit(colliderSet.get(raw.colliderHandle()), raw.time_of_impact(), VectorOps.fromRaw(raw.witness1()), VectorOps.fromRaw(raw.witness2()), VectorOps.fromRaw(raw.normal1()), VectorOps.fromRaw(raw.normal2()));
-    raw.free();
-    return result;
-  }
-};
-
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/shape.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/shape.js
 var Shape = class {
   /**
    * instant mode without cache
@@ -8937,7 +9315,7 @@ var Heightfield = class extends Shape {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/physics_pipeline.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/pipeline/physics_pipeline.js
 var PhysicsPipeline = class {
   free() {
     if (!!this.raw) {
@@ -8959,242 +9337,7 @@ var PhysicsPipeline = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/query_pipeline.js
-var QueryFilterFlags;
-(function(QueryFilterFlags2) {
-  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_FIXED"] = 1] = "EXCLUDE_FIXED";
-  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_KINEMATIC"] = 2] = "EXCLUDE_KINEMATIC";
-  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_DYNAMIC"] = 4] = "EXCLUDE_DYNAMIC";
-  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_SENSORS"] = 8] = "EXCLUDE_SENSORS";
-  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_SOLIDS"] = 16] = "EXCLUDE_SOLIDS";
-  QueryFilterFlags2[QueryFilterFlags2["ONLY_DYNAMIC"] = 3] = "ONLY_DYNAMIC";
-  QueryFilterFlags2[QueryFilterFlags2["ONLY_KINEMATIC"] = 5] = "ONLY_KINEMATIC";
-  QueryFilterFlags2[QueryFilterFlags2["ONLY_FIXED"] = 6] = "ONLY_FIXED";
-})(QueryFilterFlags || (QueryFilterFlags = {}));
-var QueryPipeline = class {
-  /**
-   * Release the WASM memory occupied by this query pipeline.
-   */
-  free() {
-    if (!!this.raw) {
-      this.raw.free();
-    }
-    this.raw = void 0;
-  }
-  constructor(raw) {
-    this.raw = raw || new RawQueryPipeline();
-  }
-  /**
-   * Updates the acceleration structure of the query pipeline.
-   * @param colliders - The set of colliders taking part in this pipeline.
-   */
-  update(colliders) {
-    this.raw.update(colliders.raw);
-  }
-  /**
-   * Find the closest intersection between a ray and a set of collider.
-   *
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param ray - The ray to cast.
-   * @param maxToi - The maximum time-of-impact that can be reported by this cast. This effectively
-   *   limits the length of the ray to `ray.dir.norm() * maxToi`.
-   * @param solid - If `false` then the ray will attempt to hit the boundary of a shape, even if its
-   *   origin already lies inside of a shape. In other terms, `true` implies that all shapes are plain,
-   *   whereas `false` implies that all shapes are hollow for this ray-cast.
-   * @param groups - Used to filter the colliders that can or cannot be hit by the ray.
-   * @param filter - The callback to filter out which collider will be hit.
-   */
-  castRay(bodies, colliders, ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawOrig = VectorOps.intoRaw(ray.origin);
-    let rawDir = VectorOps.intoRaw(ray.dir);
-    let result = RayColliderHit.fromRaw(colliders, this.raw.castRay(bodies.raw, colliders.raw, rawOrig, rawDir, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
-    rawOrig.free();
-    rawDir.free();
-    return result;
-  }
-  /**
-   * Find the closest intersection between a ray and a set of collider.
-   *
-   * This also computes the normal at the hit point.
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param ray - The ray to cast.
-   * @param maxToi - The maximum time-of-impact that can be reported by this cast. This effectively
-   *   limits the length of the ray to `ray.dir.norm() * maxToi`.
-   * @param solid - If `false` then the ray will attempt to hit the boundary of a shape, even if its
-   *   origin already lies inside of a shape. In other terms, `true` implies that all shapes are plain,
-   *   whereas `false` implies that all shapes are hollow for this ray-cast.
-   * @param groups - Used to filter the colliders that can or cannot be hit by the ray.
-   */
-  castRayAndGetNormal(bodies, colliders, ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawOrig = VectorOps.intoRaw(ray.origin);
-    let rawDir = VectorOps.intoRaw(ray.dir);
-    let result = RayColliderIntersection.fromRaw(colliders, this.raw.castRayAndGetNormal(bodies.raw, colliders.raw, rawOrig, rawDir, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
-    rawOrig.free();
-    rawDir.free();
-    return result;
-  }
-  /**
-   * Cast a ray and collects all the intersections between a ray and the scene.
-   *
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param ray - The ray to cast.
-   * @param maxToi - The maximum time-of-impact that can be reported by this cast. This effectively
-   *   limits the length of the ray to `ray.dir.norm() * maxToi`.
-   * @param solid - If `false` then the ray will attempt to hit the boundary of a shape, even if its
-   *   origin already lies inside of a shape. In other terms, `true` implies that all shapes are plain,
-   *   whereas `false` implies that all shapes are hollow for this ray-cast.
-   * @param groups - Used to filter the colliders that can or cannot be hit by the ray.
-   * @param callback - The callback called once per hit (in no particular order) between a ray and a collider.
-   *   If this callback returns `false`, then the cast will stop and no further hits will be detected/reported.
-   */
-  intersectionsWithRay(bodies, colliders, ray, maxToi, solid, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawOrig = VectorOps.intoRaw(ray.origin);
-    let rawDir = VectorOps.intoRaw(ray.dir);
-    let rawCallback = (rawInter) => {
-      return callback(RayColliderIntersection.fromRaw(colliders, rawInter));
-    };
-    this.raw.intersectionsWithRay(bodies.raw, colliders.raw, rawOrig, rawDir, maxToi, solid, rawCallback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate);
-    rawOrig.free();
-    rawDir.free();
-  }
-  /**
-   * Gets the handle of up to one collider intersecting the given shape.
-   *
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param shapePos - The position of the shape used for the intersection test.
-   * @param shapeRot - The orientation of the shape used for the intersection test.
-   * @param shape - The shape used for the intersection test.
-   * @param groups - The bit groups and filter associated to the ray, in order to only
-   *   hit the colliders with collision groups compatible with the ray's group.
-   */
-  intersectionWithShape(bodies, colliders, shapePos, shapeRot, shape, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawPos = VectorOps.intoRaw(shapePos);
-    let rawRot = RotationOps.intoRaw(shapeRot);
-    let rawShape = shape.intoRaw();
-    let result = this.raw.intersectionWithShape(bodies.raw, colliders.raw, rawPos, rawRot, rawShape, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate);
-    rawPos.free();
-    rawRot.free();
-    rawShape.free();
-    return result;
-  }
-  /**
-   * Find the projection of a point on the closest collider.
-   *
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param point - The point to project.
-   * @param solid - If this is set to `true` then the collider shapes are considered to
-   *   be plain (if the point is located inside of a plain shape, its projection is the point
-   *   itself). If it is set to `false` the collider shapes are considered to be hollow
-   *   (if the point is located inside of an hollow shape, it is projected on the shape's
-   *   boundary).
-   * @param groups - The bit groups and filter associated to the point to project, in order to only
-   *   project on colliders with collision groups compatible with the ray's group.
-   */
-  projectPoint(bodies, colliders, point, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawPoint = VectorOps.intoRaw(point);
-    let result = PointColliderProjection.fromRaw(colliders, this.raw.projectPoint(bodies.raw, colliders.raw, rawPoint, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
-    rawPoint.free();
-    return result;
-  }
-  /**
-   * Find the projection of a point on the closest collider.
-   *
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param point - The point to project.
-   * @param groups - The bit groups and filter associated to the point to project, in order to only
-   *   project on colliders with collision groups compatible with the ray's group.
-   */
-  projectPointAndGetFeature(bodies, colliders, point, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawPoint = VectorOps.intoRaw(point);
-    let result = PointColliderProjection.fromRaw(colliders, this.raw.projectPointAndGetFeature(bodies.raw, colliders.raw, rawPoint, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
-    rawPoint.free();
-    return result;
-  }
-  /**
-   * Find all the colliders containing the given point.
-   *
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param point - The point used for the containment test.
-   * @param groups - The bit groups and filter associated to the point to test, in order to only
-   *   test on colliders with collision groups compatible with the ray's group.
-   * @param callback - A function called with the handles of each collider with a shape
-   *   containing the `point`.
-   */
-  intersectionsWithPoint(bodies, colliders, point, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawPoint = VectorOps.intoRaw(point);
-    this.raw.intersectionsWithPoint(bodies.raw, colliders.raw, rawPoint, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate);
-    rawPoint.free();
-  }
-  /**
-   * Casts a shape at a constant linear velocity and retrieve the first collider it hits.
-   * This is similar to ray-casting except that we are casting a whole shape instead of
-   * just a point (the ray origin).
-   *
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param shapePos - The initial position of the shape to cast.
-   * @param shapeRot - The initial rotation of the shape to cast.
-   * @param shapeVel - The constant velocity of the shape to cast (i.e. the cast direction).
-   * @param shape - The shape to cast.
-   * @param targetDistance − If the shape moves closer to this distance from a collider, a hit
-   *                       will be returned.
-   * @param maxToi - The maximum time-of-impact that can be reported by this cast. This effectively
-   *   limits the distance traveled by the shape to `shapeVel.norm() * maxToi`.
-   * @param stopAtPenetration - If set to `false`, the linear shape-cast won’t immediately stop if
-   *   the shape is penetrating another shape at its starting point **and** its trajectory is such
-   *   that it’s on a path to exit that penetration state.
-   * @param groups - The bit groups and filter associated to the shape to cast, in order to only
-   *   test on colliders with collision groups compatible with this group.
-   */
-  castShape(bodies, colliders, shapePos, shapeRot, shapeVel, shape, targetDistance, maxToi, stopAtPenetration, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawPos = VectorOps.intoRaw(shapePos);
-    let rawRot = RotationOps.intoRaw(shapeRot);
-    let rawVel = VectorOps.intoRaw(shapeVel);
-    let rawShape = shape.intoRaw();
-    let result = ColliderShapeCastHit.fromRaw(colliders, this.raw.castShape(bodies.raw, colliders.raw, rawPos, rawRot, rawVel, rawShape, targetDistance, maxToi, stopAtPenetration, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate));
-    rawPos.free();
-    rawRot.free();
-    rawVel.free();
-    rawShape.free();
-    return result;
-  }
-  /**
-   * Retrieve all the colliders intersecting the given shape.
-   *
-   * @param colliders - The set of colliders taking part in this pipeline.
-   * @param shapePos - The position of the shape to test.
-   * @param shapeRot - The orientation of the shape to test.
-   * @param shape - The shape to test.
-   * @param groups - The bit groups and filter associated to the shape to test, in order to only
-   *   test on colliders with collision groups compatible with this group.
-   * @param callback - A function called with the handles of each collider intersecting the `shape`.
-   */
-  intersectionsWithShape(bodies, colliders, shapePos, shapeRot, shape, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let rawPos = VectorOps.intoRaw(shapePos);
-    let rawRot = RotationOps.intoRaw(shapeRot);
-    let rawShape = shape.intoRaw();
-    this.raw.intersectionsWithShape(bodies.raw, colliders.raw, rawPos, rawRot, rawShape, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate);
-    rawPos.free();
-    rawRot.free();
-    rawShape.free();
-  }
-  /**
-   * Finds the handles of all the colliders with an AABB intersecting the given AABB.
-   *
-   * @param aabbCenter - The center of the AABB to test.
-   * @param aabbHalfExtents - The half-extents of the AABB to test.
-   * @param callback - The callback that will be called with the handles of all the colliders
-   *                   currently intersecting the given AABB.
-   */
-  collidersWithAabbIntersectingAabb(aabbCenter, aabbHalfExtents, callback) {
-    let rawCenter = VectorOps.intoRaw(aabbCenter);
-    let rawHalfExtents = VectorOps.intoRaw(aabbHalfExtents);
-    this.raw.collidersWithAabbIntersectingAabb(rawCenter, rawHalfExtents, callback);
-    rawCenter.free();
-    rawHalfExtents.free();
-  }
-};
-
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/serialization_pipeline.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/pipeline/serialization_pipeline.js
 var SerializationPipeline = class {
   /**
    * Release the WASM memory occupied by this serialization pipeline.
@@ -9235,7 +9378,7 @@ var SerializationPipeline = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/debug_render_pipeline.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/pipeline/debug_render_pipeline.js
 var DebugRenderBuffers = class {
   constructor(vertices, colors) {
     this.vertices = vertices;
@@ -9264,15 +9407,16 @@ var DebugRenderPipeline = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/control/character_controller.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/control/character_controller.js
 var CharacterCollision = class {
 };
 var KinematicCharacterController = class {
-  constructor(offset, params, bodies, colliders, queries) {
+  constructor(offset, params, broadPhase, narrowPhase, bodies, colliders) {
     this.params = params;
     this.bodies = bodies;
     this.colliders = colliders;
-    this.queries = queries;
+    this.broadPhase = broadPhase;
+    this.narrowPhase = narrowPhase;
     this.raw = new RawKinematicCharacterController(offset);
     this.rawCharacterCollision = new RawCharacterCollision();
     this._applyImpulsesToDynamicBodies = false;
@@ -9485,7 +9629,7 @@ var KinematicCharacterController = class {
    */
   computeColliderMovement(collider, desiredTranslationDelta, filterFlags, filterGroups, filterPredicate) {
     let rawTranslationDelta = VectorOps.intoRaw(desiredTranslationDelta);
-    this.raw.computeColliderMovement(this.params.dt, this.bodies.raw, this.colliders.raw, this.queries.raw, collider.handle, rawTranslationDelta, this._applyImpulsesToDynamicBodies, this._characterMass, filterFlags, filterGroups, this.colliders.castClosure(filterPredicate));
+    this.raw.computeColliderMovement(this.params.dt, this.broadPhase.raw, this.narrowPhase.raw, this.bodies.raw, this.colliders.raw, collider.handle, rawTranslationDelta, this._applyImpulsesToDynamicBodies, this._characterMass, filterFlags, filterGroups, this.colliders.castClosure(filterPredicate));
     rawTranslationDelta.free();
   }
   /**
@@ -9533,7 +9677,7 @@ var KinematicCharacterController = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/control/pid_controller.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/control/pid_controller.js
 var PidAxesMask;
 (function(PidAxesMask2) {
   PidAxesMask2[PidAxesMask2["None"] = 0] = "None";
@@ -9599,7 +9743,7 @@ var PidController = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/world.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/pipeline/world.js
 var World = class _World {
   /**
    * Release the WASM memory occupied by this physics world.
@@ -9617,7 +9761,6 @@ var World = class _World {
     this.impulseJoints.free();
     this.multibodyJoints.free();
     this.ccdSolver.free();
-    this.queryPipeline.free();
     this.physicsPipeline.free();
     this.serializationPipeline.free();
     this.debugRenderPipeline.free();
@@ -9632,14 +9775,13 @@ var World = class _World {
     this.ccdSolver = void 0;
     this.impulseJoints = void 0;
     this.multibodyJoints = void 0;
-    this.queryPipeline = void 0;
     this.physicsPipeline = void 0;
     this.serializationPipeline = void 0;
     this.debugRenderPipeline = void 0;
     this.characterControllers = void 0;
     this.pidControllers = void 0;
   }
-  constructor(gravity, rawIntegrationParameters, rawIslands, rawBroadPhase, rawNarrowPhase, rawBodies, rawColliders, rawImpulseJoints, rawMultibodyJoints, rawCCDSolver, rawQueryPipeline, rawPhysicsPipeline, rawSerializationPipeline, rawDebugRenderPipeline) {
+  constructor(gravity, rawIntegrationParameters, rawIslands, rawBroadPhase, rawNarrowPhase, rawBodies, rawColliders, rawImpulseJoints, rawMultibodyJoints, rawCCDSolver, rawPhysicsPipeline, rawSerializationPipeline, rawDebugRenderPipeline) {
     this.gravity = gravity;
     this.integrationParameters = new IntegrationParameters(rawIntegrationParameters);
     this.islands = new IslandManager(rawIslands);
@@ -9650,7 +9792,6 @@ var World = class _World {
     this.impulseJoints = new ImpulseJointSet(rawImpulseJoints);
     this.multibodyJoints = new MultibodyJointSet(rawMultibodyJoints);
     this.ccdSolver = new CCDSolver(rawCCDSolver);
-    this.queryPipeline = new QueryPipeline(rawQueryPipeline);
     this.physicsPipeline = new PhysicsPipeline(rawPhysicsPipeline);
     this.serializationPipeline = new SerializationPipeline(rawSerializationPipeline);
     this.debugRenderPipeline = new DebugRenderPipeline(rawDebugRenderPipeline);
@@ -9704,7 +9845,6 @@ var World = class _World {
    */
   step(eventQueue, hooks) {
     this.physicsPipeline.step(this.gravity, this.integrationParameters, this.islands, this.broadPhase, this.narrowPhase, this.bodies, this.colliders, this.impulseJoints, this.multibodyJoints, this.ccdSolver, eventQueue, hooks);
-    this.queryPipeline.update(this.colliders);
   }
   /**
    * Update colliders positions after rigid-bodies moved.
@@ -9716,15 +9856,16 @@ var World = class _World {
   propagateModifiedBodyPositionsToColliders() {
     this.bodies.raw.propagateModifiedBodyPositionsToColliders(this.colliders.raw);
   }
-  /**
-   * Ensure subsequent scene queries take into account the collider positions set before this method is called.
-   *
-   * This does not step the physics simulation forward.
-   */
-  updateSceneQueries() {
-    this.propagateModifiedBodyPositionsToColliders();
-    this.queryPipeline.update(this.colliders);
-  }
+  // TODO: This needs to trigger a broad-phase update but without emitting collision events?
+  // /**
+  //  * Ensure subsequent scene queries take into account the collider positions set before this method is called.
+  //  *
+  //  * This does not step the physics simulation forward.
+  //  */
+  // public updateSceneQueries() {
+  //     this.propagateModifiedBodyPositionsToColliders();
+  //     this.queryPipeline.update(this.colliders);
+  // }
   /**
    * The current simulation timestep.
    */
@@ -9790,23 +9931,6 @@ var World = class _World {
     this.integrationParameters.numSolverIterations = niter;
   }
   /**
-   * Number of addition friction resolution iteration run during the last solver sub-step (default: `4`).
-   */
-  get numAdditionalFrictionIterations() {
-    return this.integrationParameters.numAdditionalFrictionIterations;
-  }
-  /**
-   * Sets the number of addition friction resolution iteration run during the last solver sub-step (default: `4`).
-   *
-   * The greater this value is, the most realistic friction will be.
-   * However a greater number of iterations is more computationally intensive.
-   *
-   * @param niter - The new number of additional friction iterations.
-   */
-  set numAdditionalFrictionIterations(niter) {
-    this.integrationParameters.numAdditionalFrictionIterations = niter;
-  }
-  /**
    * Number of internal Project Gauss Seidel (PGS) iterations run at each solver iteration (default: `1`).
    */
   get numInternalPgsIterations() {
@@ -9823,43 +9947,24 @@ var World = class _World {
   set numInternalPgsIterations(niter) {
     this.integrationParameters.numInternalPgsIterations = niter;
   }
-  /// Configures the integration parameters to match the old PGS solver
-  /// from Rapier JS version <= 0.11.
-  ///
-  /// This solver was slightly faster than the new one but resulted
-  /// in less stable joints and worse convergence rates.
-  ///
-  /// This should only be used for comparison purpose or if you are
-  /// experiencing problems with the new solver.
-  ///
-  /// NOTE: this does not affect any `RigidBody.additional_solver_iterations` that will
-  ///       still create solver iterations based on the new "small-steps" PGS solver.
-  switchToStandardPgsSolver() {
-    this.integrationParameters.switchToStandardPgsSolver();
+  /**
+   * The number of substeps continuous collision-detection can run (default: `1`).
+   */
+  get maxCcdSubsteps() {
+    return this.integrationParameters.maxCcdSubsteps;
   }
-  /// Configures the integration parameters to match the new "small-steps" PGS solver
-  /// from Rapier version >= 0.12.
-  ///
-  /// The "small-steps" PGS solver is the default one when creating the physics world. So
-  /// calling this function is generally not needed unless `World.switch_to_standard_pgs_solver`
-  /// was called.
-  ///
-  /// This solver results in more stable joints and significantly better convergence
-  /// rates but is slightly slower in its default settings.
-  switchToSmallStepsPgsSolver() {
-    this.integrationParameters.switchToSmallStepsPgsSolver();
-  }
-  /// Configures the integration parameters to match the new "small-steps" PGS solver
-  /// from Rapier version >= 0.12. Warmstarting is disabled.
-  ///
-  /// The "small-steps" PGS solver is the default one when creating the physics world. So
-  /// calling this function is generally not needed unless `World.switch_to_standard_pgs_solver`
-  /// was called.
-  ///
-  /// This solver results in more stable joints and significantly better convergence
-  /// rates but is slightly slower in its default settings.
-  switchToSmallStepsPgsSolverWithoutWarmstart() {
-    this.integrationParameters.switchToSmallStepsPgsSolverWithoutWarmstart();
+  /**
+   * Sets the number of substeps continuous collision-detection can run (default: `1`).
+   *
+   * CCD operates using a "motion clamping" mechanism where all fast-moving object trajectories will
+   * be truncated to their first impact on their path. The number of CCD substeps beyond 1 indicate how
+   * many times that trajectory will be updated and continued after a hit. This can results in smoother
+   * paths, but at a significant computational cost.
+   *
+   * @param niter - The new maximum number of CCD substeps. Setting to `0` disables CCD entirely.
+   */
+  set maxCcdSubsteps(substeps) {
+    this.integrationParameters.maxCcdSubsteps = substeps;
   }
   /**
    * Creates a new rigid-body from the given rigid-body descriptor.
@@ -9875,7 +9980,7 @@ var World = class _World {
    * @param offset - The artificial gap added between the character’s chape and its environment.
    */
   createCharacterController(offset) {
-    let controller = new KinematicCharacterController(offset, this.integrationParameters, this.bodies, this.colliders, this.queryPipeline);
+    let controller = new KinematicCharacterController(offset, this.integrationParameters, this.broadPhase, this.narrowPhase, this.bodies, this.colliders);
     this.characterControllers.add(controller);
     return controller;
   }
@@ -10068,7 +10173,7 @@ var World = class _World {
    * @param filter - The callback to filter out which collider will be hit.
    */
   castRay(ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    return this.queryPipeline.castRay(this.bodies, this.colliders, ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    return this.broadPhase.castRay(this.narrowPhase, this.bodies, this.colliders, ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
   }
   /**
    * Find the closest intersection between a ray and the physics world.
@@ -10083,7 +10188,7 @@ var World = class _World {
    * @param groups - Used to filter the colliders that can or cannot be hit by the ray.
    */
   castRayAndGetNormal(ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    return this.queryPipeline.castRayAndGetNormal(this.bodies, this.colliders, ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    return this.broadPhase.castRayAndGetNormal(this.narrowPhase, this.bodies, this.colliders, ray, maxToi, solid, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
   }
   /**
    * Cast a ray and collects all the intersections between a ray and the scene.
@@ -10099,7 +10204,7 @@ var World = class _World {
    *   If this callback returns `false`, then the cast will stop and no further hits will be detected/reported.
    */
   intersectionsWithRay(ray, maxToi, solid, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    this.queryPipeline.intersectionsWithRay(this.bodies, this.colliders, ray, maxToi, solid, callback, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    this.broadPhase.intersectionsWithRay(this.narrowPhase, this.bodies, this.colliders, ray, maxToi, solid, callback, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
   }
   /**
    * Gets the handle of up to one collider intersecting the given shape.
@@ -10111,7 +10216,7 @@ var World = class _World {
    *   hit the colliders with collision groups compatible with the ray's group.
    */
   intersectionWithShape(shapePos, shapeRot, shape, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    let handle = this.queryPipeline.intersectionWithShape(this.bodies, this.colliders, shapePos, shapeRot, shape, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    let handle = this.broadPhase.intersectionWithShape(this.narrowPhase, this.bodies, this.colliders, shapePos, shapeRot, shape, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
     return handle != null ? this.colliders.get(handle) : null;
   }
   /**
@@ -10127,7 +10232,7 @@ var World = class _World {
    *   project on colliders with collision groups compatible with the ray's group.
    */
   projectPoint(point, solid, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    return this.queryPipeline.projectPoint(this.bodies, this.colliders, point, solid, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    return this.broadPhase.projectPoint(this.narrowPhase, this.bodies, this.colliders, point, solid, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
   }
   /**
    * Find the projection of a point on the closest collider.
@@ -10137,7 +10242,7 @@ var World = class _World {
    *   project on colliders with collision groups compatible with the ray's group.
    */
   projectPointAndGetFeature(point, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    return this.queryPipeline.projectPointAndGetFeature(this.bodies, this.colliders, point, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    return this.broadPhase.projectPointAndGetFeature(this.narrowPhase, this.bodies, this.colliders, point, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
   }
   /**
    * Find all the colliders containing the given point.
@@ -10149,7 +10254,7 @@ var World = class _World {
    *   containing the `point`.
    */
   intersectionsWithPoint(point, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    this.queryPipeline.intersectionsWithPoint(this.bodies, this.colliders, point, this.colliders.castClosure(callback), filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    this.broadPhase.intersectionsWithPoint(this.narrowPhase, this.bodies, this.colliders, point, this.colliders.castClosure(callback), filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
   }
   /**
    * Casts a shape at a constant linear velocity and retrieve the first collider it hits.
@@ -10171,7 +10276,7 @@ var World = class _World {
    *   test on colliders with collision groups compatible with this group.
    */
   castShape(shapePos, shapeRot, shapeVel, shape, targetDistance, maxToi, stopAtPenetration, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    return this.queryPipeline.castShape(this.bodies, this.colliders, shapePos, shapeRot, shapeVel, shape, targetDistance, maxToi, stopAtPenetration, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    return this.broadPhase.castShape(this.narrowPhase, this.bodies, this.colliders, shapePos, shapeRot, shapeVel, shape, targetDistance, maxToi, stopAtPenetration, filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
   }
   /**
    * Retrieve all the colliders intersecting the given shape.
@@ -10184,7 +10289,7 @@ var World = class _World {
    * @param callback - A function called with the handles of each collider intersecting the `shape`.
    */
   intersectionsWithShape(shapePos, shapeRot, shape, callback, filterFlags, filterGroups, filterExcludeCollider, filterExcludeRigidBody, filterPredicate) {
-    this.queryPipeline.intersectionsWithShape(this.bodies, this.colliders, shapePos, shapeRot, shape, this.colliders.castClosure(callback), filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
+    this.broadPhase.intersectionsWithShape(this.narrowPhase, this.bodies, this.colliders, shapePos, shapeRot, shape, this.colliders.castClosure(callback), filterFlags, filterGroups, filterExcludeCollider ? filterExcludeCollider.handle : null, filterExcludeRigidBody ? filterExcludeRigidBody.handle : null, this.colliders.castClosure(filterPredicate));
   }
   /**
    * Finds the handles of all the colliders with an AABB intersecting the given AABB.
@@ -10195,7 +10300,7 @@ var World = class _World {
    *                   currently intersecting the given AABB.
    */
   collidersWithAabbIntersectingAabb(aabbCenter, aabbHalfExtents, callback) {
-    this.queryPipeline.collidersWithAabbIntersectingAabb(aabbCenter, aabbHalfExtents, this.colliders.castClosure(callback));
+    this.broadPhase.collidersWithAabbIntersectingAabb(this.narrowPhase, this.bodies, this.colliders, aabbCenter, aabbHalfExtents, this.colliders.castClosure(callback));
   }
   /**
    * Enumerates all the colliders potentially in contact with the given collider.
@@ -10233,9 +10338,168 @@ var World = class _World {
   intersectionPair(collider1, collider2) {
     return this.narrowPhase.intersectionPair(collider1.handle, collider2.handle);
   }
+  /**
+   * Sets whether internal performance profiling is enabled (default: false).
+   *
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  set profilerEnabled(enabled) {
+    this.physicsPipeline.raw.set_profiler_enabled(enabled);
+  }
+  /**
+   * Indicates if the internal performance profiling is enabled.
+   *
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  get profilerEnabled() {
+    return this.physicsPipeline.raw.is_profiler_enabled();
+  }
+  /**
+   * The time spent in milliseconds by the last step to run the entire simulation step.
+   *
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingStep() {
+    return this.physicsPipeline.raw.timing_step();
+  }
+  /**
+   * The time spent in milliseconds by the last step to run the collision-detection
+   * (broad-phase + narrow-phase).
+   *
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingCollisionDetection() {
+    return this.physicsPipeline.raw.timing_collision_detection();
+  }
+  /**
+   * The time spent in milliseconds by the last step to run the broad-phase.
+   *
+   * This timing is included in `timingCollisionDetection`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingBroadPhase() {
+    return this.physicsPipeline.raw.timing_broad_phase();
+  }
+  /**
+   * The time spent in milliseconds by the last step to run the narrow-phase.
+   *
+   * This timing is included in `timingCollisionDetection`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingNarrowPhase() {
+    return this.physicsPipeline.raw.timing_narrow_phase();
+  }
+  /**
+   * The time spent in milliseconds by the last step to run the constraint solver.
+   *
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingSolver() {
+    return this.physicsPipeline.raw.timing_solver();
+  }
+  /**
+   * The time spent in milliseconds by the last step to run the constraint
+   * initialization.
+   *
+   * This timing is included in `timingSolver`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingVelocityAssembly() {
+    return this.physicsPipeline.raw.timing_velocity_assembly();
+  }
+  /**
+   * The time spent in milliseconds by the last step to run the constraint
+   * resolution.
+   *
+   * This timing is included in `timingSolver`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingVelocityResolution() {
+    return this.physicsPipeline.raw.timing_velocity_resolution();
+  }
+  /**
+   * The time spent in milliseconds by the last step to run the rigid-body
+   * velocity update.
+   *
+   * This timing is included in `timingSolver`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingVelocityUpdate() {
+    return this.physicsPipeline.raw.timing_velocity_update();
+  }
+  /**
+   * The time spent in milliseconds by writing rigid-body velocities
+   * calculated by the solver back into the rigid-bodies.
+   *
+   * This timing is included in `timingSolver`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingVelocityWriteback() {
+    return this.physicsPipeline.raw.timing_velocity_writeback();
+  }
+  /**
+   * The total time spent in CCD detection and resolution.
+   *
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingCcd() {
+    return this.physicsPipeline.raw.timing_ccd();
+  }
+  /**
+   * The total time spent searching for the continuous hits during CCD.
+   *
+   * This timing is included in `timingCcd`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingCcdToiComputation() {
+    return this.physicsPipeline.raw.timing_ccd_toi_computation();
+  }
+  /**
+   * The total time spent in the broad-phase during CCD.
+   *
+   * This timing is included in `timingCcd`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingCcdBroadPhase() {
+    return this.physicsPipeline.raw.timing_ccd_broad_phase();
+  }
+  /**
+   * The total time spent in the narrow-phase during CCD.
+   *
+   * This timing is included in `timingCcd`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingCcdNarrowPhase() {
+    return this.physicsPipeline.raw.timing_ccd_narrow_phase();
+  }
+  /**
+   * The total time spent in the constraints resolution during CCD.
+   *
+   * This timing is included in `timingCcd`.
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingCcdSolver() {
+    return this.physicsPipeline.raw.timing_ccd_solver();
+  }
+  /**
+   * The total time spent in the islands calculation during CCD.
+   *
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingIslandConstruction() {
+    return this.physicsPipeline.raw.timing_island_construction();
+  }
+  /**
+   * The total time spent propagating detected user changes.
+   *
+   * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.
+   */
+  timingUserChanges() {
+    return this.physicsPipeline.raw.timing_user_changes();
+  }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/event_queue.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/pipeline/event_queue.js
 var ActiveEvents;
 (function(ActiveEvents2) {
   ActiveEvents2[ActiveEvents2["NONE"] = 0] = "NONE";
@@ -10346,7 +10610,7 @@ var EventQueue = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/pipeline/physics_hooks.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/pipeline/physics_hooks.js
 var ActiveHooks;
 (function(ActiveHooks2) {
   ActiveHooks2[ActiveHooks2["NONE"] = 0] = "NONE";
@@ -10359,7 +10623,20 @@ var SolverFlags;
   SolverFlags2[SolverFlags2["COMPUTE_IMPULSE"] = 1] = "COMPUTE_IMPULSE";
 })(SolverFlags || (SolverFlags = {}));
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/collider.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/pipeline/query_pipeline.js
+var QueryFilterFlags;
+(function(QueryFilterFlags2) {
+  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_FIXED"] = 1] = "EXCLUDE_FIXED";
+  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_KINEMATIC"] = 2] = "EXCLUDE_KINEMATIC";
+  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_DYNAMIC"] = 4] = "EXCLUDE_DYNAMIC";
+  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_SENSORS"] = 8] = "EXCLUDE_SENSORS";
+  QueryFilterFlags2[QueryFilterFlags2["EXCLUDE_SOLIDS"] = 16] = "EXCLUDE_SOLIDS";
+  QueryFilterFlags2[QueryFilterFlags2["ONLY_DYNAMIC"] = 3] = "ONLY_DYNAMIC";
+  QueryFilterFlags2[QueryFilterFlags2["ONLY_KINEMATIC"] = 5] = "ONLY_KINEMATIC";
+  QueryFilterFlags2[QueryFilterFlags2["ONLY_FIXED"] = 6] = "ONLY_FIXED";
+})(QueryFilterFlags || (QueryFilterFlags = {}));
+
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/collider.js
 var ActiveCollisionTypes;
 (function(ActiveCollisionTypes2) {
   ActiveCollisionTypes2[ActiveCollisionTypes2["DYNAMIC_DYNAMIC"] = 1] = "DYNAMIC_DYNAMIC";
@@ -10414,16 +10691,32 @@ var Collider = class {
     return this.colliderSet.raw.contains(this.handle);
   }
   /**
-   * The world-space translation of this rigid-body.
+   * The world-space translation of this collider.
    */
   translation() {
     return VectorOps.fromRaw(this.colliderSet.raw.coTranslation(this.handle));
   }
   /**
-   * The world-space orientation of this rigid-body.
+   * The translation of this collider relative to its parent rigid-body.
+   *
+   * Returns `null` if the collider doesn’t have a parent rigid-body.
+   */
+  translationWrtParent() {
+    return VectorOps.fromRaw(this.colliderSet.raw.coTranslationWrtParent(this.handle));
+  }
+  /**
+   * The world-space orientation of this collider.
    */
   rotation() {
     return RotationOps.fromRaw(this.colliderSet.raw.coRotation(this.handle));
+  }
+  /**
+   * The orientation of this collider relative to its parent rigid-body.
+   *
+   * Returns `null` if the collider doesn’t have a parent rigid-body.
+   */
+  rotationWrtParent() {
+    return RotationOps.fromRaw(this.colliderSet.raw.coRotationWrtParent(this.handle));
   }
   /**
    * Is this collider a sensor?
@@ -10695,14 +10988,12 @@ var Collider = class {
   // #endif
   /**
    * The type of the shape of this collider.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   shapeType() {
     return this.colliderSet.raw.coShapeType(this.handle);
   }
   /**
    * The half-extents of this collider if it is a cuboid shape.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   halfExtents() {
     return VectorOps.fromRaw(this.colliderSet.raw.coHalfExtents(this.handle));
@@ -10718,7 +11009,6 @@ var Collider = class {
   }
   /**
    * The radius of this collider if it is a ball, cylinder, capsule, or cone shape.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   radius() {
     return this.colliderSet.raw.coRadius(this.handle);
@@ -10733,7 +11023,6 @@ var Collider = class {
   }
   /**
    * The radius of the round edges of this collider if it is a round cylinder.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   roundRadius() {
     return this.colliderSet.raw.coRoundRadius(this.handle);
@@ -10748,7 +11037,6 @@ var Collider = class {
   }
   /**
    * The half height of this collider if it is a cylinder, capsule, or cone shape.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   halfHeight() {
     return this.colliderSet.raw.coHalfHeight(this.handle);
@@ -10821,7 +11109,6 @@ var Collider = class {
   /**
    * If this collider has a triangle mesh, polyline, convex polygon, or convex polyhedron shape,
    * this returns the vertex buffer of said shape.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   vertices() {
     return this.colliderSet.raw.coVertices(this.handle);
@@ -10829,7 +11116,6 @@ var Collider = class {
   /**
    * If this collider has a triangle mesh, polyline, or convex polyhedron shape,
    * this returns the index buffer of said shape.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   indices() {
     return this.colliderSet.raw.coIndices(this.handle);
@@ -10838,7 +11124,6 @@ var Collider = class {
    * If this collider has a heightfield shape, this returns the heights buffer of
    * the heightfield.
    * In 3D, the returned height matrix is provided in column-major order.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   heightfieldHeights() {
     return this.colliderSet.raw.coHeightfieldHeights(this.handle);
@@ -10846,7 +11131,6 @@ var Collider = class {
   /**
    * If this collider has a heightfield shape, this returns the scale
    * applied to it.
-   * @deprecated this field will be removed in the future, please access this field on `shape` member instead.
    */
   heightfieldScale() {
     let scale = this.colliderSet.raw.coHeightfieldScale(this.handle);
@@ -11493,7 +11777,7 @@ var ColliderDesc = class _ColliderDesc {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/geometry/collider_set.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/geometry/collider_set.js
 var ColliderSet = class {
   /**
    * Release the WASM memory occupied by this collider set.
@@ -11641,7 +11925,7 @@ var ColliderSet = class {
   }
 };
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/exports.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/exports.js
 function version3() {
   return version();
 }
@@ -11649,7 +11933,7 @@ function reserveMemory(extraBytesCount) {
   reserve_memory(extraBytesCount);
 }
 
-// node_modules/.pnpm/@dimforge+rapier2d@0.17.3/node_modules/@dimforge/rapier2d/rapier.js
+// node_modules/.pnpm/@dimforge+rapier2d@0.19.2/node_modules/@dimforge/rapier2d/rapier.js
 var rapier_default = exports_exports;
 export {
   ActiveCollisionTypes,
@@ -11697,7 +11981,6 @@ export {
   PrismaticImpulseJoint,
   PrismaticMultibodyJoint,
   QueryFilterFlags,
-  QueryPipeline,
   Ray,
   RayColliderHit,
   RayColliderIntersection,
