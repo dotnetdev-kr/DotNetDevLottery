@@ -20,9 +20,9 @@
 
 - **프론트엔드**: Blazor WebAssembly (.NET 8.0)
 - **UI 컴포넌트**: Adobe Spectrum Web Components
-- **물리 엔진**: Rapier2D
+- **물리 엔진**: Rapier2D (직접 JavaScript/WASM 로드)
 - **애니메이션**: Lottie
-- **TypeScript**: esbuild를 통한 빌드
+- **TypeScript**: esbuild를 통한 UI 컴포넌트 빌드
 - **패키지 관리**: pnpm
 - **데이터 처리**: NPOI (Excel/CSV 파싱)
 
@@ -113,8 +113,10 @@ DotNetDevLottery/
 │       ├── Pages/              # 페이지 컴포넌트
 │       ├── Services/           # 비즈니스 로직
 │       ├── Shared/             # 공유 컴포넌트
-│       ├── typescript/         # TypeScript 소스
+│       ├── typescript/         # TypeScript 소스 (UI 컴포넌트)
 │       ├── wwwroot/            # 정적 파일
+│       │   ├── js-modules/     # Plain JavaScript 모듈 (Rapier2D 래퍼)
+│       │   └── lib/            # 외부 라이브러리 (Rapier2D)
 │       ├── config/             # 빌드 설정
 │       └── Program.cs          # 애플리케이션 진입점
 ├── .github/
@@ -130,7 +132,8 @@ DotNetDevLottery/
 
 - 제출되는 엑셀 파일은 서버로 보내지지 않고, 웹 어셈블리 코드와 로컬 호스트 내부에서만 사용됩니다. (이 애플리케이션은 백엔드가 없습니다.)
 - Blazor WASM 애플리케이션은 SPA 애플리케이션으로 루트 디렉터리에서 애플리케이션이 호스팅된다는 전제에서 개발되었습니다.
-- TypeScript 코드는 빌드 전에 자동으로 컴파일됩니다.
+- TypeScript 코드는 UI 컴포넌트에 대해 빌드 전에 자동으로 컴파일됩니다.
+- Rapier2D 물리 엔진은 TypeScript를 거치지 않고 JavaScript/WASM으로 직접 로드되어 성능과 단순성을 향상시킵니다.
 
 ## 문제 해결
 
