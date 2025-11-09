@@ -54,7 +54,7 @@
         }
         machineUtils = await JSRuntime.InvokeAsync<IJSObjectReference>(
         "import",
-        "/js/Components/Random/MachineAnimation.r.js"
+        "/js-modules/machine-animation.js"
         );
         componentRef = DotNetObjectReference.Create(this);
         await machineUtils.InvokeVoidAsync(
