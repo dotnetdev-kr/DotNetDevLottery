@@ -3,19 +3,28 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @inject IEventService EventService
+@using DotNetDevLottery.Components;
+
+<div class="header">
+    <h1 class="title">🎉 경품 추첨 프로그램</h1>
+    <FluentButton Appearance="Appearance.Lightweight" OnClick="@(() => settingsDialog?.Show())">
+        ⚙️ 볼 디자인 설정
+    </FluentButton>
+</div>
 
 <div class="container">
-    <ui-button-group class="event-company">
-        @foreach (var eventInfo in EventService.EventInfos.Select((value, index) => new { value, index }))
-        {
-            <ui-button variant="@InfoButtonVariant(selectedEventCompanyIndex == eventInfo.index)"
-                fill="@InfoButtonTreatment(selectedEventCompanyIndex == eventInfo.index)"
-                onclick="@(() => OnClickIndexButton(eventInfo.index))">
-                @eventInfo.value.name
-            </ui-button>
-        }
-    </ui-button-group>
-    <ui-dropzone @ref="dropzoneElement" class="file-dropzone">
+        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" Wrap="true"
+            HorizontalGap="8" class="event-company">
+            @foreach (var eventInfo in EventService.EventInfos.Select((value, index) => new { value, index }))
+            {
+                <FluentButton
+                    Appearance="@(selectedEventCompanyIndex == eventInfo.index ? Appearance.Accent : Appearance.Neutral)"
+                    OnClick="@(() => OnClickIndexButton(eventInfo.index))">
+                    @eventInfo.value.name
+                </FluentButton>
+            }
+        </FluentStack>
+    <div @ref="dropzoneElement" class="file-dropzone">
         @if (targetFile == null)
         {
             <span>
@@ -28,40 +37,41 @@
                 @targetFile.Name
             </span>
         }
-        <ui-button variant="primary" fill="fill" @onclick="OnClickFileButton">
+        <FluentButton Appearance="Appearance.Accent" OnClick="OnClickFileButton">
             혹은 파일 직접 찾아보기
-        </ui-button>
+        </FluentButton>
         <InputFile type="file" @ref="inputFileElement" class="file-dropzone__input" OnChange="@OnInputFileInput" />
-    </ui-dropzone>
+    </div>
     @if (isSecondFilterOpened)
     {
         <div>
             <div class="form-row">
                 @foreach (var groupName in groupNames.Select((value, index) => new { value, index }).ToArray())
                 {
-                    <ui-checkbox checked="@filterGroup[groupName.index]" @onchange="@(() => OnChangeCheckbox(groupName.index))">
-                        @groupName.value
-                    </ui-checkbox>
+                    var currentIndex = groupName.index;
+                    <FluentCheckbox Value="@filterGroup[currentIndex]"
+                        ValueChanged="@(newValue => { filterGroup[currentIndex] = newValue; StateHasChanged(); })"
+                        Label="@groupName.value" />
                 }
             </div>
             <div class="form-row">
-                <ui-checkbox checked="@filterCheckedIn" @onchange="OnChangeFilterCheckInCheckbox">
-                    체크인 한 사람만 포함
-                </ui-checkbox>
+                <FluentCheckbox @bind-Value="@filterCheckedIn" Label="체크인 한 사람만 포함" />
             </div>
             <div class="form-row">
-                <ui-button variant="accent" @onclick="OnClickGoNextPageButton">
+                <FluentButton Appearance="Appearance.Accent" OnClick="OnClickGoNextPageButton">
                     이동
-                </ui-button>
+                </FluentButton>
             </div>
         </div>
     }
     else
     {
         <div class="button-row">
-            <ui-button variant="primary" fill="outline" @onclick="OnClickNextButton" disabled="@isLoading">
+            <FluentButton Appearance="Appearance.Accent" Disabled="@isLoading" OnClick="OnClickNextButton">
                 @(isLoading ? "가져오는 중" : "다음")
-            </ui-button>
+            </FluentButton>
         </div>
     }
 </div>
+
+<BallDesignSettingsDialog @ref="settingsDialog" />

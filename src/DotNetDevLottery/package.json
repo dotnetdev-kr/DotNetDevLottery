@@ -13,8 +13,6 @@
   "dependencies": {
     "@dimforge/rapier2d": "^0.19.2",
     "@lottiefiles/dotlottie-wc": "^0.8.5",
-    "@spectrum-web-components/bundle": "^1.9.0",
-    "@spectrum-web-components/textfield": "^1.9.0",
     "mitt": "^3.0.1"
   },
   "devDependencies": {

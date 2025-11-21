@@ -5,36 +5,47 @@
     flex-direction: column;
 }
 
+/* Fluent UI 버튼 커스텀 스타일 */
 .success {
-    --spectrum-button-background-color-default: hsl(142.1 76.2% 36.3%);
-    --spectrum-button-background-color-hover: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-background-color-down: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-background-color-focus: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-border-color-default: hsl(142.1 76.2% 36.3%);
-    --spectrum-button-border-color-hover: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-border-color-down: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-border-color-focus: hsl(142.1 76.2% 36.3%/.9);
-    --spectrum-button-content-color-default: hsl(355.7 100% 97.3%);
-    --spectrum-button-content-color-hover: hsl(355.7 100% 97.3%/.9);
-    --spectrum-button-content-color-down: hsl(355.7 100% 97.3%/.9);
-    --spectrum-button-content-color-focus: hsl(355.7 100% 97.3%/.9);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.success:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #65408b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .button-row {
     flex: 0 0 auto;
-    padding: 5px 0;
+    padding: 2rem;
     gap: 1rem;
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    background: white;
+    border-radius: 20px;
+    margin: 1rem;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.1);
 
-    & ui-button:has(span) {
-        width: 40px;
-        min-width: 40px;
-        padding: 0;
+    & span {
+        font-size: 1.5rem;
+        font-weight: 700;
+        min-width: 3rem;
+        text-align: center;
+        color: #667eea;
     }
+}
+
+.button-row::deep fluent-button {
+    min-width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-weight: 600;
 }
 
 .machine-wrapper {
@@ -53,22 +64,78 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid #222222;
-    border-radius: 50%;
     padding: 0;
+
+    /* 추첨기 모양 - 둥근 드럼 형태 (보라/파랑 그라데이션) */
+    background: linear-gradient(135deg,
+        rgba(102, 126, 234, 0.15) 0%,
+        rgba(118, 75, 162, 0.1) 50%,
+        rgba(102, 126, 234, 0.15) 100%
+    );
+    border: 8px solid #667eea;
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 50px rgba(102, 126, 234, 0.2),
+        0 0 30px rgba(102, 126, 234, 0.3),
+        0 10px 40px rgba(102, 126, 234, 0.15);
+
+    /* 상단 출구 표시를 위한 clip-path - 작은 노치 */
+    clip-path: polygon(
+        0% 0%,
+        45% 0%,
+        45% 3%,
+        47% 4%,
+        48% 4.5%,
+        50% 5%,
+        52% 4.5%,
+        53% 4%,
+        55% 3%,
+        55% 0%,
+        100% 0%,
+        100% 100%,
+        0% 100%
+    );
+
+    /* 추첨기 내부 반짝임 효과 */
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        box-shadow:
+            inset 0 0 30px rgba(0, 0, 0, 0.1),
+            inset 0 0 50px rgba(102, 126, 234, 0.2),
+            0 0 30px rgba(102, 126, 234, 0.3),
+            0 10px 40px rgba(102, 126, 234, 0.15);
+    }
+    50% {
+        box-shadow:
+            inset 0 0 30px rgba(0, 0, 0, 0.1),
+            inset 0 0 50px rgba(102, 126, 234, 0.4),
+            0 0 40px rgba(102, 126, 234, 0.5),
+            0 10px 40px rgba(102, 126, 234, 0.25);
+    }
 }
 
 .machine ::deep .ball {
     position: absolute;
-    background-color: #666666;
-    border: 2px solid #222222;
+    background-color: var(--ball-color, #666666);
+    background-image: var(--ball-image, none);
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--ball-border-color, #222222);
     border-radius: 50%;
     width: calc(var(--ball-size) * 1px);
     height: calc(var(--ball-size) * 1px);
 }
 
 .machine ::deep .ball.ball--drawed {
-    background-color: #666666;
+    background-color: var(--drawed-ball-color, #DDDDDD);
+    background-image: var(--drawed-ball-image, none);
+    background-size: cover;
+    background-position: center;
+    color: var(--drawed-ball-text-color, #000000);
     border: 0;
     font-size: calc(var(--ball-size) * .07px);
     display: flex;

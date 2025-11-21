@@ -171,6 +171,11 @@ public class EventService : IEventService
                 }
                 continue;
             }
+            if (phoneIndex == 0)
+            {
+                // 휴대전화번호는 필수가 아님.
+                phoneIndex = -1;
+            }
 
             if (isUserInfoStarted == false)
                 continue;
@@ -210,7 +215,7 @@ public class EventService : IEventService
             {
                 personName = MaskName(currentRow.GetCell(nameIndex).ToString() ?? string.Empty),
                 email = MaskEmail(currentRow.GetCell(emailIndex).ToString() ?? string.Empty),
-                phone = MaskPhone(currentRow.GetCell(phoneIndex).ToString() ?? string.Empty),
+                phone = phoneIndex == -1 ? string.Empty : MaskPhone(currentRow.GetCell(phoneIndex).ToString() ?? string.Empty),
                 ticketType = ticketType,
                 isChecked = isChecked
             });

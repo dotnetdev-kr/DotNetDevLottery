@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
+using DotNetDevLottery.Components;
 
 namespace DotNetDevLottery.Pages;
 
@@ -21,6 +22,7 @@ public partial class Main : ComponentBase, IAsyncDisposable
   List<string> groupNames = new();
   List<bool> filterGroup = new();
   bool filterCheckedIn = true;
+    private BallDesignSettingsDialog? settingsDialog;
 
   string InfoButtonVariant(bool isSelected) => isSelected ? "primary" : "secondary";
   string InfoButtonTreatment(bool isSelected) => isSelected ? "fill" : "outline";
@@ -105,6 +107,7 @@ public partial class Main : ComponentBase, IAsyncDisposable
     EventService.SetUserInfoList(selectedUsers);
     NavigationManager.NavigateTo("/random");
   }
+
   async ValueTask IAsyncDisposable.DisposeAsync()
   {
     if (elementUtils is not null)
