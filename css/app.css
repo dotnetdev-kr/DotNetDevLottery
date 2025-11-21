@@ -1,24 +1,32 @@
-﻿* {
+﻿@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+* {
     box-sizing: border-box;
 }
-@font-face {
-    font-family: "Freesentation";
-    src: url("/assets/Freesentation-4Regular.woff2") format("woff2");
-    font-weight: 400;
-}
-@font-face {
-    font-family: "Freesentation";
-    src: url("/assets/Freesentation-7Bold.woff2") format("woff2");
-    font-weight: 700;
-}
-:root body * {
-    --spectrum-sans-serif-font-family: "Freesentation";
+
+:root {
+    --fluent-font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 html, body {
-    font-family: "Freesentation", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-family: var(--fluent-font-family);
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    height: 100%;
+}
+
+/* Fluent UI 컴포넌트 글꼴 적용 */
+fluent-button,
+fluent-checkbox,
+fluent-label,
+fluent-text-field,
+fluent-dialog {
+    font-family: var(--fluent-font-family) !important;
 }
 
 h1:focus {
