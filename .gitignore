@@ -373,3 +373,4 @@ appsettings.json
 .DS_Store
 **/*.js
 **/*.wasm
+nul

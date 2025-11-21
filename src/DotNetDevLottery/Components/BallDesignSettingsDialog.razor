@@ -1,0 +1,174 @@
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject IJSRuntime JSRuntime
+@using DotNetDevLottery.Models
+@using Microsoft.AspNetCore.Components.Forms
+
+<FluentDialog @bind-Hidden="@isHidden" Modal="true" TrapFocus="true" @ondialogdismiss="OnDialogDismiss">
+    <DialogHeader>
+        <FluentStack Orientation="Orientation.Horizontal">
+            <FluentLabel Typo="Typography.PaneHeader">볼 디자인 설정</FluentLabel>
+        </FluentStack>
+    </DialogHeader>
+    <DialogBody>
+        <FluentStack Orientation="Orientation.Vertical" Style="gap: 1.5rem;">
+            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
+                <FluentLabel Style="font-weight: 600;">일반 볼 이미지 업로드</FluentLabel>
+                <InputFile OnChange="@(e => OnBallImageSelected(e, false))" accept="image/*" class="file-input" />
+                @if (!string.IsNullOrEmpty(settings.BallImageUrl))
+                {
+                    <FluentStack Orientation="Orientation.Horizontal" Style="align-items: center; gap: 1rem; padding: 0.5rem; background: var(--neutral-layer-2); border-radius: 4px;">
+                        <img src="@settings.BallImageUrl" alt="볼 이미지 미리보기" style="width: 60px; height: 60px; object-fit: contain; border-radius: 4px;" />
+                        <FluentButton Appearance="Appearance.Lightweight" OnClick="@(() => ClearImage(false))">삭제</FluentButton>
+                    </FluentStack>
+                }
+            </FluentStack>
+
+            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
+                <FluentLabel Style="font-weight: 600;">당첨 볼 이미지 업로드</FluentLabel>
+                <InputFile OnChange="@(e => OnBallImageSelected(e, true))" accept="image/*" class="file-input" />
+                @if (!string.IsNullOrEmpty(settings.DrawedBallImageUrl))
+                {
+                    <FluentStack Orientation="Orientation.Horizontal" Style="align-items: center; gap: 1rem; padding: 0.5rem; background: var(--neutral-layer-2); border-radius: 4px;">
+                        <img src="@settings.DrawedBallImageUrl" alt="당첨 볼 이미지 미리보기" style="width: 60px; height: 60px; object-fit: contain; border-radius: 4px;" />
+                        <FluentButton Appearance="Appearance.Lightweight" OnClick="@(() => ClearImage(true))">삭제</FluentButton>
+                    </FluentStack>
+                }
+            </FluentStack>
+
+            <FluentDivider Style="width: 100%;" />
+            <FluentLabel Style="text-align: center; color: var(--neutral-foreground-hint);">또는 색상 사용</FluentLabel>
+
+            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
+                <FluentLabel Style="font-weight: 600;">일반 볼 색상</FluentLabel>
+                <input type="color" @bind="@settings.BallColor" style="width: 100%; height: 40px; border: 1px solid var(--neutral-stroke-rest); border-radius: 4px; cursor: pointer;" />
+            </FluentStack>
+
+            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
+                <FluentLabel Style="font-weight: 600;">일반 볼 테두리 색상</FluentLabel>
+                <input type="color" @bind="@settings.BallBorderColor" style="width: 100%; height: 40px; border: 1px solid var(--neutral-stroke-rest); border-radius: 4px; cursor: pointer;" />
+            </FluentStack>
+
+            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
+                <FluentLabel Style="font-weight: 600;">당첨 볼 색상</FluentLabel>
+                <input type="color" @bind="@settings.DrawedBallColor" style="width: 100%; height: 40px; border: 1px solid var(--neutral-stroke-rest); border-radius: 4px; cursor: pointer;" />
+            </FluentStack>
+
+            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
+                <FluentLabel Style="font-weight: 600;">당첨 볼 텍스트 색상</FluentLabel>
+                <input type="color" @bind="@settings.DrawedBallTextColor" style="width: 100%; height: 40px; border: 1px solid var(--neutral-stroke-rest); border-radius: 4px; cursor: pointer;" />
+            </FluentStack>
+        </FluentStack>
+    </DialogBody>
+    <DialogFooter>
+        <FluentButton Appearance="Appearance.Neutral" OnClick="OnCancel">취소</FluentButton>
+        <FluentButton Appearance="Appearance.Accent" OnClick="OnSave">저장</FluentButton>
+    </DialogFooter>
+</FluentDialog>
+
+@code {
+    private const string SETTINGS_KEY = "ball-design-settings";
+    private const long MAX_FILE_SIZE = 1024 * 1024 * 5; // 5MB
+    private BallDesignSettings settings = new();
+    private bool isHidden = true;
+
+    [Parameter]
+    public EventCallback OnSettingsSaved { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSettings();
+    }
+
+    public void Show()
+    {
+        isHidden = false;
+        StateHasChanged();
+    }
+
+    public void Hide()
+    {
+        isHidden = true;
+        StateHasChanged();
+    }
+
+    private async Task LoadSettings()
+    {
+        var savedSettings = await LocalStorage.GetItemAsync<BallDesignSettings>(SETTINGS_KEY);
+        if (savedSettings != null)
+        {
+            settings = savedSettings;
+        }
+    }
+
+    private async Task OnBallImageSelected(InputFileChangeEventArgs e, bool isDrawedBall)
+    {
+        var file = e.File;
+        if (file == null) return;
+
+        if (file.Size > MAX_FILE_SIZE)
+        {
+            Console.Error.WriteLine($"File size exceeds {MAX_FILE_SIZE / 1024 / 1024}MB limit");
+            return;
+        }
+
+        try
+        {
+            using var stream = file.OpenReadStream(MAX_FILE_SIZE);
+            using var memoryStream = new MemoryStream();
+            await stream.CopyToAsync(memoryStream);
+            var bytes = memoryStream.ToArray();
+            var base64 = Convert.ToBase64String(bytes);
+            var dataUrl = $"data:{file.ContentType};base64,{base64}";
+
+            if (isDrawedBall)
+            {
+                settings.DrawedBallImageUrl = dataUrl;
+            }
+            else
+            {
+                settings.BallImageUrl = dataUrl;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Error reading file: {ex.Message}");
+        }
+    }
+
+    private void ClearImage(bool isDrawedBall)
+    {
+        if (isDrawedBall)
+        {
+            settings.DrawedBallImageUrl = null;
+        }
+        else
+        {
+            settings.BallImageUrl = null;
+        }
+    }
+
+    private async Task OnSave()
+    {
+        try
+        {
+            await LocalStorage.SetItemAsync(SETTINGS_KEY, settings);
+            Console.WriteLine("Settings saved to localStorage");
+            isHidden = true;
+            await OnSettingsSaved.InvokeAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Error saving settings: {ex.Message}");
+        }
+    }
+
+    private void OnCancel()
+    {
+        isHidden = true;
+    }
+
+    private async Task OnDialogDismiss()
+    {
+        await LoadSettings(); // Reload settings if dialog was dismissed without saving
+    }
+}

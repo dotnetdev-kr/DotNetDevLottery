@@ -1,13 +1,13 @@
-﻿@page "/random"
+@page "/random"
 @implements IAsyncDisposable
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @inject IEventService EventService
-<div class="container">
 
-    <MachineAnimation UserInfoList="@UserInfoList.ToArray()" OnBeforeDrawMachine="OnBeforeDrawMachine"
+<div class="container">
+    <MachineAnimation @ref="machineAnimation" UserInfoList="@UserInfoList.ToArray()" OnBeforeDrawMachine="OnBeforeDrawMachine"
         OnDrawAnimationEnd="OnDrawAnimationEnd" />
-    <ui-divider vertical />
+    <FluentDivider Orientation="Orientation.Vertical" Style="height: 100%;" />
     <div class="text">
         <h2 class="text-row">@PersonCount 명 중에 당첨자에요!</h2>
         <div class="record">
@@ -16,7 +16,7 @@
                 <div class="record-row">
                     <span>@WinnedUserInfo.personName</span>
                     <span>@WinnedUserInfo.email</span>
-                    <span>@WinnedUserInfo.phone</span>
+                    <span>@(string.IsNullOrEmpty(WinnedUserInfo.phone) ? "-" : WinnedUserInfo.phone)</span>
                 </div>
             }
         </div>

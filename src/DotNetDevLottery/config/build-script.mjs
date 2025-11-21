@@ -7,8 +7,6 @@ import path from "node:path";
 
 const cwd = process.cwd();
 
-const indexEntryPoint = path.resolve(cwd, "./typescript/index.ts");
-
 const componentEntryPoints = await glob([
   "./typescript/Components/**/*.r.ts",
 ], {
@@ -47,14 +45,8 @@ const componentEntryPointOptions = {
   outdir: path.resolve(cwd, "./wwwroot/js/Components"),
   outbase: path.resolve(cwd, "./typescript/Components"),
 };
-const indexOptions = {
-  ...baseOptions,
-  entryPoints: [indexEntryPoint],
-  outdir: path.resolve(cwd, "./wwwroot/js"),
-};
 
 await Promise.allSettled([
-  esbuild.build(indexOptions),
   esbuild.build(pageEntryPointOptions),
   esbuild.build(componentEntryPointOptions),
 ]);

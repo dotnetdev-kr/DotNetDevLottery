@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
 using DotNetDevLottery.Models;
+using DotNetDevLottery.Components.Random;
 
 namespace DotNetDevLottery.Pages;
 
@@ -12,6 +13,7 @@ public partial class Random : ComponentBase, IAsyncDisposable
 {
   IJSObjectReference? lottieUtils;
   ElementReference animationElement;
+  MachineAnimation? machineAnimation;
   List<UserInfo> UserInfoList = new List<UserInfo>();
   List<UserInfo> WinnedUserList = new List<UserInfo>();
   Boolean IsPlayAnimation = false;
