@@ -162,9 +162,9 @@ public partial class MachineAnimation : ComponentBase, IAsyncDisposable
         }
         PendingDrawCount--;
 
-        if (PendingDrawCount <= 0)
+        if (PendingDrawCount != 0)
         {
-            Status = DrawMachineStatus.Done;
+            Status = DrawMachineStatus.Pending;
         }
 
         await OnDrawAnimationEnd.InvokeAsync(new DrawAnimationEndEventArgs
