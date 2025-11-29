@@ -17,6 +17,7 @@
         <FluentButton
             OnClick="OnClickButton"
             Appearance="@(Status == DrawMachineStatus.Pending ? Appearance.Neutral : Appearance.Accent)"
+            Disabled="@(Status == DrawMachineStatus.Pending)"
             class="@TriggerButtonClass(Status == DrawMachineStatus.Pending)">
             추첨 진행
         </FluentButton>

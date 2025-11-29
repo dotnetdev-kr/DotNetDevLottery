@@ -37,6 +37,7 @@ public partial class MachineAnimation : ComponentBase, IAsyncDisposable
     int PersonCount = 0;
     int TargetPersonCount = 1;
     int RemainedPersonCount = 0;
+    int PendingDrawCount = 0;
     List<int> WinnedUserList = new List<int>();
     BallDesignSettings ballSettings = new();
     string BallStyleVariables => GenerateBallStyleVariables();
@@ -117,6 +118,7 @@ public partial class MachineAnimation : ComponentBase, IAsyncDisposable
         }
         SelectedUserInfo = null;
         Status = DrawMachineStatus.Pending;
+        PendingDrawCount = TargetPersonCount;
         Console.WriteLine($"TargetPersonCount: {TargetPersonCount}");
         await machineUtils.InvokeVoidAsync("executeDrawBall", TargetPersonCount);
         await OnBeforeDrawMachine.InvokeAsync();
@@ -158,7 +160,12 @@ public partial class MachineAnimation : ComponentBase, IAsyncDisposable
         {
             return;
         }
-        Status = DrawMachineStatus.Done;
+        PendingDrawCount--;
+
+        if (PendingDrawCount <= 0)
+        {
+            Status = DrawMachineStatus.Done;
+        }
 
         await OnDrawAnimationEnd.InvokeAsync(new DrawAnimationEndEventArgs
         {
