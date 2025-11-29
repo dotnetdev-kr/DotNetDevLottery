@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "DotNetDevLottery",
   "resources": {
-    "hash": "sha256-RU5X9fAIvdn3HpDEmUV5VO/7Jb4BtymEUcHqb7KwlmQ=",
+    "hash": "sha256-j4FA6A3CzkKN9EctW22NhwreEHZphCaHyLDgKXJoFwA=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-vtotCeXt2UD6oc459laJT32vBgigZ+eLoUmdeFkvYDk="
     },
@@ -117,7 +117,7 @@
       "System.wasm": "sha256-I4hhyMuUoHdrzDopL9tlnkL/Skg+0OO+gmkOXNT3dcg=",
       "netstandard.wasm": "sha256-9DEyzbjKxQuMFOPWmOLH+myfi2rAVchEb1nPQh7+6bQ=",
       "System.Private.CoreLib.wasm": "sha256-ndXV/crvTttJC5WzevWgOK6NoZvO5ytnM3FJFFHGRK8=",
-      "DotNetDevLottery.wasm": "sha256-O0CQW9odL7O3AFhtlYzpVaZw9NVOWhhX/z3kl5BD/vM="
+      "DotNetDevLottery.wasm": "sha256-0NTgXKbw17NRIc5siYw8LN5sVNx8CnaQaKdmA2MlGM4="
     },
     "libraryInitializers": {
       "_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js": "sha256-HDFs+g5h4mN46erk66GKMGS4GaQfjhGfcxi0ikR/UNc="
