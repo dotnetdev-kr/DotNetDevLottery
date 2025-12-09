@@ -4,23 +4,81 @@
 @inject IJSRuntime JSRuntime
 @inject IEventService EventService
 
-<div class="container">
-    <MachineAnimation @ref="machineAnimation" UserInfoList="@UserInfoList.ToArray()" OnBeforeDrawMachine="OnBeforeDrawMachine"
-        OnDrawAnimationEnd="OnDrawAnimationEnd" />
-    <FluentDivider Orientation="Orientation.Vertical" Style="height: 100%;" />
-    <div class="text">
-        <h2 class="text-row">@PersonCount 명 중에 당첨자에요!</h2>
-        <div class="record">
-            @foreach (var WinnedUserInfo in WinnedUserList)
-            {
-                <div class="record-row">
-                    <span>@WinnedUserInfo.personName</span>
-                    <span>@WinnedUserInfo.email</span>
-                    <span>@(string.IsNullOrEmpty(WinnedUserInfo.phone) ? "-" : WinnedUserInfo.phone)</span>
+<div class="flex flex-nowrap h-screen bg-gradient-page overflow-hidden max-lg:flex-col relative">
+    <!-- Grid Pattern Background -->
+    <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none"></div>
+
+    <div class="flex-1 min-w-0 bg-white/30 backdrop-blur-md m-6 rounded-[2.5rem] shadow-xl border border-white/40 flex items-center justify-center relative overflow-hidden z-10 max-lg:m-4 max-lg:mb-0">
+        <MachineAnimation @ref="machineAnimation" UserInfoList="@UserInfoList.ToArray()" OnBeforeDrawMachine="OnBeforeDrawMachine"
+            OnDrawAnimationEnd="OnDrawAnimationEnd" />
+    </div>
+
+    <!-- Vertical Divider for Desktop / Horizontal for Mobile -->
+    <div class="w-px bg-gradient-to-b from-transparent via-indigo-200 to-transparent my-12 hidden lg:block opacity-50"></div>
+    
+    <div class="flex-shrink-0 basis-[450px] flex flex-col m-6 ml-0 max-lg:m-4 max-lg:flex-1 max-lg:basis-auto z-10">
+        <div class="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50 flex flex-col h-full overflow-hidden">
+             <div class="p-8 pb-4 bg-white/50 shrink-0 z-20 border-b border-indigo-50/50">
+                <h2 class="text-2xl font-extrabold text-center text-gradient-primary m-0 flex items-center justify-center gap-2">
+                    <span style="font-family: 'Fluent Emoji Flat'">🏆</span>
+                    <span>당첨자 명단</span>
+                </h2>
+                <p class="text-center text-gray-400 text-sm font-medium mt-1">
+                    총 <span class="text-primary font-bold">@PersonCount</span>명의 참여자
+                </p>
+            </div>
+            
+            <div class="flex-1 overflow-y-auto p-6 pt-4 scrollbar-hide">
+                <div class="flex flex-col gap-3">
+                    @foreach (var (user, index) in WinnedUserList.Select((x, i) => (x, i)))
+                    {
+                        <div class="group relative bg-gradient-to-br from-white to-white/80 p-4 rounded-2xl border border-indigo-50 shadow-sm hover:shadow-lg hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 animate-slide-in-right" style="animation-delay: @(index * 100)ms">
+                            <div class="absolute -left-1 -top-1 w-7 h-7 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md ring-2 ring-white">
+                                @(WinnedUserList.Count - index)
+                            </div>
+                            <div class="flex items-center justify-between gap-3 pl-3">
+                                <div class="flex flex-col min-w-0">
+                                    <span class="text-lg font-bold text-gray-800 tracking-tight group-hover:text-primary transition-colors">@user.personName</span>
+                                    <span class="text-sm text-gray-400 truncate font-medium">@user.email</span>
+                                </div>
+                                <div class="shrink-0">
+                                     @if (!string.IsNullOrEmpty(user.phone))
+                                     {
+                                         <span class="px-3 py-1.5 bg-indigo-50/80 text-indigo-600 rounded-xl text-sm font-bold tracking-wide group-hover:bg-indigo-100 transition-colors">
+                                             @user.phone
+                                         </span>
+                                     }
+                                     else 
+                                     {
+                                         <span class="w-8 h-1.5 bg-gray-100 rounded-full inline-block"></span>
+                                     }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                     @if (WinnedUserList.Count == 0)
+                    {
+                        <div class="flex flex-col items-center justify-center py-24 text-gray-300 gap-6 opacity-60">
+                            <span class="text-7xl grayscale opacity-50 relative" style="font-family: 'Fluent Emoji Flat'">
+                                🎰
+                                <span class="absolute -bottom-2 -right-2 text-2xl animate-bounce" style="font-family: 'Fluent Emoji Flat'">✨</span>
+                            </span>
+                            <div class="text-center">
+                                <p class="font-bold text-lg mb-1">아직 당첨자가 없어요</p>
+                                <p class="text-sm">추첨 버튼을 눌러 행운의 주인공을 뽑아보세요!</p>
+                            </div>
+                        </div>
+                    }
                 </div>
-            }
+            </div>
         </div>
     </div>
+
+    <!-- Lottie Animation Overlay -->
+    <!-- Lottie Animation Overlay -->
+    @if (IsPlayAnimation)
+    {
+        <dotlottie-wc @ref="animationElement" class="absolute inset-0 z-50 pointer-events-none" autoplay="false"
+            src="/assets/tada.lottie" />
+    }
 </div>
-<dotlottie-wc @ref="animationElement" class="@EffectClass(IsPlayAnimation)" autoplay="false"
-    src="/assets/tada.lottie" />
