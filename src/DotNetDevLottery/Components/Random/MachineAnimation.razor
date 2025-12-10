@@ -3,26 +3,40 @@
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 @using DotNetDevLottery.Models
 
-<div class="container">
-    <div class="button-row">
-        <FluentButton Appearance="Appearance.Accent" OnClick="@(() => TargetPersonCount--)" IconOnly="true">
-            <span>-</span>
-        </FluentButton>
-        <span>
-            @TargetPersonCount
-        </span>
-        <FluentButton Appearance="Appearance.Accent" OnClick="@(() => TargetPersonCount++)" IconOnly="true">
-            <span>+</span>
-        </FluentButton>
-        <FluentButton
-            OnClick="OnClickButton"
-            Appearance="@(Status == DrawMachineStatus.Pending ? Appearance.Neutral : Appearance.Accent)"
-            Disabled="@(Status == DrawMachineStatus.Pending && PendingDrawCount == 0)"
-            class="@TriggerButtonClass(Status == DrawMachineStatus.Pending)">
-            추첨 진행
-        </FluentButton>
+<div class="w-full h-full flex flex-col items-center justify-center gap-6">
+    <!-- Control Bar -->
+    <div class="flex items-center gap-6 px-10 py-5 bg-white/70 backdrop-blur-2xl rounded-full shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] border border-white/60 transition-all hover:scale-[1.02] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.15)] duration-500 z-50">
+        <button @onclick="@(() => { if (TargetPersonCount > 1) TargetPersonCount--; })" class="w-14 h-14 flex items-center justify-center rounded-full bg-white text-gray-400 font-bold text-2xl shadow-sm border border-gray-100/50 hover:bg-gray-50 hover:text-primary hover:border-indigo-100 hover:-translate-y-0.5 transition-all active:scale-95 active:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed group">
+            <span class="group-hover:scale-110 transition-transform">-</span>
+        </button>
+        
+        <div class="flex flex-col items-center min-w-[80px] gap-1">
+            <span class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-primary via-indigo-500 to-secondary leading-none filter drop-shadow-sm">
+                @TargetPersonCount
+            </span>
+            <span class="text-[11px] uppercase tracking-[0.2em] font-bold text-gray-400/80">Winners</span>
+        </div>
+
+        <button @onclick="@(() => TargetPersonCount++)" class="w-14 h-14 flex items-center justify-center rounded-full bg-white text-gray-400 font-bold text-2xl shadow-sm border border-gray-100/50 hover:bg-gray-50 hover:text-primary hover:border-indigo-100 hover:-translate-y-0.5 transition-all active:scale-95 active:bg-gray-100 group">
+            <span class="group-hover:scale-110 transition-transform">+</span>
+        </button>
+
+        <div class="w-px h-10 bg-gradient-to-b from-transparent via-gray-200 to-transparent mx-2"></div>
+
+        <button @onclick="OnClickButton"
+            disabled="@(Status == DrawMachineStatus.Pending && PendingDrawCount == 0)"
+            class="@(Status == DrawMachineStatus.Pending 
+                ? "px-8 py-3.5 rounded-full font-bold text-gray-400 bg-gray-100/80 border border-gray-200/50 cursor-not-allowed transition-colors" 
+                : "px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] shadow-[0_4px_20px_-4px_rgba(99,102,241,0.4)] hover:shadow-[0_8px_25px_-4px_rgba(99,102,241,0.5)] hover:-translate-y-0.5 hover:scale-105 active:scale-95 active:translate-y-0 transition-all border border-white/20")">
+            <span class="flex items-center gap-2">
+                <span>추첨 진행</span>
+                <span class="@(Status != DrawMachineStatus.Pending ? "animate-bounce" : "")" style="font-family: 'Fluent Emoji Flat'">🎲</span>
+            </span>
+        </button>
     </div>
-    <div class="machine-wrapper">
-        <div class="machine" @ref="machineElement" style="@BallStyleVariables" />
+
+    <!-- Machine Canvas -->
+    <div class="relative w-full flex-1 flex items-center justify-center min-h-0">
+        <div class="machine relative transition-all duration-500" @ref="machineElement" style="@BallStyleVariables" />
     </div>
 </div>

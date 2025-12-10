@@ -19,8 +19,6 @@ public partial class Random : ComponentBase, IAsyncDisposable
   Boolean IsPlayAnimation = false;
   int PersonCount = 0;
 
-  string EffectClass(bool IsPlayAnimation) => IsPlayAnimation ? "effect" : "effect effect--disabled";
-
   protected override async Task OnInitializedAsync()
   {
     UserInfoList = EventService.UserInfos.ToList();

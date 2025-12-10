@@ -5,71 +5,118 @@
 @inject IEventService EventService
 @using DotNetDevLottery.Components;
 
-<div class="header">
-    <h1 class="title">🎉 경품 추첨 프로그램</h1>
-    <FluentButton Appearance="Appearance.Lightweight" OnClick="@(() => settingsDialog?.Show())">
-        ⚙️ 볼 디자인 설정
-    </FluentButton>
+<div class="flex justify-between items-center px-8 pt-12 pb-6 max-w-7xl mx-auto w-full max-lg:max-w-3xl max-sm:max-w-xl max-sm:px-4 max-sm:pt-8 max-sm:pb-4">
+    <div class="flex flex-col gap-1">
+        <h1 class="text-4xl font-extrabold m-0 text-gradient-primary tracking-tight max-sm:text-3xl">🎉 경품 추첨</h1>
+        <p class="text-gray-500 font-medium text-lg max-sm:text-sm">참석자 명단을 업로드하고 추첨을 시작하세요</p>
+    </div>
+    <button @onclick="@(() => settingsDialog?.Show())" class="flex items-center gap-2 px-4 py-2 text-gray-600 bg-transparent rounded-full hover:bg-gray-100 transition-all font-semibold">
+        <span>⚙️</span>
+        <span class="max-sm:hidden">디자인 설정</span>
+    </button>
 </div>
 
-<div class="container">
-        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Center" Wrap="true"
-            HorizontalGap="8" class="event-company">
+<div class="flex flex-col mx-auto w-full max-w-5xl p-6 max-lg:max-w-3xl max-sm:max-w-xl">
+    <div class="bg-white/60 backdrop-blur-xl rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/20 mb-8">
+        <h3 class="text-lg font-bold text-gray-800 mb-4 px-2">행사 선택</h3>
+        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.Start" Wrap="true"
+            HorizontalGap="12" VerticalGap="12" class="mb-2">
             @foreach (var eventInfo in EventService.EventInfos.Select((value, index) => new { value, index }))
             {
-                <FluentButton
-                    Appearance="@(selectedEventCompanyIndex == eventInfo.index ? Appearance.Accent : Appearance.Neutral)"
-                    OnClick="@(() => OnClickIndexButton(eventInfo.index))">
+                <button @onclick="@(() => OnClickIndexButton(eventInfo.index))"
+                    class="px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm @(selectedEventCompanyIndex == eventInfo.index 
+                        ? "bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] !text-white ring-2 ring-primary/20 ring-offset-2" 
+                        : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-100")">
                     @eventInfo.value.name
-                </FluentButton>
+                </button>
             }
         </FluentStack>
-    <div @ref="dropzoneElement" class="file-dropzone">
-        @if (targetFile == null)
-        {
-            <span>
-                파일을 끌어다가 놓아주세요!
-            </span>
-        }
-        else
-        {
-            <span class="file-dropzone__filename">
-                @targetFile.Name
-            </span>
-        }
-        <FluentButton Appearance="Appearance.Accent" OnClick="OnClickFileButton">
-            혹은 파일 직접 찾아보기
-        </FluentButton>
-        <InputFile type="file" @ref="inputFileElement" class="file-dropzone__input" OnChange="@OnInputFileInput" />
     </div>
+
+    <div @ref="dropzoneElement" class="group relative flex flex-col items-center gap-6 py-20 px-12 mx-auto w-full rounded-3xl bg-gradient-to-br from-[#f8f9ff] to-[#fcfcff] border-3 border-dashed border-indigo-200 transition-all duration-500 text-center hover:border-indigo-400 hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(102,126,234,0.15)] hover:-translate-y-1 max-sm:py-16 max-sm:px-8 overflow-hidden">
+        
+        <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none"></div>
+        
+        <div class="relative z-10 flex flex-col items-center gap-4 transition-transform duration-300 group-hover:scale-105">
+            <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-[0_4px_20px_rgb(0,0,0,0.08)] mb-2 group-hover:shadow-[0_8px_25px_rgb(102,126,234,0.2)] transition-shadow duration-300">
+                <span class="text-4xl">📂</span>
+            </div>
+            
+            @if (targetFile == null)
+            {
+                <div class="flex flex-col gap-1">
+                    <span class="text-2xl font-bold text-gray-700">
+                        파일을 여기에 놓아주세요
+                    </span>
+                    <span class="text-gray-400 font-medium">
+                        또는 아래 버튼을 눌러 선택하세요
+                    </span>
+                </div>
+            }
+            else
+            {
+                <div class="flex flex-col gap-2 items-center px-8">
+                    <span class="block w-full max-w-md text-ellipsis overflow-hidden whitespace-nowrap text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                        @targetFile.Name
+                    </span>
+                    <span class="text-sm font-medium px-3 py-1 bg-green-100 text-green-700 rounded-full">
+                        준비 완료!
+                    </span>
+                </div>
+            }
+        </div>
+
+        <div class="relative z-10 mt-4">
+            <button @onclick="OnClickFileButton" class="flex items-center justify-center px-8 py-3 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] !text-white text-base font-bold rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 transition-all">
+                파일 직접 찾아보기
+            </button>
+        </div>
+        <InputFile type="file" @ref="inputFileElement" class="!hidden invisible w-0 h-0 absolute" OnChange="@OnInputFileInput" />
+    </div>
+
     @if (isSecondFilterOpened)
     {
-        <div>
-            <div class="form-row">
-                @foreach (var groupName in groupNames.Select((value, index) => new { value, index }).ToArray())
-                {
-                    var currentIndex = groupName.index;
-                    <FluentCheckbox Value="@filterGroup[currentIndex]"
-                        ValueChanged="@(newValue => { filterGroup[currentIndex] = newValue; StateHasChanged(); })"
-                        Label="@groupName.value" />
-                }
-            </div>
-            <div class="form-row">
-                <FluentCheckbox @bind-Value="@filterCheckedIn" Label="체크인 한 사람만 포함" />
-            </div>
-            <div class="form-row">
-                <FluentButton Appearance="Appearance.Accent" OnClick="OnClickGoNextPageButton">
-                    이동
-                </FluentButton>
+        <div class="mt-8 animate-fade-in-up">
+            <div class="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-gradient-to-b from-primary to-secondary rounded-full inline-block"></span>
+                    필터 설정
+                </h3>
+                
+                <div class="flex flex-wrap gap-3 mb-8">
+                    @foreach (var groupName in groupNames.Select((value, index) => new { value, index }).ToArray())
+                    {
+                        var currentIndex = groupName.index;
+                        // Custom Checkbox Style
+                        <label class="cursor-pointer select-none group">
+                            <input type="checkbox" class="sr-only" 
+                                checked="@filterGroup[currentIndex]" 
+                                @onchange="@(e => { filterGroup[currentIndex] = (bool)e.Value!; StateHasChanged(); })" />
+                            <div class="px-4 py-2 rounded-xl border-2 font-medium transition-all duration-200 shadow-sm @(filterGroup[currentIndex] ? "text-white shadow-md ring-2 ring-indigo-500/20 ring-offset-1 font-bold" : "border-gray-100 bg-gray-50 text-gray-500 hover:bg-gray-100")"
+                                 style="@(filterGroup[currentIndex] ? "background-color: var(--color-primary); border-color: var(--color-primary);" : "")">
+                                @groupName.value
+                            </div>
+                        </label>
+                    }
+                </div>
+
+                <div class="flex justify-between items-center border-t border-gray-100 pt-6">
+                    <FluentCheckbox @bind-Value="@filterCheckedIn" Label="✅ 체크인 한 사람만 포함" class="!text-base !font-medium" />
+                    
+                    <button @onclick="OnClickGoNextPageButton" class="flex items-center justify-center px-8 py-2 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] !text-white text-base font-bold rounded-xl shadow-md hover:scale-105 active:scale-95 transition-transform">
+                        추첨 시작하기 🚀
+                    </button>
+                </div>
             </div>
         </div>
     }
     else
     {
-        <div class="button-row">
-            <FluentButton Appearance="Appearance.Accent" Disabled="@isLoading" OnClick="OnClickNextButton">
-                @(isLoading ? "가져오는 중" : "다음")
-            </FluentButton>
+        <div class="flex justify-center pt-8">
+             <button @onclick="OnClickNextButton" disabled="@isLoading" 
+                class="flex items-center justify-center px-10 py-4 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] !text-white text-lg font-bold rounded-2xl shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+                @(isLoading ? "가져오는 중..." : "다음 단계로")
+            </button>
         </div>
     }
 </div>

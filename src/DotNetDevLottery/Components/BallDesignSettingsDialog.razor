@@ -3,66 +3,122 @@
 @using DotNetDevLottery.Models
 @using Microsoft.AspNetCore.Components.Forms
 
-<FluentDialog @bind-Hidden="@isHidden" Modal="true" TrapFocus="true" @ondialogdismiss="OnDialogDismiss">
-    <DialogHeader>
-        <FluentStack Orientation="Orientation.Horizontal">
-            <FluentLabel Typo="Typography.PaneHeader">볼 디자인 설정</FluentLabel>
-        </FluentStack>
-    </DialogHeader>
-    <DialogBody>
-        <FluentStack Orientation="Orientation.Vertical" Style="gap: 1.5rem;">
-            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
-                <FluentLabel Style="font-weight: 600;">일반 볼 이미지 업로드</FluentLabel>
-                <InputFile OnChange="@(e => OnBallImageSelected(e, false))" accept="image/*" class="file-input" />
-                @if (!string.IsNullOrEmpty(settings.BallImageUrl))
-                {
-                    <FluentStack Orientation="Orientation.Horizontal" Style="align-items: center; gap: 1rem; padding: 0.5rem; background: var(--neutral-layer-2); border-radius: 4px;">
-                        <img src="@settings.BallImageUrl" alt="볼 이미지 미리보기" style="width: 60px; height: 60px; object-fit: contain; border-radius: 4px;" />
-                        <FluentButton Appearance="Appearance.Lightweight" OnClick="@(() => ClearImage(false))">삭제</FluentButton>
-                    </FluentStack>
-                }
-            </FluentStack>
+<FluentDialog @bind-Hidden="@isHidden" Modal="true" TrapFocus="true" @ondialogdismiss="OnDialogDismiss" class="!p-0 !rounded-3xl !border-0 !shadow-2xl overflow-hidden">
+    <div class="flex flex-col h-full bg-white w-full">
+        <!-- Header -->
+        <div class="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+            <h2 class="text-xl font-bold text-gray-800 m-0">볼 디자인 설정</h2>
+            <button @onclick="OnCancel" class="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
 
-            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
-                <FluentLabel Style="font-weight: 600;">당첨 볼 이미지 업로드</FluentLabel>
-                <InputFile OnChange="@(e => OnBallImageSelected(e, true))" accept="image/*" class="file-input" />
-                @if (!string.IsNullOrEmpty(settings.DrawedBallImageUrl))
-                {
-                    <FluentStack Orientation="Orientation.Horizontal" Style="align-items: center; gap: 1rem; padding: 0.5rem; background: var(--neutral-layer-2); border-radius: 4px;">
-                        <img src="@settings.DrawedBallImageUrl" alt="당첨 볼 이미지 미리보기" style="width: 60px; height: 60px; object-fit: contain; border-radius: 4px;" />
-                        <FluentButton Appearance="Appearance.Lightweight" OnClick="@(() => ClearImage(true))">삭제</FluentButton>
-                    </FluentStack>
-                }
-            </FluentStack>
+        <!-- Body -->
+        <div class="p-6 overflow-y-auto max-h-[70vh]">
+            <div class="flex flex-col gap-8">
+                <!-- Image Upload Section -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-3">
+                        <label class="text-sm font-bold text-gray-700">일반 볼 이미지</label>
+                        <div class="relative group">
+                            <InputFile OnChange="@(e => OnBallImageSelected(e, false))" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                            <div class="flex items-center justify-center p-4 border-2 border-dashed border-gray-200 rounded-xl bg-gray-50 transition-all group-hover:border-primary/50 group-hover:bg-primary/5">
+                                <span class="text-sm text-gray-500 group-hover:text-primary font-medium">Click to upload image</span>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrEmpty(settings.BallImageUrl))
+                        {
+                            <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl border border-gray-100">
+                                <img src="@settings.BallImageUrl" alt="Preview" class="w-12 h-12 object-contain rounded-lg bg-white shadow-sm" />
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-xs text-gray-400 font-mono truncate">Selected Image</p>
+                                </div>
+                                <button @onclick="@(() => ClearImage(false))" class="text-xs font-bold text-red-500 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors">
+                                    삭제
+                                </button>
+                            </div>
+                        }
+                    </div>
 
-            <FluentDivider Style="width: 100%;" />
-            <FluentLabel Style="text-align: center; color: var(--neutral-foreground-hint);">또는 색상 사용</FluentLabel>
+                    <div class="flex flex-col gap-3">
+                        <label class="text-sm font-bold text-gray-700">당첨 볼 이미지</label>
+                        <div class="relative group">
+                            <InputFile OnChange="@(e => OnBallImageSelected(e, true))" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                            <div class="flex items-center justify-center p-4 border-2 border-dashed border-gray-200 rounded-xl bg-gray-50 transition-all group-hover:border-primary/50 group-hover:bg-primary/5">
+                                <span class="text-sm text-gray-500 group-hover:text-primary font-medium">Click to upload image</span>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrEmpty(settings.DrawedBallImageUrl))
+                        {
+                            <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl border border-gray-100">
+                                <img src="@settings.DrawedBallImageUrl" alt="Preview" class="w-12 h-12 object-contain rounded-lg bg-white shadow-sm" />
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-xs text-gray-400 font-mono truncate">Selected Image</p>
+                                </div>
+                                <button @onclick="@(() => ClearImage(true))" class="text-xs font-bold text-red-500 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors">
+                                    삭제
+                                </button>
+                            </div>
+                        }
+                    </div>
+                </div>
 
-            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
-                <FluentLabel Style="font-weight: 600;">일반 볼 색상</FluentLabel>
-                <input type="color" @bind="@settings.BallColor" style="width: 100%; height: 40px; border: 1px solid var(--neutral-stroke-rest); border-radius: 4px; cursor: pointer;" />
-            </FluentStack>
+                <div class="relative py-2">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-200"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-4 bg-white text-gray-500 font-medium">또는 색상 직접 지정</span>
+                    </div>
+                </div>
 
-            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
-                <FluentLabel Style="font-weight: 600;">일반 볼 테두리 색상</FluentLabel>
-                <input type="color" @bind="@settings.BallBorderColor" style="width: 100%; height: 40px; border: 1px solid var(--neutral-stroke-rest); border-radius: 4px; cursor: pointer;" />
-            </FluentStack>
+                <!-- Color Config Section -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-gray-600 uppercase tracking-wide">일반 볼 색상</label>
+                        <div class="flex items-center gap-2 p-1.5 border border-gray-200 rounded-xl bg-white focus-within:ring-2 focus-within:ring-primary/20 transition-shadow">
+                             <input type="color" @bind="@settings.BallColor" class="w-8 h-8 rounded cursor-pointer border-0 p-0" />
+                             <span class="text-xs font-mono text-gray-500">@settings.BallColor</span>
+                        </div>
+                    </div>
 
-            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
-                <FluentLabel Style="font-weight: 600;">당첨 볼 색상</FluentLabel>
-                <input type="color" @bind="@settings.DrawedBallColor" style="width: 100%; height: 40px; border: 1px solid var(--neutral-stroke-rest); border-radius: 4px; cursor: pointer;" />
-            </FluentStack>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-gray-600 uppercase tracking-wide">테두리 색상</label>
+                        <div class="flex items-center gap-2 p-1.5 border border-gray-200 rounded-xl bg-white focus-within:ring-2 focus-within:ring-primary/20 transition-shadow">
+                             <input type="color" @bind="@settings.BallBorderColor" class="w-8 h-8 rounded cursor-pointer border-0 p-0" />
+                             <span class="text-xs font-mono text-gray-500">@settings.BallBorderColor</span>
+                        </div>
+                    </div>
 
-            <FluentStack Orientation="Orientation.Vertical" Style="gap: 0.5rem;">
-                <FluentLabel Style="font-weight: 600;">당첨 볼 텍스트 색상</FluentLabel>
-                <input type="color" @bind="@settings.DrawedBallTextColor" style="width: 100%; height: 40px; border: 1px solid var(--neutral-stroke-rest); border-radius: 4px; cursor: pointer;" />
-            </FluentStack>
-        </FluentStack>
-    </DialogBody>
-    <DialogFooter>
-        <FluentButton Appearance="Appearance.Neutral" OnClick="OnCancel">취소</FluentButton>
-        <FluentButton Appearance="Appearance.Accent" OnClick="OnSave">저장</FluentButton>
-    </DialogFooter>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-gray-600 uppercase tracking-wide">당첨 볼 색상</label>
+                         <div class="flex items-center gap-2 p-1.5 border border-gray-200 rounded-xl bg-white focus-within:ring-2 focus-within:ring-primary/20 transition-shadow">
+                             <input type="color" @bind="@settings.DrawedBallColor" class="w-8 h-8 rounded cursor-pointer border-0 p-0" />
+                             <span class="text-xs font-mono text-gray-500">@settings.DrawedBallColor</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-bold text-gray-600 uppercase tracking-wide">텍스트 색상</label>
+                         <div class="flex items-center gap-2 p-1.5 border border-gray-200 rounded-xl bg-white focus-within:ring-2 focus-within:ring-primary/20 transition-shadow">
+                             <input type="color" @bind="@settings.DrawedBallTextColor" class="w-8 h-8 rounded cursor-pointer border-0 p-0" />
+                             <span class="text-xs font-mono text-gray-500">@settings.DrawedBallTextColor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end gap-3 rounded-b-3xl">
+            <button @onclick="OnCancel" class="px-5 py-2.5 text-gray-600 font-bold bg-white border border-gray-200 rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm">
+                취소
+            </button>
+            <button @onclick="OnSave" class="px-5 py-2.5 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white font-bold rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                저장하기
+            </button>
+        </div>
+    </div>
 </FluentDialog>
 
 @code {
